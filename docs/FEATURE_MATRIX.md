@@ -6,7 +6,7 @@ Maßgeblich ist ausschließlich [HbmMods/Hbm-s-Nuclear-Tech-GIT](https://github.
 
 Diese erste Bestandsaufnahme erfasst **140 System- und Funktionspakete**, keine abschließende Liste aller Registry-IDs, Metadatenvarianten, Rezepte, Brennstoffe, Entitytypen und Assets. Eine Tabellenzeile kann viele einzelne Inhalte enthalten. Ein Dateiname oder Quellpaket beweist zunächst eine vorhandene Implementierung, noch nicht deren Registrierung oder Erreichbarkeit im Spiel. Historische, deaktivierte und `@Deprecated`-Pfade werden deshalb vor Umsetzung auf Erreichbarkeit geprüft und eingeordnet. Insbesondere Forschungsreaktor, ältere Pile-Teile und Test-/Entwicklerwerkzeuge dürfen weder stillschweigend entfallen noch ungeprüft zum aktiven Survivalumfang erklärt werden.
 
-**Alle 140 Portierungsstatus sind „Nicht begonnen“.** Die Dokumentation einer Funktion bedeutet keine Implementierung. Dieser PR legt weder ein Forge-Grundgerüst noch Spielinhalte an und ändert keine Originaldateien.
+**BASE-001 ist „In Arbeit“; die übrigen 139 Portierungsstatus sind „Nicht begonnen“.** Ein technisches Forge-Grundgerüst mit leeren Registern beginnt den Mod-Einstieg; Original-Spielinhalte sind weiterhin nicht portiert. Dokumentation, Inventur und Vertragsentwurf sind kein Implementierungsnachweis. Der Originalquellstand bleibt unverändert.
 
 ## Status, Phasen und Abnahme
 
@@ -41,6 +41,8 @@ Reproduzierbare Dateizählung am Referenzcommit mittels Python `Path('src/main/j
 
 Die größten `com.hbm`-Teilbäume sind `blocks` (628), `render` (599), `inventory` (505), `items` (452), `tileentity` (398), `entity` (185), `handler` (137) und `world` (86). Die vollständige Paketübersicht und die technische Entwicklungsstrategie stehen im [Portierungsplan](PORTING_PLAN.md).
 
+Die zusätzliche [maschinenlesbare Mappinginventur](inventory/registrations.json) erfasst einen ersten Teil der Einzeldeklarationen aus `EntityMappings.java` und `TileMappings.java` einschließlich Registrierungsanbindung. Erzeugung und Prüfung sind in [DEVELOPMENT.md](DEVELOPMENT.md) beschrieben. Diese Daten betreffen insbesondere BASE-004 und MOB-001; sie ändern deren Portstatus nicht. Übrige Registryarten, Original-Laufzeitverhalten und tatsächliche Erreichbarkeit bleiben offen.
+
 ## Systemmatrix
 
 Die IDs sind dauerhafte Planungsanker. Spätere Einzelinventare können Unter-IDs wie `NUC-008/…` erhalten; bestehende IDs werden nicht wegen einer neuen Reihenfolge umnummeriert. Quellverzeichnisse mit abschließendem `/` bezeichnen einen zu inventarisierenden Familienbaum. Genannte Dateien sind überprüfte Einstiegspunkte; die Liste einer Zeile beansprucht keine Vollständigkeit aller beteiligten Klassen.
@@ -49,7 +51,7 @@ Die IDs sind dauerhafte Planungsanker. Spätere Einzelinventare können Unter-ID
 
 | ID | Originalfunktion / konkrete Quellanker | Phase / wesentliche Abhängigkeiten | Portstatus | Originalgetreues Abnahmekriterium |
 | --- | --- | --- | --- | --- |
-| BASE-001 | **Mod-Start, Registrierung und Ereignisse**<br>`src/main/java/com/hbm/main/MainRegistry.java`<br>`src/main/java/com/hbm/main/ModEventHandler.java` | P1<br>— | Nicht begonnen | Originale registrierte Inhalte und Ereigniswirkungen sind einem 1.20.1-Lebenszyklus zugeordnet; Client und dedizierter Server starten separat. |
+| BASE-001 | **Mod-Start, Registrierung und Ereignisse**<br>`src/main/java/com/hbm/main/MainRegistry.java`<br>`src/main/java/com/hbm/main/ModEventHandler.java` | P1<br>— | In Arbeit | Originale registrierte Inhalte und Ereigniswirkungen sind einem 1.20.1-Lebenszyklus zugeordnet; Client und dedizierter Server starten separat. Bisher existiert nur der technische Einstieg mit leeren Block-/Item-Registern; die Originalregistrierungen und Ereigniswirkungen fehlen noch. |
 | BASE-002 | **Blockkatalog, Varianten und Zustand**<br>`src/main/java/com/hbm/blocks/ModBlocks.java`<br>`src/main/java/com/hbm/handler/BlockMigrations.java` | P1<br>BASE-001 | Nicht begonnen | Jede registrierte Block-ID samt Metadatenvariante erhält eine nachvollziehbare Ziel-ID und Zustandsabbildung; Platzierung, Abbau und Drops entsprechen der Referenz. |
 | BASE-003 | **Itemkatalog und kreative Gruppen**<br>`src/main/java/com/hbm/items/ModItems.java`<br>`src/main/java/com/hbm/items/ModItemsArmor.java`<br>`src/main/java/com/hbm/creativetabs/` | P1<br>BASE-001 | Nicht begonnen | Registrierte Items und Varianten, Stackgrößen, Haltbarkeit und kreative Sichtbarkeit sind vollständig zugeordnet; Mengen werden durch Registry-Inventur belegt. |
 | BASE-004 | **Block-Entity-Katalog und persistente Zustände**<br>`src/main/java/com/hbm/tileentity/TileMappings.java`<br>`src/main/java/com/hbm/tileentity/TileEntityMachineBase.java`<br>`src/main/java/com/hbm/tileentity/TileEntityInventoryBase.java` | P1<br>BASE-002 | Nicht begonnen | Jeder registrierte Tile-Typ besitzt eine Zielzuordnung; Inventar, Fortschritt und Konfiguration überstehen Speichern und erneutes Laden. |

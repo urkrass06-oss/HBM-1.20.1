@@ -1,0 +1,3 @@
+docs/inventory/registrations.json linguist-generated=true
+# Preserve upstream license/credit bytes, including their original whitespace.
+third_party_licenses/*.txt -whitespace

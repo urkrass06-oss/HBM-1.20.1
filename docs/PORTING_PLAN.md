@@ -1,6 +1,6 @@
 # Portierungsplan: HBM 1.7.10 → Forge 1.20.1
 
-Stand: **19. Oktober 2026, ausschließlich Planung und statische Bestandsaufnahme**. Die in diesem Dokument beschriebenen Zielarchitekturen und Prüfungen sind noch nicht implementiert oder ausgeführt. Der aktuelle Änderungsumfang besteht aus README, diesem Plan und der [Feature-Matrix](FEATURE_MATRIX.md).
+Stand: **19. Oktober 2026, P0-Inventur und Beginn des technischen P1-Grundgerüsts**. Der erste Planungs-PR enthält die statische Bestandsaufnahme und die [Feature-Matrix](FEATURE_MATRIX.md). Die Folgearbeit ergänzt ein Forge-Grundgerüst und einen begrenzten maschinenlesbaren Registrierungsbestand; Original-Spielfunktionen sind noch nicht implementiert. Der konkrete Prüfstand steht in [DEVELOPMENT.md](DEVELOPMENT.md); die [Datenverträge](DATA_CONTRACTS.md) bleiben ein unimplementierter Spezifikationsentwurf.
 
 ## 1. Ziel, Umfang und Referenzstand
 
@@ -41,7 +41,7 @@ git status --porcelain
 
 Git-Pfadfilter erfassen hier auch Unterverzeichnisse. Die Zählung ergibt **3.484 Java-Dateien**: **3.409** unter `com.hbm`, **63** unter `api.hbm`, **12** unter `cofh.api` einschließlich `energy`; außerdem **7.508 Ressourcendateien**. Unter `assets/hbm` liegen 7.504 Dateien, darunter 6.004 PNGs, 517 OBJ-Modelle, 523 OGG-Dateien, 271 JSON-Dateien, 83 NBT-Dateien und 11 `.lang`-Dateien. Diese Zahlen sind Aufwandssignale, keine Vollständigkeitsquote eines Ports.
 
-Die Matrix erfasst System- und Inhaltsfamilien. Die spätere Einzelinventur muss jede registrierte ID, Metadatenvariante, Rezeptdefinition, Fluidart, Entität und Ressource auf eine Matrix-ID abbilden. Noch ungeprüft sind insbesondere vollständige Laufzeitregistrierung, exakte numerische Vergleichswerte aller Systeme, reproduzierbare Builds und alle Asset-Einzellizenzen. Es wurden keine Builds, Client-/Serverstarts oder Spieltests ausgeführt.
+Die Matrix erfasst System- und Inhaltsfamilien. Die spätere Einzelinventur muss jede registrierte ID, Metadatenvariante, Rezeptdefinition, Fluidart, Entität und Ressource auf eine Matrix-ID abbilden. Noch ungeprüft sind insbesondere vollständige Laufzeitregistrierung, exakte numerische Vergleichswerte aller Systeme, reproduzierbare Originalbuilds und alle Asset-Einzellizenzen. Das Original wurde weder gebaut noch gestartet. Der erste maschinenlesbare [Teilbestand](inventory/registrations.json) erfasst inzwischen Entity-/Mob- und TileEntity-Mappingtabellen mit Quellbelegen, Alias-/Konfliktbefunden und ausdrücklich begrenzter statischer Aussagekraft; er schließt P0 nicht ab.
 
 ## 3. Java-Paketstruktur
 
@@ -145,8 +145,8 @@ Die Matrix verwendet die folgenden Phasen. Jede Familie umfasst Serverlogik, Spe
 
 | Phase | Inhalt und Reihenfolge | Überprüfbares Ergebnis / Abschlussbedingung |
 | --- | --- | --- |
-| **P0 Referenz und Inventur** | Commit und Lizenzlage festhalten; Matrix anlegen; anschließend Laufzeitregistrierung, Varianten, Assets und Messfälle einzeln erfassen. | Der vorliegende PR liefert die statische Grundlage. P0 bleibt bis zur ID-genauen Inventur und funktionierenden Referenzumgebung unvollständig. |
-| **P1 Forge-Grundgerüst und Datenvertrag** | Passendes 1.20.1-MDK mit konkreter Forge-47.x-/ForgeGradle-/Wrapper-Version festlegen; Java 17, Registries, Seitenaufteilung, Konfiguration, Ressourcenlayout, NBT-/ID-Verträge und später CI einrichten. | Client und Dedicated Server starten; kleines technisches Registrierungs-/Speicherszenario funktioniert. Noch keine breite Inhaltsmigration. |
+| **P0 Referenz und Inventur** | Commit und Lizenzlage festhalten; Matrix und statische Mappinginventur anlegen; anschließend übrige Registries, Varianten, Assets, Laufzeitregistrierung und Messfälle einzeln erfassen. | P0 bleibt bis zur ID-genauen Inventur und funktionierenden Referenzumgebung unvollständig. Vorliegende Mappingdeklarationen sind kein vollständiger Laufzeitkatalog. |
+| **P1 Forge-Grundgerüst und Datenvertrag** | Forge `47.4.10`, ForgeGradle `6.0.54`, Gradle `8.8` und Java 17 festlegen; leere Register, Seitenaufteilung, Ressourcenlayout, Vertragsentwurf und CI einrichten; persistentes Referenzszenario und erste benötigte Konfiguration folgen. | Client und Dedicated Server starten; kleines technisches Registrierungs-/Speicherszenario funktioniert. Das Grundgerüst allein schließt P1 noch nicht ab. Noch keine breite Inhaltsmigration. |
 | **P2 Basissysteme und Netze** | Persistenz, Pakete, Inventare, Menüs, BlockEntity-Basis, Multiblocks, Energie-/Fluidnetze und Chunk-Lebenszyklus; erste vertikale Strecke aus Originalgenerator, Leitung, Speicher und Verbraucher. | Energie-/Stoffbilanz sowie Speichern/Neuladen und Multiplayerbedienung bestehen; ein vollständiger Originalablauf ist vergleichbar. |
 | **P3 Industrie und Chemie** | Materialien/Tags, Grundcrafting, Rezepte, Brennstoffe, Prozessmaschinen, Rohstoffgewinnung, Öl-/Chemieketten und Automatisierung entlang der Originalprogression. | Ausgewählte vollständige Produktionsketten stimmen in Ein-/Ausgaben, Zeiten, Kosten und Nebenprodukten; danach systematische Familienabdeckung. |
 | **P4 Reaktoren und Umwelt** | Gefahren, Strahlung, Neutronen, Verschmutzung, Brennstoffkreisläufe; Reaktorfamilien und Thermik; Unfall- und Langzeitfolgen. Benötigte Explosionsbausteine aus P5 werden vor den jeweiligen Unfalltests bereitgestellt. | Jede Reaktorfamilie besteht Normalbetrieb, Regelung, Ausfall, Neustart und Unfallvergleich; Strahlung und Schutzmaßnahmen stimmen innerhalb dokumentierter Toleranzen. |
@@ -167,7 +167,7 @@ Abhängigkeiten: **P0 → P1 → P2 → P3**; **P4** benötigt P2/P3 und Unfallb
 
 Für spätere Implementierungs-PRs gilt: eine überschaubare Funktionsfamilie, betroffene Matrix-IDs, Originalbelege, Änderungsgrund, Testnachweis und bekannte Abweichungen. Die Statusfolge ist **Nicht begonnen → In Arbeit → Implementiert → Verifiziert**. Ein Eintrag wird erst **Verifiziert**, wenn Serververhalten, Speichern, Bedienung/Darstellung und Originalvergleich nachgewiesen sind. Ein kompilierendes Grundgerüst oder vorhandene Texturen erfüllen dies nicht.
 
-Der Planungs-PR selbst wird ausschließlich auf Quellenbezüge, konsistente Versions-/Phasenangaben, Markdown-Verweise, Matrixstruktur und den dokumentarischen Diff geprüft. Er behauptet keine Laufzeitvalidierung.
+Der erste Planungs-PR wurde ausschließlich auf Quellenbezüge, konsistente Versions-/Phasenangaben, Markdown-Verweise, Matrixstruktur und den dokumentarischen Diff geprüft. Spätere Grundgerüst- und Implementierungsänderungen benötigen zusätzlich die jeweils angegebenen Build-/Start- und Verhaltensnachweise; ihre Ergebnisse stehen in [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## 7. Risiken, Entscheidungen und offene Arbeit
 

@@ -1,0 +1,13 @@
+# Phase-3-Prüfbelege
+
+Diese Dateien ergänzen [MODERNIZED_BUILD_REPORT.md](../MODERNIZED_BUILD_REPORT.md). Sie enthalten Befehle, Ausgaben und Hashes, keine Mod-/Minecraft-/Bibliotheks-JARs oder Assetdateien.
+
+- [`commands.jsonl`](commands.jsonl): 48 protokollierte Aufrufe einschließlich Fehlversuchen, UTC, Arbeitsverzeichnis, Argumentliste, Exitcode und zugehörigem archiviertem Log. Äußere Protokollaufrufe und innere Gradle-Aufrufe sind getrennte Datensätze; dies sind nicht 48 unabhängige Tests.
+- [`transcripts/`](transcripts/): vollständige stdout/stderr-Ausgaben der protokollierten Aufrufe. Erwartete Negativprüfungen und zwischenzeitliche Fehler im Prüfskript sind im Hauptbericht eingeordnet. Die alten absoluten Arbeitsverzeichnisse sind historische Evidenz, keine portablen Projektvorgaben.
+- [`transcripts.sha256`](transcripts.sha256): SHA256 der archivierten Logs, etwa mit `sha256sum --check transcripts.sha256` aus diesem Verzeichnis prüfbar.
+- [`artifacts-sha256.tsv`](artifacts-sha256.tsv): 719 tatsächlich heruntergeladene JAR-/ZIP-/POM-/Gradle-Metadatenobjekte aus dem isolierten Gradle-/NFRT-Cache und den installierten Serverbibliotheken. Dies ist eine beobachtete Obermenge einschließlich Buildwerkzeugen und Compile-only-Abhängigkeiten, **kein Runtime-Modpack, kein Lizenzfreigabemanifest und kein erzwungenes Gradle-Lockfile**. `gradle-modules/`, `nfrt-artifacts/` und `server-libraries/` ersetzen die lokalen Cachewurzeln. Minecraft-Assetobjekte und generierte Zwischenartefakte werden nicht als Dateien übernommen.
+- [`diagnostics/`](diagnostics/): eigene kleine Diagnoseprogramme als Textbelege unter LGPL-3.0-only. Die in historischen Aufrufen benutzten lokalen Skriptnamen sind damit nachvollziehbar. Der frühe Gradle-Launcher zeigte zunächst auf die Debian-JRE und wurde nach deren Diagnose auf das vollständige Temurin-JDK21 umgestellt; archiviert ist sein letzter Stand. Das Archivprüfskript wurde korrigiert, damit die Platzhalterprüfung nur die Laufzeitmetadaten und nicht die legitime Sources-Vorlage betrifft.
+
+Für neue Buildversuche die gepflegten Helfer [`modernized_build.py`](../../tools/modernized_build.py) und [`audit_modernized.py`](../../tools/audit_modernized.py) verwenden. Das Zielrepository wird durch sie nicht mit fremden Spielquellen oder Assets befüllt. Lizenz-/Copyrightausschnitte und Diagnosen zu Upstreamdateien bleiben der im Hauptbericht genannten festen Quelle zugeordnet.
+
+Es wurden keine Zugangsdaten in diese Belege aufgenommen. Keine der hier genannten Binärdateien wird mit diesem PR veröffentlicht. Die EULA-Annahme und vollständige Dedicated-Server-/Client-/Spielabnahme bleiben offen.

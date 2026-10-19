@@ -1,0 +1,10 @@
+UTC: 2026-10-19T19:21:05.882839+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: python3 snapshot-datagen.py 2
+
+Files: 7952 JSON parsed: 7952 manifest SHA256: 937d5273f06fb2c18fe5e02df1b697403f051359f34439c6dcac61781d8e5a4d
+Traceback (most recent call last):
+  File "/workspace/scratch/modernized-phase3/snapshot-datagen.py", line 18, in <module>
+    assert previous==data,'Datagen content changed between runs'
+           ^^^^^^^^^^^^^^
+AssertionError: Datagen content changed between runs

@@ -1,0 +1,8 @@
+UTC: 2026-10-19T19:09:24.126098+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: curl --fail --location --retry 2 --max-time 180 -o jdk17.tar.gz https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 20  184M   20 38.3M    0     0  36.0M      0  0:00:05  0:00:01  0:00:04 36.0M 48  184M   48 90.0M    0     0  43.4M      0  0:00:04  0:00:02  0:00:02 51.3M 75  184M   75  139M    0     0  45.6M      0  0:00:04  0:00:03  0:00:01 50.7M100  184M  100  184M    0     0  46.6M      0  0:00:03  0:00:03 --:--:-- 50.4M

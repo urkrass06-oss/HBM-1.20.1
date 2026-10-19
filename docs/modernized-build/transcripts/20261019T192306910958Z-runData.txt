@@ -1,0 +1,313 @@
+{"utc": "20261019T192306910958Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase3/upstream", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:runData", "--stacktrace", "--info"], "jdk21": "/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase3/runner-logs/20261019T192306910958Z-runData.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Initialized native services in: /workspace/scratch/modernized-phase3/gradle-home/native
+Initialized jansi services in: /workspace/scratch/modernized-phase3/gradle-home/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm6683557498791724379probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm18343938964699261078probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Starting process 'Gradle build daemon'. Working directory: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1 Command: /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -Xmx2G -Dfile.encoding=UTF-8 -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Duser.country -Duser.language=en -Duser.variant -cp /workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/gradle-daemon-main-9.3.1.jar -javaagent:/workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/agents/gradle-instrumentation-agent-9.3.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.3.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.888 secs.
+The client will now receive all logging from the daemon (pid: 16570). The daemon log file: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1/daemon-16570.out.log
+Daemon will be stopped at the end of the build 
+Using 2 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=true, configureOnDemand=false, configurationCache=false, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=true, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /workspace/scratch/modernized-phase3/upstream since the file system is not supported
+File system watching is active
+Starting Build
+Not watching /workspace/scratch/modernized-phase3/upstream/build-logic since the file system is not supported
+Using local directory build cache for build ':build-logic' (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+
+> Configure project :build-logic
+Evaluating project ':build-logic' using build file '/workspace/scratch/modernized-phase3/upstream/build-logic/build.gradle.kts'.
+Resolved plugin [id: 'org.gradle.kotlin.kotlin-dsl', version: '6.4.2']
+Build d4311d4e-1a27-4ea7-96b9-cfa2a8414c3f is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+file or directory '/workspace/scratch/modernized-phase3/upstream/build-logic/src/main/java', not found
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '1.0.0']
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Running Stonecutter 0.8
+Settings evaluated using settings file '/workspace/scratch/modernized-phase3/upstream/settings.gradle.kts'.
+Using local directory build cache for the root build (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+Projects loaded. Root project using build file '/workspace/scratch/modernized-phase3/upstream/stonecutter.gradle.kts'.
+Included projects: [root project 'HBM-Modernized', project ':1.20.1-forge']
+
+> Configure project :
+Evaluating root project 'HBM-Modernized' using build file '/workspace/scratch/modernized-phase3/upstream/stonecutter.gradle.kts'.
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Resolved plugin [id: 'co.uzzu.dotenv.gradle', version: '4.0.0']
+Resolved plugin [id: 'net.neoforged.moddev', version: '2.0.120', apply: false]
+Resolved plugin [id: 'dev.kikugie.postprocess.jsonlang', version: '2.1-beta.8', apply: false]
+Resolved plugin [id: 'me.modmuss50.mod-publish-plugin', version: '1.1.0', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm', version: '2.2.10', apply: false]
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.2.10-2.0.2', apply: false]
+Resolved plugin [id: 'dev.kikugie.fletching-table', version: '0.1.0-alpha.22', apply: false]
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge', version: '2.0.120', apply: false]
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':build-logic:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Build cache key for task ':build-logic:compileKotlin' is a870430389f40771b1ffb70639b0e07e
+Skipping task ':build-logic:compileKotlin' as it is up-to-date.
+Resolve mutations for :build-logic:compileJava (Thread[#54,Execution worker,5,main]) started.
+
+> Task :build-logic:compileJava NO-SOURCE
+Skipping task ':build-logic:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :build-logic:pluginDescriptors (Thread[#54,Execution worker,5,main]) started.
+:build-logic:pluginDescriptors (Thread[#54,Execution worker,5,main]) started.
+
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+Caching disabled for task ':build-logic:pluginDescriptors' because:
+  Not worth caching
+Skipping task ':build-logic:pluginDescriptors' as it is up-to-date.
+
+> Task :build-logic:processResources UP-TO-DATE
+Caching disabled for task ':build-logic:processResources' because:
+  Not worth caching
+Skipping task ':build-logic:processResources' as it is up-to-date.
+
+> Task :build-logic:classes UP-TO-DATE
+Skipping task ':build-logic:classes' as it has no actions.
+
+> Task :build-logic:jar UP-TO-DATE
+Caching disabled for task ':build-logic:jar' because:
+  Not worth caching
+Skipping task ':build-logic:jar' as it is up-to-date.
+
+> Configure project :1.20.1-forge
+Evaluating project ':1.20.1-forge' using build file '/workspace/scratch/modernized-phase3/upstream/build.forge.gradle.kts'.
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage1) is b76f016afe0100c2b150b8b70efea247
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage1) with cache key b76f016afe0100c2b150b8b70efea247
+Resolved plugin [id: 'mod-platform']
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge']
+Resolve mutations for :build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+:build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+:build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+:build-logic:compileJava (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:processResources (Thread[#53,included builds,5,main]) started.
+:build-logic:processResources (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:classes (Thread[#53,included builds,5,main]) started.
+:build-logic:classes (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:jar (Thread[#53,included builds,5,main]) started.
+:build-logic:jar (Thread[#53,included builds,5,main]) started.
+Build 8d4c9183-bab0-4564-b3be-dbf3a3cbe090 is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage2) is fc0268372ea1859fa2a1419271504e77
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage2) with cache key fc0268372ea1859fa2a1419271504e77
+All projects evaluated.
+Task path ':1.20.1-forge:runData' matched project ':1.20.1-forge'
+Task name matched 'runData'
+Selected primary task 'runData' from project :1.20.1-forge
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm10048820228078436100probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm17262373174906088017probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Tasks to be executed: [task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors', task ':1.20.1-forge:stonecutterPrepare', task ':1.20.1-forge:stonecutterGenerate', task ':1.20.1-forge:createMinecraftArtifacts', task ':1.20.1-forge:kspKotlin', task ':1.20.1-forge:compileKotlin', task ':1.20.1-forge:compileJava', task ':1.20.1-forge:processResources', task ':1.20.1-forge:classes', task ':1.20.1-forge:downloadAssets', task ':1.20.1-forge:writeDataLegacyClasspath', task ':1.20.1-forge:prepareDataRun', task ':1.20.1-forge:runData']
+Tasks that were excluded: []
+Resolve mutations for :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :1.20.1-forge:stonecutterPrepare (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:stonecutterPrepare (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterPrepare
+Caching disabled for task ':1.20.1-forge:stonecutterPrepare' because:
+  Caching has not been enabled for the task
+Task ':1.20.1-forge:stonecutterPrepare' is not up-to-date because:
+  Input property 'source' file /workspace/scratch/modernized-phase3/upstream/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java has changed.
+Resolve mutations for :1.20.1-forge:stonecutterGenerate (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:stonecutterGenerate (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterGenerate
+Caching disabled for task ':1.20.1-forge:stonecutterGenerate' because:
+  Not worth caching
+Task ':1.20.1-forge:stonecutterGenerate' is not up-to-date because:
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/upstream/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java has changed.
+Resolve mutations for :1.20.1-forge:createMinecraftArtifacts (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:createMinecraftArtifacts (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:createMinecraftArtifacts UP-TO-DATE
+Cached resource https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-userdev.jar is up-to-date (lastModified: Fri Apr 10 15:15:04 UTC 2026).
+Cached resource https://maven.neoforged.net/releases/de/oceanlabs/mcp/mcp_config/1.20.1/mcp_config-1.20.1.zip is up-to-date (lastModified: Mon Jun 12 18:44:17 UTC 2023).
+Caching disabled for task ':1.20.1-forge:createMinecraftArtifacts' because:
+  Implements its own caching
+Skipping task ':1.20.1-forge:createMinecraftArtifacts' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:kspKotlin (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:kspKotlin (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :1.20.1-forge:downloadAssets (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:downloadAssets (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:downloadAssets UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:downloadAssets' because:
+  Implements its own caching and the output file is system specific
+Skipping task ':1.20.1-forge:downloadAssets' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:writeDataLegacyClasspath (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:writeDataLegacyClasspath (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:writeDataLegacyClasspath UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:writeDataLegacyClasspath' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:writeDataLegacyClasspath' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:prepareDataRun (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:prepareDataRun (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:prepareDataRun UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:prepareDataRun' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:prepareDataRun' as it is up-to-date.
+
+> Task :1.20.1-forge:kspKotlin
+Build cache key for task ':1.20.1-forge:kspKotlin' is 11ae0e8bcb16fbe5b15cc88214d59fde
+Task ':1.20.1-forge:kspKotlin' is not up-to-date because:
+  Input property 'kspConfig.javaSourceRoots' file /workspace/scratch/modernized-phase3/upstream/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java has changed.
+  Input property 'kspConfig.sourceRoots' file /workspace/scratch/modernized-phase3/upstream/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java has changed.
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/src/main/kotlin', not found
+i: [ksp] loaded provider(s): [dev.kikugie.fletching_table.ksp.mixin.FTMixinProcessor$Provider, dev.kikugie.fletching_table.ksp.entrypoint.FTEntrypointProcessor$Provider]
+Stored cache entry for task ':1.20.1-forge:kspKotlin' with cache key 11ae0e8bcb16fbe5b15cc88214d59fde
+Resolve mutations for :1.20.1-forge:compileKotlin (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:compileKotlin (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:compileKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileJava (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:compileJava (Thread[#53,included builds,5,main]) started.
+This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+
+> Task :1.20.1-forge:compileJava
+Build cache key for task ':1.20.1-forge:compileJava' is 2ebcfc5bc77359967d43879e4b9bc38f
+Task ':1.20.1-forge:compileJava' is not up-to-date because:
+  Input property 'stableSources' file /workspace/scratch/modernized-phase3/upstream/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java has changed.
+Compilation mode: default, forking compiler
+Created classpath snapshot for incremental compilation in 0.165 secs.
+Full recompilation is required because org.spongepowered.tools.obfuscation.MixinObfuscationProcessorTargets is not incremental. Analysis took 0.242 secs.
+Compiling with toolchain '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1'.
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/generated/ksp/main/java', not found
+Starting process 'Gradle Worker Daemon 1'. Working directory: /workspace/scratch/modernized-phase3/gradle-home/workers Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED @/workspace/scratch/modernized-phase3/gradle-home/.tmp/gradle-worker-classpath2620249956345345147txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 1'
+Successfully started process 'Gradle Worker Daemon 1'
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Started Gradle worker daemon (0.4 secs) with fork options DaemonForkOptions{executable=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java, minHeapSize=null, maxHeapSize=null, jvmArgs=[--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED], keepAliveMode=DAEMON}.
+Compiling with JDK Java compiler API.
+Note: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7)
+Note: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+Note: Loading searge mappings from /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/namedToIntermediate.tsrg
+Note: Writing refmap to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json
+Note: Writing refmap to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json
+Note: Writing searge composite mappings to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json.mappings.tsrg
+Note: Writing refmap to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json
+Note: Writing refmap to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json
+Note: Writing searge composite mappings to /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json.mappings.tsrg
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Class dependency analysis for incremental compilation took 0.371 secs.
+Stored cache entry for task ':1.20.1-forge:compileJava' with cache key 2ebcfc5bc77359967d43879e4b9bc38f
+Resolve mutations for :1.20.1-forge:processResources (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:processResources (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:processResources UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:processResources' because:
+  Not worth caching
+Skipping task ':1.20.1-forge:processResources' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:classes
+Skipping task ':1.20.1-forge:classes' as it has no actions.
+Resolve mutations for :1.20.1-forge:runData (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:runData (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:runData
+Caching disabled for task ':1.20.1-forge:runData' because:
+  Caching has been disabled for the task
+Task ':1.20.1-forge:runData' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/run Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Dfml.modFolders=hbm_m%%/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/classes/java/main:hbm_m%%/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/classes/kotlin/main:hbm_m%%/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/generated/ksp/main/classes:hbm_m%%/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/resources/main @/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/dataRunVmArgs.txt -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/classes/java/main:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/classes/kotlin/main:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/generated/ksp/main/classes:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/resources/main:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/client-extra-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.zip:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.10/30de6faa127a4a012db8e71bf1b9c0a99b1402b2/kotlin-stdlib-2.2.10.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.neoforged/DevLaunch/1.0.2/2e0e9a67793d5bfdedee4f9ea00934dbf3f2e22d/DevLaunch-1.0.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.moulberry/mixinconstraints/1.1.0/671015be7f63a4ef9a99c5948e583277c9482cef/mixinconstraints-1.1.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/9.3.1/transforms/5d83783c29e02a5eee9b5b64286c21a6/transformed/architectury-forge-9.2.14.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/bootstraplauncher/1.1.2/c546e00443d8432cda6baa1c860346980742628/bootstraplauncher-1.1.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlearlydisplay/1.20.1-47.4.20/4dcdfb740aff35b40a3471708ca8a5f1e22a9504/fmlearlydisplay-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.20/c354b21002937b393c4f86163a98dccdf1d51e72/javafmllanguage-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.20/865d75f8c18329ddb31db5856701ab86609108b5/lowcodelanguage-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.20/af599930362212ae937e392709f49047e6abbbf/mclanguage-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.20/e8cc697c69f3911e76caa2f005d9486597cd7448/fmlcore-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlloader/1.20.1-47.4.20/8798bdd148d476c7ec54d8156f88de5e243c2dfb/fmlloader-1.20.1-47.4.20.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/forgespi/7.0.1/3b4972a0cdb135853dba219be61a79b22cff1309/forgespi-7.0.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/accesstransformers/8.0.4/272d240aa73f42195b2a68e2ebd8b701ecf41f63/accesstransformers-8.0.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/modlauncher/10.0.9/6d9443f56f50bb85cea383686ff9c867391458b/modlauncher-10.0.9.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/securejarhandler/2.1.10/51e6a22c6c716beb11e244bf5b8be480f51dd6b5/securejarhandler-2.1.10.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/eventbus/6.2.33/3fae69cfa9c5095bcc25c0a8a3ed9b26c156f922/eventbus-6.2.33.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/coremods/5.2.4/e30bab269d896613e38396274711410b3a0e4b87/coremods-5.2.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.openjdk.nashorn/nashorn-core/15.4/f67f5ffaa5f5130cf6fb9b133da00c7df3b532a5/nashorn-core-15.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.9.1/ab35de4c537184a09339069f1a3b3aacf2289149/asm-commons-9.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.1.5/e31dad26696043b540681aabc93e2001a1a2cd44/mergetool-1.1.5.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.1.5/f3da18e12c696d35a47c82cbb2cc8b5aa15e1154/mergetool-1.1.5-api.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.9.1/e51f5b0ae0b0c1960687ae970a2a3434d39d8abb/asm-util-9.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.9.1/1ab8d9316ef7a67240087919a708246c37ed1660/asm-analysis-9.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.9.1/b6b1b3366296163b4b1f540731aad0a2baa484d8/asm-tree-9.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm/9.9.1/2ceea6ab43bcae1979b2a6d85fc0ca429877e5ab/asm-9.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarFileSystems/0.3.19/2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020/JarJarFileSystems-0.3.19.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr4/4.9.1/e92af8ab33e428461927b484e90bb155a4f3a052/antlr4-4.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.9.1/428664f05d2b7f7b7610204b5aa7c1763f62011a/antlr4-runtime-4.9.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/unsafe/0.2.0/54d7a0a5e8fdb71b973025caa46f341ae5904f39/unsafe-0.2.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.4/51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4/toml-3.6.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.electronwill.night-config/core/3.6.4/510f174abbf1c947494db50ef2445683bd52c230/core-3.6.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarSelector/0.3.19/376cc9c8ea60720cf027c01fc033de915699801c/JarJarSelector-0.3.19.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarMetadata/0.3.19/83feaa9b770e6ac0e96ee4fc23fa89325c5fe2/JarJarMetadata-0.3.19.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.8.5/4433f50c07debefaed0553bd0068f4f48d449313/maven-artifact-3.8.5.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.jodah/typetools/0.6.3/a01aaa6ddaea9ec07ec4f209487b7a46a526283a/typetools-0.6.3.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.github.oshi/oshi-core/6.2.2/54f5efc19bca95d709d9a37d19ffcbba3d21c1a6/oshi-core-6.2.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10/dd9b193aef96e973d5a11ab13cd17430c2e4306b/gson-2.10.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/60458f877d055d0c9114d9e1a2efb737b4bc282c/guava-31.1-jre.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.ibm.icu/icu4j/61.1/28d33b5e44e72edcc66a5da7a34a42147f38d987/icu4j-61.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/authlib/4.0.43/2ff9d747a77570a07a60d32ac77eb6162ad2a2d9/authlib-4.0.43.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/blocklist/1.0.10/5c685c5ffa94c4cd39496c7184c1d122e515ecef/blocklist-1.0.10.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/brigadier/1.1.8/5244ce82c3337bba4a196a3ce858bfaecc74404a/brigadier-1.1.8.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/datafixerupper/6.0.8/3ba4a30557a9b057760af4011f909ba619fc5125/datafixerupper-6.0.8.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/logging/1.1.1/832b8e6674a9b325a5175a3a6267dfaf34c85139/logging-1.1.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/patchy/2.2.10/da05971b07cbb379d002cf7eaec6a2048211fefc/patchy-2.2.10.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/text2speech/1.17.9/3cad216e3a7f0c19b4b394388bc9ffc446f13b14/text2speech-1.17.9.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-codec/commons-codec/1.15/49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d/commons-codec-1.15.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-io/commons-io/2.11.0/a2503f302b11ebde7ebc3df41daebe0e4eea3689/commons-io-2.11.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.82.Final/a544270cf1ae8b8077082f5036436a9a9971ea71/netty-buffer-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.82.Final/b77200379acb345a9ffdece1c605e591ac3e4e0a/netty-codec-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-common/4.1.82.Final/22d148e85c3f5ebdacc0ce1f5aabb1d420f73f3/netty-common-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.82.Final/644041d1fa96a5d3130a29e8978630d716d76e38/netty-handler-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.82.Final/38f665ae8dcd29032eea31245ba7806bed2e0fa8/netty-resolver-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.82.Final/e7c7dd18deac93105797f30057c912651ea76521/netty-transport-classes-epoll-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.82.Final/3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce/netty-transport-native-unix-common-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.82.Final/e431a218d91acb6476ccad5f5aafde50aa3945ca/netty-transport-4.1.82.Final.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.5.9/bb7ea75ecdb216654237830b3a96d87ad91f8cc5/fastutil-8.5.9.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.12.1/97406a297c852f4a41e688a176ec675f72e8329/jna-platform-5.12.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.12.1/b1e93a735caea94f503e95e6fe79bf9cdc1e985d/jna-5.12.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.4/4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c/jopt-simple-5.0.4.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/4ec95b60d4e86b5c95a0e919cb172a0af98011ef/commons-compress-1.21.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.12.0/c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e/commons-lang3-3.12.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.15/7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d/httpcore-4.4.15.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.19.0/3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb/log4j-core-2.19.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j2-impl/2.19.0/5c04bfdd63ce9dceb2e284b81e96b6a70010ee10/log4j-slf4j2-impl-2.19.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.19.0/ea1b37f38c327596b216542bc636cfdc0b8036fa/log4j-api-2.19.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.joml/joml/1.10.5/22566d58af70ad3d72308bab63b8339906deb649/joml-1.10.5.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.1/cbac1b8d30cb4795149c1ef540f912671a8616d0/lwjgl-glfw-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.1/81716978214ecbda15050ca394b06ef61501a49e/lwjgl-glfw-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.1/a817bcf213db49f710603677457567c37d53e103/lwjgl-jemalloc-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.1/33dbb017b6ed6b25f993ad9d56741a49e7937718/lwjgl-jemalloc-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.1/2623a6b8ae1dfcd880738656a9f0243d2e6840bd/lwjgl-openal-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.1/f906b6439f6daa66001182ea7727e3467a93681b/lwjgl-openal-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.1/831a5533a21a5f4f81bbc51bb13e9899319b5411/lwjgl-opengl-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.1/ab9ab6fde3743e3550fa5d46d785ecb45b047d99/lwjgl-opengl-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.1/b119297cf8ed01f247abe8685857f8e7fcf5980f/lwjgl-stb-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.1/3ee7aec8686e52867677110415566a5342a80230/lwjgl-stb-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.1/ff1914111ef2e3e0110ef2dabc8d8cdaad82347/lwjgl-tinyfd-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.1/a35110b9471bea8cde826ab297550ee8c22f5035/lwjgl-tinyfd-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.1/ae58664f88e18a9bb2c77b063833ca7aaec484cb/lwjgl-3.3.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.1/1de885aba434f934201b99f2f1afb142036ac189/lwjgl-3.3.1-natives-linux.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.machinezoo.noexception/noexception/1.7.1/b65330c98e38a1f915fa54a6e5eca496505e3f0a/noexception-1.7.1.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.30/e606eac955f55ecf1d8edcccba04eb8ac98088dd/slf4j-simple-1.7.30.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.0/82b150a36b504a09076b29c0509e31702c9c3999/slf4j-api-2.0.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/srgutils/0.4.11/fbad1341ffdb47d276bbdc40ecb06da49e053e74/srgutils-0.4.11.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.3.0/cf43b5391de623b36fe066a21127baef82c64022/plexus-utils-3.3.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.12.0/d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5/checker-qual-3.12.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.11.0/c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69/error_prone_annotations-2.11.0.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.82.Final/476409d6255001ca53a55f65b01c13822f8dc93a/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.82.Final/c7350a71920f3ae9142945e25fed4846cce53374/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/ST4/4.3/92f2c1ad8d84abcbeead6cf7f2c53a04166293c2/ST4-4.3.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar net.neoforged.devlaunch.Main @/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/dataRunProgramArgs.txt
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+2026-10-19 19:24:16,144 main WARN Advanced terminal features are not available in this environment
+[19:24:16] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, /workspace/scratch/modernized-phase3/gradle-home/caches/neoformruntime/assets, --gameDir, ., --fml.forgeVersion, 47.4.20, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, mixins.hbm_m.json, --mod, hbm_m, --all, --output, /workspace/scratch/modernized-phase3/upstream/src/generated/resources, --existing, /workspace/scratch/modernized-phase3/upstream/src/main/resources]
+[19:24:16] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.18.55
+[19:24:16] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[19:24:16] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23175!/ Service=ModLauncher Env=CLIENT
+[19:24:16] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.20/e8cc697c69f3911e76caa2f005d9486597cd7448/fmlcore-1.20.1-47.4.20.jar is missing mods.toml file
+[19:24:16] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.20/c354b21002937b393c4f86163a98dccdf1d51e72/javafmllanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:24:16] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.20/865d75f8c18329ddb31db5856701ab86609108b5/lowcodelanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:24:16] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.20/af599930362212ae937e392709f49047e6abbbf/mclanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:24:16] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+
+Stopped 1 worker daemon(s).
+
+> Task :1.20.1-forge:runData
+[19:24:18] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[19:24:18] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, /workspace/scratch/modernized-phase3/gradle-home/caches/neoformruntime/assets, --assetIndex, 5, --mod, hbm_m, --all, --output, /workspace/scratch/modernized-phase3/upstream/src/generated/resources, --existing, /workspace/scratch/modernized-phase3/upstream/src/main/resources]
+[19:24:18] [main/WARN] [mixin/]: Reference map 'mixins.hbm_m.refmap.json' for mixins.hbm_m.json could not be read. If this is a development environment you can ignore this message
+[19:24:19] [main/INFO] [mixin/]: Remapping refMap architectury-forge-refmap.json using /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[19:24:19] [main/INFO] [mixin/]: Remapping refMap architectury-common-refmap.json using /workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[19:24:20] [main/INFO] [ne.mi.da.lo.DatagenModLoader/]: Initializing Data Gatherer for mods [hbm_m]
+[19:24:25] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.20, for MC 1.20.1 with MCP 20230612.114412
+[19:24:25] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.20 Initialized
+[19:24:25] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Initializing Hbm's Nuclear Tech Mod Modernized
+[19:24:26] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering S2C receiver with id architectury:sync_ids
+[19:24:26] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[19:24:28] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar%23177!/assets/.mcassetsroot' uses unexpected schema
+[19:24:28] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase3/upstream/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar%23177!/data/.mcassetsroot' uses unexpected schema
+[19:24:28] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:block mod id hbm_m
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:block mod id hbm_m finished after 183 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Recipes
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Recipes finished after 198 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Loot Tables
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Loot Tables finished after 188 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:item mod id hbm_m
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:item mod id hbm_m finished after 12 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Registries
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Registries finished after 13 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:damage_type mod id hbm_m
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:damage_type mod id hbm_m finished after 4 ms
+[19:24:29] [main/INFO] [minecraft/DataGenerator]: Starting provider: Block States: hbm_m
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Block States: hbm_m finished after 574 ms
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Starting provider: Item Models: hbm_m
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Item Models: hbm_m finished after 319 ms
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Starting provider: Languages: ru_ru
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Languages: ru_ru finished after 14 ms
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Starting provider: Languages: en_us
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: Languages: en_us finished after 38 ms
+[19:24:30] [main/INFO] [minecraft/DataGenerator]: All providers took: 1556 ms
+[19:24:30] [main/INFO] [minecraft/HashCache]: Caching: total files: 7952, old count: 7987, new count: 7953, removed stale: 0, written: 1
+Build d4311d4e-1a27-4ea7-96b9-cfa2a8414c3f is closed
+Build 8d4c9183-bab0-4564-b3be-dbf3a3cbe090 is closed
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase3/upstream/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 23s
+14 actionable tasks: 5 executed, 9 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

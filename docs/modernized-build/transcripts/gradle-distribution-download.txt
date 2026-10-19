@@ -1,0 +1,9 @@
+UTC: 2026-10-19T19:17:49.271377+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: curl --fail --location --retry 2 --max-time 180 --output gradle-9.3.1-bin.zip https://services.gradle.org/distributions/gradle-9.3.1-bin.zip
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   169  100   169    0     0   1798      0 --:--:-- --:--:-- --:--:--  1817
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 23  130M   23 30.7M    0     0  33.6M      0  0:00:03 --:--:--  0:00:03 33.6M 65  130M   65 85.5M    0     0  44.4M      0  0:00:02  0:00:01  0:00:01 54.2M100  130M  100  130M    0     0  47.5M      0  0:00:02  0:00:02 --:--:-- 54.5M

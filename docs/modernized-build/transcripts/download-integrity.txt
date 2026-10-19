@@ -1,0 +1,9 @@
+UTC: 2026-10-19T19:18:17.375191+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: python3 verify-downloads.py
+
+jdk17.tar.gz 3808d1d15e3ec6bd5b84057fb5d84c33d8a1536a258146bcea2e603fc726e08e OK
+jdk21.tar.gz ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94 OK
+gradle-9.3.1-bin.zip b266d5ff6b90eada6dc3b20cb090e3731302e553a27c5d3e4df1f0d76beaff06 OK
+gradle-wrapper-9.3.1.jar b3a875ddc1f044746e1b1a55f645584505f4a10438c1afea9f15e92a7c42ec13 OK
+Actual cached Gradle distribution matches verified archive: 314 files

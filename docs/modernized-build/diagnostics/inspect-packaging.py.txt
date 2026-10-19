@@ -1,0 +1,21 @@
+from pathlib import Path
+import hashlib,json,tomllib,zipfile
+r=Path(__file__).resolve().parent
+source=r/'replay-verified'
+license_bytes=(source/'LICENSE').read_bytes()
+for p in sorted((source/'versions/1.20.1-forge/build/libs').glob('*.jar')):
+    raw=p.read_bytes()
+    with zipfile.ZipFile(p) as z:
+        names=z.namelist()
+        assert len(names)==len(set(names)),'Duplicate ZIP entries'
+        assert z.read('LICENSE.hbm_m')==license_bytes,'License bytes changed'
+        assert not any('.cache' in Path(n).parts for n in names),'Datagen cache packaged'
+        assert not any(n.endswith('.class') and n.startswith(('net/minecraft/','net/minecraftforge/')) for n in names),'Platform classes packaged'
+        print(p.name,'bytes',len(raw),'SHA256',hashlib.sha256(raw).hexdigest())
+        print('LICENSE preserved, no duplicate entries or datagen cache/platform classes')
+        if 'META-INF/mods.toml' in names and not p.name.endswith('-sources.jar'):
+            text=z.read('META-INF/mods.toml').decode()
+            assert '${' not in text,'Unexpanded metadata placeholders'
+            data=tomllib.loads(text)
+            print(json.dumps({key:data[key] for key in ('modLoader','loaderVersion','license','mods','dependencies')},ensure_ascii=False))
+print('Packaged root LICENSE SHA256',hashlib.sha256(license_bytes).hexdigest())

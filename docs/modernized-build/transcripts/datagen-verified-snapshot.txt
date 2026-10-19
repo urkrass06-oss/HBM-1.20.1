@@ -1,0 +1,6 @@
+UTC: 2026-10-19T19:29:18.687138+00:00
+CWD: /workspace/HBM-1.20.1
+COMMAND: python3 tools/audit_modernized.py resources /workspace/scratch/modernized-phase3/replay-verified/src/generated/resources --output /workspace/scratch/modernized-phase3/datagen-verified.sha256 --compare /workspace/scratch/modernized-phase3/datagen-fixed-1.sha256
+
+{"files": 7952, "manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700"}
+Resource manifests match byte-for-byte (excluding .cache).

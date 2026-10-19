@@ -1,0 +1,17 @@
+UTC: 2026-10-19T19:30:20.946253+00:00
+CWD: /workspace/scratch/modernized-phase3/server
+COMMAND: timeout 150 /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xms512M -Xmx3G -Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts @libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt nogui
+
+2026-10-19 19:30:22,633 main WARN Advanced terminal features are not available in this environment
+[19:30:22] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.20, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[19:30:22] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.18.55
+[19:30:22] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[19:30:22] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/workspace/scratch/modernized-phase3/server/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[19:30:23] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/server/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.20/fmlcore-1.20.1-47.4.20.jar is missing mods.toml file
+[19:30:23] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/server/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.20/javafmllanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:30:23] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/server/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.20/lowcodelanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:30:23] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase3/server/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.20/mclanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[19:30:23] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[19:30:24] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[19:30:24] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[19:30:25] [main/INFO] [minecraft/Main]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.

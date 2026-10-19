@@ -1,0 +1,8 @@
+UTC: 2026-10-19T19:10:43.232601+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: curl --fail --location --retry 2 --max-time 180 -o jdk21.tar.gz https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 15  197M   15 30.8M    0     0  32.3M      0  0:00:06 --:--:--  0:00:06 32.3M 38  197M   38 75.5M    0     0  38.6M      0  0:00:05  0:00:01  0:00:04 44.6M 63  197M   63  126M    0     0  42.8M      0  0:00:04  0:00:02  0:00:02 47.8M 89  197M   89  177M    0     0  44.8M      0  0:00:04  0:00:03  0:00:01 48.8M100  197M  100  197M    0     0  45.4M      0  0:00:04  0:00:04 --:--:-- 49.2M

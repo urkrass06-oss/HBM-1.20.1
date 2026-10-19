@@ -1,0 +1,19 @@
+import hashlib,pathlib,zipfile
+root=pathlib.Path(__file__).resolve().parent
+for filename,expected in [
+('jdk17.tar.gz','3808d1d15e3ec6bd5b84057fb5d84c33d8a1536a258146bcea2e603fc726e08e'),
+('jdk21.tar.gz','ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94'),
+('gradle-9.3.1-bin.zip','b266d5ff6b90eada6dc3b20cb090e3731302e553a27c5d3e4df1f0d76beaff06'),
+('gradle-wrapper-9.3.1.jar','b3a875ddc1f044746e1b1a55f645584505f4a10438c1afea9f15e92a7c42ec13')]:
+    actual=hashlib.file_digest((root/filename).open('rb'),'sha256').hexdigest()
+    assert actual==expected,(filename,actual)
+    print(filename,actual,'OK')
+cache=next((root/'gradle-home/wrapper/dists/gradle-9.3.1-bin').glob('*/gradle-9.3.1'))
+count=0
+with zipfile.ZipFile(root/'gradle-9.3.1-bin.zip') as archive:
+    for entry in archive.infolist():
+        if entry.is_dir():continue
+        relative=pathlib.PurePosixPath(entry.filename).relative_to('gradle-9.3.1')
+        assert (cache/relative).read_bytes()==archive.read(entry),relative
+        count+=1
+print('Actual cached Gradle distribution matches verified archive:',count,'files')

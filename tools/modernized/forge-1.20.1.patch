@@ -1,0 +1,216 @@
+diff --git a/build-logic/build.gradle.kts b/build-logic/build.gradle.kts
+index 8ba3aab4..f1ac4919 100644
+--- a/build-logic/build.gradle.kts
++++ b/build-logic/build.gradle.kts
+@@ -12,7 +12,6 @@ gradlePlugin {
+ }
+ 
+ repositories {
+-	mavenLocal()
+ 	mavenCentral()
+ 	gradlePluginPortal()
+ 	maven("https://maven.fabricmc.net/") { name = "Fabric" }
+diff --git a/build-logic/src/main/kotlin/ModPlatformPlugin.kt b/build-logic/src/main/kotlin/ModPlatformPlugin.kt
+index d6801f28..c3cbe1cf 100644
+--- a/build-logic/src/main/kotlin/ModPlatformPlugin.kt
++++ b/build-logic/src/main/kotlin/ModPlatformPlugin.kt
+@@ -13,6 +13,8 @@ import org.gradle.api.artifacts.dsl.RepositoryHandler
+ import org.gradle.api.artifacts.repositories.MavenArtifactRepository
+ import org.gradle.api.plugins.JavaPluginExtension
+ import org.gradle.api.provider.Property
++import org.gradle.api.tasks.compile.JavaCompile
++import org.gradle.jvm.toolchain.JavaLanguageVersion
+ import org.gradle.api.tasks.Copy
+ import org.gradle.api.tasks.javadoc.Javadoc
+ import org.gradle.external.javadoc.StandardJavadocDocletOptions
+@@ -249,11 +251,15 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
+ 
+ 	private fun Project.configureJava(stonecutter: StonecutterBuildExtension, requiredJava: JavaVersion) {
+ 		extensions.configure<JavaPluginExtension>("java") {
++			toolchain.languageVersion.set(JavaLanguageVersion.of(requiredJava.majorVersion))
+ 			withSourcesJar()
+ 			withJavadocJar()
+ 			sourceCompatibility = requiredJava
+ 			targetCompatibility = requiredJava
+ 		}
++		tasks.withType<JavaCompile>().configureEach {
++			options.release.set(requiredJava.majorVersion.toInt())
++		}
+ 		// Javadoc: UTF-8; не валим build из-за несовместимых/незавершённых комментариев (doclint, битые @link)
+ 		tasks.withType<Javadoc>().configureEach {
+ 			isFailOnError = false
+diff --git a/build.forge.gradle.kts b/build.forge.gradle.kts
+index df44e919..5c71d439 100644
+--- a/build.forge.gradle.kts
++++ b/build.forge.gradle.kts
+@@ -1,3 +1,5 @@
++import groovy.json.JsonOutput
++import groovy.json.JsonSlurper
+ import org.gradle.kotlin.dsl.runtimeOnly
+ 
+ plugins {
+@@ -78,7 +80,6 @@ mixin {
+ }
+ 
+ repositories {
+-	mavenLocal()
+ 	mavenCentral()
+ 	maven("https://maven.minecraftforge.net/") { name = "MinecraftForge" }
+ 	maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
+@@ -102,7 +103,9 @@ dependencies {
+ 	jarJar("dev.architectury:architectury-forge:${prop("deps.architectury")}")
+ 
+ 	"modCompileOnly"("curse.maven:jei-238222:${prop("deps.jei")}")
+-	"modRuntimeOnly"("curse.maven:jei-238222:${prop("deps.jei")}")
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:jei-238222:${prop("deps.jei")}")
++	}
+ 	// Create compat — compile-only (мод опциональный, работает и без Create).
+ 	// slim-артефакт без транзитивных зависимостей; flywheel-api нужен только для
+ 	// сигнатур Create MovementBehaviour (VisualizationContext и т.п.).
+@@ -110,24 +113,42 @@ dependencies {
+ 		isTransitive = false
+ 	}
+ 	"modCompileOnly"("dev.engine-room.flywheel:flywheel-forge-api-1.20.1:${prop("deps.flywheel")}")
+-	"modRuntimeOnly"("curse.maven:embeddium-908741:5681725")
+-	"modRuntimeOnly"("curse.maven:oculus-581495:6020952")
+-	"modRuntimeOnly"("curse.maven:modernfix-790626:7515215")
+-	"modRuntimeOnly"("curse.maven:smooth-boot-reloaded-633412:5016280")
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:embeddium-908741:5681725")
++	}
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:oculus-581495:6020952")
++	}
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:modernfix-790626:7515215")
++	}
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:smooth-boot-reloaded-633412:5016280")
++	}
+ 	
+-	"modRuntimeOnly"("curse.maven:screenshot-to-clipboard-326950:3643026")
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:screenshot-to-clipboard-326950:3643026")
++	}
+ 	// "modRuntimeOnly"("maven.modrinth:cwoL6CqY:3PEwIAxS") // Item Transforms Helper
+ 	// "modRuntimeOnly"("maven.modrinth:f3zK7pP5:8gUY8UiV") // Tick Freeze
+-	"modRuntimeOnly"("maven.modrinth:spark:1.10.53-forge")
+-	"modRuntimeOnly"("maven.modrinth:VYRu7qmG:QtSVNyjm") // Observable -  profiles (tile) entities and shows you what's taking up tick time and where.
+-	"modRuntimeOnly"("maven.modrinth:ordsPcFz:Zsh14XeQ") // Kotlin For Forge
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("maven.modrinth:spark:1.10.53-forge")
++	}
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("maven.modrinth:VYRu7qmG:QtSVNyjm") // Observable -  profiles (tile) entities and shows you what's taking up tick time and where.
++	}
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("maven.modrinth:ordsPcFz:Zsh14XeQ") // Kotlin For Forge
++	}
+ 	// "modRuntimeOnly"("curse.maven:konkrete-410295:5028413")
+ 	// "modCompileOnly"("maven.modrinth:distanthorizons:lcyL2Fq3")
+ 	// "modRuntimeOnly"("maven.modrinth:distanthorizons:lcyL2Fq3")
+ 
+ 	// "modRuntimeOnly"("curse.maven:xaeros-world-map-317780:7598469")
+     // "modRuntimeOnly"("curse.maven:xaeros-minimap-263420:7598586")
+-	"modRuntimeOnly"("curse.maven:jade-324717:6855440")
++	if (providers.gradleProperty("modernized.devRuntime").orNull == "true") {
++		"modRuntimeOnly"("curse.maven:jade-324717:6855440")
++	}
+ }
+ 
+ sourceSets {
+@@ -143,4 +164,27 @@ tasks.named("createMinecraftArtifacts") {
+ tasks.withType<JavaCompile>().configureEach { options.encoding = "UTF-8" }
+ 
+ stonecutter {
+-}
+\ No newline at end of file
++}
++// Preserve the upstream license in all produced archives.
++tasks.withType<Jar>().configureEach {
++	exclude("**/.cache/**")
++	from(rootProject.file("LICENSE")) { rename { "LICENSE.hbm_m" } }
++	isPreserveFileTimestamps = false
++	isReproducibleFileOrder = true
++}
++
++// Fletching Table also appends manually client/server-scoped mixins to the common list.
++// Preserve the existing side assignments when packaging the generated configuration.
++tasks.named<ProcessResources>("processResources") {
++    inputs.property("modernized.mixinSideFilter", 1)
++    doLast {
++        val configFile = destinationDir.resolve(prop("mod.mixin_config"))
++        @Suppress("UNCHECKED_CAST")
++        val config = JsonSlurper().parse(configFile) as MutableMap<String, Any?>
++        val sided = ((config["client"] as? List<*>) ?: emptyList<Any>()) +
++            ((config["server"] as? List<*>) ?: emptyList<Any>())
++        val common = config["mixins"] as List<*>
++        config["mixins"] = common.filterNot { it in sided }
++        configFile.writeText(JsonOutput.prettyPrint(JsonOutput.toJson(config)), Charsets.UTF_8)
++    }
++}
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+index 5e2f2d40..527f86de 100644
+--- a/gradle/wrapper/gradle-wrapper.properties
++++ b/gradle/wrapper/gradle-wrapper.properties
+@@ -4,3 +4,5 @@ distributionPath=wrapper/dists
+ distributionUrl=https\://services.gradle.org/distributions/gradle-9.3.1-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
++
++distributionSha256Sum=b266d5ff6b90eada6dc3b20cb090e3731302e553a27c5d3e4df1f0d76beaff06
+diff --git a/settings.gradle.kts b/settings.gradle.kts
+index 1fe9d410..0fbae6fc 100644
+--- a/settings.gradle.kts
++++ b/settings.gradle.kts
+@@ -1,6 +1,5 @@
+ pluginManagement {
+ 	repositories {
+-		mavenLocal()
+ 		mavenCentral()
+ 		gradlePluginPortal()
+ 		maven("https://maven.fabricmc.net/") { name = "Fabric" }
+@@ -30,7 +29,7 @@ stonecutter {
+ 			loaders.forEach { version("$version-$it", version).buildscript = "build.$it.gradle.kts" }
+ 
+ 		// match("1.21.11", "fabric", "neoforge")
+-		match("1.21.1", "neoforge")
++		// Phase 3: only Forge 1.20.1 is active.
+ 		// match("1.21.1", "fabric")
+ 		// match("1.20.1", "fabric", "forge")
+ 		match("1.20.1", "forge")
+diff --git a/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java b/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java
+index beb108af..ac850b78 100644
+--- a/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java
++++ b/src/main/java/com/hbm_m/datagen/assets/ModItemModelProvider.java
+@@ -2158,7 +2158,7 @@ public class ModItemModelProvider extends ItemModelProvider {
+      * No {@code display} block: transforms come from {@link com.hbm_m.client.render.item.ItemRenderMissileGeneric}.
+      */
+     private void missileItemFromObjModel(String itemPath, MissileFormFactorModels hull, ResourceLocation texture) {
+-        objPartItemModel(itemPath, hull.getObjModel(), texture, hull.getPartNames().toArray(String[]::new));
++        objPartItemModel(itemPath, hull.getObjModel(), texture, hull.getPartNames().stream().sorted().toArray(String[]::new));
+     }
+ 
+     /**
+diff --git a/stonecutter.gradle.kts b/stonecutter.gradle.kts
+index 16b62bd9..e37ab689 100644
+--- a/stonecutter.gradle.kts
++++ b/stonecutter.gradle.kts
+@@ -1,7 +1,6 @@
+ plugins {
+ 	alias(libs.plugins.stonecutter)
+ 	alias(libs.plugins.dotenv)
+-	alias(libs.plugins.fabric.loom).apply(false)
+ 	alias(libs.plugins.neoforged.moddev).apply(false)
+ 	alias(libs.plugins.jsonlang.postprocess).apply(false)
+ 	alias(libs.plugins.mod.publish.plugin).apply(false)
+diff --git a/versions/1.20.1-forge/gradle.properties b/versions/1.20.1-forge/gradle.properties
+index 3c2d6993..8e7e9b24 100644
+--- a/versions/1.20.1-forge/gradle.properties
++++ b/versions/1.20.1-forge/gradle.properties
+@@ -15,4 +15,3 @@ deps.flywheel=1.0.5
+ deps.jei=7270446
+ 
+ publish.additionalVersions=
+-org.gradle.java.home=C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.9.10-hotspot

@@ -1,0 +1,134 @@
+UTC: 2026-10-19T19:11:04.952806+00:00
+CWD: /workspace/scratch/modernized-phase3/upstream
+COMMAND: timeout 900 python3 /workspace/scratch/modernized-phase3/gradle.py :1.20.1-forge:tasks --all --stacktrace
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Running Stonecutter 0.8
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:pluginDescriptors
+> Task :build-logic:processResources
+> Task :build-logic:compileKotlin
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:classes
+> Task :build-logic:jar
+
+> Task :1.20.1-forge:tasks
+
+------------------------------------------------------------
+Tasks runnable from project ':1.20.1-forge'
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildAndCollect
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildKotlinToolingMetadata - Build metadata json file containing information about the used Kotlin tooling
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the classes of the 'main' feature.
+javadocJar - Assembles a jar archive containing the main javadoc.
+kotlinSourcesJar - Assembles a jar archive containing the sources of target 'kotlin'.
+sourcesJar - Assembles a jar archive containing the main sources.
+testClasses - Assembles test classes.
+
+Documentation tasks
+-------------------
+javadoc - Generates Javadoc API documentation for the 'main' feature.
+
+Help tasks
+----------
+artifactTransforms - Displays the Artifact Transforms that can be executed in project ':1.20.1-forge'.
+buildEnvironment - Displays all buildscript dependencies declared in project ':1.20.1-forge'.
+dependencies - Displays all dependencies declared in project ':1.20.1-forge'.
+dependencyInsight - Displays the insight into a specific dependency in project ':1.20.1-forge'.
+help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+kotlinDslAccessorsReport - Prints the Kotlin code for accessing the currently available project extensions.
+outgoingVariants - Displays the outgoing variants of project ':1.20.1-forge'.
+projects - Displays the sub-projects of project ':1.20.1-forge'.
+properties - Displays the properties of project ':1.20.1-forge'.
+resolvableConfigurations - Displays the configurations that can be resolved in project ':1.20.1-forge'.
+tasks - Displays the tasks runnable from project ':1.20.1-forge'.
+
+IDE tasks
+---------
+cleanIdea - Cleans IDEA project files (IML, IPR)
+idea - Generates IDEA project files (IML, IPR, IWS)
+
+Mod development tasks
+---------------------
+createLaunchScripts - Creates batch files/shell scripts to launch the game from outside of Gradle (i.e. Renderdoc, NVidia Nsight, etc.)
+downloadAssets - Downloads the Minecraft assets and asset index needed to run a Minecraft client or generate client-side resources.
+runClient - Runs the client Minecraft run configuration.
+runData - Runs the data Minecraft run configuration.
+runServer - Runs the server Minecraft run configuration.
+
+Mod development/internal tasks
+------------------------------
+createClientLaunchScript - Creates a bash/shell-script to launch the client Minecraft run from outside Gradle or your IDE.
+createDataLaunchScript - Creates a bash/shell-script to launch the data Minecraft run from outside Gradle or your IDE.
+createMinecraftArtifacts - Creates the NeoForge and Minecraft artifacts by invoking NFRT.
+createServerLaunchScript - Creates a bash/shell-script to launch the server Minecraft run from outside Gradle or your IDE.
+jarJar - Creates the directory structure and metadata needed to embed other Jar files.
+neoForgeIdeSync - A utility task that is used to create necessary files when the Gradle project is synchronized with the IDE project.
+prepareClientRun - Prepares all files needed to launch the client Minecraft run.
+prepareDataRun - Prepares all files needed to launch the data Minecraft run.
+prepareServerRun - Prepares all files needed to launch the server Minecraft run.
+testJarJar - Creates the directory structure and metadata needed to embed other Jar files.
+writeClientLegacyClasspath - Writes the legacyClasspath file for the client Minecraft run, containing all dependencies that shouldn't be considered boot modules.
+writeDataLegacyClasspath - Writes the legacyClasspath file for the data Minecraft run, containing all dependencies that shouldn't be considered boot modules.
+writeServerLegacyClasspath - Writes the legacyClasspath file for the server Minecraft run, containing all dependencies that shouldn't be considered boot modules.
+
+Publishing tasks
+----------------
+publishCurseforge
+publishModrinth
+publishMods
+
+Stonecutter-impl tasks
+----------------------
+stonecutterGenerate - Internal Stonecutter task. Do not call manually.
+stonecutterGenerateTest - Internal Stonecutter task. Do not call manually.
+stonecutterMerge - Internal Stonecutter task. Do not call manually.
+stonecutterMergeTest - Internal Stonecutter task. Do not call manually.
+stonecutterPrepare - Internal Stonecutter task. Do not call manually.
+stonecutterPrepareTest - Internal Stonecutter task. Do not call manually.
+stonecutterSaveNodeModel - Internal Stonecutter task. Do not call manually.
+
+Verification tasks
+------------------
+check - Runs all checks.
+checkKotlinGradlePluginConfigurationErrors - Checks that Kotlin Gradle Plugin hasn't reported project configuration errors, failing otherwise. This task always runs before compileKotlin* or similar tasks.
+test - Runs the test suite.
+
+Other tasks
+-----------
+checkLegacyAbi
+cleanIdeaModule
+compileJava - Compiles main Java source.
+compileKotlin - Compiles the compilation 'main' in target ''.
+compileTestJava - Compiles test Java source.
+compileTestKotlin - Compiles the compilation 'test' in target ''.
+copyAccessTransformersPublications
+copyInterfaceInjectionDataPublications
+dumpLegacyAbi
+ideaModule - Generates IDEA module files (IML)
+kspKotlin
+kspTestKotlin
+mainClasses
+processResources - Processes main resources.
+processTestResources - Processes test resources.
+reobfJar
+updateLegacyAbi
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+
+BUILD SUCCESSFUL in 1m 28s
+5 actionable tasks: 5 executed

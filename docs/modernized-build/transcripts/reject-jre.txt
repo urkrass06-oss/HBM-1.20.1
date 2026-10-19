@@ -1,0 +1,5 @@
+UTC: 2026-10-19T19:15:48.562533+00:00
+CWD: /workspace/HBM-1.20.1
+COMMAND: python3 tools/modernized_build.py run /workspace/scratch/modernized-phase3/replay javaToolchains --java21-home /usr/lib/jvm/java-21-openjdk-amd64 --java17-home /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1 --gradle-home /workspace/scratch/modernized-phase3/gradle-home --log-dir /workspace/scratch/modernized-phase3/runner-logs
+
+Modernized preparation failed: [Errno 2] No such file or directory: '/usr/lib/jvm/java-21-openjdk-amd64/bin/javac'

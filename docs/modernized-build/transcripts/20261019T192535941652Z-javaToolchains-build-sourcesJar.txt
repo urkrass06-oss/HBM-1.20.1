@@ -1,0 +1,852 @@
+{"utc": "20261019T192535941652Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase3/replay-final", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:javaToolchains", ":1.20.1-forge:build", ":1.20.1-forge:sourcesJar", "--stacktrace", "--continue", "--info"], "jdk21": "/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase3/runner-logs/20261019T192535941652Z-javaToolchains-build-sourcesJar.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Initialized native services in: /workspace/scratch/modernized-phase3/gradle-home/native
+Initialized jansi services in: /workspace/scratch/modernized-phase3/gradle-home/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm10362899244412071214probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm9910677606292175444probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Starting process 'Gradle build daemon'. Working directory: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1 Command: /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -Xmx2G -Dfile.encoding=UTF-8 -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Duser.country -Duser.language=en -Duser.variant -cp /workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/gradle-daemon-main-9.3.1.jar -javaagent:/workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/agents/gradle-instrumentation-agent-9.3.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.3.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 1.003 secs.
+The client will now receive all logging from the daemon (pid: 17279). The daemon log file: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1/daemon-17279.out.log
+Daemon will be stopped at the end of the build 
+Using 2 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=true, configureOnDemand=false, configurationCache=false, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=true, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /workspace/scratch/modernized-phase3/replay-final since the file system is not supported
+File system watching is active
+Starting Build
+Not watching /workspace/scratch/modernized-phase3/replay-final/build-logic since the file system is not supported
+Using local directory build cache for build ':build-logic' (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+
+> Configure project :build-logic
+Evaluating project ':build-logic' using build file '/workspace/scratch/modernized-phase3/replay-final/build-logic/build.gradle.kts'.
+Resolved plugin [id: 'org.gradle.kotlin.kotlin-dsl', version: '6.4.2']
+Build fa489436-6750-40a2-b0a7-6fa00e469f9d is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+file or directory '/workspace/scratch/modernized-phase3/replay-final/build-logic/src/main/java', not found
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '1.0.0']
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Running Stonecutter 0.8
+Settings evaluated using settings file '/workspace/scratch/modernized-phase3/replay-final/settings.gradle.kts'.
+Using local directory build cache for the root build (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+Projects loaded. Root project using build file '/workspace/scratch/modernized-phase3/replay-final/stonecutter.gradle.kts'.
+Included projects: [root project 'HBM-Modernized', project ':1.20.1-forge']
+
+> Configure project :
+Evaluating root project 'HBM-Modernized' using build file '/workspace/scratch/modernized-phase3/replay-final/stonecutter.gradle.kts'.
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Resolved plugin [id: 'co.uzzu.dotenv.gradle', version: '4.0.0']
+Resolved plugin [id: 'net.neoforged.moddev', version: '2.0.120', apply: false]
+Resolved plugin [id: 'dev.kikugie.postprocess.jsonlang', version: '2.1-beta.8', apply: false]
+Resolved plugin [id: 'me.modmuss50.mod-publish-plugin', version: '1.1.0', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm', version: '2.2.10', apply: false]
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.2.10-2.0.2', apply: false]
+Resolved plugin [id: 'dev.kikugie.fletching-table', version: '0.1.0-alpha.22', apply: false]
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge', version: '2.0.120', apply: false]
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':build-logic:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Build cache key for task ':build-logic:compileKotlin' is a870430389f40771b1ffb70639b0e07e
+Skipping task ':build-logic:compileKotlin' as it is up-to-date.
+
+> Task :build-logic:compileJava NO-SOURCE
+Skipping task ':build-logic:compileJava' as it has no source files and no previous output files.
+
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+Caching disabled for task ':build-logic:pluginDescriptors' because:
+  Not worth caching
+Skipping task ':build-logic:pluginDescriptors' as it is up-to-date.
+
+> Task :build-logic:processResources UP-TO-DATE
+Caching disabled for task ':build-logic:processResources' because:
+  Not worth caching
+Skipping task ':build-logic:processResources' as it is up-to-date.
+
+> Task :build-logic:classes UP-TO-DATE
+Skipping task ':build-logic:classes' as it has no actions.
+
+> Task :build-logic:jar UP-TO-DATE
+Caching disabled for task ':build-logic:jar' because:
+  Not worth caching
+Skipping task ':build-logic:jar' as it is up-to-date.
+
+> Configure project :1.20.1-forge
+Evaluating project ':1.20.1-forge' using build file '/workspace/scratch/modernized-phase3/replay-final/build.forge.gradle.kts'.
+Resolved plugin [id: 'mod-platform']
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge']
+Resolve mutations for :build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+:build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+:build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:compileJava (Thread[#53,included builds,5,main]) started.
+:build-logic:compileJava (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:pluginDescriptors (Thread[#53,included builds,5,main]) started.
+:build-logic:pluginDescriptors (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:processResources (Thread[#53,included builds,5,main]) started.
+:build-logic:processResources (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:classes (Thread[#53,included builds,5,main]) started.
+:build-logic:classes (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:jar (Thread[#53,included builds,5,main]) started.
+:build-logic:jar (Thread[#53,included builds,5,main]) started.
+Build 0af72efe-2145-4ca4-a312-3ac1b1f7db8c is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+All projects evaluated.
+Task path ':1.20.1-forge:javaToolchains' matched project ':1.20.1-forge'
+Task name matched 'javaToolchains'
+Task path ':1.20.1-forge:build' matched project ':1.20.1-forge'
+Task name matched 'build'
+Task path ':1.20.1-forge:sourcesJar' matched project ':1.20.1-forge'
+Task name matched 'sourcesJar'
+Selected primary task 'javaToolchains' from project :1.20.1-forge
+Selected primary task 'build' from project :1.20.1-forge
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm11584154726342506234probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm3805070988224873957probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Selected primary task 'sourcesJar' from project :1.20.1-forge
+Tasks to be executed: [task ':1.20.1-forge:javaToolchains', task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors', task ':1.20.1-forge:stonecutterPrepare', task ':1.20.1-forge:stonecutterGenerate', task ':1.20.1-forge:createMinecraftArtifacts', task ':1.20.1-forge:kspKotlin', task ':1.20.1-forge:compileKotlin', task ':1.20.1-forge:compileJava', task ':1.20.1-forge:processResources', task ':1.20.1-forge:classes', task ':1.20.1-forge:jarJar', task ':1.20.1-forge:jar', task ':1.20.1-forge:javadoc', task ':1.20.1-forge:javadocJar', task ':1.20.1-forge:reobfJar', task ':1.20.1-forge:sourcesJar', task ':1.20.1-forge:assemble', task ':1.20.1-forge:kspTestKotlin', task ':1.20.1-forge:compileTestKotlin', task ':1.20.1-forge:compileTestJava', task ':1.20.1-forge:processTestResources', task ':1.20.1-forge:testClasses', task ':1.20.1-forge:test', task ':1.20.1-forge:check', task ':1.20.1-forge:build']
+Tasks that were excluded: []
+Resolve mutations for :1.20.1-forge:javaToolchains (Thread[#54,Execution worker,5,main]) started.
+destroyer locations for task group 0 (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:javaToolchains (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:javaToolchains
+Caching disabled for task ':1.20.1-forge:javaToolchains' because:
+  Task is untracked because: Produces only non-cacheable console output
+Task ':1.20.1-forge:javaToolchains' is not up-to-date because:
+  Task is untracked because: Produces only non-cacheable console output
+
+ + Options
+     | Auto-detection:     Enabled
+     | Auto-download:      Disabled
+
+ + Eclipse Temurin JDK 17 (17.0.20.1+1)
+     | Location:           /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1
+     | Language Version:   17
+     | Vendor:             Eclipse Temurin
+     | Architecture:       amd64
+     | Is JDK:             true
+     | Detected by:        environment variable 'JAVA17_HOME'
+
+ + Debian JRE 21 (21.0.12.1+1-1-deb13u1-Debian)
+     | Location:           /usr/lib/jvm/java-21-openjdk-amd64
+     | Language Version:   21
+     | Vendor:             Debian
+     | Architecture:       amd64
+     | Is JDK:             false
+     | Detected by:        Common Linux Locations
+
+ + Eclipse Temurin JDK 21 (21.0.12.1+1-LTS)
+     | Location:           /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1
+     | Language Version:   21
+     | Vendor:             Eclipse Temurin
+     | Architecture:       amd64
+     | Is JDK:             true
+     | Detected by:        Current JVM
+
+Resolve mutations for :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :1.20.1-forge:stonecutterPrepare (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:stonecutterPrepare (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterPrepare UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:stonecutterPrepare' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:stonecutterPrepare' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:stonecutterGenerate (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:stonecutterGenerate (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterGenerate UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:stonecutterGenerate' because:
+  Not worth caching
+Skipping task ':1.20.1-forge:stonecutterGenerate' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:createMinecraftArtifacts (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:createMinecraftArtifacts (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:createMinecraftArtifacts UP-TO-DATE
+Cached resource https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-userdev.jar is up-to-date (lastModified: Fri Apr 10 15:15:04 UTC 2026).
+Cached resource https://maven.neoforged.net/releases/de/oceanlabs/mcp/mcp_config/1.20.1/mcp_config-1.20.1.zip is up-to-date (lastModified: Mon Jun 12 18:44:17 UTC 2023).
+Caching disabled for task ':1.20.1-forge:createMinecraftArtifacts' because:
+  Implements its own caching
+Skipping task ':1.20.1-forge:createMinecraftArtifacts' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:kspKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:kspKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:kspKotlin UP-TO-DATE
+Build cache key for task ':1.20.1-forge:kspKotlin' is 11ae0e8bcb16fbe5b15cc88214d59fde
+Skipping task ':1.20.1-forge:kspKotlin' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:compileKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:compileKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileJava (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileJava (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileJava UP-TO-DATE
+Build cache key for task ':1.20.1-forge:compileJava' is 2ebcfc5bc77359967d43879e4b9bc38f
+Skipping task ':1.20.1-forge:compileJava' as it is up-to-date.
+No compile result for :1.20.1-forge:compileJava
+No compile result for :1.20.1-forge:compileJava
+No compile result for :1.20.1-forge:compileJava
+Resolve mutations for :1.20.1-forge:processResources (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:processResources (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:processResources
+Caching disabled for task ':1.20.1-forge:processResources' because:
+  Not worth caching
+Task ':1.20.1-forge:processResources' is not up-to-date because:
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-final/src/generated/resources/assets/hbm_m/lang/en_us.json has changed.
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-final/src/generated/resources/assets/hbm_m/lang/ru_ru.json has changed.
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-final/src/generated/resources/assets/hbm_m/blockstates has been added.
+  and more...
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/resources', not found
+Resolve mutations for :1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:classes
+Skipping task ':1.20.1-forge:classes' as it has no actions.
+Resolve mutations for :1.20.1-forge:jarJar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:jarJar (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:jarJar
+Caching disabled for task ':1.20.1-forge:jarJar' because:
+  Caching has not been enabled for the task
+Task ':1.20.1-forge:jarJar' is not up-to-date because:
+  No history is available.
+Resolve mutations for :1.20.1-forge:jar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:jar (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:jar
+Caching disabled for task ':1.20.1-forge:jar' because:
+  Not worth caching
+Task ':1.20.1-forge:jar' is not up-to-date because:
+  No history is available.
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/classes/kotlin/main', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/generated/ksp/main/classes', not found
+Resolve mutations for :1.20.1-forge:javadoc (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:javadoc (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:javadoc
+Build cache key for task ':1.20.1-forge:javadoc' is 3137f27d4134d0f17e275b50308793cc
+Task ':1.20.1-forge:javadoc' is not up-to-date because:
+  No history is available.
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/generated/ksp/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/generated/ksp/main/java', not found
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/javadoc''. Working directory: /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/javadoc @/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/tmp/javadoc/javadoc.options
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/javadoc''
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/util/ArmorUtil.java:12: error: reference not found
+ * Минимальный порт проверок брони для {@link ContaminationUtil}. Полный {@link com.hbm.util.ArmorUtil} — по мере переноса FSB/роб.
+                                                                                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/util/ContaminationUtil.java:25: error: reference not found
+ * Утилиты контаминации. Порт {@link com.hbm.util.ContaminationUtil} (1.7.10).
+                                     ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/hazard/HazardSystem.java:26: error: malformed HTML
+ * Система работает по принципу приоритетов: Теги < Предметы.
+                                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/hazard/HazardRegistry.java:24: error: reference not found
+ * Регистрация опасностей предметов и блоков. Порт {@link com.hbm.hazard.HazardRegistry} (1.7.10).
+                                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/effect/TaintEffect.java:29: error: reference not found
+ * Порт {@link com.hbm.potion.HbmPotion#taint} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/multiblock/MultiblockSideTuples.java:5: error: reference not found
+ * {@link MultiblockStructureHelper#createFromLayersWithRoles(String[][], Map, Supplier, Map, Map, Map, Map, Map)}:
+          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/config/RadiationConfig.java:4: error: reference not found
+ * Флаги отключения типов опасностей. Порт {@link com.hbm.config.RadiationConfig} (1.7.10).
+                                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/config/GeneralConfig.java:4: error: reference not found
+ * Общие флаги. Порт {@link com.hbm.config.GeneralConfig} (1.7.10), минимальный набор.
+                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/blockentity/machines/DeconBlockEntity.java:18: error: reference not found
+ * Порт {@link com.hbm.tileentity.machine.TileEntityDecon} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/blockentity/machines/GeigerCounterBlockEntity.java:21: error: reference not found
+ * Порт {@link com.hbm.tileentity.machine.TileEntityGeiger} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/blockentity/machines/FluidDuctBlockEntity.java:48: error: reference not found
+ * «skin»; на Fabric {@link com.hbm_m.client.model.loading.MtlData} читает это поле, JSON {@code mtl_override}
+                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AJRArmorModelLoader.java:15: error: unknown tag: name
+ * Names MUST match "o <name>" in {@code ajr.obj}.
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/BismuthArmorModelLoader.java:16: error: unknown tag: name
+ * Names MUST match "o <name>" in {@code bismuth.obj}.
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/handler/HazmatRegistry.java:17: error: reference not found
+ * Радиационное сопротивление брони. Порт {@link com.hbm.handler.HazmatRegistry} (1.7.10).
+                                                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/handler/EntityEffectHandler.java:34: error: reference not found
+ * Порт {@link com.hbm.handler.EntityEffectHandler} (1.7.10), радиационная часть.
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/effect/EntityMist.java:28: error: reference not found
+ * Облако жидкости/газа (урон, яд, коррозия). Порт {@link com.hbm.entity.effect.EntityMist} (1.7.10).
+                                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/mob/EntityCreeperPhosgene.java:22: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperPhosgene} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/mob/EntityCreeperTainted.java:24: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperTainted} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/mob/EntityCreeperNuclear.java:34: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperNuclear} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/item/radiation_meter/ItemGeigerCounter.java:23: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemGeigerCounter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/item/radiation_meter/ItemDigammaDiagnostic.java:15: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemDigammaDiagnostic} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/item/radiation_meter/ItemDosimeter.java:23: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemDosimeter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/api/entity/IRadiationImmune.java:5: error: reference not found
+ * Порт {@link api.hbm.entity.IRadiationImmune} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/MachineChemicalPlantBakedModel.java:24: error: reference not found
+ * Поворот в BER: {@link MultipartFacingTransforms#chemicalPlantBakedRotationY}.
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/entity/mob/RenderCreeperUniversal.java:16: error: reference not found
+ * Порт {@link com.hbm.render.entity.mob.RenderCreeperUniversal} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/implementations/MachineRadarScreenRenderer.java:38: error: reference not found
+ *      берётся из {@link MachineRadarScreenBakedModel} (часть {@code Plane}) и рендерится
+                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/dae/DaeModel.java:25: error: reference not found
+ * buffers are baked by {@link DaeModelRenderer}. Parsing is deliberately lenient since
+                               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/gui/FluidGuiRendering.java:24: error: reference not found
+ * <p>Для Forge 1.20 {@link IClientFluidTypeExtensions#getStillTexture(FluidStack)} возвращает id вида
+                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/creativetabs/NukeTab.java:14: error: reference not found
+ * Порт {@link com.hbm.creativetabs.NukeTab} — иконка и фон креативной вкладки бомб.
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/creativetabs/MissileTab.java:12: error: reference not found
+ * Порт {@link com.hbm.creativetabs.MissileTab} — иконка вкладки и доп. предметы (кастомные ракеты).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/FullBrightParticleRenderType.java:18: error: reference not found
+ * Как {@link com.hbm.render.entity.effect.RenderTorex} 1.7.10: {@code RenderHelper.disableStandardItemLighting()}.
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/helper/VomitParticleCreator.java:17: error: reference not found
+ * Рвота при радиационной болезни. Порт {@link com.hbm.main.ClientProxy} type {@code vomit} (1.7.10).
+                                               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/event/HazardEventHandler.java:14: error: reference not found
+ * Опасности выброшенных предметов (гидрореактивность, взрыв в огне). Порт логики {@link com.hbm.hazard.HazardSystem#updateHeldItem} (1.7.10).
+                                                                                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/event/PlayerHazardHandler.java:10: error: reference not found
+ * Применение опасностей инвентаря игрока. Порт {@link com.hbm.hazard.HazardSystem#updatePlayerInventory} (1.7.10).
+                                                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/extprop/HbmLivingProps.java:11: error: reference not found
+ * Данные живых сущностей (радиация). Порт {@link com.hbm.extprop.HbmLivingProps} (1.7.10), минимальный набор для радиации.
+                                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockHazard.java:19: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockHazard} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockHazard.java:32: error: reference not found
+    /** {@link com.hbm.blocks.generic.BlockHazard.ExtDisplayEffect} (1.7.10). */
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockFallout.java:30: error: reference not found
+ * Тонкий слой радиоактивных осадков (порт {@link com.hbm.blocks.generic.BlockFallout} 1.7.10).
+                                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockSellafieldOre.java:17: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockSellafieldOre} — sellafite-руда с оверлеем и кастомным дропом.
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockHazardFalling.java:16: error: reference not found
+ * Падающий hazard-блок (порт {@link com.hbm.blocks.generic.BlockHazardFalling} 1.7.10).
+                                     ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/WasteEarth.java:9: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.WasteEarth} — waste_mycelium и аналоги.
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockAbsorber.java:23: error: reference not found
+ * Поглотитель радиации с четырьмя уровнями (порт {@link com.hbm.blocks.generic.BlockAbsorber} 1.7.10).
+                                                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockSlag.java:8: error: reference not found
+ * Блок шлака (порт {@link com.hbm.blocks.generic.BlockSlag} 1.7.10).
+                           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/generic/BlockOre.java:17: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockOre} 1.7.10.
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/machines/BlockDecon.java:19: error: reference not found
+ * Порт {@link com.hbm.blocks.machine.BlockDecon} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/machines/GeigerCounterBlock.java:35: error: reference not found
+ * Порт {@link com.hbm.blocks.machine.GeigerCounter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/bomb/BlockTaint.java:43: error: reference not found
+ * Порт {@link com.hbm.blocks.bomb.BlockTaint} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:59: warning: no @return
+    protected String[] getPartNamesInternal() {
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:51: warning: no @param for modelName
+    protected static ArmorItem.Type resolveItemArmorType(@Nullable ResourceLocation modelName) {
+                                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:51: warning: no @return
+    protected static ArmorItem.Type resolveItemArmorType(@Nullable ResourceLocation modelName) {
+                                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:62: warning: no @param for newTransforms
+    public abstract AbstractArmorBakedModel withTransforms(ItemTransforms newTransforms);
+                                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:62: warning: no @return
+    public abstract AbstractArmorBakedModel withTransforms(ItemTransforms newTransforms);
+                                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:34: warning: no comment
+    protected final IArmorModelConfig config;
+                                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:39: warning: no comment
+    protected AbstractArmorBakedModel(Map<String, BakedModel> parts, ItemTransforms transforms,
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:75: warning: no comment
+        String[] getPartNames();
+                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:221: warning: no comment
+    protected abstract boolean shouldSkipWorldRendering(@Nullable BlockState state);
+                               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:35: warning: no comment
+    public AbstractExplosionParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:151: warning: no comment
+        T create(ClientLevel level, double x, double y, double z, SpriteSet sprites,
+          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:132: warning: no comment
+        protected final ParticleFactory<T> factory;
+                                           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:131: warning: no comment
+        protected final SpriteSet sprites;
+                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:134: warning: no comment
+        public Provider(SpriteSet sprites, ParticleFactory<T> factory) {
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:24: warning: no comment
+public abstract class AbstractGpuMesh {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:28: warning: no comment
+    protected int eboId = -1;
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:29: warning: no comment
+    protected int indexCount = 0;
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:30: warning: no comment
+    protected boolean initialized = false;
+                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:26: warning: no comment
+    protected int vaoId = -1;
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:27: warning: no comment
+    protected int vboId = -1;
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:40: warning: no comment
+    public float[] getObjBbox() {
+                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:44: warning: no comment
+    protected void setObjBboxFrom(SingleMeshVboRenderer.VboData data) {
+                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:25: warning: no comment
+public abstract class AbstractMultipartBakedModel implements BakedModel {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:27: warning: no comment
+    protected final Map<String, BakedModel> parts;
+                                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:28: warning: no comment
+    protected final ItemTransforms transforms;
+                                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:41: warning: no comment
+    protected AbstractMultipartBakedModel(Map<String, BakedModel> parts, ItemTransforms transforms) {
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:302: warning: no comment
+    public void clearCaches() {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:231: warning: no comment
+    protected List<String> getItemRenderPartNames() {
+                           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:46: warning: no comment
+    public BakedModel getPart(String name) {
+                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:50: warning: no comment
+    public Map<String, BakedModel> getPartModels() {
+                                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:133: warning: no comment
+    protected List<BakedQuad> getQuadsForModelData(
+                              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:227: warning: no comment
+    protected BlockState getStateForPart(@Nullable BlockState state) {
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:223: warning: no comment
+    protected boolean shouldSkipSideRendering(@Nullable BlockState state, @Nullable Direction side) {
+                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:51: warning: no comment
+    protected final IArmorLayerConfig config;
+                                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:45: warning: no comment
+    protected static final float DEFAULT_Z_FIGHTING_SCALE = 1.015F; 
+                                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:44: warning: no comment
+    protected static final float PIXEL_SCALE = 1.0F / 16.0F;
+                                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:62: warning: no comment
+    public AbstractObjArmorLayer(RenderLayerParent<T, M> parent) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:273: warning: no comment
+    public static void clearAllCaches() {
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:267: warning: no comment
+    public void clearPivotCache() {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:67: warning: no comment
+    protected abstract IArmorLayerConfig createConfig();
+                                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:163: warning: no comment
+    protected Vec3 getBasePivot(String partName, ModelPart bone, boolean crouching) {
+                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:121: warning: no comment
+    protected final void renderPart(PoseStack poseStack, MultiBufferSource buffer, int light, BakedModel partModel, ModelPart bone, String partName, boolean crouching) {
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:80: warning: no comment
+    protected final void renderSlot(PoseStack poseStack, MultiBufferSource buffer, int light, T entity, EquipmentSlot slot) {
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:41: warning: no @return
+    protected boolean flipV() { return true; }
+                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:46: warning: no @param for texture
+    protected ResourceLocation mapAtlasForTexture(ResourceLocation texture) { return null; }
+                               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:46: warning: no @return
+    protected ResourceLocation mapAtlasForTexture(ResourceLocation texture) { return null; }
+                               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:31: warning: no comment
+public abstract class AbstractObjPartModelLoader<T extends BakedModel> implements IGeometryLoader<AbstractObjPartModelLoader.ObjPartGeometry<T>> {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:58: warning: no comment
+    public static class ObjPartGeometry<T extends BakedModel> implements IUnbakedGeometry<ObjPartGeometry<T>> {
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:172: warning: no comment
+    protected static class SinglePartBakingContext implements IGeometryBakingContext {
+                     ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:34: warning: no comment
+    protected abstract T createBakedModel(HashMap<String, BakedModel> bakedParts, 
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:33: warning: no comment
+    protected abstract Set<String> getPartNames(JsonObject jsonObject);
+                                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:64: warning: no comment
+        public ObjPartGeometry(ResourceLocation modelLocation, Set<String> partNames, boolean flipV,
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:177: warning: no comment
+        public SinglePartBakingContext(IGeometryBakingContext parent, String visiblePart, AbstractObjPartModelLoader<?> loader) {
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:39: warning: no @param for blockEntity
+    protected BakedModel getModel(T blockEntity) {
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:39: warning: no @return
+    protected BakedModel getModel(T blockEntity) {
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:50: warning: no @param for animator
+    protected void setupBlockTransform(LegacyAnimator animator, T blockEntity) {
+                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:50: warning: no @param for blockEntity
+    protected void setupBlockTransform(LegacyAnimator animator, T blockEntity) {
+                   ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:64: warning: no @return
+    public Matrix4f getCurrentModelViewMatrix() {
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:175: warning: no @param for model
+    public static BakedModel unwrapFabricForwardingModels(BakedModel model) {
+                             ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:175: warning: no @return
+    public static BakedModel unwrapFabricForwardingModels(BakedModel model) {
+                             ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:32: warning: no comment
+public abstract class AbstractPartBasedRenderer<T extends BlockEntity, M extends BakedModel>
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:45: warning: no comment
+    protected abstract Direction getFacing(T blockEntity);
+                                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:112: warning: no comment
+    protected final Minecraft getMinecraft() {
+                              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:44: warning: no comment
+    protected abstract M getModelType(BakedModel rawModel);
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:116: warning: no comment
+    protected boolean isInViewFrustum(T blockEntity) {
+                      ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:46: warning: no comment
+    protected abstract void renderParts(T blockEntity, M model, LegacyAnimator animator, float partialTick,
+                            ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:123: warning: no comment
+    public static class AssemblerArm {
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:32: warning: no comment
+    public AdvancedAssemblerClientTicker() {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:50: warning: no comment
+    public void clientTick(Level level, BlockPos pos, BlockState state, MachineAdvancedAssemblerBlockEntity entity) {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:46: warning: no comment
+    public AssemblerArm[] getArms() {
+                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:42: warning: no comment
+    public float getPrevRingAngle() {
+                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:38: warning: no comment
+    public float getRingAngle() {
+                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:116: warning: no comment
+    public void onRemoved() {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:124: warning: no comment
+        public float[] angles = new float[4];
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:125: warning: no comment
+        public float[] prevAngles = new float[4];
+                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:135: warning: no comment
+        public AssemblerArm() {
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:195: warning: no comment
+        public void chooseNewArmPosition(RandomSource random) {
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:143: warning: no comment
+        public void returnToNullPos() {
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:158: warning: no comment
+        public void updateArm(Level level, BlockPos pos, RandomSource random) {
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:139: warning: no comment
+        public void updateInterp() {
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/sound/AdvancedAssemblerSoundInstance.java:19: warning: no comment
+public class AdvancedAssemblerSoundInstance extends AbstractTickableSoundInstance {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/sound/AdvancedAssemblerSoundInstance.java:22: warning: no comment
+    public AdvancedAssemblerSoundInstance(BlockPos pos) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:322: warning: no comment
+    public static class Provider extends AbstractExplosionParticle.Provider<AgentOrangeParticle> {
+                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:36: warning: no comment
+    public AgentOrangeParticle(ClientLevel level, double x, double y, double z,
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:323: warning: no comment
+        public Provider(SpriteSet sprites) {
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:23: warning: no comment
+public class AirBombBlock extends Block implements IDetonatable {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:25: warning: no comment
+    public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:28: warning: no comment
+    public AirBombBlock(Properties props) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/item/grenades_and_activators/AirBombItem.java:18: warning: no comment
+public class AirBombItem extends Item {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/item/grenades_and_activators/AirBombItem.java:21: warning: no comment
+    public AirBombItem(Properties properties, RegistrySupplier<? extends EntityType<?>> airBombProjectile) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:34: warning: no comment
+public class AirBombProjectileEntity extends ThrowableItemProjectile {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:48: warning: no comment
+    public AirBombProjectileEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:52: warning: no comment
+    public AirBombProjectileEntity(Level level, LivingEntity thrower) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:56: warning: no comment
+    public AirBombProjectileEntity(Level level, LivingEntity thrower, float planeYaw) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:73: warning: no comment
+    public float getSynchedYaw() {
+                 ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:67: warning: no comment
+    public void syncYawWithPlane(float planeYaw) {
+                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/implementations/AirBombProjectileEntityRenderer.java:16: warning: no comment
+public class AirBombProjectileEntityRenderer extends EntityRenderer<AirBombProjectileEntity> {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/implementations/AirBombProjectileEntityRenderer.java:20: warning: no comment
+    public AirBombProjectileEntityRenderer(EntityRendererProvider.Context context) {
+           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/explosives/AirNukeBombBlock.java:23: warning: no comment
+public class AirNukeBombBlock extends Block implements IDetonatable {
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/explosives/AirNukeBombBlock.java:25: warning: no comment
+    public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/hazard/HazardSystem.java:140: error: @param name not found
+     * @param type  Тип искомой опасности.
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:339: error: unknown tag: key
+    /** Ключ локализации названия поля: config.hbm_m.field.<key> */
+                                                           ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:344: error: unknown tag: key
+    /** Ключ локализации тултипа поля: config.hbm_m.field.<key>.tooltip */
+                                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:349: error: unknown tag: category
+    /** Ключ локализации категории: config.hbm_m.category.<category> */
+                                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/handler/HazmatRegistry.java:71: error: reference not found
+    /** {@link com.hbm.handler.HazmatRegistry#initDefault()} */
+               ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/hazard/type/HazardTypeRadiation.java:23: error: reference not found
+     * 1:1 с {@link com.hbm.hazard.type.HazardTypeRadiation#onUpdate} (1.7.10).
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/shader/IrisRenderBatch.java:284: error: reference not found
+     * {@link com.hbm_m.client.render.compat.ShaderCompatibilityDetector#isRenderingShadowPass()}
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/blockentity/machines/MachineMiningDrillBlockEntity.java:527: error: reference not found
+     * {@link MachineMiningDrillRenderer} bzw. dessen Ur-Aequivalent {@code RenderExcavator}). Ohne
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/module/machine/MachineModuleChemplant.java:40: error: @param name not found
+     * @param level мир (для поиска рецепта)
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/MdiGeometryAtlas.java:354: error: reference not found
+     * После {@link ShaderInstance#apply()} / Embeddium chunk-батчей часть массивов
+                    ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/culling/MdiRenderFrameGate.java:28: error: reference not found
+    /** Call once per render frame after {@link InstancedRenderFrame#present}. */
+                                                ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/ModBlocks.java:172: error: reference not found
+    /** Порт {@code rad_absorber} ({@link com.hbm.blocks.generic.BlockAbsorber}). */
+                                          ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/block/ModBlocks.java:1879: error: reference not found
+    /** Порт {@code block_schrabidium_cluster} ({@link com.hbm.blocks.generic.BlockRotatablePillar}). */
+                                                       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:156: error: unknown tag: BlockState
+     * @param symbolMap Карта символов на Supplier<BlockState>
+                                                  ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:167: error: unknown tag: example
+     * @example
+       ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:745: error: reference not found
+     * Как полный {@link #createFromLayersWithRoles(String[][], Map, Supplier, Map, Map, Map, Map, Map)},
+                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:867: error: @param name not found
+     * @param localOffset Локальная позиция части
+              ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/client/render/entity/mob/RenderCreeperUniversal.java:75: error: reference not found
+    /** Заражённый крипер — как в {@link com.hbm.main.ClientProxy} 1.7.10. */
+                                         ^
+/workspace/scratch/modernized-phase3/replay-final/src/main/java/com/hbm_m/blockentity/machines/SoyuzLauncherBlockEntity.java:302: error: bad HTML entity
+    /** 0 = not required (satellite mode), 1 = required but missing/not-ready, 2 = present & ready. */
+                                                                                           ^
+66 errors
+100 warnings
+Stored cache entry for task ':1.20.1-forge:javadoc' with cache key 3137f27d4134d0f17e275b50308793cc
+Resolve mutations for :1.20.1-forge:javadocJar (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:javadocJar (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:javadocJar
+Caching disabled for task ':1.20.1-forge:javadocJar' because:
+  Not worth caching
+Task ':1.20.1-forge:javadocJar' is not up-to-date because:
+  No history is available.
+Resolve mutations for :1.20.1-forge:reobfJar (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:reobfJar (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:reobfJar
+Caching disabled for task ':1.20.1-forge:reobfJar' because:
+  Caching has not been enabled for the task
+Task ':1.20.1-forge:reobfJar' is not up-to-date because:
+  No history is available.
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge Command: /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java -Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 -Dstderr.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dfile.encoding=UTF-8 -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Duser.country -Duser.language=en -Duser.variant -jar /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.neoforged/AutoRenamingTool/2.0.4/12da27cc4caf32e429af9a91f79e1f66a965e667/AutoRenamingTool-2.0.4-all.jar --input /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/devlibs/hbm_m-0.2.1-alpha+1.20.1-forge.jar --output /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-alpha+1.20.1-forge.jar --names /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/moddev/artifacts/namedToIntermediate.tsrg --names /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/mixin/mixins.hbm_m.refmap.json.mappings.tsrg --lib /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.10/30de6faa127a4a012db8e71bf1b9c0a99b1402b2/kotlin-stdlib-2.2.10.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/dev.kikugie/fletching-table/0.1.0-alpha.22/a365d07eb617d7150bbb383fa88b355781143cb9/fletching-table-0.1.0-alpha.22-api.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/9.3.1/transforms/12728ca10b89788cd25764860019ddb2/transformed/jei-238222-7270446.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/9.3.1/transforms/f1bc5231e97ed2c4b72baeb5d2027266/transformed/create-1.20.1-6.0.8-289-slim.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/9.3.1/transforms/e40edab5586767ed066b20a7987f7746/transformed/flywheel-forge-api-1.20.1-1.0.5.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.moulberry/mixinconstraints/1.1.0/671015be7f63a4ef9a99c5948e583277c9482cef/mixinconstraints-1.1.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/9.3.1/transforms/5d83783c29e02a5eee9b5b64286c21a6/transformed/architectury-forge-9.2.14.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/securejarhandler/2.1.10/51e6a22c6c716beb11e244bf5b8be480f51dd6b5/securejarhandler-2.1.10.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlloader/1.20.1-47.4.20/8798bdd148d476c7ec54d8156f88de5e243c2dfb/fmlloader-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/coremods/5.2.4/e30bab269d896613e38396274711410b3a0e4b87/coremods-5.2.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/modlauncher/10.0.9/6d9443f56f50bb85cea383686ff9c867391458b/modlauncher-10.0.9.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.openjdk.nashorn/nashorn-core/15.4/f67f5ffaa5f5130cf6fb9b133da00c7df3b532a5/nashorn-core-15.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.9.1/ab35de4c537184a09339069f1a3b3aacf2289149/asm-commons-9.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.9.1/e51f5b0ae0b0c1960687ae970a2a3434d39d8abb/asm-util-9.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.9.1/1ab8d9316ef7a67240087919a708246c37ed1660/asm-analysis-9.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.9.1/b6b1b3366296163b4b1f540731aad0a2baa484d8/asm-tree-9.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.ow2.asm/asm/9.9.1/2ceea6ab43bcae1979b2a6d85fc0ca429877e5ab/asm-9.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/accesstransformers/8.0.4/272d240aa73f42195b2a68e2ebd8b701ecf41f63/accesstransformers-8.0.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr4/4.9.1/e92af8ab33e428461927b484e90bb155a4f3a052/antlr4-4.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.9.1/428664f05d2b7f7b7610204b5aa7c1763f62011a/antlr4-runtime-4.9.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.20/e8cc697c69f3911e76caa2f005d9486597cd7448/fmlcore-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/eventbus/6.2.33/3fae69cfa9c5095bcc25c0a8a3ed9b26c156f922/eventbus-6.2.33.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/forgespi/7.0.1/3b4972a0cdb135853dba219be61a79b22cff1309/forgespi-7.0.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/unsafe/0.2.0/54d7a0a5e8fdb71b973025caa46f341ae5904f39/unsafe-0.2.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.1.7/fe2225c1a7834ee20d5a1e2630bcca798367d962/mergetool-1.1.7.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.1.7/aa7c6d9d187d585a8a215c288d65b0038be80b2a/mergetool-1.1.7-api.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.4/51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4/toml-3.6.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.electronwill.night-config/core/3.6.4/510f174abbf1c947494db50ef2445683bd52c230/core-3.6.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarSelector/0.3.19/376cc9c8ea60720cf027c01fc033de915699801c/JarJarSelector-0.3.19.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarMetadata/0.3.19/83feaa9b770e6ac0e96ee4fc23fa89325c5fe2/JarJarMetadata-0.3.19.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.8.5/4433f50c07debefaed0553bd0068f4f48d449313/maven-artifact-3.8.5.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.jodah/typetools/0.6.3/a01aaa6ddaea9ec07ec4f209487b7a46a526283a/typetools-0.6.3.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/cpw.mods/bootstraplauncher/1.1.2/c546e00443d8432cda6baa1c860346980742628/bootstraplauncher-1.1.2.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/JarJarFileSystems/0.3.19/2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020/JarJarFileSystems-0.3.19.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlearlydisplay/1.20.1-47.4.20/4dcdfb740aff35b40a3471708ca8a5f1e22a9504/fmlearlydisplay-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.20/c354b21002937b393c4f86163a98dccdf1d51e72/javafmllanguage-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.20/865d75f8c18329ddb31db5856701ab86609108b5/lowcodelanguage-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.20/af599930362212ae937e392709f49047e6abbbf/mclanguage-1.20.1-47.4.20.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.3.0/cf43b5391de623b36fe066a21127baef82c64022/plexus-utils-3.3.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.12.0/c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e/commons-lang3-3.12.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.8.1/4ac28ff2f1ddf05dae3043a190451e8c46b73c31/log4j-core-2.8.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10/dd9b193aef96e973d5a11ab13cd17430c2e4306b/gson-2.10.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/60458f877d055d0c9114d9e1a2efb737b4bc282c/guava-31.1-jre.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.machinezoo.noexception/noexception/1.7.1/b65330c98e38a1f915fa54a6e5eca496505e3f0a/noexception-1.7.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.8.0-beta4/83b0359d847ee053d745be7ec0d8e9e8a44304b4/slf4j-api-1.8.0-beta4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.19.0/ea1b37f38c327596b216542bc636cfdc0b8036fa/log4j-api-2.19.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/logging/1.1.1/832b8e6674a9b325a5175a3a6267dfaf34c85139/logging-1.1.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/ca.weblite/java-objc-bridge/1.1/1227f9e0666314f9de41477e3ec277e542ed7f7b/java-objc-bridge-1.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.github.oshi/oshi-core/6.2.2/54f5efc19bca95d709d9a37d19ffcbba3d21c1a6/oshi-core-6.2.2.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.ibm.icu/icu4j/61.1/28d33b5e44e72edcc66a5da7a34a42147f38d987/icu4j-61.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/authlib/4.0.43/2ff9d747a77570a07a60d32ac77eb6162ad2a2d9/authlib-4.0.43.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/blocklist/1.0.10/5c685c5ffa94c4cd39496c7184c1d122e515ecef/blocklist-1.0.10.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/brigadier/1.1.8/5244ce82c3337bba4a196a3ce858bfaecc74404a/brigadier-1.1.8.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/datafixerupper/6.0.8/3ba4a30557a9b057760af4011f909ba619fc5125/datafixerupper-6.0.8.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/patchy/2.2.10/da05971b07cbb379d002cf7eaec6a2048211fefc/patchy-2.2.10.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.mojang/text2speech/1.17.9/3cad216e3a7f0c19b4b394388bc9ffc446f13b14/text2speech-1.17.9.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-codec/commons-codec/1.15/49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d/commons-codec-1.15.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-io/commons-io/2.11.0/a2503f302b11ebde7ebc3df41daebe0e4eea3689/commons-io-2.11.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.82.Final/a544270cf1ae8b8077082f5036436a9a9971ea71/netty-buffer-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.82.Final/b77200379acb345a9ffdece1c605e591ac3e4e0a/netty-codec-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-common/4.1.82.Final/22d148e85c3f5ebdacc0ce1f5aabb1d420f73f3/netty-common-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.82.Final/644041d1fa96a5d3130a29e8978630d716d76e38/netty-handler-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.82.Final/38f665ae8dcd29032eea31245ba7806bed2e0fa8/netty-resolver-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.82.Final/e7c7dd18deac93105797f30057c912651ea76521/netty-transport-classes-epoll-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.82.Final/3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce/netty-transport-native-unix-common-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.82.Final/e431a218d91acb6476ccad5f5aafde50aa3945ca/netty-transport-4.1.82.Final.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.5.9/bb7ea75ecdb216654237830b3a96d87ad91f8cc5/fastutil-8.5.9.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.12.1/97406a297c852f4a41e688a176ec675f72e8329/jna-platform-5.12.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.10.0/7cf4c87dd802db50721db66947aa237d7ad09418/jna-5.10.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.4/4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c/jopt-simple-5.0.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/4ec95b60d4e86b5c95a0e919cb172a0af98011ef/commons-compress-1.21.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.15/7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d/httpcore-4.4.15.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j2-impl/2.19.0/5c04bfdd63ce9dceb2e284b81e96b6a70010ee10/log4j-slf4j2-impl-2.19.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.joml/joml/1.10.5/22566d58af70ad3d72308bab63b8339906deb649/joml-1.10.5.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.1/cbac1b8d30cb4795149c1ef540f912671a8616d0/lwjgl-glfw-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.1/a817bcf213db49f710603677457567c37d53e103/lwjgl-jemalloc-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.1/2623a6b8ae1dfcd880738656a9f0243d2e6840bd/lwjgl-openal-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.1/831a5533a21a5f4f81bbc51bb13e9899319b5411/lwjgl-opengl-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.1/b119297cf8ed01f247abe8685857f8e7fcf5980f/lwjgl-stb-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.1/ff1914111ef2e3e0110ef2dabc8d8cdaad82347/lwjgl-tinyfd-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.1/ae58664f88e18a9bb2c77b063833ca7aaec484cb/lwjgl-3.3.1.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/ST4/4.3/92f2c1ad8d84abcbeead6cf7f2c53a04166293c2/ST4-4.3.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.12.0/d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5/checker-qual-3.12.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.11.0/c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69/error_prone_annotations-2.11.0.jar --lib /workspace/scratch/modernized-phase3/gradle-home/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar --disable-abstract-param --strip-sigs
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java''
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Resolve mutations for :1.20.1-forge:sourcesJar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:sourcesJar (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:sourcesJar
+Caching disabled for task ':1.20.1-forge:sourcesJar' because:
+  Not worth caching
+Task ':1.20.1-forge:sourcesJar' is not up-to-date because:
+  No history is available.
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/resources', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/generated/ksp/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/generated/ksp/main/java', not found
+Resolve mutations for :1.20.1-forge:assemble (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:assemble (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:assemble
+Skipping task ':1.20.1-forge:assemble' as it has no actions.
+Resolve mutations for :1.20.1-forge:kspTestKotlin (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:kspTestKotlin (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:kspTestKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:kspTestKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileTestKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileTestKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileTestKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:compileTestKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileTestJava (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:compileTestJava (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileTestJava NO-SOURCE
+Skipping task ':1.20.1-forge:compileTestJava' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:processTestResources (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:processTestResources (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:processTestResources NO-SOURCE
+Skipping task ':1.20.1-forge:processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:testClasses (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:testClasses (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:testClasses UP-TO-DATE
+Skipping task ':1.20.1-forge:testClasses' as it has no actions.
+Resolve mutations for :1.20.1-forge:test (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:test (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:test NO-SOURCE
+Skipping task ':1.20.1-forge:test' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:check (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:check (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:check UP-TO-DATE
+Skipping task ':1.20.1-forge:check' as it has no actions.
+Resolve mutations for :1.20.1-forge:build (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:build (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:build
+Skipping task ':1.20.1-forge:build' as it has no actions.
+Build fa489436-6750-40a2-b0a7-6fa00e469f9d is closed
+Build 0af72efe-2145-4ca4-a312-3ac1b1f7db8c is closed
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase3/replay-final/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 46s
+17 actionable tasks: 8 executed, 9 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

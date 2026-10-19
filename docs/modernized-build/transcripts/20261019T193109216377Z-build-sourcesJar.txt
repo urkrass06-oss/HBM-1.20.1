@@ -1,0 +1,297 @@
+{"utc": "20261019T193109216377Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase3/replay-verified", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:build", ":1.20.1-forge:sourcesJar", "--stacktrace", "--continue", "--info"], "jdk21": "/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase3/runner-logs/20261019T193109216377Z-build-sourcesJar.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Initialized native services in: /workspace/scratch/modernized-phase3/gradle-home/native
+Initialized jansi services in: /workspace/scratch/modernized-phase3/gradle-home/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm16970041460608707676probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm13702740796368280067probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Starting process 'Gradle build daemon'. Working directory: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1 Command: /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -Xmx2G -Dfile.encoding=UTF-8 -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Duser.country -Duser.language=en -Duser.variant -cp /workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/gradle-daemon-main-9.3.1.jar -javaagent:/workspace/scratch/modernized-phase3/gradle-home/wrapper/dists/gradle-9.3.1-bin/23ovyewtku6u96viwx3xl3oks/gradle-9.3.1/lib/agents/gradle-instrumentation-agent-9.3.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.3.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.887 secs.
+The client will now receive all logging from the daemon (pid: 18453). The daemon log file: /workspace/scratch/modernized-phase3/gradle-home/daemon/9.3.1/daemon-18453.out.log
+Daemon will be stopped at the end of the build 
+Using 2 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=true, configureOnDemand=false, configurationCache=false, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=true, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /workspace/scratch/modernized-phase3/replay-verified since the file system is not supported
+File system watching is active
+Starting Build
+Not watching /workspace/scratch/modernized-phase3/replay-verified/build-logic since the file system is not supported
+Using local directory build cache for build ':build-logic' (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+
+> Configure project :build-logic
+Evaluating project ':build-logic' using build file '/workspace/scratch/modernized-phase3/replay-verified/build-logic/build.gradle.kts'.
+Resolved plugin [id: 'org.gradle.kotlin.kotlin-dsl', version: '6.4.2']
+Build 5c9c9c75-d039-406f-8e5c-d2888144fc43 is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/build-logic/src/main/java', not found
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '1.0.0']
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Running Stonecutter 0.8
+Settings evaluated using settings file '/workspace/scratch/modernized-phase3/replay-verified/settings.gradle.kts'.
+Using local directory build cache for the root build (location = /workspace/scratch/modernized-phase3/gradle-home/caches/build-cache-1, remove unused entries = after 7 days).
+Projects loaded. Root project using build file '/workspace/scratch/modernized-phase3/replay-verified/stonecutter.gradle.kts'.
+Included projects: [root project 'HBM-Modernized', project ':1.20.1-forge']
+
+> Configure project :
+Evaluating root project 'HBM-Modernized' using build file '/workspace/scratch/modernized-phase3/replay-verified/stonecutter.gradle.kts'.
+Resolved plugin [id: 'dev.kikugie.stonecutter', version: '0.8']
+Resolved plugin [id: 'co.uzzu.dotenv.gradle', version: '4.0.0']
+Resolved plugin [id: 'net.neoforged.moddev', version: '2.0.120', apply: false]
+Resolved plugin [id: 'dev.kikugie.postprocess.jsonlang', version: '2.1-beta.8', apply: false]
+Resolved plugin [id: 'me.modmuss50.mod-publish-plugin', version: '1.1.0', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm', version: '2.2.10', apply: false]
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.2.10-2.0.2', apply: false]
+Resolved plugin [id: 'dev.kikugie.fletching-table', version: '0.1.0-alpha.22', apply: false]
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge', version: '2.0.120', apply: false]
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':build-logic:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Build cache key for task ':build-logic:compileKotlin' is a870430389f40771b1ffb70639b0e07e
+Skipping task ':build-logic:compileKotlin' as it is up-to-date.
+
+> Task :build-logic:compileJava NO-SOURCE
+Skipping task ':build-logic:compileJava' as it has no source files and no previous output files.
+
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+Caching disabled for task ':build-logic:pluginDescriptors' because:
+  Not worth caching
+Skipping task ':build-logic:pluginDescriptors' as it is up-to-date.
+
+> Task :build-logic:processResources UP-TO-DATE
+Caching disabled for task ':build-logic:processResources' because:
+  Not worth caching
+Skipping task ':build-logic:processResources' as it is up-to-date.
+
+> Task :build-logic:classes UP-TO-DATE
+Skipping task ':build-logic:classes' as it has no actions.
+
+> Task :build-logic:jar UP-TO-DATE
+Caching disabled for task ':build-logic:jar' because:
+  Not worth caching
+Skipping task ':build-logic:jar' as it is up-to-date.
+
+> Configure project :1.20.1-forge
+Evaluating project ':1.20.1-forge' using build file '/workspace/scratch/modernized-phase3/replay-verified/build.forge.gradle.kts'.
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage1) is 0d37747fbe6cb821ba8b0a64693247dc
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage1) with cache key 0d37747fbe6cb821ba8b0a64693247dc
+Resolved plugin [id: 'mod-platform']
+Resolved plugin [id: 'net.neoforged.moddev.legacyforge']
+Resolve mutations for :build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+:build-logic:checkKotlinGradlePluginConfigurationErrors (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+:build-logic:compileKotlin (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:compileJava (Thread[#53,included builds,5,main]) started.
+:build-logic:compileJava (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:pluginDescriptors (Thread[#53,included builds,5,main]) started.
+:build-logic:pluginDescriptors (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:processResources (Thread[#53,included builds,5,main]) started.
+:build-logic:processResources (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:classes (Thread[#53,included builds,5,main]) started.
+:build-logic:classes (Thread[#53,included builds,5,main]) started.
+Resolve mutations for :build-logic:jar (Thread[#53,included builds,5,main]) started.
+:build-logic:jar (Thread[#53,included builds,5,main]) started.
+Build 6d1013f1-f4c8-4150-8f16-89126b40afa5 is started
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage2) is 4400d49b80e13f645d56f36e92696867
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage2) with cache key 4400d49b80e13f645d56f36e92696867
+All projects evaluated.
+Task path ':1.20.1-forge:build' matched project ':1.20.1-forge'
+Task name matched 'build'
+Task path ':1.20.1-forge:sourcesJar' matched project ':1.20.1-forge'
+Task name matched 'sourcesJar'
+Selected primary task 'build' from project :1.20.1-forge
+Starting process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm2307830430652812956probe Command: /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1/bin/java''
+Received JVM installation metadata from '/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1': {JAVA_HOME=/workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Starting process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''. Working directory: /workspace/scratch/modernized-phase3/gradle-home/.tmp/tmp-jvm3098434300643505599probe Command: /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/usr/lib/jvm/java-21-openjdk-amd64/bin/java''
+Received JVM installation metadata from '/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Selected primary task 'sourcesJar' from project :1.20.1-forge
+Tasks to be executed: [task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors', task ':1.20.1-forge:stonecutterPrepare', task ':1.20.1-forge:stonecutterGenerate', task ':1.20.1-forge:createMinecraftArtifacts', task ':1.20.1-forge:kspKotlin', task ':1.20.1-forge:compileKotlin', task ':1.20.1-forge:compileJava', task ':1.20.1-forge:processResources', task ':1.20.1-forge:classes', task ':1.20.1-forge:jarJar', task ':1.20.1-forge:jar', task ':1.20.1-forge:javadoc', task ':1.20.1-forge:javadocJar', task ':1.20.1-forge:reobfJar', task ':1.20.1-forge:sourcesJar', task ':1.20.1-forge:assemble', task ':1.20.1-forge:kspTestKotlin', task ':1.20.1-forge:compileTestKotlin', task ':1.20.1-forge:compileTestJava', task ':1.20.1-forge:processTestResources', task ':1.20.1-forge:testClasses', task ':1.20.1-forge:test', task ':1.20.1-forge:check', task ':1.20.1-forge:build']
+Tasks that were excluded: []
+Resolve mutations for :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:checkKotlinGradlePluginConfigurationErrors (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':1.20.1-forge:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :1.20.1-forge:stonecutterPrepare (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:stonecutterPrepare (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterPrepare UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:stonecutterPrepare' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:stonecutterPrepare' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:stonecutterGenerate (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:stonecutterGenerate (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:stonecutterGenerate UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:stonecutterGenerate' because:
+  Not worth caching
+Skipping task ':1.20.1-forge:stonecutterGenerate' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:createMinecraftArtifacts (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:createMinecraftArtifacts (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:createMinecraftArtifacts UP-TO-DATE
+Cached resource https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-userdev.jar is up-to-date (lastModified: Fri Apr 10 15:15:04 UTC 2026).
+Cached resource https://maven.neoforged.net/releases/de/oceanlabs/mcp/mcp_config/1.20.1/mcp_config-1.20.1.zip is up-to-date (lastModified: Mon Jun 12 18:44:17 UTC 2023).
+Caching disabled for task ':1.20.1-forge:createMinecraftArtifacts' because:
+  Implements its own caching
+Skipping task ':1.20.1-forge:createMinecraftArtifacts' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:kspKotlin (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:kspKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:kspKotlin UP-TO-DATE
+Build cache key for task ':1.20.1-forge:kspKotlin' is 11ae0e8bcb16fbe5b15cc88214d59fde
+Skipping task ':1.20.1-forge:kspKotlin' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:compileKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:compileKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileJava (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileJava (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileJava UP-TO-DATE
+Build cache key for task ':1.20.1-forge:compileJava' is 2ebcfc5bc77359967d43879e4b9bc38f
+Skipping task ':1.20.1-forge:compileJava' as it is up-to-date.
+No compile result for :1.20.1-forge:compileJava
+No compile result for :1.20.1-forge:compileJava
+No compile result for :1.20.1-forge:compileJava
+Resolve mutations for :1.20.1-forge:processResources (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:processResources (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:processResources
+Custom actions are attached to task ':1.20.1-forge:processResources'.
+Caching disabled for task ':1.20.1-forge:processResources' because:
+  Not worth caching
+Task ':1.20.1-forge:processResources' is not up-to-date because:
+  One or more additional actions for task ':1.20.1-forge:processResources' have changed.
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/src/main/resources', not found
+Resolve mutations for :1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:classes (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:classes
+Skipping task ':1.20.1-forge:classes' as it has no actions.
+Resolve mutations for :1.20.1-forge:jarJar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:jarJar (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:jarJar UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:jarJar' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:jarJar' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:jar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:jar (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:jar UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:jar' because:
+  Not worth caching
+Skipping task ':1.20.1-forge:jar' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:javadoc (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:javadoc (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:javadoc UP-TO-DATE
+Build cache key for task ':1.20.1-forge:javadoc' is 1ef24c2ffd9b2b82b072ed7306123122
+Skipping task ':1.20.1-forge:javadoc' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:javadocJar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:javadocJar (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:javadocJar UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:javadocJar' because:
+  Not worth caching
+Skipping task ':1.20.1-forge:javadocJar' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:reobfJar (Thread[#53,included builds,5,main]) started.
+:1.20.1-forge:reobfJar (Thread[#53,included builds,5,main]) started.
+
+> Task :1.20.1-forge:reobfJar UP-TO-DATE
+Caching disabled for task ':1.20.1-forge:reobfJar' because:
+  Caching has not been enabled for the task
+Skipping task ':1.20.1-forge:reobfJar' as it is up-to-date.
+Resolve mutations for :1.20.1-forge:sourcesJar (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:sourcesJar (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:sourcesJar
+Caching disabled for task ':1.20.1-forge:sourcesJar' because:
+  Not worth caching
+Task ':1.20.1-forge:sourcesJar' is not up-to-date because:
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-verified/src/generated/resources/.cache has been removed.
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-verified/src/generated/resources/.cache/008f32cd8cbbfe11da61bf6696d56d1c91cd4412 has been removed.
+  Input property 'rootSpec$1' file /workspace/scratch/modernized-phase3/replay-verified/src/generated/resources/.cache/103d9f3f36b01595f1aa5172191e60eff02e6924 has been removed.
+  and more...
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/src/main/resources', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/src/main/java', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/src/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/build/generated/ksp/main/kotlin', not found
+file or directory '/workspace/scratch/modernized-phase3/replay-verified/versions/1.20.1-forge/build/generated/ksp/main/java', not found
+Resolve mutations for :1.20.1-forge:assemble (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:assemble (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:assemble
+Skipping task ':1.20.1-forge:assemble' as it has no actions.
+Resolve mutations for :1.20.1-forge:kspTestKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:kspTestKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:kspTestKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:kspTestKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileTestKotlin (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileTestKotlin (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileTestKotlin NO-SOURCE
+Skipping task ':1.20.1-forge:compileTestKotlin' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:compileTestJava (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:compileTestJava (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:compileTestJava NO-SOURCE
+Skipping task ':1.20.1-forge:compileTestJava' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:processTestResources (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:processTestResources (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:processTestResources NO-SOURCE
+Skipping task ':1.20.1-forge:processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:testClasses (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:testClasses (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:testClasses UP-TO-DATE
+Skipping task ':1.20.1-forge:testClasses' as it has no actions.
+Resolve mutations for :1.20.1-forge:test (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:test (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:test NO-SOURCE
+Skipping task ':1.20.1-forge:test' as it has no source files and no previous output files.
+Resolve mutations for :1.20.1-forge:check (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:check (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:check UP-TO-DATE
+Skipping task ':1.20.1-forge:check' as it has no actions.
+Resolve mutations for :1.20.1-forge:build (Thread[#54,Execution worker,5,main]) started.
+:1.20.1-forge:build (Thread[#54,Execution worker,5,main]) started.
+
+> Task :1.20.1-forge:build
+Skipping task ':1.20.1-forge:build' as it has no actions.
+Build 5c9c9c75-d039-406f-8e5c-d2888144fc43 is closed
+Build 6d1013f1-f4c8-4150-8f16-89126b40afa5 is closed
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase3/replay-verified/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 26s
+16 actionable tasks: 2 executed, 14 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

@@ -1,0 +1,57 @@
+UTC: 2026-10-19T19:26:36.788994+00:00
+CWD: /workspace/HBM-1.20.1
+COMMAND: python3 tools/audit_modernized.py jar /workspace/scratch/modernized-phase3/replay-final/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-alpha+1.20.1-forge.jar
+
+{
+  "name": "hbm_m-0.2.1-alpha+1.20.1-forge.jar",
+  "sha256": "99497db3cffc3d5d48b16036e6ad75ab477abbaf91e25a8c6e916bb562ee6937",
+  "entries": 16841,
+  "class_major_counts": {
+    "61": 1911
+  },
+  "unsupported_or_preview_classes": [],
+  "license_notice_paths": [
+    "LICENSE.hbm_m"
+  ],
+  "refmap_paths": [
+    "mixins.hbm_m.refmap.json"
+  ],
+  "platform_classes_in_outer_jar": [],
+  "nested": [
+    {
+      "name": "META-INF/jarjar/architectury-forge-9.2.14.jar",
+      "sha256": "47d5eca3d83aae1ac1d4a70116727715bd7ef4c077d228fee873065cbca94687",
+      "entries": 482,
+      "class_major_counts": {
+        "52": 1,
+        "60": 381
+      },
+      "unsupported_or_preview_classes": [],
+      "license_notice_paths": [],
+      "refmap_paths": [
+        "architectury-common-refmap.json",
+        "architectury-forge-refmap.json"
+      ],
+      "platform_classes_in_outer_jar": [],
+      "nested": [],
+      "META-INF/MANIFEST.MF": "Manifest-Version: 1.0\r\nMixinConfigs: architectury.mixins.json,architectury-common.mixins.json\r\n\r\n"
+    },
+    {
+      "name": "META-INF/jarjar/mixinconstraints-1.1.0.jar",
+      "sha256": "67e1fca9cb518f8afb356105c7816587e02880c2acca3bbdb6e08c8e967fc1be",
+      "entries": 30,
+      "class_major_counts": {
+        "61": 21
+      },
+      "unsupported_or_preview_classes": [],
+      "license_notice_paths": [],
+      "refmap_paths": [],
+      "platform_classes_in_outer_jar": [],
+      "nested": [],
+      "META-INF/MANIFEST.MF": "Manifest-Version: 1.0\r\nFMLModType: GAMELIBRARY\r\nAutomatic-Module-Name: MixinConstraints\r\n\r\n"
+    }
+  ],
+  "META-INF/MANIFEST.MF": "Manifest-Version: 1.0\r\nMixinConfigs: mixins.hbm_m.json\r\n\r\n",
+  "META-INF/jarjar/metadata.json": "{\n  \"jars\": [\n    {\n      \"identifier\": {\n        \"group\": \"com.moulberry\",\n        \"artifact\": \"mixinconstraints\"\n      },\n      \"version\": {\n        \"range\": \"[1.1.0,)\",\n        \"artifactVersion\": \"1.1.0\"\n      },\n      \"path\": \"META-INF/jarjar/mixinconstraints-1.1.0.jar\",\n      \"isObfuscated\": false\n    },\n    {\n      \"identifier\": {\n        \"group\": \"dev.architectury\",\n        \"artifact\": \"architectury-forge\"\n      },\n      \"version\": {\n        \"range\": \"[9.2.14,)\",\n        \"artifactVersion\": \"9.2.14\"\n      },\n      \"path\": \"META-INF/jarjar/architectury-forge-9.2.14.jar\",\n      \"isObfuscated\": false\n    }\n  ]\n}\n"
+}
+Bytecode gate passed for Java 17, including nested JARs; API/linkage and gameplay require runtime tests.

@@ -1,0 +1,13 @@
+UTC: 2026-10-19T19:32:13.402194+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: python3 inspect-packaging.py
+
+hbm_m-0.2.1-alpha+1.20.1-forge-javadoc.jar bytes 7460785 SHA256 76cea95e5c32cd8867ec4887dc6227947d271eb6fae173e3ccff46945afc5899
+LICENSE preserved, no duplicate entries or datagen cache/platform classes
+hbm_m-0.2.1-alpha+1.20.1-forge-sources.jar bytes 41942516 SHA256 fac289adbf3c69dde406d4b3e3cfee06181b2afeaffd56d6029cb9fab13de6c7
+LICENSE preserved, no duplicate entries or datagen cache/platform classes
+Traceback (most recent call last):
+  File "/workspace/scratch/modernized-phase3/inspect-packaging.py", line 18, in <module>
+    assert '${' not in text,'Unexpanded metadata placeholders'
+           ^^^^^^^^^^^^^^^^
+AssertionError: Unexpanded metadata placeholders

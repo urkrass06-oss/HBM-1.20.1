@@ -1,0 +1,19 @@
+import hashlib,json,pathlib,sys
+root=pathlib.Path(__file__).resolve().parent
+source=root/'upstream/src/generated/resources'
+rows=[];checked=0
+for p in sorted(source.rglob('*')):
+    rel=p.relative_to(source)
+    if not p.is_file() or '.cache' in rel.parts:continue
+    raw=p.read_bytes()
+    if p.suffix=='.json':
+        json.loads(raw)
+        checked+=1
+    rows.append(f'{hashlib.sha256(raw).hexdigest()}  {rel.as_posix()}')
+data=('\n'.join(rows)+'\n').encode()
+output=root/f'datagen-{sys.argv[1]}.sha256';output.write_bytes(data)
+print('Files:',len(rows),'JSON parsed:',checked,'manifest SHA256:',hashlib.sha256(data).hexdigest())
+if sys.argv[1]=='2':
+    previous=(root/'datagen-1.sha256').read_bytes()
+    assert previous==data,'Datagen content changed between runs'
+    print('Second datagen content is byte-identical, excluding .cache bookkeeping')

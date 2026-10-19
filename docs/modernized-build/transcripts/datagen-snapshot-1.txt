@@ -1,0 +1,5 @@
+UTC: 2026-10-19T19:20:33.420354+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: python3 snapshot-datagen.py 1
+
+Files: 7952 JSON parsed: 7952 manifest SHA256: cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700

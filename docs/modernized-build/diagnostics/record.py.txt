@@ -1,0 +1,15 @@
+import datetime, json, pathlib, shlex, subprocess, sys, time
+root = pathlib.Path(__file__).resolve().parent
+label, cwd, *command = sys.argv[1:]
+start = datetime.datetime.now(datetime.timezone.utc).isoformat()
+log = root / 'logs' / (label + '.log')
+with log.open('w') as output:
+    output.write(f'UTC: {start}\nCWD: {cwd}\nCOMMAND: {shlex.join(command)}\n\n')
+    output.flush()
+    result = subprocess.run(command, cwd=cwd, stdout=output, stderr=subprocess.STDOUT)
+event = dict(label=label, utc=start, cwd=cwd, command=command, exit_code=result.returncode, log=log.name)
+with (root / 'commands.jsonl').open('a') as output:
+    output.write(json.dumps(event) + '\n')
+print(json.dumps(event), flush=True)
+print(log.read_text()[-18000:], flush=True)
+sys.exit(result.returncode)

@@ -63,7 +63,7 @@
     "publication_status": "cleared"
   },
   "evidence/validation.md": {
-    "sha256": "6a891c188bf3e9c6b7b06d69d7a21889eec4b73359089af737ad21e73f53306a",
+    "sha256": "49e57176d83b40882371a97dafad004f43dd48680a38055d43659bdf0eb3252c",
     "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
     "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
     "authors": [
@@ -209,6 +209,6 @@
     ],
     "review": "Codex, 2026-10-20: individually reviewed source-only payload, including patch context; no copied full source trees, assets, worlds or binaries.",
     "publication_status": "cleared",
-    "sha256": "67557e3bc9bc2e877d08912162d58de4f480094c6d35b0474a65ad3a5b6db7f2"
+    "sha256": "fe8f8a8cdfb23ae8cead797427d38dae7393eb7a7cc11887776dbd8391c68a9b"
   }
 }

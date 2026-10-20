@@ -72,10 +72,10 @@
   "delivery_files": {
     "changes.patch": "59e7c824ebcfea806d19d2bcde6b328577aca5f22a74f5dee46995b768569a43",
     "evidence/provenance.json": "7620ca80dc0bbde2b6aab30765fce8649af4eccbdbfe1da6723be6fa334c9ffa",
-    "evidence/r01-followup.json": "67557e3bc9bc2e877d08912162d58de4f480094c6d35b0474a65ad3a5b6db7f2",
+    "evidence/r01-followup.json": "fe8f8a8cdfb23ae8cead797427d38dae7393eb7a7cc11887776dbd8391c68a9b",
     "evidence/reproduction.md": "d2f2f2e4a6ea300c0c9fd353a5568050e72c6017651aa33aed08f3c8a11d3e17",
     "evidence/results.json": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b",
-    "evidence/validation.md": "6a891c188bf3e9c6b7b06d69d7a21889eec4b73359089af737ad21e73f53306a",
+    "evidence/validation.md": "49e57176d83b40882371a97dafad004f43dd48680a38055d43659bdf0eb3252c",
     "gametest/com/hbm/integration/nuclear/BreederGameTests.java": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4",
     "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283",
     "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738",
@@ -84,7 +84,7 @@
     "requests/R-01-test-loader.json": "f62bc1d6f33300bcca499f28da182f1abfba6555ed967450c274bed733ade024",
     "requests/R-N01-breeding-rods.json": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df",
     "requests/R-N01-display.json": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96",
-    "rights.json": "15552e2cef591928a3b8aa8be55aa4961e992e494782853df912aaf178829102"
+    "rights.json": "594115dda5fa054ac17eb92565462c9a9f2ac33a672e5de119be9bf3607f5f4f"
   },
   "rights": "rights.json",
   "evidence": [
@@ -119,8 +119,10 @@
   "validation": {
     "results": "evidence/results.json",
     "production_jar_sha256": "8b449e2272fa28369cbb46f8752ebbdbec83e9196d55d9d13db84722c00a18d0",
-    "G3": "BLOCKED: 21/22 required passed, production-binding guard failed",
-    "integration_ready": false
+    "G3": "BLOCKED: 21/22 required tests; all 14 regressions and 7 N functional tests passed again after fixture nesting",
+    "integration_ready": false,
+    "latest_test_code_commit": "5c568686600406793eb471cfd07f4486cc806627",
+    "R01": "Schema compatible; real immutable preflight rejects six missing central reservations before target creation"
   },
   "test_layout": "BreederTestContent is nested in the single BreederGameTests source; every gametest source declares required tests, as required by R-01.",
   "kind": "area",
@@ -248,10 +250,10 @@
   "payloads": {
     "changes.patch": "59e7c824ebcfea806d19d2bcde6b328577aca5f22a74f5dee46995b768569a43",
     "evidence/provenance.json": "7620ca80dc0bbde2b6aab30765fce8649af4eccbdbfe1da6723be6fa334c9ffa",
-    "evidence/r01-followup.json": "67557e3bc9bc2e877d08912162d58de4f480094c6d35b0474a65ad3a5b6db7f2",
+    "evidence/r01-followup.json": "fe8f8a8cdfb23ae8cead797427d38dae7393eb7a7cc11887776dbd8391c68a9b",
     "evidence/reproduction.md": "d2f2f2e4a6ea300c0c9fd353a5568050e72c6017651aa33aed08f3c8a11d3e17",
     "evidence/results.json": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b",
-    "evidence/validation.md": "6a891c188bf3e9c6b7b06d69d7a21889eec4b73359089af737ad21e73f53306a",
+    "evidence/validation.md": "49e57176d83b40882371a97dafad004f43dd48680a38055d43659bdf0eb3252c",
     "gametest/com/hbm/integration/nuclear/BreederGameTests.java": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4",
     "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283",
     "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738",
@@ -260,6 +262,6 @@
     "requests/R-01-test-loader.json": "f62bc1d6f33300bcca499f28da182f1abfba6555ed967450c274bed733ade024",
     "requests/R-N01-breeding-rods.json": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df",
     "requests/R-N01-display.json": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96",
-    "rights.json": "15552e2cef591928a3b8aa8be55aa4961e992e494782853df912aaf178829102"
+    "rights.json": "594115dda5fa054ac17eb92565462c9a9f2ac33a672e5de119be9bf3607f5f4f"
   }
 }

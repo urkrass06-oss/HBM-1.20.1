@@ -1,0 +1,4 @@
+M-01 network lifecycle, pressure and persistence corrections, 2026-10-20.
+SPDX-License-Identifier: GPL-3.0-only
+Derived from the pinned Modernized sources; upstream and original HBM credits
+remain applicable. Exact file/context provenance and scope: rights.json.

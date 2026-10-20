@@ -5,8 +5,8 @@
   "to": "R",
   "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
   "depends_on": "R-01",
-  "status": "requested",
-  "integration_commit": null,
+  "status": "partially-implemented-policy-reservation-pending",
+  "integration_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
   "purpose": "Include the M-01 delivery and its eight required tests through the serialized area loader.",
   "production_paths": [
     "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
@@ -39,7 +39,8 @@
     "file": "tools/audit_modernized.py",
     "finding": "The existing production audit rejects com/hbm/integration/Modernized* and empty.nbt, but does not cover the new area test packages.",
     "change": "Also reject com/hbm/integration/machines/ (and other registered area test packages) in the production JAR, including inner classes.",
-    "regression": "A production JAR containing MachineNetworkTests.class or MachineNetworkTests$Endpoint.class must fail the audit, even without empty.nbt."
+    "regression": "A production JAR containing MachineNetworkTests.class or MachineNetworkTests$Endpoint.class must fail the audit, even without empty.nbt.",
+    "status": "implemented-by-R-01-declared-test-audit-not-yet-combined-runtime-verified"
   },
   "contract_changes": "No public method signatures, registry IDs, HE units, pressure units, menus or packet formats change.",
   "acceptance": [

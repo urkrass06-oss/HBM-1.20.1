@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "request_id": "M-01-R-01-POLICY",
+  "from": "M",
+  "to": "R",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "reviewed_R_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "api_version": "1",
+  "status": "requested",
+  "central_file": "tools/modernized/parallel/policy.json",
+  "exact_addition": {
+    "owners": {
+      "integration/src/gametest/java/com/hbm/integration/machines/MachineNetworkTests.java": "machines"
+    }
+  },
+  "reason": "M-01 test destination prescribed in TASKS_MACHINES.md is absent from the central R-01 exact reservation. M has not edited policy or other central files.",
+  "tests": [
+    "capabilitiesInvalidateOnRemoval",
+    "singletonNetworkCanReconnect",
+    "valveUnloadReleasesNodeImmediately",
+    "networkUnloadReloadConservesAmounts",
+    "networksAreDimensionLocal",
+    "pressureAndSubstanceStaySeparate",
+    "splitMergePreservesAmounts",
+    "pumpTransfersAreScheduledForSaving"
+  ],
+  "acceptance": [
+    "Read-only loader preflight accepts the immutable machines delivery and rendering dependency.",
+    "Fresh integration applies five declared production deltas plus the single independent test source.",
+    "Execute all 14 existing, eight machines and two rendering required tests; audit exact required IDs and production test exclusion."
+  ],
+  "return_required": "Concrete R commit containing the reservation; M will bind and retest that dependency."
+}

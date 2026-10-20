@@ -32,7 +32,7 @@ gesamten Modernized-Bestands. Die neuen Tests und das Auditwerkzeug sind eigene
 Beiträge unter LGPL-3.0-only.
 
 Die serialisierte Bereichseinbindung ist als
-[M-01-R-01](requests/R-01-machines-tests.json) an R übergeben. Bis zu deren
+[M-01-R-01](../requests/R-01-machines-tests.json) an R übergeben. Bis zu deren
 Integration gilt die in `docs/PARALLEL_DEVELOPMENT.md` erlaubte gezielte Einbindung:
 
 ```bash
@@ -54,7 +54,7 @@ SHA256 `056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3`.
 Der zusätzliche Audit gegen dieses Paket lautet:
 
 ```bash
-python3 "$HBM_MACHINES/audit_network_jar.py" \
+python3 "$HBM_MACHINES/evidence/audit_network_jar.py" \
   /absolute/external/baseline-production.jar \
   "$HBM_CHECK_ROOT/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar"
 ```
@@ -92,7 +92,7 @@ aus einem vorher gescheiterten Lauf nicht erneut als Input gezählt werden.
 
 GameTests ersetzen weder zwei Produktionsclients noch Serverneustarts,
 Singleplayer-Weltkopie oder den Original-Lauf. Die O-Verträge und ihre Grenzen
-sind in [original-contracts.json](evidence/original-contracts.json) dokumentiert;
+sind in [original-contracts.json ](original-contracts.json) dokumentiert;
 es gibt keinen behaupteten Minecraft-1.7.10/JDK8-Messnachweis.
 
 Offene zentrale Requests benötigen einen konkreten R-Integrationscommit.

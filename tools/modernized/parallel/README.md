@@ -44,6 +44,12 @@ Nur Rendering darf zentrale Requestlieferungen anbieten. Zyklen sind Fehler.
 - `registrations`: zentrale Requests `{registry, id, class, bindings,
   initialization, resources, tests, request}`; Identität ist `(registry, id)`.
   Namespace `hbm_m`, keine doppelten Identitäten. Ohne Registeränderung `[]`.
+- `requests`: optionale Liste gehashter JSON-Aufträge unter `requests/`.
+  Jeder Registryeintrag verweist auf einen solchen geprüften Auftrag. Aufträge
+  werden dokumentiert, nicht als Code ausgeführt. Bereits als Literal in der
+  jeweiligen zentralen Basisdatei vorhandene IDs werden vor Anwendung abgewiesen;
+  dynamisch konstruierte Registrierungen erfordern zusätzlich fachliches Review
+  und den Forge-Laufzeittest.
 - `evidence`: nichtleere Liste gehashter Textbelege unter `evidence/`.
 
 `rights.json` enthält für jeden Payload außer den beiden administrativen

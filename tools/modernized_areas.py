@@ -13,6 +13,9 @@ import subprocess
 
 AREAS = ("machines", "weapons", "nuclear", "rendering")
 REGISTRIES = ("block", "item", "block_entity_type", "entity_type", "menu", "recipe_serializer", "sound_event")
+REGISTRY_SOURCES = dict(zip(REGISTRIES, (
+    "block/ModBlocks.java", "item/ModItems.java", "blockentity/ModBlockEntities.java",
+    "entity/ModEntities.java", "inventory/menu/ModMenuTypes.java", "recipe/ModRecipes.java", "sound/ModSounds.java")))
 POLICY = Path(__file__).resolve().parent / "modernized/parallel/policy.json"
 
 
@@ -158,6 +161,11 @@ def validate(deliveries, policy):
                 raise ValueError(f"Uncleared payload: {name}")
         if not manifest["evidence"] or any(name not in files or not name.startswith("evidence/") for name in manifest["evidence"]):
             raise ValueError("Hashed test evidence is required")
+        requests = manifest.get("requests", [])
+        for request in requests:
+            if request not in files or not request.startswith("requests/") or not request.endswith(".json"):
+                raise ValueError("Requests must be explicitly hashed JSON payloads")
+            unique_json(files[request])
         patch = manifest["patch"]
         patched = set(patch_targets(files[patch])) if patch else set()
         copied = set()
@@ -189,7 +197,7 @@ def validate(deliveries, policy):
                 raise ValueError("Missing result hash")
         if patched != {c["target"] for c in manifest["files"] if c["source"] is None}:
             raise ValueError("Patch paths differ from exact declaration")
-        used = copied | set(manifest["evidence"]) | {"rights.json"} | ({patch} if patch else set())
+        used = copied | set(manifest["evidence"]) | set(requests) | {"rights.json"} | ({patch} if patch else set())
         if set(expected) != used:
             raise ValueError("Unused delivery payload")
         for registry in manifest["registrations"]:
@@ -201,6 +209,10 @@ def validate(deliveries, policy):
             registries.add(key)
             if not all(registry.get(k) for k in ("class", "bindings", "initialization", "resources", "tests", "request")):
                 raise ValueError("Incomplete central registration request")
+            if registry["request"] not in requests:
+                raise ValueError("Registration requires its hashed central request")
+            for resource in registry["resources"]:
+                path_name(resource)
         for test in manifest["tests"]:
             if test["id"] in test_ids or test["source"] not in copied or test["required"] is not True:
                 raise ValueError("Duplicate, optional or undeclared GameTest")
@@ -253,11 +265,30 @@ def safe_target(checkout, name):
     return target
 
 
+def registry_literals(checkout):
+    """Conservative static delta gate for literal and register-helper declarations.
+
+    Dynamic construction still needs the runtime contract and human request review.
+    This scanner never executes delivered Java or claims a complete Java parse.
+    """
+    result = {}
+    for registry, relative in REGISTRY_SOURCES.items():
+        source = checkout / "src/main/java/com/hbm_m" / relative
+        result[registry] = set(re.findall(r'\bregister\w*\s*\(\s*"([a-z0-9_./-]+)"', source.read_text())) if source.is_file() else set()
+    return result
+
+
 def apply(checkout, deliveries):
     """Called only in disposable staging, after the complete pure preflight."""
     records = []
     for delivery in deliveries:
         manifest = delivery["manifest"]
+        registry_before = registry_literals(checkout)
+        for registration in manifest["registrations"]:
+            source = checkout / "src/main/java/com/hbm_m" / REGISTRY_SOURCES[registration["registry"]]
+            identifier = registration["id"].removeprefix("hbm_m:")
+            if not source.is_file() or re.search(r'"' + re.escape(identifier) + r'"', source.read_text()):
+                raise ValueError("Registry identity already present or baseline registry source unavailable")
         for change in manifest["files"]:
             target = safe_target(checkout, change["target"])
             before = change["before_sha256"]
@@ -279,6 +310,15 @@ def apply(checkout, deliveries):
                     output.write(delivery["files"][change["source"]])
             if digest(target.read_bytes()) != change["sha256"]:
                 raise ValueError(f"Applied result hash mismatch: {change['target']}")
+        registry_after = registry_literals(checkout)
+        declared = {(r["registry"], r["id"].removeprefix("hbm_m:")) for r in manifest["registrations"]}
+        actual = set()
+        for registry in REGISTRIES:
+            if registry_before[registry] - registry_after[registry]:
+                raise ValueError("Existing literal registry identities removed")
+            actual.update((registry, name) for name in registry_after[registry] - registry_before[registry])
+        if actual != declared:
+            raise ValueError("Literal registry delta differs from the central request declaration")
         records.append({"area": delivery["area"], "commit": delivery["commit"],
                         "manifest_sha256": digest(delivery["files"]["area.json"]),
                         "manifest": manifest, "rights": unique_json(delivery["files"]["rights.json"])})

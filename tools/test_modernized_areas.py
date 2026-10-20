@@ -170,14 +170,75 @@ class DeliveryTests(unittest.TestCase):
         item = delivery("rendering", "src/R.java")
         self.policy["owners"]["src/R.java"] = "rendering"
         item["manifest"]["kind"] = "central"
+        item["manifest"]["requests"] = ["requests/registry.json"]
+        item["files"]["requests/registry.json"] = encode({"request": "independent registry fixture"})
         registry = {"registry": "block", "id": "hbm_m:fixture", "class": "com.example.Fixture", "bindings": "fixture",
-                    "initialization": "fixture", "resources": ["fixture.json"], "tests": ["fixture"], "request": "R-fixture"}
+                    "initialization": "fixture", "resources": ["fixture.json"], "tests": ["fixture"], "request": "requests/registry.json"}
         item["manifest"]["registrations"] = [registry, registry]
         self.reject([seal(item)])
+
+    def test_central_requests_before_independent_area_delta(self):
+        central = delivery("rendering", "src/R.java")
+        self.policy["owners"]["src/R.java"] = "rendering"
+        central["manifest"]["kind"] = "central"
+        order = areas.validate([self.a, seal(central)], self.policy)
+        self.assertEqual([d["area"] for d in order], ["rendering", "machines"])
+
+    def test_game_test_requires_separate_declared_package(self):
+        self.a["manifest"]["files"][0]["source"] = "gametest/com/hbm/integration/nuclear/Wrong.java"
+        self.reject([seal(self.a)])
 
     def test_noncentral_registry_rejected(self):
         self.a["manifest"]["registrations"] = [{"registry": "block", "id": "hbm_m:fixture"}]
         self.reject([seal(self.a)])
+
+    def registry_delivery(self, after, registrations):
+        target = "src/main/java/com/hbm_m/block/ModBlocks.java"
+        before = b'register("existing");\n'
+        item = delivery("rendering", target, after, patch=True)
+        self.policy["owners"][target] = "rendering"
+        item["manifest"]["kind"] = "central"
+        item["manifest"]["files"][0]["before_sha256"] = areas.digest(before)
+        item["manifest"]["requests"] = ["requests/registry.json"]
+        item["files"]["requests/registry.json"] = encode({"request": "independent fixture"})
+        item["manifest"]["registrations"] = registrations
+        added = b"".join(b"+" + row + b"\n" for row in after.splitlines())
+        item["files"]["changes.patch"] = (f"--- a/{target}\n+++ b/{target}\n@@ -1 +1,{len(after.splitlines())} @@\n".encode()
+                                           + b'-register("existing");\n' + added)
+        selected = areas.validate([seal(item)], self.policy)
+        def builder(path):
+            path.mkdir()
+            subprocess.run(["git", "init", "-q", str(path)], check=True)
+            source = path / target
+            source.parent.mkdir(parents=True)
+            source.write_bytes(before)
+            areas.apply(path, selected)
+        integration.publish(self.target, builder)
+
+    def test_undeclared_registry_addition_rejected_atomically(self):
+        with self.assertRaisesRegex(ValueError, "delta"):
+            self.registry_delivery(b'register("existing");\nregister("new");\n', [])
+        self.assertFalse(self.target.exists())
+
+    def test_removed_existing_registry_rejected_atomically(self):
+        with self.assertRaisesRegex(ValueError, "removed"):
+            self.registry_delivery(b'register("replacement");\n', [])
+        self.assertFalse(self.target.exists())
+
+    def test_valid_central_registry_request(self):
+        registration = {"registry": "block", "id": "hbm_m:new", "class": "com.example.New",
+                        "bindings": "own fixture", "initialization": "own fixture", "resources": ["fixture.json"],
+                        "tests": ["fixture"], "request": "requests/registry.json"}
+        self.registry_delivery(b'register("existing");\nregister("new");\n', [registration])
+        self.assertTrue(self.target.exists())
+
+    def test_existing_registry_id_rejected_before_patch(self):
+        registration = {"registry": "block", "id": "hbm_m:existing", "class": "com.example.New",
+                        "bindings": "fixture", "initialization": "fixture", "resources": ["fixture.json"],
+                        "tests": ["fixture"], "request": "requests/registry.json"}
+        with self.assertRaisesRegex(ValueError, "already present"):
+            self.registry_delivery(b'register("existing");\n', [registration])
+        self.assertFalse(self.target.exists())
 
     def test_unlisted_payload(self):
         self.a["files"]["extra.java"] = b"untracked"

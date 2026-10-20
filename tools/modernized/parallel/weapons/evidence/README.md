@@ -23,8 +23,8 @@ Handler auf dem Serverthread auf und enthalten gültige Gegenfälle.
 
 Die Granatenprüfung beobachtet das echte Explosionsereignis. Dieses wird in den
 kleinen Tests nach der Beobachtung abgebrochen, damit benachbarte Teststrukturen
-erhalten bleiben. Das ist **kein** Nachweis von Produktions-Blockschaden oder
-Clientdarstellung. Ein eigener Empfänger prüft das Radar-Dispatching; eine
+erhalten bleiben. Der getrennte Produktionslauf unten prüft zusätzlich echten Blockschaden und
+die Bedienung durch zwei Clients. Ein eigener Empfänger prüft das Radar-Dispatching; eine
 vollständige Raketenflug-/Nutzlastkette bleibt W-05.
 
 ## Originalreferenz und Grenzen
@@ -56,9 +56,9 @@ Die bestehenden 66 Javadocfehler/100 Warnungen sind weiterhin offene Arbeit.
 | G1 | Bereichspfade, Herkunft jedes gelieferten Deltas einschließlich Kontext, Pins und frisches Patch-Replay geprüft. Zentrale R-01-Lieferung/Commit fehlt; Integration bleibt blockiert. |
 | G2 | Zwei bytegleiche Datagenläufe, getrenntes `build sourcesJar`, Audit und Hash erfolgreich auf 47.4.23. Kein sauberer Javadoc-Nachweis. |
 | G3 | 24/24 required Tests, davon 14 unverändert und zehn Waffenprüfungen. |
-| G4 | Zwei Produktionsstarts mit je 30 Sekunden, Save/Stop und Exit 0 bestanden. EULA ausdrücklich vom Nutzer angenommen. Arena-NBT-Abgleich nach Neustart noch in Arbeit. |
-| G5 | Zwei echte Clients mit identischem Produktionshash beigetreten. Umgebung unterbrach den ersten Lauf vor zehn Minuten; separater Folgelauf in Arbeit. Keine vollständige G5-Abnahme behauptet. |
-| G6 | NBT-Roundtrip geprüft. Normaler Chunkreload, echter Reconnect/Dimensionswechsel, Produktionsneustart und Singleplayer-Weltkopie offen. |
+| G4 | Bestanden: zwei initiale Produktionsstarts mit je 30 Sekunden, Save/Stop und Exit 0; zusätzliche Mehrspieler-/Neustartsitzungen ebenfalls sauber beendet. Neun NBT-/Inventarabfragen nach Neustart identisch. EULA ausdrücklich angenommen. |
+| G5 | Fachszenarien und 608 Sekunden ununterbrochene Zweiclientverbindung bestanden. Gesamtgate wegen vorhandener Client-Asset-/Starterfehler und überlappender Detonatorwidgets bei R offen; [konkreter Request](../requests/R-02-runtime-ui.json). |
+| G6 | Für die lokalen W-01-Fixtures bestanden: tatsächliches Entladen ohne Force-Loading, zwei Dimensionswechsel/Rückkehr, Transfer nach Reload, Reconnect, Save/Restart und echte Singleplayer-Weltkopie; neun Abfragen an allen vier Ständen identisch. Zünder-/Owner-NBT zusätzlich per GameTest. |
 | G7 | Nur die genannte quellgestützte S3-Referenz; Laufzeitvergleich und direkte Variantenzuordnung offen. |
 | G8 | Zweistündiger Mischbetrieb erst am gemeinsamen M/N/W/R-Integrationsstand; nicht ausgeführt. |
 
@@ -67,6 +67,49 @@ dokumentierte Yggdrasil-Public-Key-Anfrage im isolierten Offlinebetrieb. Sie
 bleibt in den externen Rohlogs erhalten. Der bekannte Naval-Mine-Höhenbereich
 bleibt eine Warnung im Zuständigkeitsbereich R. Keine allgemeine
 Fehlerunterdrückung wurde ergänzt.
+
+## Produktionslauf mit zwei Clients und Lebensdauer
+
+Getestete Codelieferung: `494da12957638953e854cde8d4a8276d27b74d87`;
+Patch-/Quellhashes und Produktions-JAR blieben unverändert. Beide echten
+Forge-47.4.23-Clients nutzten exakt denselben JAR-Hash wie der Server.
+Ununterbrochene gemeinsame Verbindung: **17:36:46–17:46:54 UTC (608 Sekunden)**.
+Zwei vorherige unterbrochene Versuche werden nicht als Erfolg gezählt.
+
+| Tatsächliche Aktion | Abgleich mit Serverzustand |
+| --- | --- |
+| Batterieitem One → Maschine → Two und zurück | Maschineninventar danach leer, genau ein Batterieitem beim erwarteten Spieler; anderer Spieler leer. |
+| HE-Netzübertragung | Quelle 20.000.000 → 0 HE, Ziel 0 → 20.000.000 HE. Nach normalem Reload auch Rück- und erneuter Hintransfer ohne Mengenverlust. |
+| Zwei echte Wassereimer, Tankmodus und Duct-Netz | 16.000 + 2.000 = 18.000 mB, zwei leere Eimer; Ziel 18.000 mB. Moduspaket von beiden Clients, Transfer nach Reload in beide Richtungen. |
+| RBMK-Spalte live hinzufügen/entfernen | Beide Screens aktualisiert. One setzt 0,37 / AZ-5 → 0; Two setzt 0,81 / AZ-5 → 0. Beide ändern Bildschirmtyp. |
+| Nahezu gleichzeitiger Raketenbau beider Clients | Klicks 57 ms auseinander; genau eine `missile_micro`, jeder Bestandteil genau einmal verbraucht, Ausgabe verhindert weiteren Bau. |
+| Gemeinsame Turret-/Radar-/Soyuzmenüs | Änderungen beider Clients und Anzeigen/Serverwerte stimmen überein. Leerer Soyuz startet nicht. |
+| Radarbildschirm 64 Blöcke von der Quelle | Echter verknüpfter Screen bedient Quellradar; zweiter Client hält Quelle normal geladen und sieht Änderung. Kein Force-Loading. |
+| Echte Spielergranate | Owner exakt Spieler-UUID; 2 → 1 Item, Restzünder 48 Ticks beobachtet; nach Ablauf kein Projektil. Von 75 Glasblöcken bleiben 55. Rückprall tötet Werfer; Todesmeldung nennt korrekt HBMClientOne als Ursache. |
+| Echter Multi-Detonator | Shift-Rechtsklick speichert `Dimension: minecraft:overworld`; leerer echter C2S-Befehl löst gehaltenes Serverziel aus. Wiederholung lässt Ziel entfernt. |
+| Ressourcenreload / Reconnect | Beide Clients laden Ressourcen neu und verbinden sich nach Save/Restart erneut; keine Client-Crashdatei. Vorhandene Fehler bleiben unten offen. |
+
+Die Arena bei X≈1024 liegt außerhalb der Spawnchunks. `forceload query`
+meldete keine erzwungenen Chunks; nach beiden Netherwechseln bestätigte `unless loaded`
+das tatsächliche Entladen. Neun identische Abfragen liegen vor Entladen,
+nach Rückkehr, nach Dedicated-Neustart/Reconnect und im integrierten
+Singleplayer vor: Batterie 123.456 HE, Netzziel 20.000.000 HE, Tank 18.000 mB,
+Raketeninventar, Turret/Radar/Soyuz, RBMK-Sollwert und gehaltenes Detonator-NBT.
+Die Weltkopie entstand nach sauberem Stop; alle 54 Dateien waren zunächst
+bytegleich. Nur Kopiename und Befehlsfreigabe wurden dort für Abfragen geändert.
+Dies ist keine allgemeine Modpack-/Capability- oder Variantenabnahme.
+
+Beide Clientlogs enthalten jeweils 74 ERROR-Zeilen: 68 ungültige Assetpfade,
+zweimal fehlendes `nuke_prototype`-Modell, zweimal fehlende `ore_acidizer`-Textur,
+ein unzulässiger `simulationDistance:2`-Starterwert und eine Offline-Profil-
+Schlüsselanfrage. Keine wurde unterdrückt. Zusätzlich überlappen im
+Multi-Detonator bei 854×480 / GUI-Skala 2 der vierte Punkt und „Detonate All“;
+der schmale freie Buttonbereich löst korrekt aus. R besitzt diese Screens,
+den Starter und die Assets; W hat dort nichts geändert. Der Request beschreibt
+konkrete Reproduktion und Abnahme. G5 wird deshalb nicht pauschal grün erklärt.
+
+Rohlogs, Bilder, Clientaktionen und Welten bleiben extern. `checks.json` enthält
+nur geprüfte Textwerte, Befehle und SHA256-Nachweise; keine Asset-/Bildbytes.
 
 ## Einspielen und Nachweise
 

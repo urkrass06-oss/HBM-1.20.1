@@ -11,7 +11,8 @@
     "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
     "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
     "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
-    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8"
+    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8",
+    "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19"
   },
   "profile": {
     "minecraft": "1.20.1",
@@ -163,16 +164,16 @@
       "detail": "All 24 required tests pass: 14 unchanged baseline plus 10 weapons tests."
     },
     "G4": {
-      "status": "startup-save-stop-passed; state-restart-check-in-progress",
-      "detail": "Both production starts Done, 30-second observation, Save/Stop and exit 0. No unexpected ERROR/FATAL; documented Yggdrasil offline failure retained separately. Arena NBT restart check follows."
+      "status": "passed",
+      "detail": "Two initial production starts: Done,30s observation,Save/Stop,exit0. Additional multiplayer and restart sessions also saved/stopped with exit0 and no unexpected ERROR/FATAL. Nine state queries match before unload, after normal reload and after restart/reconnect."
     },
     "G5": {
-      "status": "in-progress",
-      "detail": "EULA explicitly accepted; two production clients and interactive server prepared."
+      "status": "functional-cases-and-608-second-overlap-passed; R-client-gate-open",
+      "detail": "Two real Forge47.4.23 clients with exact production hash;608s uninterrupted overlap, battery both directions,20mHE,18k mB/buckets/modes,RBMK live changes/both controls, actual owner-attributed grenade with20glass blocks destroyed, common missile build/turret/radar/Soyuz/detonator, resource reload and reconnect. Existing asset/launcher errors and reproduced overlapping MultiDetonator widgets remain R-owned; not a clean overall client/visual gate."
     },
     "G6": {
-      "status": "open",
-      "detail": "NBT fuse/owner persistence tested; normal chunk unload/reload, reconnect, dimension change with real clients, production Save/Restart and singleplayer copy not completed."
+      "status": "passed-for-W-01-local-fixtures",
+      "detail": "Normal unload proven without force loading; both real clients changed dimension and returned;9state queries identical before unload/after reload/after restart/reconnect/in actual Singleplayer world copy. HE/water transferred successfully both directions after normal reload. Grenade fuse/owner persistence additionally tested by GameTests. Not a whole-mod capability or variant-parity claim."
     },
     "G7": {
       "status": "source-supported-only",
@@ -585,15 +586,838 @@
       }
     ]
   },
-  "runtime_interruption": {
-    "observed_by_utc": "2026-10-20 13:02:10 UTC",
-    "reason": "Managed environment restarted; server, two clients and both Xorg processes no longer running; source/artifact/log files persisted.",
-    "first_clients_joined_utc": [
-      "2026-10-20 12:59:50 UTC",
-      "2026-10-20 12:59:52 UTC"
+  "runtime_delivery_commit": "494da12957638953e854cde8d4a8276d27b74d87",
+  "runtime_interruptions": [
+    {
+      "observed_by_utc": "2026-10-20 13:02:10 UTC",
+      "reason": "Managed environment restarted; server, two clients and both Xorg processes no longer running; source/artifact/log files persisted.",
+      "first_clients_joined_utc": [
+        "2026-10-20 12:59:50 UTC",
+        "2026-10-20 12:59:52 UTC"
+      ],
+      "ten_minute_overlap_proven": false,
+      "classification": "interrupted infrastructure attempt; not a demonstrated production defect",
+      "next_session": "weapons-multiplayer-resume"
+    },
+    {
+      "observed_by_utc": "2026-10-20T17:34:26Z",
+      "session": "weapons-multiplayer-resume",
+      "reason": "No earlier test processes survived the turn/environment interruption; no completed save/stop record. Not counted as10minute success. Raw logs retained.",
+      "classification": "incomplete infrastructure attempt; no production defect inferred"
+    }
+  ],
+  "runtime_notes": {
+    "tested_delivery_commit": "494da12957638953e854cde8d4a8276d27b74d87",
+    "production_jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "two_clients_joined": [
+      "2026-10-20T17:36:40Z",
+      "2026-10-20T17:36:46Z"
     ],
-    "ten_minute_overlap_proven": false,
-    "classification": "interrupted infrastructure attempt; not a demonstrated production defect",
-    "next_session": "weapons-multiplayer-resume"
-  }
+    "cases": [
+      {
+        "case": "battery inventory both directions",
+        "result": "passed",
+        "observations": "One -> battery -> Two -> battery -> One; machine inventory empty, one battery at expected holder, other holder empty; server NBT queries 17:37:23, 17:37:26, 17:37:46."
+      },
+      {
+        "case": "HE balance",
+        "result": "passed",
+        "source_final": 0,
+        "target_final": 20000000,
+        "initial_total": 20000000
+      },
+      {
+        "case": "tank buckets/mode/network",
+        "result": "passed",
+        "initial_mb": 16000,
+        "real_buckets": 2,
+        "empty_buckets": 2,
+        "final_source_mb": 0,
+        "final_target_mb": 18000,
+        "ui_mode_transitions": [
+          1,
+          2,
+          3
+        ],
+        "note": "Fixture subsequently set source mode0 for export, as mode3 is disabled."
+      },
+      {
+        "case": "RBMK live column and controls",
+        "result": "passed",
+        "observations": "Both screens showed added second control column then its removal. One set both rods to0.37 and AZ5 to0; Two set remaining rod0.81 and AZ5 to0. Both cycled screen0, server stored CONTROL then MODERATOR."
+      },
+      {
+        "case": "two-client missile build",
+        "result": "passed",
+        "click_times_utc": [
+          "17:39:57.553304",
+          "17:39:57.610643"
+        ],
+        "input_stacks_before": 2,
+        "input_stacks_after": 1,
+        "output": "one hbm_m:missile_micro in slot5"
+      },
+      {
+        "case": "Turret shared menu",
+        "result": "passed",
+        "is_on": [
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "case": "Radar shared menu and remote linked screen",
+        "result": "passed",
+        "source": [
+          1040,
+          100,
+          16
+        ],
+        "screen": [
+          1104,
+          100,
+          16
+        ],
+        "scan_players": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "screen_linked": true,
+        "both_positions_loaded": true
+      },
+      {
+        "case": "Soyuz mode/start",
+        "result": "passed",
+        "modes": [
+          0,
+          1,
+          0
+        ],
+        "empty_start_rejected": true,
+        "inventory_empty": true
+      },
+      {
+        "case": "player grenade",
+        "result": "passed",
+        "owner_uuid_ints": [
+          -2013071434,
+          -1252638963,
+          -1855311903,
+          -38967003
+        ],
+        "owner_matches_player": true,
+        "observed_remaining_fuse_ticks": 48,
+        "item_count_before": 2,
+        "item_count_after_throw": 1,
+        "glass_before": 75,
+        "glass_remaining_after_blast": 55,
+        "projectile_gone": true,
+        "note": "Collision reflected grenade back; player killed at17:42:13 with attribution to HBMClientOne. Inventory dropped on death, respawn via actual UI."
+      },
+      {
+        "case": "held Multi-Detonator actual link and packet",
+        "result": "passed-with-R-screen-layout-finding",
+        "saved_dimension": "minecraft:overworld",
+        "target": [
+          1044,
+          100,
+          8
+        ],
+        "first_clicks_consumed_by_overlapping_widgets": true,
+        "detonate_all_succeeded_utc": "17:44:03",
+        "repeat_target_remains_air": true
+      },
+      {
+        "case": "resource reload",
+        "result": "completed-with-existing-asset-errors",
+        "clients": 2
+      },
+      {
+        "case": "normal unload and dimension switch",
+        "result": "passed-normal-unload-and-reload",
+        "no_force_loaded_chunks": true,
+        "unloaded_confirmed_utc": "17:45:24",
+        "both_in_nether_confirmed": true
+      }
+    ],
+    "normal_lifecycle": {
+      "result": "passed",
+      "arena_unloaded_confirmed_utc": "2026-10-20T17:45:24Z",
+      "after_return_utc": "2026-10-20T17:45:59Z",
+      "queried_values_match": true,
+      "he_and_water_transfer_after_reload": "both directions successful; final20000000HE and18000mB preserved",
+      "no_force_loading": true
+    },
+    "overlap_proof": {
+      "start_utc": "2026-10-20T17:36:46Z",
+      "end_utc": "2026-10-20T17:46:54Z",
+      "seconds": 608,
+      "both_online_at_end": true,
+      "no_disconnect_in_interval": true
+    },
+    "server_run_completed": {
+      "utc": "2026-10-20T17:34:46.171511+00:00",
+      "command": [
+        "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Dterminal.jline=false",
+        "-Dterminal.ansi=false",
+        "-XX:ActiveProcessorCount=2",
+        "-Xms256M",
+        "-Xmx1600M",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/hbm-check-weapons/server-47.4.23",
+      "jar": "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+      "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+      "forge": "47.4.23",
+      "bind": "127.0.0.1:54921",
+      "transcript": "/workspace/hbm-check-weapons/server-47.4.23/weapons-runtime-final.log",
+      "world": "integration-test-world",
+      "eula": "accepted-for-isolated-test",
+      "done": true,
+      "error_lines": [
+        "[17:35:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "command_failure_lines": [],
+      "save_confirmed": true,
+      "startup_seconds": 59.159,
+      "exit_code": 0,
+      "duration_seconds": 733.6,
+      "environment_error_lines": [
+        "[17:35:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "unexpected_error_lines": [],
+      "passed_start_save_stop": true
+    },
+    "persistence": {
+      "nine_queries_match": true,
+      "stages": [
+        "before normal unload",
+        "after normal reload",
+        "after production restart and both clients reconnected"
+      ],
+      "snapshots_file": "/workspace/hbm-check-weapons/persistence-snapshots.json"
+    }
+  },
+  "persistence_snapshots": {
+    "W01_BEFORE_UNLOAD": [
+      "1024, 100, 0 has the following block data: 123456L",
+      "1031, 100, 0 has the following block data: 20000000L",
+      "1016, 100, 8 has the following block data: 18000",
+      "1024, 100, 16 has the following block data: [{Slot: 0, id: \"hbm_m:missile_chip\", Count: 1b}, {Slot: 1, id: \"hbm_m:warhead_generic_small\", Count: 1b}, {Slot: 2, id: \"hbm_m:missile_fuselage\", Count: 1b}, {Slot: 4, id: \"hbm_m:thruster_small\", Count: 1b}, {Slot: 5, id: \"hbm_m:missile_micro\", Count: 1b}]",
+      "1032, 100, 16 has the following block data: 1b",
+      "1040, 100, 16 has the following block data: 1b",
+      "1048, 100, 16 has the following block data: 0",
+      "1027, 100, 8 has the following block data: 0.0d",
+      "HBMClientOne has the following entity data: {id: \"hbm_m:multi_detonator\", Count: 1b, tag: {ActivePoint: 3, Points: [{X: 1044, Y: 100, Z: 8, HasTarget: 1b, Dimension: \"minecraft:overworld\", Name: \"Point 1\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"Point 4\"}]}}"
+    ],
+    "W01_AFTER_NORMAL_RELOAD": [
+      "1024, 100, 0 has the following block data: 123456L",
+      "1031, 100, 0 has the following block data: 20000000L",
+      "1016, 100, 8 has the following block data: 18000",
+      "1024, 100, 16 has the following block data: [{Slot: 0, id: \"hbm_m:missile_chip\", Count: 1b}, {Slot: 1, id: \"hbm_m:warhead_generic_small\", Count: 1b}, {Slot: 2, id: \"hbm_m:missile_fuselage\", Count: 1b}, {Slot: 4, id: \"hbm_m:thruster_small\", Count: 1b}, {Slot: 5, id: \"hbm_m:missile_micro\", Count: 1b}]",
+      "1032, 100, 16 has the following block data: 1b",
+      "1040, 100, 16 has the following block data: 1b",
+      "1048, 100, 16 has the following block data: 0",
+      "1027, 100, 8 has the following block data: 0.0d",
+      "HBMClientOne has the following entity data: {id: \"hbm_m:multi_detonator\", Count: 1b, tag: {ActivePoint: 3, Points: [{X: 1044, Y: 100, Z: 8, HasTarget: 1b, Dimension: \"minecraft:overworld\", Name: \"Point 1\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"Point 4\"}]}}"
+    ],
+    "W01_AFTER_RESTART": [
+      "1024, 100, 0 has the following block data: 123456L",
+      "1031, 100, 0 has the following block data: 20000000L",
+      "1016, 100, 8 has the following block data: 18000",
+      "1024, 100, 16 has the following block data: [{Slot: 0, id: \"hbm_m:missile_chip\", Count: 1b}, {Slot: 1, id: \"hbm_m:warhead_generic_small\", Count: 1b}, {Slot: 2, id: \"hbm_m:missile_fuselage\", Count: 1b}, {Slot: 4, id: \"hbm_m:thruster_small\", Count: 1b}, {Slot: 5, id: \"hbm_m:missile_micro\", Count: 1b}]",
+      "1032, 100, 16 has the following block data: 1b",
+      "1040, 100, 16 has the following block data: 1b",
+      "1048, 100, 16 has the following block data: 0",
+      "1027, 100, 8 has the following block data: 0.0d",
+      "HBMClientOne has the following entity data: {id: \"hbm_m:multi_detonator\", Count: 1b, tag: {ActivePoint: 3, Points: [{X: 1044, Y: 100, Z: 8, HasTarget: 1b, Dimension: \"minecraft:overworld\", Name: \"Point 1\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"Point 4\"}]}}"
+    ],
+    "W01_SINGLEPLAYER_STATE": [
+      "1024, 100, 0 has the following block data: 123456L",
+      "1031, 100, 0 has the following block data: 20000000L",
+      "1016, 100, 8 has the following block data: 18000",
+      "1024, 100, 16 has the following block data: [{Slot: 0, id: \"hbm_m:missile_chip\", Count: 1b}, {Slot: 1, id: \"hbm_m:warhead_generic_small\", Count: 1b}, {Slot: 2, id: \"hbm_m:missile_fuselage\", Count: 1b}, {Slot: 4, id: \"hbm_m:thruster_small\", Count: 1b}, {Slot: 5, id: \"hbm_m:missile_micro\", Count: 1b}]",
+      "1032, 100, 16 has the following block data: 1b",
+      "1040, 100, 16 has the following block data: 1b",
+      "1048, 100, 16 has the following block data: 0",
+      "1027, 100, 8 has the following block data: 0.0d",
+      "HBMClientOne has the following entity data: {id: \"hbm_m:multi_detonator\", Count: 1b, tag: {ActivePoint: 3, Points: [{X: 1044, Y: 100, Z: 8, HasTarget: 1b, Dimension: \"minecraft:overworld\", Name: \"Point 1\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"\"}, {X: 0, Y: 0, Z: 0, HasTarget: 0b, Name: \"Point 4\"}]}}"
+    ]
+  },
+  "client_log_review": {
+    "client-one-final": {
+      "total_error_fatal_lines": 74,
+      "categories": {
+        "offline authentication services": 1,
+        "invalid upstream resource paths": 68,
+        "missing models/textures": 2,
+        "unsupported option from shared launcher": 1,
+        "nuke_prototype model failures": 2
+      },
+      "crash_reports": []
+    },
+    "client-two-final": {
+      "total_error_fatal_lines": 74,
+      "categories": {
+        "offline authentication services": 1,
+        "invalid upstream resource paths": 68,
+        "missing models/textures": 2,
+        "unsupported option from shared launcher": 1,
+        "nuke_prototype model failures": 2
+      },
+      "crash_reports": []
+    }
+  },
+  "singleplayer_copy": {
+    "source": "/workspace/hbm-check-weapons/server-47.4.23/integration-test-world",
+    "target": "/workspace/hbm-check-weapons/client-one-final/saves/WeaponsCopy",
+    "source_stopped_cleanly": true,
+    "files_identical_before_test_fixture_changes": 54,
+    "manifest_sha256": "dc25e54e82999f36cdf8b6a639a735225eeb546710a71d295aefcae355274770",
+    "copy_only_changes": {
+      "level.dat": "allowCommands=1, LevelName=WeaponsCopy for isolated command queries; no source world changes"
+    },
+    "production_jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "runtime_result": "All9 live data queries match before unload, after normal reload and after production restart; integrated server actually loaded WeaponsCopy at17:50:23 and queries17:51:14..17:52:14UTC.",
+    "saved_cleanly_utc": "2026-10-20T17:53:22Z"
+  },
+  "server_runtime_sessions": [
+    {
+      "utc": "2026-10-20T17:34:46.171511+00:00",
+      "command": [
+        "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Dterminal.jline=false",
+        "-Dterminal.ansi=false",
+        "-XX:ActiveProcessorCount=2",
+        "-Xms256M",
+        "-Xmx1600M",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/hbm-check-weapons/server-47.4.23",
+      "jar": "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+      "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+      "forge": "47.4.23",
+      "bind": "127.0.0.1:54921",
+      "transcript": "/workspace/hbm-check-weapons/server-47.4.23/weapons-runtime-final.log",
+      "world": "integration-test-world",
+      "eula": "accepted-for-isolated-test",
+      "done": true,
+      "error_lines": [
+        "[17:35:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "command_failure_lines": [],
+      "save_confirmed": true,
+      "startup_seconds": 59.159,
+      "exit_code": 0,
+      "duration_seconds": 733.6,
+      "environment_error_lines": [
+        "[17:35:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "unexpected_error_lines": [],
+      "passed_start_save_stop": true
+    },
+    {
+      "utc": "2026-10-20T17:47:16.647884+00:00",
+      "command": [
+        "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Dterminal.jline=false",
+        "-Dterminal.ansi=false",
+        "-XX:ActiveProcessorCount=2",
+        "-Xms256M",
+        "-Xmx1600M",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/hbm-check-weapons/server-47.4.23",
+      "jar": "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+      "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+      "forge": "47.4.23",
+      "bind": "127.0.0.1:54921",
+      "transcript": "/workspace/hbm-check-weapons/server-47.4.23/weapons-persistence-restart.log",
+      "world": "integration-test-world",
+      "eula": "accepted-for-isolated-test",
+      "done": true,
+      "error_lines": [
+        "[17:47:40] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "command_failure_lines": [],
+      "save_confirmed": true,
+      "startup_seconds": 48.96,
+      "exit_code": 0,
+      "duration_seconds": 125.732,
+      "environment_error_lines": [
+        "[17:47:40] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "unexpected_error_lines": [],
+      "passed_start_save_stop": true
+    }
+  ],
+  "client_launch_records": [
+    {
+      "cwd": "/workspace/hbm-check-weapons/client-one-final",
+      "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+      "forge": "47.4.23",
+      "username": "HBMClientOne",
+      "server": "127.0.0.1:54921",
+      "display": ":99",
+      "offline_test_only": true,
+      "utc": "2026-10-20T17:35:03.234929+00:00",
+      "exit_code": 0,
+      "duration_seconds": 1129.906,
+      "expanded_command_evidence": "External launch.json retained and hashed in runtime_evidence_manifest; includes verified Forge classpath,Java17/proxy/truststore arguments.",
+      "launcher_command": [
+        "python3",
+        "tools/modernized_client.py",
+        "launch",
+        "/workspace/hbm-check-weapons/client-install",
+        "/workspace/hbm-check-weapons/client-one-final",
+        "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+        "--username",
+        "HBMClientOne",
+        "--server",
+        "127.0.0.1:54921",
+        "--java17-home",
+        "/workspace/toolchains/jdk-17.0.20.1+1",
+        "--trust-store",
+        "/etc/ssl/certs/java/cacerts"
+      ]
+    },
+    {
+      "cwd": "/workspace/hbm-check-weapons/client-two-final",
+      "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+      "forge": "47.4.23",
+      "username": "HBMClientTwo",
+      "server": "127.0.0.1:54921",
+      "display": ":100",
+      "offline_test_only": true,
+      "utc": "2026-10-20T17:35:03.124430+00:00",
+      "exit_code": 0,
+      "duration_seconds": 1099.005,
+      "expanded_command_evidence": "External launch.json retained and hashed in runtime_evidence_manifest; includes verified Forge classpath,Java17/proxy/truststore arguments.",
+      "launcher_command": [
+        "python3",
+        "tools/modernized_client.py",
+        "launch",
+        "/workspace/hbm-check-weapons/client-install",
+        "/workspace/hbm-check-weapons/client-two-final",
+        "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+        "--username",
+        "HBMClientTwo",
+        "--server",
+        "127.0.0.1:54921",
+        "--java17-home",
+        "/workspace/toolchains/jdk-17.0.20.1+1",
+        "--trust-store",
+        "/etc/ssl/certs/java/cacerts"
+      ]
+    }
+  ],
+  "runtime_jar_hashes": {
+    "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "/workspace/hbm-check-weapons/client-one-final/mods/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "/workspace/hbm-check-weapons/client-two-final/mods/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "/workspace/hbm-check-weapons/server-47.4.23/mods/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e"
+  },
+  "runtime_environment": {
+    "os": "Linux amd64",
+    "isolated_loopback": "127.0.0.1:54921",
+    "seed": 42012001,
+    "server_view_distance": 4,
+    "server_simulation_distance": 4,
+    "runtime_jdk": "Temurin17.0.20.1+1",
+    "client_rendering": "Xorg dummy1280x720,854x480 windows,softwareGL llvmpipe,maxFps20,GUI scale2",
+    "limits": "2 active processors per JVM,server heap1600MiB,each client1800MiB; initial chunk loads/dimension changes produced retained overload/moved-too-quickly warnings. No TPS/performance guarantee."
+  },
+  "runtime_evidence_manifest": {
+    "/workspace/hbm-check-weapons/client-actions.jsonl": {
+      "sha256": "5736531ed673261d7c980cbf0ac1b965de089d2220ba6fc8abbd1b697cb84d1a",
+      "bytes": 32225
+    },
+    "/workspace/hbm-check-weapons/runtime-notes.json": {
+      "sha256": "78b0cd32a8f5b3f1b9b60b672aa523813e4e9fac7c0beef195929ed1b59f0273",
+      "bytes": 6121
+    },
+    "/workspace/hbm-check-weapons/persistence-snapshots.json": {
+      "sha256": "8988e5b4f3424cf118ec6cac03bf4f293d580a96328972b146ba545c4976f3d9",
+      "bytes": 4442
+    },
+    "/workspace/hbm-check-weapons/singleplayer-copy.json": {
+      "sha256": "5a9adead86269e5f027c7fdb65e3e50ad23a98157b1b724785beaa5c87a8cce8",
+      "bytes": 577
+    },
+    "/workspace/hbm-check-weapons/singleplayer-copy-manifest.json": {
+      "sha256": "dc25e54e82999f36cdf8b6a639a735225eeb546710a71d295aefcae355274770",
+      "bytes": 5347
+    },
+    "/workspace/hbm-check-weapons/client-log-review.json": {
+      "sha256": "8c038d21f92ed790a26548d25a19d3f0c8c7f4861a350a6c12b0f1c513e45cf9",
+      "bytes": 669
+    },
+    "/workspace/hbm-check-weapons/runtime-jar-hashes.json": {
+      "sha256": "0330bf7f6c64332b3c21d9f0e6778546838970a7eb884132a2cdc1638589064b",
+      "bytes": 656
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-multiplayer.log": {
+      "sha256": "1f3bbb192a90843e6b2dafc5de36deb9b65451b12e8f55ef00d26fa883aad053",
+      "bytes": 17782
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-multiplayer-resume.log": {
+      "sha256": "0e6026cd7bcf0ea4a13fe7d6bf6af1b1038ddb1a5cd866850dc983002b923760",
+      "bytes": 23120
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-runtime-final.log": {
+      "sha256": "a0450046d1b8a15a27a40b9fbdefce2ef38ade4b058a48a259746f6c6ee6c1a1",
+      "bytes": 203914
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-runtime-final.json": {
+      "sha256": "25ed54f24f6d5618f5e4f1955082206809b56a40d5942b58b0d43cbbabdd156f",
+      "bytes": 1490
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-persistence-restart.log": {
+      "sha256": "162e4fe1a1725cc957983ce9a245135239c5caa201d681ffb7f3b8fdbb51e0fc",
+      "bytes": 22069
+    },
+    "/workspace/hbm-check-weapons/server-47.4.23/weapons-persistence-restart.json": {
+      "sha256": "75943fb1d502f778be4b8afb0c4307c866192f65315dd367c904c468e42791b2",
+      "bytes": 1497
+    },
+    "/workspace/hbm-check-weapons/client-one-final/console.log": {
+      "sha256": "c199306729ec206ad09e81ce6ed000f0b3553ea4b7dd2730838d7115025b8b75",
+      "bytes": 546410
+    },
+    "/workspace/hbm-check-weapons/client-one-final/logs/latest.log": {
+      "sha256": "9ebcf950544fe5993f1bc9e2e374d6a0aff90f13ec9b3f473db7e2bbea6b7128",
+      "bytes": 633194
+    },
+    "/workspace/hbm-check-weapons/client-one-final/launch.json": {
+      "sha256": "ed05646964817349325c391371e6452cce98a074510a867188e341fb71fb8265",
+      "bytes": 12808
+    },
+    "/workspace/hbm-check-weapons/client-two-final/console.log": {
+      "sha256": "932c4e525b5d0bf648363600122b0dbdf062f18648cc1b3e47cc77a33849e437",
+      "bytes": 502884
+    },
+    "/workspace/hbm-check-weapons/client-two-final/logs/latest.log": {
+      "sha256": "4ea1ccd8b11f7d7c6367aa7d52ccbe68c0182f323e950c726e1380bd6c4237a6",
+      "bytes": 580066
+    },
+    "/workspace/hbm-check-weapons/client-two-final/launch.json": {
+      "sha256": "927951c0209a89ca5ca89504af708dbfb4a9104e257b810a0cc341d2bcc95d55",
+      "bytes": 12809
+    }
+  },
+  "screenshot_metadata": [
+    {
+      "name": "after-reload-battery-two.png",
+      "sha256": "68e422bae034ac3dd3e1851945a91ff159c7f20127c21afd87473440198c4b6c",
+      "bytes": 74192
+    },
+    {
+      "name": "after-reload-battery.png",
+      "sha256": "2a6c63532c09df75d2bff6f321033aba04d9a2f17490b305f12e2423a4015a2f",
+      "bytes": 69217
+    },
+    {
+      "name": "battery-one-open.png",
+      "sha256": "521f399af3091d728dd0466b417af6f7ead1f2d40da93ef34585a79da5a63512",
+      "bytes": 67713
+    },
+    {
+      "name": "battery-shared-insert.png",
+      "sha256": "c17a7839e9ce9c4346c42ef40c85431f298ed1a2597ebceb78ed640c4d81ba5c",
+      "bytes": 71491
+    },
+    {
+      "name": "battery-shared-retrieve.png",
+      "sha256": "23604a72c9f1ccf3fea571d6d254b9d587ca920e956e1192566cc65c94ad3dc9",
+      "bytes": 68918
+    },
+    {
+      "name": "battery-two-open.png",
+      "sha256": "5e3154074fce6b5955619e3b5dd6b212bb7ec327a56ebc1d602ab175c2797e2d",
+      "bytes": 75474
+    },
+    {
+      "name": "before-singleplayer.png",
+      "sha256": "f92eac4aff264fc4bbfea272221f8da25f0ad174f404f06029c2591682eb6948",
+      "bytes": 45638
+    },
+    {
+      "name": "copy-saved-title.png",
+      "sha256": "e7f44f7f8c92db8f61724b8c3236b7ec57f97d67046ce3c2838feeeee93ae8e3",
+      "bytes": 390021
+    },
+    {
+      "name": "dimension-nether-one.png",
+      "sha256": "eb9324a228dc56d8d16237bbd677f88fcb983b75d68e554cc8e6b32f43d83942",
+      "bytes": 11598
+    },
+    {
+      "name": "dimension-nether-two.png",
+      "sha256": "1d3b677efa60deae6526bf6ab8d3e1dd7f77c5391b5502e8a278fbb16eb00995",
+      "bytes": 11407
+    },
+    {
+      "name": "direct-connect-form.png",
+      "sha256": "ca52494b2d18cd406142c98c39eb10c54cc42bdb2284910c5a29ad98634c6df8",
+      "bytes": 20015
+    },
+    {
+      "name": "final-arrival.png",
+      "sha256": "20a61c779ecfd9c233b62688e4057d85f7078d27a029815146ef453d2fa0f550",
+      "bytes": 7855
+    },
+    {
+      "name": "final-loaded.png",
+      "sha256": "53da86893107cc7273791f507446171b4d446c147d541aeb6a390aa4057871c5",
+      "bytes": 15930
+    },
+    {
+      "name": "grenade-after.png",
+      "sha256": "f84965d567c3e8d2d892122cc1b6cf546ee10747e326f350a0ce5c60c09d6b20",
+      "bytes": 188969
+    },
+    {
+      "name": "grenade-observer.png",
+      "sha256": "72eeb313e6f964a4a08eb9e59ad07302112b7ae6b6174baeaa3a0c532adbb65f",
+      "bytes": 119075
+    },
+    {
+      "name": "main-menu-for-copy.png",
+      "sha256": "b4634376eecdb616365dc65ccd2e1182f04405ee116b2d48c9d6f5c6f36c7217",
+      "bytes": 373943
+    },
+    {
+      "name": "missile-before-two.png",
+      "sha256": "be9c61058d17112a2ad06b253f5569febf6e0d27746ad923db3982787f52121e",
+      "bytes": 52263
+    },
+    {
+      "name": "missile-before.png",
+      "sha256": "08071409b2c41e883d72a7e707463cabe874867d9adf2302df56035197675399",
+      "bytes": 42278
+    },
+    {
+      "name": "missile-built-one.png",
+      "sha256": "016a480f4f110403660699472e4671c8b0d6ffa4f86589db5178a5456824f6a1",
+      "bytes": 45085
+    },
+    {
+      "name": "missile-built-two.png",
+      "sha256": "676876975cf70e0e57978aa32c23341bc45aa423cc26201cb1392f9967aced6a",
+      "bytes": 54081
+    },
+    {
+      "name": "missile-menu-confirm.png",
+      "sha256": "f60b1284dc113acc12e75546e51459758ed759f79a83d9539a6a151c8812dbf8",
+      "bytes": 44752
+    },
+    {
+      "name": "multi-after.png",
+      "sha256": "4069e60a2df87aede49102a75cd3294693ff4e76567b83668e4db727bfd3e8c9",
+      "bytes": 86933
+    },
+    {
+      "name": "multi-detonated.png",
+      "sha256": "34287e6e7577c60954738a3a5a030b9b52b3d6f9c56aa8f241cf9309cdcf5662",
+      "bytes": 179051
+    },
+    {
+      "name": "multi-linked-gui.png",
+      "sha256": "58fdbf754d954d010d346d3c92780cd7cf7024cbe643b3bfbcd872e6a671e356",
+      "bytes": 90932
+    },
+    {
+      "name": "multi-success.png",
+      "sha256": "2e0fffdb7279a0ec6ac4c9bd88abf97aadf93fb9d89b6a7bf166b5f7796cc773",
+      "bytes": 86944
+    },
+    {
+      "name": "one-arena-setup.png",
+      "sha256": "a5c7cc7c5f614cb5af5631f4d9898152021c140657a642ef4997b88f3d18e673",
+      "bytes": 110723
+    },
+    {
+      "name": "one-arrival.png",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "name": "one-resume-arrival.png",
+      "sha256": "f9e0f238fef1ced68952c0827ea050dc336cb839ac0595c933a8161810b4b232",
+      "bytes": 202719
+    },
+    {
+      "name": "radar-open.png",
+      "sha256": "a5ab83dee0454d5e3a584a131faafae634a3ec881f76afa899b4372ec669fd89",
+      "bytes": 48758
+    },
+    {
+      "name": "radar-players-on-shared.png",
+      "sha256": "cd680b4a2d72ae58778910636812c87c2fd1cd03a171c5a693b85d1f83cd65d7",
+      "bytes": 51734
+    },
+    {
+      "name": "radar-remote-change-observed.png",
+      "sha256": "e587be16c115afb5b74b7d0291ad9ecf26350b5d71fa7e878b91bdba17489cad",
+      "bytes": 49663
+    },
+    {
+      "name": "radar-remote-screen-open.png",
+      "sha256": "0fde71e416c4f6e9294ac7bda29f0441497978417515a753bc1aa384b673f475",
+      "bytes": 110965
+    },
+    {
+      "name": "rbmk-live-two.png",
+      "sha256": "8f30e5f93e23bfe32bc5e46ef86982d0b308de8b57e664577cc103485112cd2d",
+      "bytes": 37285
+    },
+    {
+      "name": "rbmk-removed-and-second-client.png",
+      "sha256": "692a239805be8e72d54ca6c875cd155978c32fe0d0da40223e2c8c3a50195625",
+      "bytes": 29614
+    },
+    {
+      "name": "rbmk-two-clients.png",
+      "sha256": "7b0320684454965c242cbaa4162eddd0278e9f3f1193d69e82bdd119bf5c7107",
+      "bytes": 29549
+    },
+    {
+      "name": "reconnect-screen.png",
+      "sha256": "13d07fb3fb6f04b792eba99d15e7f64981e0dad8bff65e1bee7861a53e9016e5",
+      "bytes": 15566
+    },
+    {
+      "name": "reconnected-two.png",
+      "sha256": "6b9e76de5c3ded951600a5a46ac4fe18d0405f2a352e94bf232dc761047bb871",
+      "bytes": 119732
+    },
+    {
+      "name": "restart-battery-one.png",
+      "sha256": "995e54f22c62b7f84f59915c7a57b335b942b770e526c1b227e86b7b6e64f634",
+      "bytes": 72348
+    },
+    {
+      "name": "restart-battery-two.png",
+      "sha256": "8ded79bab280b5d366a50cbe61723ba49050f1c9e1417b1b760ee44995c08239",
+      "bytes": 78337
+    },
+    {
+      "name": "server-list-after-stop.png",
+      "sha256": "b12fa49ca96e81492e4c2b3eacbd1c183b4da7d25c535abcc9efce0ba48f0d77",
+      "bytes": 22422
+    },
+    {
+      "name": "singleplayer-copy-running.png",
+      "sha256": "4d600645d0d81c6439f4c04297e9b1c3f16199cda55fdcd269ecb200d8afe7d2",
+      "bytes": 113514
+    },
+    {
+      "name": "singleplayer-loading.png",
+      "sha256": "018da5c52c5aa8863b60ef4909521174c50b0359587134cbf93ba3e2497524eb",
+      "bytes": 11445
+    },
+    {
+      "name": "singleplayer-save-menu.png",
+      "sha256": "af5eaa39a31c5852a4b65cfac9d48cd6fee39123d0e555baeac79f5dcb7a432d",
+      "bytes": 89017
+    },
+    {
+      "name": "singleplayer-state-query.png",
+      "sha256": "081618fcc0455a00a602741997c695afb27579ce85616de980e7fda1fafb6e1e",
+      "bytes": 125803
+    },
+    {
+      "name": "soyuz-cargo-shared.png",
+      "sha256": "6eb6b3cead56bf725e3f69d627c70a38dd965fdc88589bce6c94650ce447c9a6",
+      "bytes": 107681
+    },
+    {
+      "name": "soyuz-open.png",
+      "sha256": "89ea13d77ea695cf0168f749e2e791c07b2e33396f8318dca5125875ead2f4fb",
+      "bytes": 88263
+    },
+    {
+      "name": "soyuz-start-empty.png",
+      "sha256": "d996312ae19ed8bca649160cc0b21976b49f3c9e30c7eca36160d7c2b7fd79b1",
+      "bytes": 83396
+    },
+    {
+      "name": "stop-final-screen.png",
+      "sha256": "a9907cbe93f8a28aeb66ebf90380f5a6e53f715abc655850cae0de99c49d7906",
+      "bytes": 374022
+    },
+    {
+      "name": "tank-18000-shared.png",
+      "sha256": "fde0305b816bf6403a483186b1f3cb6f88e6c333f01691042c659be5c93aad09",
+      "bytes": 54737
+    },
+    {
+      "name": "tank-export-mode.png",
+      "sha256": "dc47a3639bd7d93692599359dd1f6aa2f9a852f37ebf031f3220d3c972203635",
+      "bytes": 55081
+    },
+    {
+      "name": "tank-open.png",
+      "sha256": "c0c90e8fc643e069f807fce4bcf3d654156924c6f55f5a9208a159df1305e114",
+      "bytes": 51256
+    },
+    {
+      "name": "ten-minute-one.png",
+      "sha256": "8120cdbfe5b99f2de58fd3bf77bfe0451bdd3d33f085a6aeabf0ffca610d7b0c",
+      "bytes": 111033
+    },
+    {
+      "name": "ten-minute-two.png",
+      "sha256": "316ce8a7bed0641ac3a1d0ef2335bec0a5d384264aa2d32e6f0d9b64a31705a1",
+      "bytes": 125070
+    },
+    {
+      "name": "turret-off-shared.png",
+      "sha256": "025b5a21c6f1339c2e5002c2676237c38ea35aa04e1743ae412ac45e5e9c5ac8",
+      "bytes": 51079
+    },
+    {
+      "name": "turret-on-shared.png",
+      "sha256": "2b9ad2cf44868fe5186ea2b9ffa3f9925a284a691e8fe5609620465a38f98776",
+      "bytes": 25726
+    },
+    {
+      "name": "turret-open.png",
+      "sha256": "5cba7be3c748bd5e3e5bc7665358c98a36c23c02a6ff1b241550e8098574daf6",
+      "bytes": 28127
+    },
+    {
+      "name": "two-resume-arrival.png",
+      "sha256": "403758d0f92aa8086b00155d80048360711f638f7ac4894184b36d89792c7b61",
+      "bytes": 153598
+    },
+    {
+      "name": "world-copy-select.png",
+      "sha256": "1601019c7d794c9592ac3e6e224beb7f7eaaf0b38479011d9f0d0f842bb8aabe",
+      "bytes": 30768
+    }
+  ],
+  "screenshot_distribution": "Metadata only; all images remain external and are not cleared for upload."
 }

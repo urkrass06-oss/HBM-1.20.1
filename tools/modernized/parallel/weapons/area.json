@@ -150,7 +150,8 @@
     "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
     "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
     "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
-    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8"
+    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8",
+    "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19"
   },
   "file_owners": {
     "src/main/java/com/hbm_m/network/DetonateAllPacket.java": "W / Agent B",
@@ -163,5 +164,7 @@
     "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java": "W / Agent B",
     "src/main/java/com/hbm_m/network/WeaponPacketAccess.java": "W / Agent B",
     "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "W / Agent B"
-  }
+  },
+  "runtime_tested_delivery_commit": "494da12957638953e854cde8d4a8276d27b74d87",
+  "runtime_request": "requests/R-02-runtime-ui.json"
 }

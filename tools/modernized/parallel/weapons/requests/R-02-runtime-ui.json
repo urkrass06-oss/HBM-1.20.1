@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "requester": "W / Agent B",
+  "owner": "R",
+  "task": "R-02",
+  "tested_delivery_commit": "494da12957638953e854cde8d4a8276d27b74d87",
+  "production_jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+  "profile": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.23",
+    "window": [
+      854,
+      480
+    ],
+    "gui_scale": 2
+  },
+  "finding": {
+    "class": "src/main/java/com/hbm_m/inventory/gui/GUIMultiDetonator.java",
+    "reproduction": "Hold a genuinely linked multi_detonator and press R. At logical height 240, Detonate All occupies y189..209 and overlaps Point 4 button y175..195 and its name field y200..218. The earlier widgets consume clicks in the overlaps.",
+    "observed": "Physical root clicks at (640,518) focused the fourth name field, (640,507) selected Point 4; click (640,512) in the narrow gap performed the real detonation. No production code change was needed for server-side W-01 validation.",
+    "requested": "R adjusts layout or scrolling so each point field and Detonate All are separately accessible at supported GUI scales. Preserve the existing empty DetonateAllPacket contract and held server item authorization.",
+    "acceptance": "At 854x480 / scale2 and a larger window, all four point controls and Detonate All can be clicked without activating another widget; held-item detonation still succeeds once."
+  },
+  "scope": "No screen, client renderer or shared registration modified by W. Textual reproduction only; unreviewed screenshots/assets remain external.",
+  "status": "pending-R",
+  "additional_observations": [
+    {
+      "owner": "R",
+      "file": "tools/modernized_client.py",
+      "finding": "Launcher writes simulationDistance:2; both Minecraft1.20.1 clients log ERROR parsing Simulation Distance, allowed range[5:33]. No W changes to central launcher.",
+      "request": "Use a supported isolated-test client option value and preserve separate server simulation-distance fixture."
+    },
+    {
+      "owner": "R",
+      "scope": "upstream assets/model loader",
+      "finding": "Both production clients retain invalid mixed-case trophy resource paths and missing nuke_prototype model / ore_acidizer texture errors at initial load and resource reload; no client crash observed.",
+      "request": "Review the existing asset/model defects separately with per-file rights checks; W uploaded no asset bytes."
+    }
+  ]
+}

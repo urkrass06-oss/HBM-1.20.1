@@ -27,8 +27,10 @@ TASKS = ("tasks", "javaToolchains", "runData", "build", "sourcesJar", "runServer
 
 def external(path):
     result = Path(path).expanduser().resolve()
-    if result == REPO or REPO in result.parents:
-        raise ValueError("The checkout, cache and logs must be outside this repository")
+    worktrees = subprocess.check_output(["git", "-C", str(REPO), "worktree", "list", "--porcelain"], text=True)
+    roots = [Path(row.removeprefix("worktree ")).resolve() for row in worktrees.splitlines() if row.startswith("worktree ")]
+    if any(result == root or root in result.parents for root in roots):
+        raise ValueError("The checkout, cache and logs must be outside every public worktree")
     return result
 
 

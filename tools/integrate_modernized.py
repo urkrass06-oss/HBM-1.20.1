@@ -12,8 +12,10 @@ import shutil
 import subprocess
 import struct
 import sys
+import tempfile
 
 import modernized_build as base
+import modernized_areas as areas
 
 REPO = Path(__file__).resolve().parents[1]
 PATCH = REPO / "tools/modernized/phase4-integration.patch"
@@ -93,7 +95,7 @@ def install_overlay(checkout):
     return records
 
 
-def provenance(checkout, records, phase5=False):
+def provenance(checkout, records, phase5=False, deliveries=()):
     tree = subprocess.check_output(["git", "-C", str(checkout), "ls-tree", "-r", "-z", "HEAD"])
     files = []
     # Git object bytes, not generated/modified working files, establish source identity.
@@ -130,6 +132,15 @@ def provenance(checkout, records, phase5=False):
     if phase5:
         manifest["phase5_patch_sha256"] = sha(PHASE5_PATCH)
         manifest["profile"] = "phase5-multiplayer"
+    manifest["deliveries"] = list(deliveries)
+    # Include modified and untracked files too. Upstream object hashes above are
+    # provenance, not a claim that the patched working tree is unchanged/cleared.
+    manifest["working_files"] = [
+        {"path": p.relative_to(checkout).as_posix(), "sha256": sha(p),
+         "publication_status": "not-cleared-external-only"}
+        for p in sorted(checkout.rglob("*")) if p.is_file()
+        and ".git" not in p.relative_to(checkout).parts
+        and p.relative_to(checkout).as_posix() != "integration/provenance.json"]
     (checkout / "integration/provenance.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
 
@@ -142,28 +153,59 @@ def prepare_game_test_directory(checkout):
         "server-ip=127.0.0.1\nonline-mode=false\nenable-rcon=false\nenable-query=false\n")
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("checkout", help="New directory outside the target repository")
-    parser.add_argument("--phase5", action="store_true", help="Apply multiplayer fixes and additional GameTests; keep Forge 47.4.20 build pin")
-    args = parser.parse_args()
-    checkout = base.external(args.checkout)
-    base.prepare(args)
+def populate(checkout, phase5, deliveries):
+    base.prepare(argparse.Namespace(checkout=checkout))
     subprocess.run(["git", "-C", str(checkout), "apply", "--check", str(PATCH)], check=True)
     subprocess.run(["git", "-C", str(checkout), "apply", str(PATCH)], check=True)
-    if args.phase5:
+    if phase5:
         subprocess.run(["git", "-C", str(checkout), "apply", "--check", str(PHASE5_PATCH)], check=True)
         subprocess.run(["git", "-C", str(checkout), "apply", str(PHASE5_PATCH)], check=True)
     records = install_overlay(checkout)
-    if args.phase5:
+    if phase5:
         shutil.copytree(REPO / "tools/modernized/phase5-gametest", checkout / "integration/src/gametest/java", dirs_exist_ok=True)
         with (checkout / "integration/notices/CHANGES-AND-CREDITS.txt").open("a") as notice:
             notice.write("\nPhase-5 changes, 2026-10-20: bounded/authorized RBMK controls; live console\n"
                          "column synchronization; one energy-network budget per level tick;\n"
                          "nonnegative saturated Forge Energy values and HIGH-unit capacity check.\n"
                          "Additional isolated regression tests; runtime evaluation on Forge 47.4.23.\n")
-    provenance(checkout, records, args.phase5)
+    delivery_records = areas.apply(checkout, deliveries)
+    provenance(checkout, records, phase5, delivery_records)
     prepare_game_test_directory(checkout)
+
+
+def publish(checkout, builder):
+    """Never expose partial integration and never overwrite an existing target."""
+    if checkout.exists() or checkout.is_symlink():
+        raise ValueError("Destination already exists; choose a new external directory")
+    checkout.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".hbm-staging-", dir=checkout.parent) as directory:
+        staging = Path(directory) / "modernized"
+        builder(staging)
+        # mkdir is the exclusive reservation. Rename cannot replace an occupied
+        # directory; the failure path removes only an empty reservation.
+        checkout.mkdir()
+        try:
+            # On POSIX rename can replace an empty directory, not an occupied one.
+            staging.rename(checkout)
+        except BaseException:
+            checkout.rmdir()
+            raise
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("checkout", help="New directory outside the target repository")
+    parser.add_argument("--phase5", action="store_true", help="Apply multiplayer fixes and additional GameTests; keep Forge 47.4.20 build pin")
+    parser.add_argument("--delivery", action="append", default=[], metavar="AREA@COMMIT",
+                        help="Explicit immutable delivery, repeat for dependencies; requires --phase5")
+    args = parser.parse_args()
+    checkout = base.external(args.checkout)
+    if checkout.exists() or checkout.is_symlink():
+        raise ValueError("Destination already exists; choose a new external directory")
+    if args.delivery and not args.phase5:
+        raise ValueError("Area deliveries require the complete --phase5 basis")
+    deliveries = areas.load(REPO, args.delivery)
+    publish(checkout, lambda staging: populate(staging, args.phase5, deliveries))
     print(f"Integrated at {checkout}; source identities in integration/provenance.json")
     print("Evaluation only: no source/assets/JAR uploaded. Use modernized_build.py run next.")
 
@@ -171,6 +213,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except (ValueError, OSError, subprocess.CalledProcessError) as error:
+    except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as error:
         print(f"Integration failed: {error}", file=sys.stderr)
         sys.exit(1)

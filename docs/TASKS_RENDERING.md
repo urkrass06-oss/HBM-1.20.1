@@ -4,6 +4,13 @@ Gemeinsame Basis, Dateibesitz, Rechteprüfung und Gates: [PARALLEL_DEVELOPMENT.m
 
 ## Zuständigkeit und erste Lieferung
 
+Ausführungsbasis R-01/R-02: `997b15c9d60dd293e9c436663e90a95140ab13af`,
+Branch `port/rendering`. Reserviert: `tools/integrate_modernized.py`,
+`tools/modernized_areas.py`, `tools/modernized_build.py`, `tools/audit_modernized.py`,
+zugehörige eigene Werkzeugtests, `tools/modernized/parallel/policy.json`,
+Rendering-Lieferpfad, Integrationsworkflow und Buildbericht. Keine Änderung an
+den drei bisherigen Patches, den 14 GameTests oder der Root-Foundation.
+
 R besitzt sämtliche Client-/Screen-/Rendererdateien, zentrale Register, Ressourcenintegration, Build-/CI-/Patchloader und die serialisierte Integration. R schreibt keine fachliche Reaktorsimulation, Waffenlogik oder HE-/Fluidbasis. Zentrale Änderungen aus M/N/W-Requests sind kleine separate Commits mit Review des Fachbereichs. Renderingarbeit an denselben Dateien während solcher Übergaben serialisieren.
 
 **Zuerst R-01 und R-02:** Bereichslieferungen reproduzierbar einspielen und den Produktionsbuild explizit auf Forge 47.4.23 prüfen. Die vorhandene Integration hat bereits Forge-47.4.23-Runtime- und GameTest-Nachweise, ihr regulärer Produktionsbuild-Pin bleibt an der Basis 47.4.20. Keine Behauptung eines bereits erfolgten 47.4.23-Produktionsbuilds.

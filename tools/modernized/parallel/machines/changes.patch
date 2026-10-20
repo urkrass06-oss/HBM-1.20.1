@@ -1,0 +1,100 @@
+M-01 network lifecycle and pressure corrections, 2026-10-20.
+SPDX-License-Identifier: GPL-3.0-only
+Derived from the pinned Modernized sources; upstream and original HBM credits
+remain applicable. Exact file/context provenance and scope: rights.json.
+
+diff --git a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
+index 81eb35a..ca2caa4 100644
+--- a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
++++ b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
+@@ -447,9 +447,8 @@ public class EnergyNetwork {
+     public void removeNode(EnergyNode node) {
+         if (!nodes.remove(node)) return;
+         node.setNetwork(null);
+-        if (nodes.size() < 2) {
+-            for (EnergyNode remainingNode : nodes) remainingNode.setNetwork(null);
+-            nodes.clear();
++        // M-01, 2026-10-20: retain a live singleton so a later neighbor can join it.
++        if (nodes.isEmpty()) {
+             manager.removeNetwork(this);
+         } else {
+             verifyConnectivity();
+diff --git a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java b/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
+index db6798f..4b9ad44 100644
+--- a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
++++ b/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
+@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
+ public class WireBlockEntity extends BlockEntity implements IEnergyConnector {
+
+     //? if forge {
+-    private final LazyOptional<IEnergyConnector> hbmConnector = LazyOptional.of(() -> this);
++    private LazyOptional<IEnergyConnector> hbmConnector = LazyOptional.of(() -> this);
+      //?}
+
+     public WireBlockEntity(BlockPos pos, BlockState state) {
+@@ -72,6 +72,14 @@ public class WireBlockEntity extends BlockEntity implements IEnergyConnector {
+         hbmConnector.invalidate();
+     }
+
++    // M-01 lifecycle correction, 2026-10-20; upstream GPLv3 notices retained.
++    @Override
++    public void reviveCaps() {
++        super.reviveCaps();
++        hbmConnector.invalidate();
++        hbmConnector = LazyOptional.of(() -> this);
++    }
++
+     @Override
+     public void onChunkUnloaded() {
+         super.onChunkUnloaded();
+diff --git a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
+index 9b07138..09e8ca6 100644
+--- a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
+@@ -173,7 +173,8 @@ public class FluidValveBlockEntity extends BlockEntity implements IFluidPipeMK2
+     //? if forge {
+     @Override
+     public void onChunkUnloaded() {
+-        if (node != null) node.expired = true;
++        // M-01, 2026-10-20: release topology now rather than waiting for the reaper.
++        if (level instanceof ServerLevel sl) destroyCurrentNode(sl);
+         super.onChunkUnloaded();
+     }
+     //?}
+diff --git a/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java b/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
+index 518e1f5..9481b09 100644
+--- a/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
++++ b/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
+@@ -247,6 +247,8 @@ public class FluidTank implements Cloneable {
+             this.conformedFluid = fluid;
+         }
+         //? if forge {
++        // M-01, 2026-10-20: MK2 callers already match pressure; Forge containers do not.
++        if (pressure != 0) return fillInternal(fluid, amountMb);
+         return forgeStorage.fill(new FluidStack(fluid, amountMb), IFluidHandler.FluidAction.EXECUTE);
+         //?}
+         //? if fabric {
+@@ -275,8 +277,22 @@ public class FluidTank implements Cloneable {
+
+     public int fillInternal(Fluid fluid, int amountMb) {
+         if (amountMb <= 0 || fluid == Fluids.EMPTY || fluid == null) return 0;
++        if (pressure < 0 || pressure > com.hbm_m.api.fluids.IFluidUserMK2.HIGHEST_VALID_PRESSURE) return 0;
+         //? if forge {
+-        return forgeStorage.fill(new FluidStack(fluid, amountMb), IFluidHandler.FluidAction.EXECUTE);
++        // M-01, 2026-10-20: internal pressure-aware transfer bypasses only the ambient-pressure gate.
++        if (isFluidTypeExplicitlySet(conformedFluid)
++                && !VanillaFluidEquivalence.sameSubstance(conformedFluid, fluid)) return 0;
++        FluidStack stored = forgeStorage.getFluid();
++        FluidStack incoming = harmonizeForgeFillResource(stored, new FluidStack(fluid, amountMb));
++        if (!stored.isEmpty() && !stored.isFluidEqual(incoming)) return 0;
++        int accepted = Math.min(amountMb, Math.max(0, capacity - getFluidAmountMb()));
++        if (accepted == 0) return 0;
++        FluidStack next = stored.isEmpty() ? incoming.copy() : stored.copy();
++        next.setAmount(getFluidAmountMb() + accepted);
++        if (!isFluidTypeExplicitlySet(conformedFluid)) conformedFluid = fluid;
++        forgeStorage.setFluid(next);
++        onContentsChanged();
++        return accepted;
+         //?}
+         //? if fabric {
+         /*try (Transaction tx = Transaction.openOuter()) {

@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "area": "machines",
+  "owner": "M",
+  "task_ids": [
+    "M-01"
+  ],
+  "feature_ids": [
+    "NET-001",
+    "NET-002",
+    "NET-003",
+    "NET-004",
+    "NET-005",
+    "NET-006",
+    "BASE-005",
+    "BASE-008"
+  ],
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "original": {
+    "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+    "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d"
+  },
+  "modernized": {
+    "repository": "https://github.com/Raptor324/HBM-Modernized.git",
+    "commit": "0365cef5956016913095eeeb9366f26c601ca9a0"
+  },
+  "base_patches": {
+    "phase3_patch_sha256": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+    "phase4_patch_sha256": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+    "phase5_patch_sha256": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+  },
+  "base_overlays": [
+    {
+      "path": "integration/notices/ARCHITECTURY_LICENSE.md",
+      "sha256": "1171d2933e66dbe4720bfe0ab30d5a519409c96adffca4358bc86f94ca59c654"
+    },
+    {
+      "path": "integration/notices/CHANGES-AND-CREDITS.txt",
+      "sha256": "7190f92aeb4c7b49bb0dbeddc6306e653b439e1682ed9852dcd2508cfd0d1116"
+    },
+    {
+      "path": "integration/notices/LICENSE.LESSER.foundation",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    },
+    {
+      "path": "integration/notices/LICENSE.foundation",
+      "sha256": "605e9047a563c5c8396ffb18232aa4304ec56586aee537c45064c6fb425e44ad"
+    },
+    {
+      "path": "integration/notices/MIXINCONSTRAINTS_LICENSE.txt",
+      "sha256": "d1719cceec677ea0cac7ac126134881509c00627f14dd4b7b08eaa908498dab6"
+    },
+    {
+      "path": "integration/notices/MODERNIZED_GPL-3.0.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "integration/src/gametest/java/com/hbm/integration/ModernizedIntegrationTests.java",
+      "sha256": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301"
+    },
+    {
+      "path": "integration/src/gametest/java/com/hbm/integration/ModernizedSystemsTests.java",
+      "sha256": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d"
+    },
+    {
+      "path": "integration/src/gametest/resources/data/hbm_m/structures/empty.nbt",
+      "sha256": "6e64a736059b56f0e0c2b02885c899f2961f2f5467fae8b5d7bbcd53e8fb2ee9"
+    },
+    {
+      "path": "integration/src/main/java/com/hbm/HbmPort.java",
+      "sha256": "5823a9edd49ecf04e2dd8d3059b8d957ebc31cfc444b76fa0df906f82285a033"
+    },
+    {
+      "path": "integration/src/main/java/com/hbm/client/ClientSetup.java",
+      "sha256": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a"
+    },
+    {
+      "path": "integration/src/main/java/com/hbm/integration/PortPaintings.java",
+      "sha256": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7"
+    },
+    {
+      "path": "integration/src/main/java/com/hbm/registry/ModRegistries.java",
+      "sha256": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f"
+    }
+  ],
+  "reserved_external_files": [
+    "src/main/java/com/hbm_m/api/energy/EnergyNetworkManager.java",
+    "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
+    "src/main/java/com/hbm_m/api/energy/LongEnergyWrapper.java",
+    "src/main/java/com/hbm_m/api/energy/HbmForgeWrapper.java",
+    "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
+    "src/main/java/com/hbm_m/api/fluids/FluidNet.java",
+    "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+    "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
+    "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java"
+  ],
+  "modified_external_files": [
+    {
+      "path": "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
+      "sha256": "bcb7e4e9bc54efeb7d936f82b984b17f42448c383c06a3c2a746527d965837d0"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
+      "sha256": "d962dac9553e95250dcb8c970e82a6d748201f4b342b93c5de69620ad2b7dc9c"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java",
+      "sha256": "847b010bf431608cc8412c3442cf7f25040ca84dea4f813b116b5a33b421c8fe"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+      "sha256": "a37fb46c59add2fbdc266eb6e41d57421a83c42cbf063e7fb1297702af509f5c"
+    }
+  ],
+  "requires": [
+    {
+      "task_id": "R-01",
+      "commit": null,
+      "api_version": null,
+      "status": "pending-test-loader-request"
+    }
+  ],
+  "api_version": "M-01-phase5-lifecycle-v1",
+  "required_registrations": [],
+  "deliverables": [
+    {
+      "path": "audit_network_jar.py",
+      "sha256": "08e11fd7ddca225f2a4d499e929bc20da00d0105a288750c5abf98d6db13c15d"
+    },
+    {
+      "path": "changes.patch",
+      "sha256": "358cb2877ba831106d56b2fa0745656f096b8f792634a1dcebcff6ed91b27bde"
+    },
+    {
+      "path": "evidence/original-contracts.json",
+      "sha256": "18cd07ddf1c6aedcb74d34d2f5cdf1e97ad91bb3719f3e99fecdb98a431bbb40"
+    },
+    {
+      "path": "gametest/com/hbm/integration/machines/MachineNetworkTests.java",
+      "sha256": "da48a5661e35bdd321b7132ace1ca9bd1eb8474f2220bc6d6156e50dae0beed0"
+    },
+    {
+      "path": "requests/R-01-machines-tests.json",
+      "sha256": "81ea5c6f7b11a275db326eeba6884d72db77ce113af9efd0111b2bda0e00419b"
+    },
+    {
+      "path": "rights.json",
+      "sha256": "e5f5aa07a910c4912db1123688c99099b06dde65ecb0730f66f8d56a81ad0eba"
+    }
+  ],
+  "rights": "rights.json",
+  "evidence": "evidence/results.json",
+  "status": "implemented-runtime-validation-in-progress",
+  "contract_changes": [
+    "No public signatures, registries, recipes, menus or packet formats changed.",
+    "Internal MK2 fill handles pressure 0\u20135 while Forge container fill retains its ambient-pressure gate."
+  ]
+}

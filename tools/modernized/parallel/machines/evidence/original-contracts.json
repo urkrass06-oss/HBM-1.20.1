@@ -1,0 +1,75 @@
+{
+  "source_repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+  "source_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+  "source_files": [
+    {
+      "path": "src/main/java/api/hbm/energymk2/PowerNetMK2.java",
+      "git_blob": "16c355415e054baa0e5704ec863e4bbbfb05ac52",
+      "sha256": "a04882983265f15c1f712e7b2d54ea58b0788fdc1859e8f6c074b2ce97d9f5ef"
+    },
+    {
+      "path": "src/main/java/api/hbm/fluidmk2/FluidNetMK2.java",
+      "git_blob": "83ac5b1767c3e3ac827c45708af3ee58a5907143",
+      "sha256": "9945f99e61194027ebafba2e79561b441507bc88c5f853bdc596130082e21870"
+    },
+    {
+      "path": "src/main/java/api/hbm/fluidmk2/IFluidUserMK2.java",
+      "git_blob": "1e60f7585ce577b112b11e4aee18c6f0985b04c7",
+      "sha256": "4cd7ee1225afd001038d205529446d597f5238766286b9db7bcdf0c731d903b1"
+    },
+    {
+      "path": "src/main/java/com/hbm/inventory/fluid/tank/FluidTank.java",
+      "git_blob": "cc55dde21103bcba8f26c27f88aeb7675ab5bf18",
+      "sha256": "3212d4f9ecc4724a5dae2e1f07d18b0115e43d450b245da6bd22e79e9ef00daa"
+    },
+    {
+      "path": "src/main/java/com/hbm/tileentity/network/TileEntityFluidValve.java",
+      "git_blob": "a54caa173fa808d48817a296ff5b849396532d3a",
+      "sha256": "e3545f1fdf8b14765977f19ada778faa7803b4f5284ab26d7054dac4ad2117a9"
+    },
+    {
+      "path": "src/main/java/com/hbm/tileentity/network/TileEntityPipeBaseNT.java",
+      "git_blob": "de7aa8d8e1cfa3d6f3e7810a4f78c14688f37caa",
+      "sha256": "cb7351729af4a046604b5a991b5d8a7518aae6a29a3a908ff5da4040470bc0b7"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "e62ec04cdeece724caeeeeaeb6ae1f6af1bb6b9a",
+      "sha256": "605e9047a563c5c8396ffb18232aa4304ec56586aee537c45064c6fb425e44ad"
+    }
+  ],
+  "claims": [
+    {
+      "contract": "HE is accounted for as long values; transfer is bounded by stored/available energy, receiver space and transfer rates.",
+      "reference": "src/main/java/api/hbm/energymk2/PowerNetMK2.java",
+      "status": "source-supported-only",
+      "limit": "Modernized uses a different graph implementation. No HE=FE conversion rate or full priority parity is established."
+    },
+    {
+      "contract": "Fluid pressure is independent of substance and has six valid levels, 0 through 5.",
+      "reference": "src/main/java/api/hbm/fluidmk2/IFluidUserMK2.java:9",
+      "status": "source-supported-only"
+    },
+    {
+      "contract": "Fluid tanks persist pressure separately from amount/type; changing pressure intentionally clears fill. Tests keep pressure fixed during conservation checks.",
+      "reference": "src/main/java/com/hbm/inventory/fluid/tank/FluidTank.java:54",
+      "status": "source-supported-only"
+    },
+    {
+      "contract": "Valve closure removes connectivity. The original pipe lifecycle also distinguishes loaded from unloaded participants.",
+      "reference": "src/main/java/com/hbm/tileentity/network/TileEntityFluidValve.java:15",
+      "status": "source-supported-only"
+    }
+  ],
+  "fixtures": {
+    "energy_he": 20000000,
+    "other_dimension_energy_he": 7000000,
+    "fluid_mb": 18000,
+    "other_dimension_fluid_mb": 7000,
+    "pressure_test_source_mb": 4000,
+    "origin": "Independent controlled test inputs, not claimed as original recipe or balance constants. No generators, creative sources or sinks participate in conservation checks."
+  },
+  "original_runtime": "not-run",
+  "g7": "open: no isolated Minecraft 1.7.10/JDK8 measurements or complete NET-001\u2013006 variant comparison",
+  "recipes": "No process recipes changed by M-01; no process parity is claimed."
+}

@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "reviewer": "Agent A / Codex",
+  "date": "2026-10-20",
+  "scope": "M-01 small lifecycle deltas and independent behavioral tests; no full source/assets/binary approval",
+  "upstream_files": [
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/energy/EnergyNetworkManager.java",
+      "git_blob": "fab0328cb66c75a846fae93c56b1c50c8760e86c",
+      "sha256": "43274f35df5aad328bfbbeb2545f2eaaf5695ff9c3d240270c6d975220837c5a",
+      "publication_status": "inspection-only-no-file-import",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
+      "git_blob": "81eb35a54a546aca9088acb1d001bdeabd297a43",
+      "sha256": "6f962ddc3928bf4a39b5dbd9962de114b70aa66b246be1c46b80707e1047e2af",
+      "publication_status": "small-delta-and-context-reviewed-only",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review.",
+      "origin": "Modernized EnergyNetwork introduced at 5db92ec5d282673e0e1d96b83a2f7f9ed3ad459e; author H-y-p-e-r-i-O. Later modifications by Raptor and razchexlitiel. Original PowerNetMK2 is a separate subscriber-based implementation; no original copied expression is needed for the singleton correction.",
+      "original_reference": "src/main/java/api/hbm/energymk2/PowerNetMK2.java",
+      "creation_commit": "5db92ec5d282673e0e1d96b83a2f7f9ed3ad459e",
+      "authors": [
+        "H-y-p-e-r-i-O",
+        "Raptor",
+        "razchexlitiel"
+      ],
+      "review_scope": "Only exact delta and adjacent context lines in changes.patch, not the complete file.",
+      "license": "GPL-3.0-only for this derivative patch; existing notices preserved",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties",
+        "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE"
+      ],
+      "review_status": "belegt-for-listed-small-hunks",
+      "result_sha256": "bcb7e4e9bc54efeb7d936f82b984b17f42448c383c06a3c2a746527d965837d0",
+      "changes": "M-01 lifecycle/pressure correction, 2026-10-20, generated with Codex for the repository maintainer."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/energy/LongEnergyWrapper.java",
+      "git_blob": "b52307dc4d1f829662ce5c845be31bdf8bbc7eaa",
+      "sha256": "14f714d0aa08b18ba32d3cc52e98b5f6713cc32b885d3440622e94c829360225",
+      "publication_status": "inspection-only-no-file-import",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/energy/HbmForgeWrapper.java",
+      "git_blob": "9bc25da58002914927782c56d799c5035e215501",
+      "sha256": "f0ee74b5beec686701a9b8306a9edb2daec7f94cd297275709f41bfc15257ed9",
+      "publication_status": "inspection-only-no-file-import",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
+      "git_blob": "db6798fcdb4fa1e7bfc0191c30c8db1a477bca20",
+      "sha256": "0a313ec9a554ae27544224ab5eac0f71e6ca39137bb58adbd20434e0a23b3029",
+      "publication_status": "small-delta-and-context-reviewed-only",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review.",
+      "origin": "Introduced at e6bc9ccdf78f77df656730430cdf3645a0a2d878 under block/entity by Raptor324; energy changes by H-y-p-e-r-i-O, rename at 72ca2ef88d71848e8d11323d0fc7845a9c03152c by razchexlitiel, later lifecycle edits by Raptor. The small Forge LazyOptional lifecycle hunk contains no copied Minecraft/Forge method body.",
+      "creation_commit": "e6bc9ccdf78f77df656730430cdf3645a0a2d878",
+      "rename_commit": "72ca2ef88d71848e8d11323d0fc7845a9c03152c",
+      "authors": [
+        "Raptor324 / Raptor",
+        "H-y-p-e-r-i-O",
+        "razchexlitiel"
+      ],
+      "review_scope": "Only exact delta and adjacent context lines in changes.patch, not the complete file.",
+      "license": "GPL-3.0-only for this derivative patch; existing notices preserved",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties"
+      ],
+      "review_status": "belegt-for-listed-small-hunks",
+      "result_sha256": "d962dac9553e95250dcb8c970e82a6d748201f4b342b93c5de69620ad2b7dc9c",
+      "changes": "M-01 lifecycle/pressure correction, 2026-10-20, generated with Codex for the repository maintainer."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/api/fluids/FluidNet.java",
+      "git_blob": "8825a4015e58d296b1c76ac96eaf76ab7eb84e88",
+      "sha256": "bb189e82edee9cf44fb9b6f6e7e3390856a90fbdfaafc32f04c6b13c1768ba50",
+      "publication_status": "inspection-only-no-file-import",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+      "git_blob": "518e1f577fab1d5b3a2ab540e5ee07db7467c322",
+      "sha256": "86006ce4446cb626c22a26b94ca530b125f6855fa6d2fba56926093d661eb5d6",
+      "publication_status": "small-delta-and-context-reviewed-only",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review.",
+      "origin": "Modernized tank implementation and 1.7.10-compatible methods examined against original FluidTank at the O pin. Modernized path history includes Raptor and the 62a711478e63a6ebd86a9af3ffdec296c2076f27 refactor (co-authored by Alex). Only the pressure-aware internal-fill delta and its context are published.",
+      "original_reference": "src/main/java/com/hbm/inventory/fluid/tank/FluidTank.java",
+      "authors": [
+        "Raptor / Alex and Modernized contributors",
+        "The Bobcat (hbm) and original HBM contributors"
+      ],
+      "license": "GPL-3.0-only derivative patch; original and upstream notices retained",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+        "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE"
+      ],
+      "review_status": "belegt-for-listed-small-hunks",
+      "review_scope": "Exact fillMb/fillInternal delta and adjacent context only, not the complete tank/rendering implementation.",
+      "result_sha256": "a37fb46c59add2fbdc266eb6e41d57421a83c42cbf063e7fb1297702af509f5c",
+      "changes": "M-01 lifecycle/pressure correction, 2026-10-20, generated with Codex for the repository maintainer."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
+      "git_blob": "62ef61fa905bf9047f4312790fca247ceb33e20d",
+      "sha256": "078d57158f74a9ef931e16103a3d662835931c50f8557b160553bdd487aa0686",
+      "publication_status": "inspection-only-no-file-import",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+    },
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java",
+      "git_blob": "9b07138d1231d070f649f66d45c5c4c7b076f7c8",
+      "sha256": "70b774de3f2471d7f9aea7fa176514b042707847c47598864583e4f6871aff6f",
+      "publication_status": "small-delta-and-context-reviewed-only",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review.",
+      "origin": "Introduced by Raptor at 83e9a2eeda9c87d755a54d700f3c27d8e781bab4 as a port of the original valve, renamed at c136c6dacb9528fe930dc98101bd5a190abcdcd2. Original valve and pipe-base source at O pin examined under original GPLv3. This delta calls the existing Modernized destruction helper; no original body is copied.",
+      "creation_commit": "83e9a2eeda9c87d755a54d700f3c27d8e781bab4",
+      "rename_commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+      "original_reference": "src/main/java/com/hbm/tileentity/network/TileEntityFluidValve.java",
+      "authors": [
+        "Raptor",
+        "The Bobcat (hbm) and original HBM contributors"
+      ],
+      "review_scope": "Only exact delta and adjacent context lines in changes.patch, not the complete file.",
+      "license": "GPL-3.0-only for this derivative patch; existing notices preserved",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties",
+        "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE"
+      ],
+      "review_status": "belegt-for-listed-small-hunks",
+      "result_sha256": "847b010bf431608cc8412c3442cf7f25040ca84dea4f813b116b5a33b421c8fe",
+      "changes": "M-01 lifecycle/pressure correction, 2026-10-20, generated with Codex for the repository maintainer."
+    }
+  ],
+  "published_files": [
+    {
+      "path": "audit_network_jar.py",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt"
+    },
+    {
+      "path": "area.json",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; upstream identity facts only.",
+      "review_status": "belegt"
+    },
+    {
+      "path": "requests/R-01-machines-tests.json",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; upstream identity facts only.",
+      "review_status": "belegt"
+    },
+    {
+      "path": "evidence/original-contracts.json",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; upstream identity facts only.",
+      "review_status": "belegt"
+    },
+    {
+      "path": "gametest/com/hbm/integration/machines/MachineNetworkTests.java",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt"
+    },
+    {
+      "path": "changes.patch",
+      "license": "GPL-3.0-only",
+      "origin": "Four individually reviewed upstream deltas including context; per-file identities and chain above.",
+      "review_status": "belegt-for-listed-small-hunks"
+    }
+  ],
+  "licenses_preserved": [
+    "third_party_licenses/MODERNIZED_GPL-3.0.txt",
+    "third_party_licenses/MODERNIZED_NOTICES.md",
+    "LICENSE",
+    "LICENSE.LESSER"
+  ],
+  "unresolved": [
+    "Whole Modernized game/source and asset distribution remains blocked by docs/integration/rights-review.json.",
+    "No evaluation JAR, Minecraft source, generated resource, screenshot, world or upstream full file is published."
+  ]
+}

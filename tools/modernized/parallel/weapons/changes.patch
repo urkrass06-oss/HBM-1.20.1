@@ -1,0 +1,549 @@
+W-01: server-authoritative weapon controls and grenade lifetime, 2026-10-20.
+Modernized derivative hunks: GPLv3; upstream notices retained.
+Authors of affected upstream files: Raptor, TRFFuchs, razchexlitiel, Alex.
+Original HBM behavioral references: The Bobcat (hbm) and contributors.
+Individual source identity, history and context review: rights.json.
+New test/helper source files retain their LGPL-3.0-only notices.
+No full source, asset, generated resource, world or binary import authorized.
+
+diff --git a/src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java
+index 14c5b04..ea4d142 100644
+--- a/src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java
+@@ -751,7 +751,8 @@ public class MachineRadarBlockEntity extends BaseMachineBlockEntity {
+         }
+ 
+         BlockPos receiverPos = getLinkerPos(linkSlot);
+-        if (receiverPos == null) {
++        if (receiverPos == null || !level.isInWorldBounds(receiverPos)
++                || !level.getWorldBorder().isWithinBounds(receiverPos) || !level.hasChunkAt(receiverPos)) {
+             return false;
+         }
+ 
+@@ -763,12 +764,19 @@ public class MachineRadarBlockEntity extends BaseMachineBlockEntity {
+         boolean ok;
+         if (action == ACTION_LAUNCH_AT_ENTITY && targetId >= 0) {
+             Entity target = level.getEntity(targetId);
+-            if (target == null) {
++            if (target == null || !target.isAlive() || target.level() != level
++                    || !Double.isFinite(target.getX()) || !Double.isFinite(target.getY()) || !Double.isFinite(target.getZ())
++                    || !level.hasChunkAt(target.blockPosition())
++                    || Math.abs(target.getX() - worldPosition.getX() - 0.5) > getRange()
++                    || Math.abs(target.getZ() - worldPosition.getZ() - 0.5) > getRange()
++                    || nearbyMissiles.stream().noneMatch(contact -> contact != null && contact.length >= 7 && contact[6] == targetId)) {
+                 return false;
+             }
+             ok = receiver.sendCommandEntity(target);
+         } else if (action == ACTION_LAUNCH_AT_COORDS) {
+-            ok = receiver.sendCommandPosition(new BlockPos(x, worldPosition.getY(), z));
++            BlockPos target = new BlockPos(x, worldPosition.getY(), z);
++            if (!level.isInWorldBounds(target) || !level.getWorldBorder().isWithinBounds(target)) return false;
++            ok = receiver.sendCommandPosition(target);
+         } else {
+             return false;
+         }
+diff --git a/src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java b/src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java
+index fb382fe..c5e7bae 100644
+--- a/src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java
++++ b/src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java
+@@ -29,6 +29,9 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+             SynchedEntityData.defineId(GrenadeProjectileEntity.class, EntityDataSerializers.STRING);
+ 
+     private int bounceCount = 0;
++    // W-01: selected O Universal S3 configuration, 3 seconds * 20 ticks, 2026-10-20.
++    private int fuseTicks = 60;
++    private boolean detonated;
+     private GrenadeType grenadeType;
+ 
+     private static final Random RANDOM = new Random();
+@@ -62,6 +65,20 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+         return grenadeType != null ? grenadeType.getItem() : Items.SNOWBALL;
+     }
+ 
++    @Override
++    public void tick() {
++        if (isRemoved()) return;
++        if (detonated) {
++            if (!level().isClientSide) discard();
++            return;
++        }
++        super.tick();
++        if (!level().isClientSide && !isRemoved()) {
++            if (grenadeType == null) grenadeType = GrenadeType.valueOf(entityData.get(GRENADE_TYPE_ID));
++            if (grenadeType == GrenadeType.STANDARD && --fuseTicks <= 0) explode(blockPosition());
++        }
++    }
++
+     @Override
+     protected void onHitBlock(BlockHitResult result) {
+         if (!this.level().isClientSide) {
+@@ -69,6 +86,10 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+                 grenadeType = GrenadeType.valueOf(this.entityData.get(GRENADE_TYPE_ID));
+             }
+ 
++            if (grenadeType == GrenadeType.STANDARD && bounceCount >= grenadeType.getMaxBounces()) {
++                this.setDeltaMovement(Vec3.ZERO);
++                return;
++            }
+             BlockPos blockPos = result.getBlockPos();
+             this.level().playSound(null, blockPos, ModSounds.BOUNCE_RANDOM.get(), SoundSource.NEUTRAL, 2.1F, 1.0F);
+ 
+@@ -79,6 +100,8 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+                 Vec3 hitNormal = Vec3.atLowerCornerOf(result.getDirection().getNormal());
+                 Vec3 reflectedVelocity = currentVelocity.subtract(hitNormal.scale(2 * currentVelocity.dot(hitNormal)));
+                 this.setDeltaMovement(reflectedVelocity.scale(grenadeType.getBounceMultiplier()));
++            } else if (grenadeType == GrenadeType.STANDARD) {
++                this.setDeltaMovement(Vec3.ZERO);
+             } else {
+                 explode(blockPos);
+             }
+@@ -99,7 +122,8 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+     }
+ 
+     private void explode(BlockPos pos) {
+-        if (!this.level().isClientSide && !this.isRemoved()) {
++        if (!this.level().isClientSide && !this.isRemoved() && !detonated) {
++            detonated = true; // Latch before world callbacks; they may re-enter tick/collision.
+             // Увеличиваем силу взрыва (например, умножаем на 1.5 для более мощного разрушения)
+             float explosionPower = grenadeType.getExplosionPower() * 1.5f;
+ 
+@@ -127,7 +151,7 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+                     float damage = grenadeType.getCustomDamage() * (float) (1.0 - (dist / damageRadius));
+                     if (damage > 0) {
+                         entity.invulnerableTime = 0;
+-                        entity.hurt(this.damageSources().explosion(this, null), damage);
++                        entity.hurt(this.damageSources().explosion(this, getOwner()), damage);
+                     }
+                 }
+             }
+@@ -166,6 +190,8 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+     public void addAdditionalSaveData(CompoundTag tag) {
+         super.addAdditionalSaveData(tag);
+         tag.putInt("BounceCount", this.bounceCount);
++        tag.putInt("FuseTicks", this.fuseTicks);
++        tag.putBoolean("Detonated", this.detonated);
+         tag.putString("GrenadeType", this.entityData.get(GRENADE_TYPE_ID));
+     }
+ 
+@@ -173,6 +199,8 @@ public class GrenadeProjectileEntity extends ThrowableItemProjectile {
+     public void readAdditionalSaveData(CompoundTag tag) {
+         super.readAdditionalSaveData(tag);
+         this.bounceCount = tag.getInt("BounceCount");
++        this.fuseTicks = tag.contains("FuseTicks") ? Math.max(0, Math.min(60, tag.getInt("FuseTicks"))) : 60;
++        this.detonated = tag.getBoolean("Detonated");
+         if (tag.contains("GrenadeType")) {
+             this.entityData.set(GRENADE_TYPE_ID, tag.getString("GrenadeType"));
+             this.grenadeType = GrenadeType.valueOf(tag.getString("GrenadeType"));
+diff --git a/src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java b/src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java
+index 675c105..45cad72 100644
+--- a/src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java
++++ b/src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java
+@@ -53,6 +53,7 @@ public class MultiDetonatorItem extends Item {
+         public int x, y, z;
+         public String name;
+         public boolean hasTarget;
++        public String dimension = ""; // W-01: legacy points require relinking before detonation.
+ 
+         public PointData(int x, int y, int z, String name, boolean hasTarget) {
+             this.x = x;
+@@ -153,6 +154,7 @@ public class MultiDetonatorItem extends Item {
+             pointTag.putInt(NBT_POINT_Y, pos.getY());
+             pointTag.putInt(NBT_POINT_Z, pos.getZ());
+             pointTag.putBoolean(NBT_POINT_HAS_TARGET, true);
++            pointTag.putString("Dimension", level.dimension().location().toString());
+ 
+             // Возвращаем сохранённое имя
+             pointTag.putString(NBT_POINT_NAME, savedName.isEmpty() ?
+@@ -238,7 +240,10 @@ public class MultiDetonatorItem extends Item {
+ 
+             BlockPos targetPos = new BlockPos(pointData.x, pointData.y, pointData.z);
+ 
+-            if (!level.isLoaded(targetPos)) {
++            if (!level.dimension().location().toString().equals(pointData.dimension)
++                    || !player.isAlive() || player.isSpectator() || !level.isInWorldBounds(targetPos)
++                    || !level.getWorldBorder().isWithinBounds(targetPos)
++                    || !level.hasChunkAt(targetPos) || !level.mayInteract(player, targetPos)) {
+                 player.displayClientMessage(
+                         Component.translatable("message.hbm_m.multi_detonator.chunk_not_loaded")
+                                 .withStyle(ChatFormatting.RED),
+@@ -339,13 +344,15 @@ public class MultiDetonatorItem extends Item {
+             name = "Point " + (pointIndex + 1);
+         }
+ 
+-        return new PointData(
++        PointData result = new PointData(
+                 pointTag.getInt(NBT_POINT_X),
+                 pointTag.getInt(NBT_POINT_Y),
+                 pointTag.getInt(NBT_POINT_Z),
+                 name,
+                 pointTag.getBoolean(NBT_POINT_HAS_TARGET)
+         );
++        result.dimension = pointTag.getString("Dimension");
++        return result;
+     }
+ 
+     /**
+diff --git a/src/main/java/com/hbm_m/network/BuildMissilePacket.java b/src/main/java/com/hbm_m/network/BuildMissilePacket.java
+index 6a0690d..7e5304f 100644
+--- a/src/main/java/com/hbm_m/network/BuildMissilePacket.java
++++ b/src/main/java/com/hbm_m/network/BuildMissilePacket.java
+@@ -1,14 +1,14 @@
+ package com.hbm_m.network;
+ 
+-import com.hbm_m.blockentity.machines.MissileAssemblyBlockEntity;
++// W-01: server authority and bounded payloads, 2026-10-20.
++import com.hbm_m.inventory.menu.MissileAssemblyMenu;
++
+ 
+ import dev.architectury.networking.NetworkManager.PacketContext;
+ 
+ import net.minecraft.core.BlockPos;
+ import net.minecraft.network.FriendlyByteBuf;
+-import net.minecraft.server.level.ServerLevel;
+ import net.minecraft.server.level.ServerPlayer;
+-import net.minecraft.world.level.block.entity.BlockEntity;
+ 
+ public class BuildMissilePacket implements C2SPacket {
+ 
+@@ -19,6 +19,7 @@ public class BuildMissilePacket implements C2SPacket {
+     }
+ 
+     public static BuildMissilePacket decode(FriendlyByteBuf buf) {
++        WeaponPacketAccess.requireSize(buf, 8);
+         return new BuildMissilePacket(buf.readBlockPos());
+     }
+ 
+@@ -27,16 +28,17 @@ public class BuildMissilePacket implements C2SPacket {
+         buf.writeBlockPos(pos);
+     }
+ 
+-    public static void handle(BuildMissilePacket msg, PacketContext context) {
+-        context.queue(() -> {
+-            if (!(context.getPlayer() instanceof ServerPlayer player)) return;
+-
+-            ServerLevel level = player.serverLevel();
+-            BlockEntity be = level.getBlockEntity(msg.pos);
++    private boolean apply(ServerPlayer player) {
++        if (player == null || !(player.containerMenu instanceof MissileAssemblyMenu menu)) return false;
++        var assembly = menu.blockEntity;
++        if (!WeaponPacketAccess.menuTarget(player, pos, assembly) || !WeaponPacketAccess.nearby(player, pos)) return false;
++        assembly.construct();
++        return true;
++    }
+ 
+-            if (be instanceof MissileAssemblyBlockEntity assembly) {
+-                assembly.construct();
+-            }
++    public static void handle(BuildMissilePacket packet, PacketContext context) {
++        context.queue(() -> {
++            if (context.getPlayer() instanceof ServerPlayer player) packet.apply(player);
+         });
+     }
+ }
+diff --git a/src/main/java/com/hbm_m/network/DetonateAllPacket.java b/src/main/java/com/hbm_m/network/DetonateAllPacket.java
+index ec8e92a..e518e70 100644
+--- a/src/main/java/com/hbm_m/network/DetonateAllPacket.java
++++ b/src/main/java/com/hbm_m/network/DetonateAllPacket.java
+@@ -1,5 +1,8 @@
+ package com.hbm_m.network;
+ 
++// W-01: only the held server-side item supplies targets, 2026-10-20.
++import io.netty.handler.codec.DecoderException;
++
+ import com.hbm_m.interfaces.IDetonatable;
+ import com.hbm_m.item.grenades_and_activators.MultiDetonatorItem;
+ import com.hbm_m.item.grenades_and_activators.MultiDetonatorItem.PointData;
+@@ -25,7 +28,7 @@ public class DetonateAllPacket implements C2SPacket {
+     private final CompoundTag tag;
+ 
+     public DetonateAllPacket(CompoundTag tag) {
+-        this.tag = (tag == null) ? new CompoundTag() : tag;
++        this.tag = (tag == null) ? new CompoundTag() : tag.copy();
+     }
+ 
+     public DetonateAllPacket() {
+@@ -35,7 +38,10 @@ public class DetonateAllPacket implements C2SPacket {
+     // ── Serialization ─────────────────────────────────────────────────────────
+ 
+     public static DetonateAllPacket decode(FriendlyByteBuf buf) {
+-        return new DetonateAllPacket(buf.readNbt());
++        WeaponPacketAccess.requireSize(buf, 1, 4);
++        var tag = buf.readNbt();
++        if (buf.isReadable() || tag != null && !tag.isEmpty()) throw new DecoderException("Detonator command must be empty");
++        return new DetonateAllPacket(tag);
+     }
+ 
+     @Override
+@@ -49,7 +55,7 @@ public class DetonateAllPacket implements C2SPacket {
+         context.queue(() -> {
+             // context.getPlayer() на C2S стороне — это ServerPlayer (отправитель)
+             if (!(context.getPlayer() instanceof ServerPlayer player)) return;
+-            handleDetonation(player);
++            if (msg.tag.isEmpty() && WeaponPacketAccess.active(player)) handleDetonation(player);
+         });
+     }
+ 
+@@ -79,13 +85,16 @@ public class DetonateAllPacket implements C2SPacket {
+         int successCount  = 0;
+         int pointsCount   = detonatorItem.getMaxPoints();
+ 
++        java.util.Set<BlockPos> seen = new java.util.HashSet<>();
+         for (int i = 0; i < pointsCount; i++) {
+             PointData pointData = detonatorItem.getPointData(detonatorStack, i);
+-            if (pointData == null || !pointData.hasTarget) continue;
++            if (pointData == null || !pointData.hasTarget
++                    || !level.dimension().location().toString().equals(pointData.dimension)) continue;
+ 
+             BlockPos  targetPos = new BlockPos(pointData.x, pointData.y, pointData.z);
+ 
+-            if (!level.isLoaded(targetPos)) {
++            if (!seen.add(targetPos) || !WeaponPacketAccess.loaded(player, targetPos)
++                    || !player.serverLevel().mayInteract(player, targetPos)) {
+                 player.displayClientMessage(
+                         Component.literal(pointData.name + " ❌ Позиция не загружена")
+                                 .withStyle(ChatFormatting.RED), false);
+diff --git a/src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java b/src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java
+index 1674067..fd0247a 100644
+--- a/src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java
++++ b/src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java
+@@ -1,6 +1,9 @@
+ package com.hbm_m.network;
+ 
+-import com.hbm_m.blockentity.machines.SoyuzLauncherBlockEntity;
++// W-01: server authority and bounded payloads, 2026-10-20.
++import com.hbm_m.inventory.menu.SoyuzLauncherMenu;
++import io.netty.handler.codec.DecoderException;
++
+ 
+ import dev.architectury.networking.NetworkManager.PacketContext;
+ import net.minecraft.core.BlockPos;
+@@ -27,7 +30,10 @@ public class SoyuzLauncherControlPacket implements C2SPacket {
+     }
+ 
+     public static SoyuzLauncherControlPacket decode(FriendlyByteBuf buf) {
+-        return new SoyuzLauncherControlPacket(buf.readBlockPos(), buf.readByte(), buf.readInt());
++        WeaponPacketAccess.requireSize(buf, 13);
++        var packet = new SoyuzLauncherControlPacket(buf.readBlockPos(), buf.readByte(), buf.readInt());
++        if (!packet.validPayload()) throw new DecoderException("Invalid Soyuz control");
++        return packet;
+     }
+ 
+     @Override
+@@ -37,16 +43,23 @@ public class SoyuzLauncherControlPacket implements C2SPacket {
+         buf.writeInt(value);
+     }
+ 
+-    public static void handle(SoyuzLauncherControlPacket pkt, PacketContext ctx) {
+-        ctx.queue(() -> {
+-            if (!(ctx.getPlayer() instanceof ServerPlayer player)) return;
+-            if (player.level().getBlockEntity(pkt.pos) instanceof SoyuzLauncherBlockEntity launcher) {
+-                if (pkt.action == ACTION_SET_MODE) {
+-                    launcher.setMode(pkt.value);
+-                } else if (pkt.action == ACTION_START) {
+-                    launcher.startCountdown();
+-                }
+-            }
++    private boolean validPayload() {
++        return action == ACTION_SET_MODE ? value >= 0 && value <= 1
++                : action == ACTION_START && value == 0;
++    }
++
++    private boolean apply(ServerPlayer player) {
++        if (!validPayload() || player == null || !(player.containerMenu instanceof SoyuzLauncherMenu menu)) return false;
++        var launcher = menu.getBlockEntity();
++        if (!WeaponPacketAccess.menuTarget(player, pos, launcher) || !WeaponPacketAccess.nearby(player, pos)) return false;
++        if (action == ACTION_SET_MODE) launcher.setMode(value);
++        else launcher.startCountdown();
++        return true;
++    }
++
++    public static void handle(SoyuzLauncherControlPacket packet, PacketContext context) {
++        context.queue(() -> {
++            if (context.getPlayer() instanceof ServerPlayer player) packet.apply(player);
+         });
+     }
+ 
+diff --git a/src/main/java/com/hbm_m/network/TurretControlPacket.java b/src/main/java/com/hbm_m/network/TurretControlPacket.java
+index 55fb7a2..97c70fb 100644
+--- a/src/main/java/com/hbm_m/network/TurretControlPacket.java
++++ b/src/main/java/com/hbm_m/network/TurretControlPacket.java
+@@ -1,5 +1,9 @@
+ package com.hbm_m.network;
+ 
++// W-01: server authority and bounded payloads, 2026-10-20.
++import com.hbm_m.inventory.menu.TurretMenu;
++import io.netty.handler.codec.DecoderException;
++
+ import com.hbm_m.blockentity.machines.TurretBaseBlockEntity;
+ 
+ import dev.architectury.networking.NetworkManager.PacketContext;
+@@ -26,7 +30,10 @@ public class TurretControlPacket implements C2SPacket {
+     }
+ 
+     public static TurretControlPacket decode(FriendlyByteBuf buf) {
+-        return new TurretControlPacket(buf.readBlockPos(), buf.readInt());
++        WeaponPacketAccess.requireSize(buf, 12);
++        var packet = new TurretControlPacket(buf.readBlockPos(), buf.readInt());
++        if (!packet.validPayload()) throw new DecoderException("Invalid turret action");
++        return packet;
+     }
+ 
+     @Override
+@@ -35,16 +42,21 @@ public class TurretControlPacket implements C2SPacket {
+         buf.writeInt(action);
+     }
+ 
++    private boolean validPayload() {
++        return action >= ACTION_TOGGLE_ON && action <= ACTION_CYCLE_FIRE_MODE;
++    }
++
++    private boolean apply(ServerPlayer player) {
++        if (!validPayload() || player == null || !(player.containerMenu instanceof TurretMenu menu)) return false;
++        var turret = menu.blockEntity;
++        if (!WeaponPacketAccess.menuTarget(player, pos, turret) || !WeaponPacketAccess.nearby(player, pos)) return false;
++        turret.handleButtonPress(action);
++        return true;
++    }
++
+     public static void handle(TurretControlPacket packet, PacketContext context) {
+         context.queue(() -> {
+-            if (!(context.getPlayer() instanceof ServerPlayer player)) {
+-                return;
+-            }
+-
+-            var blockEntity = player.level().getBlockEntity(packet.pos);
+-            if (blockEntity instanceof TurretBaseBlockEntity turret) {
+-                turret.handleButtonPress(packet.action);
+-            }
++            if (context.getPlayer() instanceof ServerPlayer player) packet.apply(player);
+         });
+     }
+ 
+diff --git a/src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java b/src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java
+index eb37d94..3748f83 100644
+--- a/src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java
++++ b/src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java
+@@ -1,5 +1,9 @@
+ package com.hbm_m.network;
+ 
++// W-01: preserve linked-screen access while validating server-side, 2026-10-20.
++import com.hbm_m.blockentity.machines.MachineRadarScreenBlockEntity;
++import io.netty.handler.codec.DecoderException;
++
+ import com.hbm_m.blockentity.machines.MachineRadarBlockEntity;
+ import com.hbm_m.inventory.menu.MachineRadarMenu;
+ import com.hbm_m.inventory.menu.MachineRadarSlotsMenu;
+@@ -83,6 +87,7 @@ public class UpdateRadarC2SPacket implements C2SPacket {
+     }
+ 
+     public static UpdateRadarC2SPacket decode(FriendlyByteBuf buf) {
++        WeaponPacketAccess.requireSize(buf, 13, 29);
+         BlockPos pos = buf.readBlockPos();
+         boolean hasLaunch = buf.readBoolean();
+         if (hasLaunch) {
+@@ -91,9 +96,13 @@ public class UpdateRadarC2SPacket implements C2SPacket {
+             int targetId = buf.readInt();
+             int targetX = buf.readInt();
+             int targetZ = buf.readInt();
+-            return new UpdateRadarC2SPacket(pos, true, action, linkSlot, targetId, targetX, targetZ);
++            var packet = new UpdateRadarC2SPacket(pos, true, action, linkSlot, targetId, targetX, targetZ);
++            if (buf.isReadable() || !packet.validPayload()) throw new DecoderException("Invalid radar launch");
++            return packet;
+         }
+-        return new UpdateRadarC2SPacket(pos, buf.readInt());
++        var packet = new UpdateRadarC2SPacket(pos, buf.readInt());
++        if (buf.isReadable() || !packet.validPayload()) throw new DecoderException("Invalid radar button");
++        return packet;
+     }
+ 
+     @Override
+@@ -111,37 +120,60 @@ public class UpdateRadarC2SPacket implements C2SPacket {
+         }
+     }
+ 
++    private boolean validPayload() {
++        if (!hasLaunch) return buttonId >= 0 && buttonId <= MachineRadarBlockEntity.ACTION_OPEN_MAIN;
++        if (linkSlot < MachineRadarBlockEntity.SLOT_LINK_FIRST || linkSlot > MachineRadarBlockEntity.SLOT_LINK_LAST) return false;
++        if (launchAction == MachineRadarBlockEntity.ACTION_LAUNCH_AT_ENTITY) return targetId >= 0;
++        return launchAction == MachineRadarBlockEntity.ACTION_LAUNCH_AT_COORDS
++                && targetX > -30_000_000 && targetX < 30_000_000
++                && targetZ > -30_000_000 && targetZ < 30_000_000;
++    }
++
++    private boolean apply(ServerPlayer player) {
++        if (!validPayload() || player == null) return false;
++        MachineRadarBlockEntity radar;
++        if (player.containerMenu instanceof MachineRadarMenu menu) radar = menu.getBlockEntity();
++        else if (player.containerMenu instanceof MachineRadarSlotsMenu menu) radar = menu.getBlockEntity();
++        else return false;
++        if (!WeaponPacketAccess.menuTarget(player, pos, radar)) return false;
++        if (!WeaponPacketAccess.nearby(player, pos)) {
++            BlockPos screenPos = radar.getScreenLinkerPos();
++            if (!WeaponPacketAccess.loaded(player, screenPos) || !WeaponPacketAccess.nearby(player, screenPos)
++                    || !player.serverLevel().mayInteract(player, screenPos)
++                    || !(player.serverLevel().getBlockEntity(screenPos) instanceof MachineRadarScreenBlockEntity screen)
++                    || !screen.linked || screen.refX != pos.getX() || screen.refY != pos.getY() || screen.refZ != pos.getZ()) return false;
++        }
++        if (hasLaunch && launchAction == MachineRadarBlockEntity.ACTION_LAUNCH_AT_COORDS) {
++            BlockPos target = new BlockPos(targetX, pos.getY(), targetZ);
++            if (!player.serverLevel().isInWorldBounds(target)
++                    || !player.serverLevel().getWorldBorder().isWithinBounds(target)) return false;
++        }
++        if (hasLaunch) {
++            return radar.handleLaunchCommand(linkSlot, launchAction,
++                    targetId, targetX, targetZ);
++        } else if (buttonId == MachineRadarBlockEntity.ACTION_OPEN_SLOTS) {
++            MenuRegistry.openExtendedMenu(player,
++                    new SimpleMenuProvider(
++                            (containerId, playerInventory, p) ->
++                                    new MachineRadarSlotsMenu(containerId, playerInventory, radar),
++                            radar.getDisplayName()),
++                    buf -> buf.writeBlockPos(pos));
++        } else if (buttonId == MachineRadarBlockEntity.ACTION_OPEN_MAIN) {
++            MenuRegistry.openExtendedMenu(player,
++                    new SimpleMenuProvider(
++                            (containerId, playerInventory, p) ->
++                                    new MachineRadarMenu(containerId, playerInventory, radar),
++                            radar.getDisplayName()),
++                    buf -> buf.writeBlockPos(pos));
++        } else {
++            radar.handleButtonPress(buttonId);
++        }
++        return true;
++    }
++
+     public static void handle(UpdateRadarC2SPacket packet, PacketContext context) {
+         context.queue(() -> {
+-            if (!(context.getPlayer() instanceof ServerPlayer player)) {
+-                return;
+-            }
+-
+-            var blockEntity = player.level().getBlockEntity(packet.pos);
+-            if (!(blockEntity instanceof MachineRadarBlockEntity radar)) {
+-                return;
+-            }
+-
+-            if (packet.hasLaunch) {
+-                radar.handleLaunchCommand(packet.linkSlot, packet.launchAction,
+-                        packet.targetId, packet.targetX, packet.targetZ);
+-            } else if (packet.buttonId == MachineRadarBlockEntity.ACTION_OPEN_SLOTS) {
+-                MenuRegistry.openExtendedMenu(player,
+-                        new SimpleMenuProvider(
+-                                (containerId, playerInventory, p) ->
+-                                        new MachineRadarSlotsMenu(containerId, playerInventory, radar),
+-                                radar.getDisplayName()),
+-                        buf -> buf.writeBlockPos(packet.pos));
+-            } else if (packet.buttonId == MachineRadarBlockEntity.ACTION_OPEN_MAIN) {
+-                MenuRegistry.openExtendedMenu(player,
+-                        new SimpleMenuProvider(
+-                                (containerId, playerInventory, p) ->
+-                                        new MachineRadarMenu(containerId, playerInventory, radar),
+-                                radar.getDisplayName()),
+-                        buf -> buf.writeBlockPos(packet.pos));
+-            } else {
+-                radar.handleButtonPress(packet.buttonId);
+-            }
++            if (context.getPlayer() instanceof ServerPlayer player) packet.apply(player);
+         });
+     }
+ }

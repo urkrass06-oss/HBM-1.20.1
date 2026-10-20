@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "area": "weapons",
+  "owner": "W / Agent B",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "tasks": [
+    "W-01"
+  ],
+  "features": [
+    "BOMB-006",
+    "BOMB-007",
+    "BOMB-011",
+    "BOMB-012",
+    "BOMB-013",
+    "BASE-007"
+  ],
+  "pins": {
+    "original": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized": "0365cef5956016913095eeeb9366f26c601ca9a0"
+  },
+  "basis_files": {
+    "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+    "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+    "tools/modernized/multiplayer-fixture.commands": "72413edbfae36609ac3e1b0178c78a326f1fbb0df9dc8448514a38b6a4171049",
+    "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+    "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+    "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+    "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d",
+    "tools/modernized/xorg-dummy.conf": "075e7e20e96b695dbcffcb86479e3c7c68e68ab990b7c646ea0243ba9c2958ac",
+    "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+    "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+    "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f"
+  },
+  "reserved_external_files": [
+    "src/main/java/com/hbm_m/item/grenades_and_activators/GrenadeItem.java",
+    "src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+    "src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+    "src/main/java/com/hbm_m/network/TurretControlPacket.java",
+    "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+    "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+    "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+    "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+    "src/main/java/com/hbm_m/network/WeaponPacketAccess.java",
+    "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java"
+  ],
+  "requires": [],
+  "pending_dependencies": [
+    {
+      "task": "R-01",
+      "api_version": 1,
+      "commit": null,
+      "reason": "Area GameTest discovery/loader is not present at target_base; manual explicit staging allowed by PARALLEL_DEVELOPMENT section 5."
+    }
+  ],
+  "registrations": [],
+  "status": "draft-gated",
+  "profile": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.23",
+    "build_jdk": 21,
+    "runtime_and_mod_jdk": 17,
+    "gradle": "9.3.1"
+  },
+  "external_changed_files": [
+    "src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+    "src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+    "src/main/java/com/hbm_m/network/TurretControlPacket.java",
+    "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+    "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+    "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+    "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+    "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java"
+  ],
+  "external_new_production_files": [
+    "src/main/java/com/hbm_m/network/WeaponPacketAccess.java"
+  ],
+  "external_test_files": [
+    "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java"
+  ],
+  "patch": {
+    "path": "changes.patch",
+    "sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "base": "unchanged Phase-3/4/5 integration; all eight affected upstream files are byte-identical to M pin before this delta"
+  },
+  "overlays": [
+    {
+      "source": "overlay/com/hbm_m/network/WeaponPacketAccess.java",
+      "target": "src/main/java/com/hbm_m/network/WeaponPacketAccess.java",
+      "sha256": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5"
+    }
+  ],
+  "tests": [
+    {
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "target": "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java",
+      "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+      "required_test_names": [
+        "weaponPacketsRejectInvalidTargets",
+        "missileAssemblyRequiresItsMatchingMenu",
+        "radarRejectsWrongMenuAndKeepsLinkedScreenAccess",
+        "detonatorUsesHeldServerItemAndDimension",
+        "radarValidatesLoadedReceiverAndDetectedEntity",
+        "weaponDecodersBoundPayloads",
+        "grenadeHasOwnerAndOneDetonation",
+        "grenadeCollisionCannotDetonateTwiceReentrantly",
+        "grenadeFuseAndOwnerSurviveNbtRoundTrip",
+        "soyuzRequiresItsMatchingMenu"
+      ],
+      "baseline_required_count": 14,
+      "total_required_count": 24
+    }
+  ],
+  "rights_file": "rights.json",
+  "evidence_file": "evidence/checks.json",
+  "integration_request": "requests/R-01-test-profile.json",
+  "required_registrations": [],
+  "client_renderer_changes": [],
+  "production_jar": {
+    "file": "hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+    "sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "area_tests_absent": true,
+    "production_helper_present": true
+  },
+  "original_reference": {
+    "source_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "configuration": "O Universal grenade, EnumGrenadeFuze.S3 / FUZE_3S, selected as explicit provisional reference for M STANDARD only",
+    "formula": "EntityGrenadeUniversal.getTimer() = ticksInAir + ticksInGround; FUZE_3S detonates at timer >= 60",
+    "measurement_status": "source-supported only; no O-JDK8 runtime measurement or direct M STANDARD/O registration equivalence established",
+    "other_variants": "HE/FIRE/SLIME/SMART payloads and collision modes retained; no family-wide parity claim",
+    "evidence_files": [
+      {
+        "path": "src/main/java/com/hbm/items/weapon/grenade/ItemGrenadeFuze.java",
+        "git_blob": "d1448f6cd958ede5e0a4083aaaa84f904afc603a",
+        "sha256": "e5e28bd111b75e7d6df56c0034224da5e5b6627916b753e07238b3bcbf544a94"
+      },
+      {
+        "path": "src/main/java/com/hbm/entity/grenade/EntityGrenadeUniversal.java",
+        "git_blob": "dfadd69c0f6ec1989a0d2c5e4ecfd029922f3016",
+        "sha256": "8a2a4ddb23b67a8d9773d5e84fade7e74230b901dc38947071ec97943a83ec7e"
+      },
+      {
+        "path": "src/main/java/com/hbm/items/ModItems.java",
+        "git_blob": "0c2f64fbe44baf5123aa80c0e98455066867c831",
+        "sha256": "6399cb55481dfdd69d0320a5ea2a8d58de83c61145f694bcdea2792ef2435d0b"
+      }
+    ]
+  },
+  "public_delivery_hashes": {
+    "changes.patch": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
+    "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+    "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
+    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8"
+  },
+  "file_owners": {
+    "src/main/java/com/hbm_m/network/DetonateAllPacket.java": "W / Agent B",
+    "src/main/java/com/hbm_m/network/BuildMissilePacket.java": "W / Agent B",
+    "src/main/java/com/hbm_m/network/TurretControlPacket.java": "W / Agent B",
+    "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java": "W / Agent B",
+    "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java": "W / Agent B",
+    "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java": "W / Agent B",
+    "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java": "W / Agent B",
+    "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java": "W / Agent B",
+    "src/main/java/com/hbm_m/network/WeaponPacketAccess.java": "W / Agent B",
+    "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "W / Agent B"
+  }
+}

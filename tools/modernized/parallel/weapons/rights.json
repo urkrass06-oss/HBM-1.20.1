@@ -1,0 +1,446 @@
+{
+  "schema": 1,
+  "scope": "Individual W-01 delta/context review only; unchanged global full-import/release prohibition remains in force.",
+  "license_evidence": {
+    "modernized_gpl": {
+      "url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+      "git_blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "original_lgpl": {
+      "url": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE.LESSER",
+      "git_blob": "0a041280bd00a9d068f503b8ee7ce35214bd24a1",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    }
+  },
+  "files": [
+    {
+      "path": "src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+      "source_git_blob": "ec8e92ae0dce11422251588d0e2943b11d0082cd",
+      "source_sha256": "d5244a7ad872746c235d18febfb4bdf94d570e3f5e6673598b5cdcf2f003ced2",
+      "integrated_baseline_sha256": "d5244a7ad872746c235d18febfb4bdf94d570e3f5e6673598b5cdcf2f003ced2",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+      "authors_observed": [
+        "Raptor",
+        "razchexlitiel"
+      ],
+      "history": [
+        {
+          "sha": "d62916fb506d9973ad7ff2a7491445f6f0131d84",
+          "author": "Raptor",
+          "subject": "Day 5: 728 errors left to resolve..."
+        },
+        {
+          "sha": "dba7d8453b0abffc5c720bcacbb32ab048656dbb",
+          "author": "Raptor",
+          "subject": "Moved all interfaces to src\\main\\java\\com\\hbm_m\\interfaces from entire project"
+        },
+        {
+          "sha": "e32f201aa14d15b3fd6d066b340b5adb96c9064e",
+          "author": "Raptor",
+          "subject": "Rework package structure, fix item display and fluid rendering in GUI"
+        },
+        {
+          "sha": "f6eb9f3d86564af91f8c36c3817f637aadd589d9",
+          "author": "Raptor",
+          "subject": "Merge patch (final)"
+        },
+        {
+          "sha": "75e0a69799964439faaa584c0b076a908275f255",
+          "author": "Raptor",
+          "subject": "Merge branch 'main_temp' into PowerArmorRender"
+        },
+        {
+          "sha": "fb927b8e6c803dd1232eec2deb96c43ae14bcbfc",
+          "author": "Raptor",
+          "subject": "Comment cleanup"
+        },
+        {
+          "sha": "7fe0b243ec9d9c36764e04657595937a7cb3b69d",
+          "author": "Raptor",
+          "subject": "Major power armor system refactoring and enhancement"
+        },
+        {
+          "sha": "72ca2ef88d71848e8d11323d0fc7845a9c03152c",
+          "author": "razchexlitiel",
+          "subject": "nuke almoste done"
+        },
+        {
+          "sha": "bba7beab5ca4d414890886882791046f9805fe03",
+          "author": "razchexlitiel",
+          "subject": "tooltips 1"
+        },
+        {
+          "sha": "bfe7d01606ba88115685fbaadc67ab7c85796aa0",
+          "author": "razchexlitiel",
+          "subject": "added all types od detonators"
+        },
+        {
+          "sha": "96ec1608ce4082c9eeb549b9cb189af681911c8f",
+          "author": "razchexlitiel",
+          "subject": "nuke update4 save"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized Multi-Detonator and Architectury implementation; authors/history linked above",
+        "O ItemDetonator is a behavioral reference under Original LGPL; no O Java body copied into the delta."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "8b20316fc459bd9bfbcc429b82a736de8a084fdf624a3979095df805ba1fd585",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+      "source_git_blob": "6a0690d7ad18de1b57e12437477dc1a8a39e0912",
+      "source_sha256": "1463776bb26644e76728612d17eb5fdbc50365ed1a3141f40a1a526242a19354",
+      "integrated_baseline_sha256": "1463776bb26644e76728612d17eb5fdbc50365ed1a3141f40a1a526242a19354",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+      "authors_observed": [
+        "TRFFuchs"
+      ],
+      "history": [
+        {
+          "sha": "257aaf7338db03cc87d3ad55eeafb113df754e25",
+          "author": "TRFFuchs",
+          "subject": "\u00e4hm 3.0"
+        },
+        {
+          "sha": "f7a7b5f2623c1d948bc6cf2990cc37379ec77e8a",
+          "author": "TRFFuchs",
+          "subject": "fixed Crucible and added recipes , added soyuz launcher with logic and gerald with full logic"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized 1.20.1 Architectury packet implementation introduced by the linked TRFFuchs/Raptor commits; no direct O packet source copied."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "06db123f073d88759954ace3dda9799b39ccf58a5c85279aec7b556aa78c4387",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/network/TurretControlPacket.java",
+      "source_git_blob": "55fb7a2ed70458c0f9cbb648fe288c4dfc987d54",
+      "source_sha256": "2f8d51cd78a79bab21e75cf35334b1923d5718683d36895a7970d36435a0f2fd",
+      "integrated_baseline_sha256": "2f8d51cd78a79bab21e75cf35334b1923d5718683d36895a7970d36435a0f2fd",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/network/TurretControlPacket.java",
+      "authors_observed": [
+        "TRFFuchs"
+      ],
+      "history": [
+        {
+          "sha": "257aaf7338db03cc87d3ad55eeafb113df754e25",
+          "author": "TRFFuchs",
+          "subject": "\u00e4hm 3.0"
+        },
+        {
+          "sha": "f7a7b5f2623c1d948bc6cf2990cc37379ec77e8a",
+          "author": "TRFFuchs",
+          "subject": "fixed Crucible and added recipes , added soyuz launcher with logic and gerald with full logic"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/network/TurretControlPacket.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized 1.20.1 Architectury packet implementation introduced by the linked TRFFuchs/Raptor commits; no direct O packet source copied."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "1d7f8b4dc267ea70fa47ca8a92421e8f330a62f1e95c21cdb4b46d9bbe1b6613",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+      "source_git_blob": "eb37d947de1c1627ddc4e91d76c909c030606e5c",
+      "source_sha256": "c79bd506675a0fc44db18daf3ab572291748ef074f86b49b562931197b0a297d",
+      "integrated_baseline_sha256": "c79bd506675a0fc44db18daf3ab572291748ef074f86b49b562931197b0a297d",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+      "authors_observed": [
+        "Raptor",
+        "TRFFuchs"
+      ],
+      "history": [
+        {
+          "sha": "8c5aa2a385c15386ce53a22fb6aa4b53edac5e1d",
+          "author": "Raptor",
+          "subject": "MISSILE INTERCEPTION LOGIC FULLY COMPLETE"
+        },
+        {
+          "sha": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+          "author": "Raptor",
+          "subject": "I'm Back"
+        },
+        {
+          "sha": "270c1243ee1cbd295eecd178cba3e2d987213e6b",
+          "author": "Raptor",
+          "subject": "Merge branch FMC into Test-multi and resolve conflicts. Switched stonecutter to Forge"
+        },
+        {
+          "sha": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
+          "author": "TRFFuchs",
+          "subject": "400 Bomboclat FIles Changes...."
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized 1.20.1 Architectury packet implementation introduced by the linked TRFFuchs/Raptor commits; no direct O packet source copied."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "8ef25c67e174abb78f3b691a175f2e9da9210f7626d9179953e0e22b4415cf9c",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+      "source_git_blob": "167406776be7450e4b2a6787044e0a62a243a571",
+      "source_sha256": "2f28edc4b26f0c8d30f5e4074cc9fe1c3c901b1dc03d7f6c5e323201106be10b",
+      "integrated_baseline_sha256": "2f28edc4b26f0c8d30f5e4074cc9fe1c3c901b1dc03d7f6c5e323201106be10b",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+      "authors_observed": [
+        "TRFFuchs"
+      ],
+      "history": [
+        {
+          "sha": "257aaf7338db03cc87d3ad55eeafb113df754e25",
+          "author": "TRFFuchs",
+          "subject": "\u00e4hm 3.0"
+        },
+        {
+          "sha": "f7a7b5f2623c1d948bc6cf2990cc37379ec77e8a",
+          "author": "TRFFuchs",
+          "subject": "fixed Crucible and added recipes , added soyuz launcher with logic and gerald with full logic"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized 1.20.1 Architectury packet implementation introduced by the linked TRFFuchs/Raptor commits; no direct O packet source copied."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "e08dca7569083bcd4bd9634240969040cf6edfbb092e7c684644d0e2a502a438",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+      "source_git_blob": "fb382fef9f8d580914ef2907df633553443d31e6",
+      "source_sha256": "78e323e62cc839ccd004496ace8828cf047d848859fc958e1f5f190224c2618c",
+      "integrated_baseline_sha256": "78e323e62cc839ccd004496ace8828cf047d848859fc958e1f5f190224c2618c",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+      "authors_observed": [
+        "Alex",
+        "razchexlitiel"
+      ],
+      "history": [
+        {
+          "sha": "9ba6a48c0793fa5f874c1b89602ffd3cd674db0e",
+          "author": "razchexlitiel",
+          "subject": "all airstrikes complete"
+        },
+        {
+          "sha": "daa30e36af3cdc706cec97e5e179500985eb89a0",
+          "author": "razchexlitiel",
+          "subject": "heavy airstrike"
+        },
+        {
+          "sha": "10d7bd343fcf9e7045906e478aed68223c71db1a",
+          "author": "razchexlitiel",
+          "subject": "grenades first update"
+        },
+        {
+          "sha": "635d3707ec3b10e6479cca8972755c81cd6d2401",
+          "author": "Alex",
+          "subject": "Fixed grenade sounds; Rewrite granade system"
+        },
+        {
+          "sha": "bd43bbcd146ef0a79649ec4c50b42315d4e55220",
+          "author": "razchexlitiel",
+          "subject": "\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0430 \u043a\u043b\u0443\u0431\u043d\u0438\u043a\u0430 \u0438 \u0435\u0451 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized grenade rewrite commits by razchexlitiel and Alex linked above; current entity uses 1.20.1 ThrowableItemProjectile",
+        "O behavioral reference only: ItemGrenadeFuze.FUZE_3S; EntityGrenadeBouncyBase persistence. No O Java body copied into the delta."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "d4209a61c9ea237cef55404db745d48240f2e1933f6cd899738debd6ffc794e7",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+      "source_git_blob": "675c1053d8a2f0ec69c739e9d62489273dc72a8a",
+      "source_sha256": "4b9e4437578bde261c99008cb6b9c153a0716f512b4426b0b12213f3d27898d1",
+      "integrated_baseline_sha256": "4b9e4437578bde261c99008cb6b9c153a0716f512b4426b0b12213f3d27898d1",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+      "authors_observed": [
+        "Raptor"
+      ],
+      "history": [
+        {
+          "sha": "57492ee5dae09390027c99f16e1d8ae9075711c6",
+          "author": "Raptor",
+          "subject": "Cloth Config NO LONGER REQUIRED!"
+        },
+        {
+          "sha": "f3c7077f535ca678156e3b2a0a946cf4ccdd0a39",
+          "author": "Raptor",
+          "subject": "Im gonna die...."
+        },
+        {
+          "sha": "dba7d8453b0abffc5c720bcacbb32ab048656dbb",
+          "author": "Raptor",
+          "subject": "Moved all interfaces to src\\main\\java\\com\\hbm_m\\interfaces from entire project"
+        },
+        {
+          "sha": "e32f201aa14d15b3fd6d066b340b5adb96c9064e",
+          "author": "Raptor",
+          "subject": "Rework package structure, fix item display and fluid rendering in GUI"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized Multi-Detonator and Architectury implementation; authors/history linked above",
+        "O ItemDetonator is a behavioral reference under Original LGPL; no O Java body copied into the delta."
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "afa455bec0343507d505c8f17f0ffb001fcbacbd4a1d4d188b532d0fbc3d35f4",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java",
+      "source_git_blob": "14c5b0443173dab8bb14399097bf220c95c8827e",
+      "source_sha256": "b2a2f3e7355de9167cc19231bf2b2e35a93b6cf68b738a0f448f2b4965d2511e",
+      "integrated_baseline_sha256": "b2a2f3e7355de9167cc19231bf2b2e35a93b6cf68b738a0f448f2b4965d2511e",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_url": "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java",
+      "authors_observed": [
+        "Raptor"
+      ],
+      "history": [
+        {
+          "sha": "57492ee5dae09390027c99f16e1d8ae9075711c6",
+          "author": "Raptor",
+          "subject": "Cloth Config NO LONGER REQUIRED!"
+        },
+        {
+          "sha": "0bfc30a4e6d56e32aea5a61fa9425e945aa977d0",
+          "author": "Raptor",
+          "subject": "optimization"
+        },
+        {
+          "sha": "664c42ea429b58ea5e04b87494d3f299e8e208c0",
+          "author": "Raptor",
+          "subject": "Zombie & Villager skeletonizer port + sound fix"
+        },
+        {
+          "sha": "8c5aa2a385c15386ce53a22fb6aa4b53edac5e1d",
+          "author": "Raptor",
+          "subject": "MISSILE INTERCEPTION LOGIC FULLY COMPLETE"
+        },
+        {
+          "sha": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+          "author": "Raptor",
+          "subject": "I'm Back"
+        }
+      ],
+      "license": "GPL-3.0 (upstream root declaration; derivative delta only)",
+      "notices": "No individual copyright/license/third-party exception in the inspected affected Java hunks. Preserve all upstream files and notices; do not relicense the full tree.",
+      "target_path": "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java",
+      "public_delivery": "changes.patch hunks, including reviewed context; never the full source file",
+      "review_status": "belegt-delta-only",
+      "changes_date": "2026-10-20",
+      "reviewer": "Codex / Agent B",
+      "distribution": "Public source delta only. No evaluation JAR, assets, world or full source import. Existing integration license texts remain unchanged.",
+      "original_source_chain": [
+        "Modernized Raptor history linked above; file documents ported Original radar behavior",
+        "O:src/main/java/com/hbm/tileentity/machine/TileEntityMachineRadarNT.java@aee05a40f10fb7bb9b042b65eccaa449ecc1672d; LGPL-3.0 root; original HBM authors including The Bobcat (hbm)"
+      ],
+      "review_basis": "Pinned source bytes, linked individual Git history, affected hunks including context read, upstream GPL and referenced Original LGPL evidence; no individual conflicting/third-party notices found in the delivered hunks. This clears only this small delta, never a full-tree import.",
+      "modified_sha256": "1e237956731357268d4f2f37aea775cb13a06285e828b9a9c36162a295c56f13",
+      "public_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2"
+    }
+  ],
+  "own_files": [
+    {
+      "path": "overlay/com/hbm_m/network/WeaponPacketAccess.java",
+      "sha256": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
+      "origin": "Original W-01 implementation/test written in this task on 2026-10-20; no upstream source/asset body copied. Tests use public APIs and controlled test fixtures.",
+      "license": "LGPL-3.0-only",
+      "notice": "SPDX file header preserved",
+      "author": "HBM Complete Port W-01 contribution via Codex / Agent B",
+      "reviewer": "Codex / Agent B",
+      "review_status": "belegt-own-source"
+    },
+    {
+      "path": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+      "origin": "Original W-01 implementation/test written in this task on 2026-10-20; no upstream source/asset body copied. Tests use public APIs and controlled test fixtures.",
+      "license": "LGPL-3.0-only",
+      "notice": "SPDX file header preserved",
+      "author": "HBM Complete Port W-01 contribution via Codex / Agent B",
+      "reviewer": "Codex / Agent B",
+      "review_status": "belegt-own-source"
+    }
+  ]
+}

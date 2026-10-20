@@ -1,0 +1,2 @@
+# Unified-diff context must retain the reviewed upstream whitespace.
+changes.patch -whitespace

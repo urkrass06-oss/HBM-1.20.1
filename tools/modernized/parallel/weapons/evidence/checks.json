@@ -1,0 +1,599 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "source_pins": {
+    "original": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized": "0365cef5956016913095eeeb9366f26c601ca9a0"
+  },
+  "delivery_hashes": {
+    "changes.patch": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
+    "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+    "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
+    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8"
+  },
+  "profile": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.23",
+    "build_jdk": 21,
+    "runtime_and_mod_jdk": 17,
+    "gradle": "9.3.1"
+  },
+  "baseline": {
+    "required_tests": 24,
+    "baseline_regressions_passed": 14,
+    "weapons_tests_failed": 10,
+    "exit_code": 1,
+    "failures": [
+      {
+        "test": "grenadehasownerandonedetonation",
+        "result": "Grenade did not detonate once at 60 ticks"
+      },
+      {
+        "test": "radarrejectswrongmenuandkeepslinkedscreenaccess",
+        "result": "Radar changed without menu"
+      },
+      {
+        "test": "radarvalidatesloadedreceiveranddetectedentity",
+        "result": "Radar launched at an undetected entity"
+      },
+      {
+        "test": "grenadefuseandownersurvivenbtroundtrip",
+        "result": "Reload reset or lost grenade fuse"
+      },
+      {
+        "test": "grenadecollisioncannotdetonatetwicereentrantly",
+        "result": "Custom grenade damage lost the player owner; explosion count=2"
+      },
+      {
+        "test": "soyuzrequiresitsmatchingmenu",
+        "result": "Soyuz accepted wrong menu"
+      },
+      {
+        "test": "weapondecodersboundpayloads",
+        "result": "Malformed weapon payloads accepted: [turret action, Soyuz mode, radar slot, radar coordinate, nonempty/nonfinite detonator NBT, nonempty/nonfinite detonator NBT, nonempty/nonfinite detonator NBT, oversized fixed packet, oversized NBT]"
+      },
+      {
+        "test": "missileassemblyrequiresitsmatchingmenu",
+        "result": "Missile built without menu"
+      },
+      {
+        "test": "weaponpacketsrejectinvalidtargets",
+        "result": "Turret changed without its menu"
+      },
+      {
+        "test": "detonatorusesheldserveritemanddimension",
+        "result": "Detonator activated same coordinates in wrong dimension"
+      }
+    ],
+    "source_test_sha256": "f5e227572951af4d4dc0e07e2296e729caa6dae739e940c59c9344c81daa036b"
+  },
+  "candidate": {
+    "required_tests_passed": 24,
+    "baseline_regressions_passed": 14,
+    "weapons_tests_passed": 10,
+    "exit_code": 0,
+    "source_test_sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+    "production_archives": [
+      {
+        "file": "hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+        "sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+        "area_tests_absent": true,
+        "production_helper_present": true
+      },
+      {
+        "file": "hbm_m-0.2.1-phase5-dev+1.20.1-forge-sources.jar",
+        "sha256": "8f1a0a13e2076d43f052b8ed320daa9dfd4cfbf755a047a833e623c1f2bc2fe4",
+        "area_tests_absent": true,
+        "production_helper_present": true
+      }
+    ],
+    "entrypoint_audit": {
+      "mod_ids": [
+        "hbm_m"
+      ],
+      "mod_annotation_classes": [
+        "com/hbm/HbmPort.class"
+      ],
+      "nested_jars": {
+        "jars": [
+          {
+            "identifier": {
+              "group": "com.moulberry",
+              "artifact": "mixinconstraints"
+            },
+            "version": {
+              "range": "[1.1.0,)",
+              "artifactVersion": "1.1.0"
+            },
+            "path": "META-INF/jarjar/mixinconstraints-1.1.0.jar",
+            "isObfuscated": false
+          },
+          {
+            "identifier": {
+              "group": "dev.architectury",
+              "artifact": "architectury-forge"
+            },
+            "version": {
+              "range": "[9.2.14,)",
+              "artifactVersion": "9.2.14"
+            },
+            "path": "META-INF/jarjar/architectury-forge-9.2.14.jar",
+            "isObfuscated": false
+          }
+        ]
+      },
+      "runtime_test_classes_absent": true
+    },
+    "datagen": {
+      "files": 7952,
+      "runs": 2,
+      "manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700",
+      "byte_identical": true,
+      "same_manifest_as_baseline": true
+    },
+    "additional_wire_round_trips": 11,
+    "final_recheck": "All 24 required tests passed, 2026-10-20 12:53:11 UTC; only additional valid decoder round trips added after first 24/24 candidate run; production bytes unchanged."
+  },
+  "patch_replay": {
+    "passed": true,
+    "base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "modernized_pin": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "patched_files": 8,
+    "explicit_overlay_files": 2,
+    "result": "Fresh Phase-3/4/5 basis verified, git apply --check and apply exit 0; all patched bytes match tested candidate; no shared registry/renderer files changed."
+  },
+  "known_failed_fixture_attempt": {
+    "result": "First 23-test attempt crashed after reporting nine negative failures because the test receiver extended the unregistered large-launchpad class with the normal launchpad ticker. Corrected to LaunchPadBlockEntity, removed fixture in finally, and repeated in a fresh test world. This crash is not attributed to production code.",
+    "external_log_sha256": "7b89af0fb21ac773f7fae0afcbb37c87828c8fc2ee300ecae023ac739f4d0dc7"
+  },
+  "gates": {
+    "G1": {
+      "status": "local-scope-and-delta-review-passed; integration-blocked",
+      "detail": "Only weapons delivery files and TASKS_WEAPONS.md; individual source/hunk review and fresh replay passed. R-01 commit/API delivery still unavailable; no fabricated dependency SHA."
+    },
+    "G2": {
+      "status": "passed-with-known-javadoc-debt",
+      "detail": "Forge 47.4.23, two byte-identical datagen runs, separate build sourcesJar exit 0, Java17 including embedded jars, one entrypoint, all generated resources, no test classes/structures in runtime or sources archive. Existing 66 Javadoc errors / 100 warnings remain; no clean Javadoc claim."
+    },
+    "G3": {
+      "status": "passed",
+      "detail": "All 24 required tests pass: 14 unchanged baseline plus 10 weapons tests."
+    },
+    "G4": {
+      "status": "startup-save-stop-passed; state-restart-check-in-progress",
+      "detail": "Both production starts Done, 30-second observation, Save/Stop and exit 0. No unexpected ERROR/FATAL; documented Yggdrasil offline failure retained separately. Arena NBT restart check follows."
+    },
+    "G5": {
+      "status": "in-progress",
+      "detail": "EULA explicitly accepted; two production clients and interactive server prepared."
+    },
+    "G6": {
+      "status": "open",
+      "detail": "NBT fuse/owner persistence tested; normal chunk unload/reload, reconnect, dimension change with real clients, production Save/Restart and singleplayer copy not completed."
+    },
+    "G7": {
+      "status": "source-supported-only",
+      "detail": "Explicit O Universal/S3 60-tick reference; direct M STANDARD equivalence and O-JDK8 runtime comparison absent."
+    },
+    "G8": {
+      "status": "deferred-to-four-delivery-integration",
+      "detail": "No two-hour mixed load/online-auth/modpack claim; depends on combined M/N/W/R deliveries."
+    }
+  },
+  "environment_notes": [
+    "Only the documented Yggdrasil public-key authentication request failure appears as an environment ERROR in the successful offline-loopback GameTest run; kept in raw logs.",
+    "Known empty naval-mine height-range warning belongs to R; no broad error suppression added.",
+    "No third-party source, assets, generated resources, JARs, worlds or screenshots uploaded."
+  ],
+  "commands": [
+    {
+      "utc": "20261020T073532898544Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline/20261020T073532898544Z-runData.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T123119426900Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline/20261020T123119426900Z-runData.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T123151730540Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:build",
+        ":1.20.1-forge:sourcesJar",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline/20261020T123151730540Z-build-sourcesJar.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T123241667121Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pmodernized.gameTests=true",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline/20261020T123241667121Z-runGameTestServer.log",
+      "exit_code": 1
+    },
+    {
+      "utc": "20261020T123517214174Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pmodernized.gameTests=true",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline-replay/20261020T123517214174Z-runGameTestServer.log",
+      "exit_code": 1
+    },
+    {
+      "utc": "20261020T123732733391Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pmodernized.gameTests=true",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/baseline-final/20261020T123732733391Z-runGameTestServer.log",
+      "exit_code": 1
+    },
+    {
+      "utc": "20261020T124025538449Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/candidate/20261020T124025538449Z-runData.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T124223208308Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/candidate/20261020T124223208308Z-runData.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T124249414924Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:build",
+        ":1.20.1-forge:sourcesJar",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/candidate/20261020T124249414924Z-build-sourcesJar.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T124329788980Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pmodernized.gameTests=true",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/candidate/20261020T124329788980Z-runGameTestServer.log",
+      "exit_code": 0
+    },
+    {
+      "utc": "20261020T125054692921Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-check-weapons/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pmodernized.gameTests=true",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+      "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+      "log": "/workspace/hbm-check-weapons/logs/final/20261020T125054692921Z-runGameTestServer.log",
+      "exit_code": 0
+    }
+  ],
+  "external_logs": [
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline/20261020T073532898544Z-runData.log",
+      "sha256": "800cffddf1b17245d1216348ca851ef7d2c33ad2ee11b274ef4da27e4c23f7e6",
+      "bytes": 19666
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline/20261020T123119426900Z-runData.log",
+      "sha256": "710f3b91e9bbc71536802bcb81c5152664372bda84c178a4eb5824a2a7372995",
+      "bytes": 9639
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline/20261020T123151730540Z-build-sourcesJar.log",
+      "sha256": "013aa657e54a2dd188e4b7226a26e374173d9a577d70b600ebdfd4abbb39376f",
+      "bytes": 43430
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline/20261020T123241667121Z-runGameTestServer.log",
+      "sha256": "7b89af0fb21ac773f7fae0afcbb37c87828c8fc2ee300ecae023ac739f4d0dc7",
+      "bytes": 64067
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline-final/20261020T123732733391Z-runGameTestServer.log",
+      "sha256": "3c2e13f9ab989f5114ff890ca87853ceeaf76de05baa3fea849445f4910c6000",
+      "bytes": 55187
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/baseline-replay/20261020T123517214174Z-runGameTestServer.log",
+      "sha256": "c8a8a86f5a8ee561e5b5704d2eb43ea0fddd113381e64b7103cbe24785357134",
+      "bytes": 54567
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/candidate/20261020T124025538449Z-runData.log",
+      "sha256": "dfb8098bd07aa8dbbbfedbf6dfeb5f13d53d9bd0f9da1197938ede498823d784",
+      "bytes": 11155
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/candidate/20261020T124223208308Z-runData.log",
+      "sha256": "383ee726d88929c3ae7f5c09917284240084ff97b5d03b33b1a4de2759a32c78",
+      "bytes": 9662
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/candidate/20261020T124249414924Z-build-sourcesJar.log",
+      "sha256": "286d289e66dafbb3b054f0bb7ec3de9105765609681824a5268f656e6871ee99",
+      "bytes": 43442
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/candidate/20261020T124329788980Z-runGameTestServer.log",
+      "sha256": "81128d308b023dabcdf1142ee0d99b10737276866bea185d5e5ddbcc5a510b58",
+      "bytes": 34864
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/prepare.log",
+      "sha256": "d9d2c27445a0434b1238ffce74dd715a066dc868b8067979cdd33c04730df8a4",
+      "bytes": 1193
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/replay-prepare.log",
+      "sha256": "c66319cda478cbf937a818f9ad4dc38ed94a125592ba05a4503466581e0aa17f",
+      "bytes": 1181
+    },
+    {
+      "external_path": "/workspace/hbm-check-weapons/logs/final/20261020T125054692921Z-runGameTestServer.log",
+      "sha256": "e112231bbb980676985a24e8c674c6e3f62b992bfd8056deb34cbc798cbca42e",
+      "bytes": 34585
+    }
+  ],
+  "authorizations": {
+    "minecraft_eula": "Explicit user reply: Minecraft-EULA f\u00fcr diese isolierten lokalen Tests gelesen und akzeptiert",
+    "scope": "Isolated local server and two-client tests G4\u2013G6 only; no online service or distribution."
+  },
+  "server_smoke": {
+    "utc": "2026-10-20T12:54:48.815362+00:00",
+    "jar": "/workspace/hbm-check-weapons/candidate-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+    "jar_sha256": "08e5283dd4d7c9c9a146fb4e89192d91c2de7d532449944ebc89178273b44c7e",
+    "forge": "1.20.1-47.4.23",
+    "installer_url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.23/forge-1.20.1-47.4.23-installer.jar",
+    "installer_sha256": "75cfcb11f60cc641dc83757c1357c08c9bdba255ec529feb115c5e89a59cf75a",
+    "download_command": [
+      "curl",
+      "--fail",
+      "--silent",
+      "--show-error",
+      "--location",
+      "--retry",
+      "2",
+      "--max-time",
+      "180",
+      "--output",
+      "/workspace/hbm-check-weapons/server-47.4.23/forge-installer.jar",
+      "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.23/forge-1.20.1-47.4.23-installer.jar"
+    ],
+    "install_command": [
+      "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+      "-Dhttp.proxyHost=proxy",
+      "-Dhttp.proxyPort=8080",
+      "-Dhttps.proxyHost=proxy",
+      "-Dhttps.proxyPort=8080",
+      "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+      "-jar",
+      "/workspace/hbm-check-weapons/server-47.4.23/forge-installer.jar",
+      "--installServer"
+    ],
+    "bind": "127.0.0.1:54921",
+    "eula": "accepted-for-isolated-test",
+    "runs": [
+      {
+        "utc": "2026-10-20T12:54:48.857801+00:00",
+        "command": [
+          "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+          "-Dhttp.proxyHost=proxy",
+          "-Dhttp.proxyPort=8080",
+          "-Dhttps.proxyHost=proxy",
+          "-Dhttps.proxyPort=8080",
+          "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+          "-Xms512M",
+          "-Xmx3072M",
+          "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+          "nogui"
+        ],
+        "cwd": "/workspace/hbm-check-weapons/server-47.4.23",
+        "transcript": "/workspace/hbm-check-weapons/server-47.4.23/server-1.log",
+        "done": true,
+        "startup_seconds": 53.477,
+        "observed_seconds": 30,
+        "save_confirmed": true,
+        "exit_code": 0,
+        "error_lines": [
+          "[12:55:05] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+        ],
+        "environment_error_lines": [
+          "[12:55:05] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+        ],
+        "unexpected_error_lines": [],
+        "passed": true
+      },
+      {
+        "utc": "2026-10-20T12:56:15.153184+00:00",
+        "command": [
+          "/workspace/toolchains/jdk-17.0.20.1+1/bin/java",
+          "-Dhttp.proxyHost=proxy",
+          "-Dhttp.proxyPort=8080",
+          "-Dhttps.proxyHost=proxy",
+          "-Dhttps.proxyPort=8080",
+          "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+          "-Xms512M",
+          "-Xmx3072M",
+          "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+          "nogui"
+        ],
+        "cwd": "/workspace/hbm-check-weapons/server-47.4.23",
+        "transcript": "/workspace/hbm-check-weapons/server-47.4.23/server-2.log",
+        "done": true,
+        "startup_seconds": 25.242,
+        "observed_seconds": 30,
+        "save_confirmed": true,
+        "exit_code": 0,
+        "error_lines": [
+          "[12:56:32] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+        ],
+        "environment_error_lines": [
+          "[12:56:32] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+        ],
+        "unexpected_error_lines": [],
+        "passed": true
+      }
+    ]
+  },
+  "runtime_interruption": {
+    "observed_by_utc": "2026-10-20 13:02:10 UTC",
+    "reason": "Managed environment restarted; server, two clients and both Xorg processes no longer running; source/artifact/log files persisted.",
+    "first_clients_joined_utc": [
+      "2026-10-20 12:59:50 UTC",
+      "2026-10-20 12:59:52 UTC"
+    ],
+    "ten_minute_overlap_proven": false,
+    "classification": "interrupted infrastructure attempt; not a demonstrated production defect",
+    "next_session": "weapons-multiplayer-resume"
+  }
+}

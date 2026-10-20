@@ -145,7 +145,7 @@
     },
     {
       "path": "gametest/com/hbm/integration/machines/MachineNetworkTests.java",
-      "sha256": "a919c1d0e80097c1533601a79a934695228038c5d134acd16785cd4a0fe84f72"
+      "sha256": "c5798811ab4c7ffe9f5aeaeedeb043f5e5c751cfe4b7c1b0b593e95cd72223f8"
     },
     {
       "path": "requests/R-01-machines-tests.json",

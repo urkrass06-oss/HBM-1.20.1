@@ -188,7 +188,7 @@ public final class MachineNetworkTests {
             afterFlow.run();
             return;
         }
-        h.assertTrue(attempts > 0, "Transfer never started before unload; HE=" + energy.getEnergyStored()
+        h.assertTrue(attempts > 0, "Transfer did not become ready; HE=" + energy.getEnergyStored()
                 + ", mB=" + fluid.getAllTanks()[0].getFill() + ", chunk="
                 + level.getChunkSource().getChunkDebugData(new ChunkPos(center)));
         h.runAfterDelay(10, () -> awaitFlow(h, level, center, attempts - 1, afterFlow));
@@ -243,7 +243,7 @@ public final class MachineNetworkTests {
                 level.setBlockAndUpdate(center, ModBlocks.WIRE_COATED.get().defaultBlockState());
                 level.setBlockAndUpdate(pipe.below(), Blocks.AIR.defaultBlockState());
                 valve.updateRedstone(level, pipe);
-                h.runAfterDelay(10, () -> {
+                h.runAfterDelay(10, () -> awaitFlow(h, level, center, 10, () -> {
                     balance(h, level, center, 20_000_000L, 18_000);
                     h.assertTrue(b.getEnergyStored() > 0,
                             "HE transfer did not resume after merging; stored=" + b.getEnergyStored());
@@ -257,7 +257,7 @@ public final class MachineNetworkTests {
                             "Pump configuration or buffered fluid changed on NBT roundtrip");
                     clear(level, center);
                     h.succeed();
-                });
+                }));
             });
         });
     }

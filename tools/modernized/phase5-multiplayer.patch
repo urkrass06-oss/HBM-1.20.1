@@ -1,0 +1,176 @@
+--- a/src/main/java/com/hbm_m/network/RBMKConsoleControlPacket.java
++++ b/src/main/java/com/hbm_m/network/RBMKConsoleControlPacket.java
+@@ -1,6 +1,8 @@
+ package com.hbm_m.network;
+ 
+ import com.hbm_m.blockentity.machines.MachineRbmkConsoleBlockEntity;
++import com.hbm_m.inventory.menu.MachineRbmkConsoleMenu;
++import io.netty.handler.codec.DecoderException;
+ 
+ import dev.architectury.networking.NetworkManager.PacketContext;
+ import net.minecraft.core.BlockPos;
+@@ -45,9 +47,14 @@
+         double  dVal    = buf.readDouble();
+         int     iVal    = buf.readInt();
+         int     len     = buf.readInt();
++        // Bound allocation before trusting a client-supplied array length.
++        if (len < 0 || len > MachineRbmkConsoleBlockEntity.AREA || len > buf.readableBytes() / Integer.BYTES)
++            throw new DecoderException("Invalid RBMK selection length");
+         int[]   sel     = new int[len];
+         for (int i = 0; i < len; i++) sel[i] = buf.readInt();
+-        return new RBMKConsoleControlPacket(pos, action, dVal, iVal, sel);
++        var packet = new RBMKConsoleControlPacket(pos, action, dVal, iVal, sel);
++        if (!packet.validPayload()) throw new DecoderException("Invalid RBMK control payload");
++        return packet;
+     }
+ 
+     @Override
+@@ -60,12 +67,39 @@
+         for (int i : selectedIndices) buf.writeInt(i);
+     }
+ 
++    private boolean validPayload() {
++        if (action < ACTION_SET_LEVEL || action > ACTION_ASSIGN_SCREEN || !Double.isFinite(doubleVal)
++                || selectedIndices.length > MachineRbmkConsoleBlockEntity.AREA) return false;
++        if (action == ACTION_SET_LEVEL && (doubleVal < 0 || doubleVal > 1)) return false;
++        if (action == ACTION_ASSIGN_COLOR && (intVal < -1 || intVal > 4)) return false;
++        if ((action == ACTION_CYCLE_SCREEN || action == ACTION_ASSIGN_SCREEN)
++                && (intVal < 0 || intVal >= MachineRbmkConsoleBlockEntity.SCREENS)) return false;
++        if (action == ACTION_SET_ORIGIN) return selectedIndices.length == 3;
++        for (int index : selectedIndices)
++            if (index < 0 || index >= MachineRbmkConsoleBlockEntity.AREA) return false;
++        return true;
++    }
++
++    /** Server-thread application, shared with the focused authorization regression test. */
++    public boolean apply(ServerPlayer player) {
++        if (!validPayload() || player.isSpectator() || !player.isAlive()
++                || !(player.containerMenu instanceof MachineRbmkConsoleMenu menu)
++                || !menu.stillValid(player) || !player.serverLevel().hasChunkAt(consolePos)) return false;
++        var console = menu.getBlockEntity();
++        if (console.isRemoved() || !console.getBlockPos().equals(consolePos)
++                || player.serverLevel().getBlockEntity(consolePos) != console) return false;
++        if (action == ACTION_SET_ORIGIN) {
++            BlockPos origin = new BlockPos(selectedIndices[0], selectedIndices[1], selectedIndices[2]);
++            if (!player.serverLevel().isInWorldBounds(origin)
++                    || !player.serverLevel().getWorldBorder().isWithinBounds(origin)) return false;
++        }
++        console.handleControl(player.serverLevel(), action, doubleVal, intVal, selectedIndices);
++        return true;
++    }
++
+     public static void handle(RBMKConsoleControlPacket pkt, PacketContext ctx) {
+         ctx.queue(() -> {
+-            if (!(ctx.getPlayer() instanceof ServerPlayer player)) return;
+-            if (player.level().getBlockEntity(pkt.consolePos) instanceof MachineRbmkConsoleBlockEntity console) {
+-                console.handleControl(player.serverLevel(), pkt.action, pkt.doubleVal, pkt.intVal, pkt.selectedIndices);
+-            }
++            if (ctx.getPlayer() instanceof ServerPlayer player) pkt.apply(player);
+         });
+     }
+ 
+--- a/src/main/java/com/hbm_m/blockentity/machines/MachineRbmkConsoleBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/MachineRbmkConsoleBlockEntity.java
+@@ -272,6 +272,11 @@
+     public void handleUpdateTag(CompoundTag tag) {
+         applyUpdateTag(tag);
+     }
++
++    @Override
++    public void onDataPacket(net.minecraft.network.Connection connection, ClientboundBlockEntityDataPacket packet) {
++        if (packet.getTag() != null) applyUpdateTag(packet.getTag());
++    }
+     //?} else {
+     /*public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
+         return buildUpdateTag(super.getUpdateTag(registries));
+--- a/src/main/java/com/hbm_m/api/energy/EnergyNetworkManager.java
++++ b/src/main/java/com/hbm_m/api/energy/EnergyNetworkManager.java
+@@ -26,6 +26,7 @@
+     private static final String DATA_NAME = "hbm_modernized_energy_networks";
+ 
+     private final ServerLevel level;
++    private long lastTickTime = Long.MIN_VALUE;
+     private final Long2ObjectMap<EnergyNode> allNodes = new Long2ObjectOpenHashMap<>();
+     private final Set<EnergyNetwork> networks = Sets.newHashSet();
+ 
+@@ -126,6 +127,11 @@
+ 
+ 
+     public void tick() {
++        // Common SERVER_POST and Forge LevelTickEvent both invoke this manager.
++        // Give every dimension exactly one transfer budget per game tick.
++        long now = level.getGameTime();
++        if (lastTickTime == now) return;
++        lastTickTime = now;
+         // Копируем, чтобы избежать ConcurrentModificationException
+         new HashSet<>(networks).forEach(network -> network.tick(level));
+     }
+--- a/src/main/java/com/hbm_m/api/energy/LongEnergyWrapper.java
++++ b/src/main/java/com/hbm_m/api/energy/LongEnergyWrapper.java
+@@ -44,6 +44,7 @@
+     // --- Forge Energy IEnergyStorage ---
+     @Override
+     public int receiveEnergy(int maxReceive, boolean simulate) {
++        if (maxReceive <= 0) return 0;
+         if (!(handler instanceof IEnergyReceiver receiver) || !receiver.canReceive()) {
+             return 0;
+         }
+@@ -53,17 +54,17 @@
+ 
+         if (mode == BitMode.LOW) {
+             // LOW режим: работаем с младшими битами
+-            long toReceive = Math.min(maxReceive, maxEnergy - currentEnergy);
++            long toReceive = Math.min(maxReceive, Math.max(0L, maxEnergy - currentEnergy));
+             long received = receiver.receiveEnergy(toReceive, simulate);
+             return (int) Math.min(received, Integer.MAX_VALUE);
+ 
+         } else {
+             // HIGH режим: работаем со старшими битами
+             int currentHigh = getHigh(currentEnergy);
+-            int maxHigh = getHigh(maxEnergy);
+             int currentLow = getLow(currentEnergy);
+ 
+-            int canReceive = Math.min(maxReceive, maxHigh - currentHigh);
++            // A whole HIGH unit must fit including the existing LOW remainder.
++            int canReceive = (int) Math.min(maxReceive, Math.max(0L, maxEnergy - currentEnergy) >>> 32);
+             if (canReceive <= 0) return 0;
+ 
+             if (!simulate) {
+@@ -78,6 +79,7 @@
+ 
+     @Override
+     public int extractEnergy(int maxExtract, boolean simulate) {
++        if (maxExtract <= 0) return 0;
+         if (!(handler instanceof IEnergyProvider provider) || !provider.canExtract()) {
+             return 0;
+         }
+@@ -118,7 +120,8 @@
+             energy = r.getEnergyStored();
+         }
+ 
+-        return (mode == BitMode.LOW) ? getLow(energy) : getHigh(energy);
++        // Forge Energy exposes nonnegative ints, not a signed low-bit view.
++        return (mode == BitMode.LOW) ? (int) Math.min(Integer.MAX_VALUE, Math.max(0L, energy)) : getHigh(energy);
+     }
+ 
+     @Override
+@@ -131,7 +134,7 @@
+             maxEnergy = r.getMaxEnergyStored();
+         }
+ 
+-        return (mode == BitMode.LOW) ? getLow(maxEnergy) : getHigh(maxEnergy);
++        return (mode == BitMode.LOW) ? (int) Math.min(Integer.MAX_VALUE, Math.max(0L, maxEnergy)) : getHigh(maxEnergy);
+     }
+ 
+     @Override
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -9,7 +9,7 @@
+ mod.id=hbm_m
+ mod.name=HBM Complete Port - Modernized Integration
+ mod.group=com
+-mod.version=0.2.1-phase4-dev
++mod.version=0.2.1-phase5-dev
+ mod.channel_tag=
+ mod.authors=RaptorDev, TRFFuchs, razchexlitiel, HyperiO
+ mod.contributors=ThePhoenixKnight, boryu._. (ko_kr translation), hexagon_inc (.dae parser), kami_no_samurai (fr_fr translation)

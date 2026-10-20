@@ -17,6 +17,7 @@ import modernized_build as base
 
 REPO = Path(__file__).resolve().parents[1]
 PATCH = REPO / "tools/modernized/phase4-integration.patch"
+PHASE5_PATCH = REPO / "tools/modernized/phase5-multiplayer.patch"
 
 
 def sha(path):
@@ -92,7 +93,7 @@ def install_overlay(checkout):
     return records
 
 
-def provenance(checkout, records):
+def provenance(checkout, records, phase5=False):
     tree = subprocess.check_output(["git", "-C", str(checkout), "ls-tree", "-r", "-z", "HEAD"])
     files = []
     # Git object bytes, not generated/modified working files, establish source identity.
@@ -126,6 +127,9 @@ def provenance(checkout, records):
                 "upstream_files": files,
                 "overlay_files": [{"path": str(p.relative_to(checkout)), "sha256": sha(p)}
                                   for p in sorted((checkout / "integration").rglob("*")) if p.is_file()]}
+    if phase5:
+        manifest["phase5_patch_sha256"] = sha(PHASE5_PATCH)
+        manifest["profile"] = "phase5-multiplayer"
     (checkout / "integration/provenance.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
 
@@ -141,12 +145,24 @@ def prepare_game_test_directory(checkout):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("checkout", help="New directory outside the target repository")
+    parser.add_argument("--phase5", action="store_true", help="Apply multiplayer fixes and additional GameTests; keep Forge 47.4.20 build pin")
     args = parser.parse_args()
     checkout = base.external(args.checkout)
     base.prepare(args)
     subprocess.run(["git", "-C", str(checkout), "apply", "--check", str(PATCH)], check=True)
     subprocess.run(["git", "-C", str(checkout), "apply", str(PATCH)], check=True)
-    provenance(checkout, install_overlay(checkout))
+    if args.phase5:
+        subprocess.run(["git", "-C", str(checkout), "apply", "--check", str(PHASE5_PATCH)], check=True)
+        subprocess.run(["git", "-C", str(checkout), "apply", str(PHASE5_PATCH)], check=True)
+    records = install_overlay(checkout)
+    if args.phase5:
+        shutil.copytree(REPO / "tools/modernized/phase5-gametest", checkout / "integration/src/gametest/java", dirs_exist_ok=True)
+        with (checkout / "integration/notices/CHANGES-AND-CREDITS.txt").open("a") as notice:
+            notice.write("\nPhase-5 changes, 2026-10-20: bounded/authorized RBMK controls; live console\n"
+                         "column synchronization; one energy-network budget per level tick;\n"
+                         "nonnegative saturated Forge Energy values and HIGH-unit capacity check.\n"
+                         "Additional isolated regression tests; runtime evaluation on Forge 47.4.23.\n")
+    provenance(checkout, records, args.phase5)
     prepare_game_test_directory(checkout)
     print(f"Integrated at {checkout}; source identities in integration/provenance.json")
     print("Evaluation only: no source/assets/JAR uploaded. Use modernized_build.py run next.")

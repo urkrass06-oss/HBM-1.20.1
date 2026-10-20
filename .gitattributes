@@ -4,4 +4,5 @@ third_party_licenses/*.txt -whitespace
 third_party_licenses/ARCHITECTURY_LICENSE.md -whitespace
 # Preserve recorded output and the whitespace required by unified-diff context.
 docs/integration/transcripts/** -whitespace linguist-generated=true
+docs/integration/phase5/transcripts/** -whitespace linguist-generated=true
 tools/modernized/*.patch -whitespace

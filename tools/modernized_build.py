@@ -73,6 +73,8 @@ def jdk(path, major):
 
 
 def run(args):
+    if "runData" in args.tasks and len(args.tasks) != 1:
+        raise ValueError("Run runData by itself, then build in a separate invocation: runData depends on classes/processResources")
     checkout = external(args.checkout)
     pinned(checkout)
     java21 = jdk(args.java21_home, 21)

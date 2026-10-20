@@ -1,0 +1,44 @@
+[
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/multiplayer-fixed.log",
+    "path": "transcripts/phase5-47.4.23-multiplayer.log",
+    "sha256": "6bd071ec8aef46ad0ee5f652357f37b985f217606c687091de7e749b45faa3ae",
+    "bytes": 31637,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/multiplayer-fixed.json",
+    "path": "transcripts/phase5-47.4.23-multiplayer.json",
+    "sha256": "0d49a04a52af4d4493d19a51db562850c68adfe68d64496f35da9ce0667dfe2c",
+    "bytes": 1526,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/reload-fixed.log",
+    "path": "transcripts/phase5-47.4.23-reload.log",
+    "sha256": "568b8934c515e4cda5586a169e464d01b3f033936e4e6c8bd350a47ad235d20a",
+    "bytes": 21817,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/reload-fixed.json",
+    "path": "transcripts/phase5-47.4.23-reload.json",
+    "sha256": "aca3a9bd9378ed18b383e864deaf1bab5a9cc6d11f1c5226846aa6e3a36994f4",
+    "bytes": 1551,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/final-server-47.4.20/result.json",
+    "path": "transcripts/phase5-rejected-candidate-server-result.json",
+    "sha256": "87c6e323889a355fd20acf94ceb7be6a90c46ec79719a32af7b38f01e1515231",
+    "bytes": 3707,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/prepare-final.log",
+    "path": "transcripts/phase5-prepare-final.log",
+    "sha256": "fe37e076b060e31a4f21637f9aadacfc5a2a438b841cdbb9fece640e7557d0ce",
+    "bytes": 1202,
+    "kind": "full-original-text"
+  }
+]

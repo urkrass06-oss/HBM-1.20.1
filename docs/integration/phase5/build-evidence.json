@@ -1,0 +1,79 @@
+[
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-gametests-47.4.20/20261020T055715010570Z-runGameTestServer.log",
+    "path": "transcripts/phase5-47.4.20-gametests.log",
+    "sha256": "32eb02272463a5cebdb358365a75e699aaece705029e2866751b8c95234b20e1",
+    "bytes": 43180,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-gametests-47.4.23/20261020T060433601972Z-runGameTestServer.log",
+    "path": "transcripts/phase5-47.4.23-gametests.log",
+    "sha256": "4b105f8d5577faf5f81418b0a3dc0bd886632041593a425c236cd7a386955d94",
+    "bytes": 28643,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/verified-server-47.4.20/result.json",
+    "path": "transcripts/phase5-47.4.20-server-result.json",
+    "sha256": "7c6e788309cdfe925d6bbe5949d3d8de3c0163a6ada5041a5a3f3062c80cd148",
+    "bytes": 3789,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/verified-server-47.4.20/server-1.log",
+    "path": "transcripts/phase5-47.4.20-server-1.log",
+    "sha256": "9f3a71fa9ac1d1d57ed82de8ec1e68777e3e1dc757f7a056246410ec57476286",
+    "bytes": 33398,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/verified-server-47.4.20/server-2.log",
+    "path": "transcripts/phase5-47.4.20-server-2.log",
+    "sha256": "79105f5ffd4a993924d78648a3644f3ebdc5b3509ea70d1ca4c3f1c562bf53d8",
+    "bytes": 19716,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-build/20261020T055504706622Z-runData-build-sourcesJar.log",
+    "path": "transcripts/phase5-combined-candidate-build.log",
+    "sha256": "88e3d358005857d6e872495d17070f2c560fe5f004b04be184ae387633cfca23",
+    "bytes": 56244,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/verified-build/20261020T060152151552Z-build-sourcesJar.log",
+    "path": "transcripts/phase5-production-build.log",
+    "sha256": "e8643987b6c48454be0e272550259e05dea1df66ea10e2ede75bdd8260b01d2a",
+    "bytes": 44020,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/verified-jar-audit.txt",
+    "path": "transcripts/phase5-production-jar-audit.txt",
+    "sha256": "17a37badcfd9c9c2eae71565789e853187d3971f84ba49b7d6732192a4aee130",
+    "bytes": 3358,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/verified-jar-delta.json",
+    "path": "transcripts/phase5-production-jar-delta.json",
+    "sha256": "d65bde19467f118dba9591941451b0fa34b8bc96c127e683ef51b56f0775ac06",
+    "bytes": 584,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/candidate-packaging-rejection.log",
+    "path": "transcripts/phase5-candidate-package-rejection.log",
+    "sha256": "1e5d9a1e00fe2db7cf57799aa64c32eb4754b6431856c1546ff91e5de9e258ab",
+    "bytes": 3463,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/combined-tasks-rejection.log",
+    "path": "transcripts/phase5-combined-tasks-rejection.log",
+    "sha256": "2e8b71b340e03352c5731383a39b326ce7b04f5e9863f076294f7d7e9d3b7c64",
+    "bytes": 135,
+    "kind": "full-original-text"
+  }
+]

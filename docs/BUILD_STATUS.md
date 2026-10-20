@@ -1,4 +1,38 @@
-# Build- und Teststatus: Phase 4
+# Build- und Teststatus
+
+## Phase 5: zusätzliche Forge-47.4.23-Prüfung
+
+Stand **20. Oktober 2026 (UTC)**, Arbeitsbasis `main = de6083c75c6dbb586d66cb6606d023d66c1ba26a`. Vollständiger Umfang, Fehlversuche und Reproduktion: [Forge-/Mehrspielerbericht](FORGE_MULTIPLAYER_REPORT.md). Modernized-Pin und `hbm_m` unverändert; Minecraft **1.20.1**, regulärer Build **Forge 47.4.20**.
+
+| Ausgeführt | Ergebnis |
+| --- | --- |
+| Unveränderte Phase-4-JAR auf 47.4.23 | Zwei Produktionsserverstarts mit Save/Stop, zwei gleichzeitig verbundene echte Produktionsclients, Inventar-/Energie-/Fluid-/Granatenfälle und begrenzter Singleplayer-Test. RBMK-Liveanzeige dabei fehlgeschlagen und anschließend korrigiert. |
+| Regression vor Korrektur auf 47.4.20 | **7/11 bestanden, 4 fehlgeschlagen**; JVM Exit 4/Gradle Exit 1. Fehler reproduziert, kein erfolgreicher Lauf behauptet. |
+| Korrigierte GameTests 47.4.20 | **14/14**, Exit **0**, **4m 29s**, einschließlich erneutem Compile und paralleler Testlast. |
+| Korrigierte GameTests 47.4.23 | **14/14**, Exit **0**, **5m**, einschließlich erstmaliger Vorbereitung der Forge-47.4.23-Entwicklungsbestände. Tatsächliche Forge-Version im Log bestätigt. |
+| Datagen und vollständiger Produktionsbuild | Datagen erfolgreich; **7.952** Ressourcen, Manifest `cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700`, bytegleich zu Phase 4. Getrennter abschließender Build/Sources-JAR Exit **0**, **45s**. Gemeinsamer Download-/Gradlecache verwendet. |
+| Fehlerhafter gemeinsamer Datagen-/Buildaufruf | Kandidat wegen **7.823 fehlenden generierten Ressourcen** verworfen. Wiederholung mit getrenntem Build und Paketgate erfolgreich. Kombinierte Aufrufe nun vor Gradlestart abgewiesen. |
+| Verpackung / Java 17 | **16.856** Einträge, **1.915 Klassen mit Major 61**; eingebettete Bibliotheken ebenfalls Java-17-kompatibel. Alle generierten Ressourcen vorhanden, keine Testklassen/-struktur. Keine Einträge gegenüber Phase 4 entfernt; sämtliche Assets/Daten bytegleich. |
+| Korrigierte Produktions-JAR auf 47.4.20 | **2/2 Starts bestanden**: `Done` nach **137,085s** und **65,293s**, je weitere 30s, Save/Stop, Exit **0**, keine unerwarteten ERROR/FATALs. Heap 1.600 MB, parallele Vorbereitung der 47.4.23-Entwicklungsumgebung. |
+| Korrigierte Produktions-JAR auf 47.4.23 | Zwei aufgezeichnete Sitzungen: `Done` nach **117,126s** und **51,345s**, Save/Stop und Exit **0**. Erster Lauf mit sieben früh fehlgeschlagenen NBT-Abfragen, identische spätere Abfragen erfolgreich; erneuter Neustart mit explizit geladenen Arena-Chunks ohne Befehlsfehler. |
+| Zwei Produktionsclients / Nachtest | Gleichzeitig verbunden für **4m 19s**, nach Neustart nochmals **60s**. RBMK-Spalten live entfernt/hinzugefügt, Sollwert/Bildschirm/AZ-5 von beiden Clients, Inventarübergabe, Tankanzeige/Modus/18.000-mB-Rücktransfer, Spielergranate mit Glaszerstörung, NBT und Spielerinventare nach Neustart geprüft. Kein Serverabsturz beobachtet. |
+| Korrigierter Produktionsclient / Singleplayer | Weltkopie geladen, bestehende Batterie gerendert, Menü geöffnet, gespeichert, Titel und regulärer Exit **0**. Beide Clients Exit **0**. **Rendering weiterhin nicht freigegeben**; bekannte Asset-/Modellfehler vorhanden. |
+| Javadoc | Weiterhin **66 Fehler/100 Warnungen**, von Upstream toleriert. Keine bestandene Javadocprüfung. |
+
+Aktuelle vollständige Evaluations-JAR (**44.925.653 Bytes**, gegen Forge 47.4.20 gebaut):
+
+```text
+/workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar
+SHA256: 056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3
+```
+
+Daneben: Sources-JAR **41.978.133 Bytes**, SHA256 `539802b686c9e0a312cf8eb4d53e7fee73c970d8a25941aadf905beebcce8b42`; Javadoc-JAR **7.522.931 Bytes**, SHA256 `687a132e8ecbf3763e41e63d893a1c7fdc4f9c619f4c22ba97c9507812f58e25` (Fehler siehe oben). Reproduktion mit `integrate_modernized.py <neues-externes-verzeichnis> --phase5`, anschließend **getrennt** `runData` und `build sourcesJar`. Keine Veröffentlichung dieser Dateien wegen offener Rechte.
+
+Die genaue Yggdrasil-Public-Key-Fehlermeldung ist ausschließlich in den Offline-Loopback-Serverprüfungen ausdrücklich gesondert zugelassen und bleibt protokolliert. Weitere Client-Renderingfehler, Online-/Last-/Create- und breite Spieltests bleiben offen. **Keine Release-/Modpack-/Originalparitätsfreigabe.** Textnachweise: [Phase-5-Belege](integration/phase5/build-evidence.json).
+
+Die vollständigen lokalen [Sitzungsergebnisse](integration/phase5/results.json) binden alle korrigierten Produktionsläufe an denselben JAR-Hash. Exakte Mehrspielerfälle, Einschränkungen und Fehler: [FORGE_MULTIPLAYER_REPORT.md](FORGE_MULTIPLAYER_REPORT.md).
+
+## Archiv: Phase 4
 
 Tests: **19. Oktober 2026 (UTC)**; Abschlussprüfung: **20. Oktober 2026**. Lokaler Linux-x86_64-Nachweis am Modernized-Pin `0365cef5956016913095eeeb9366f26c601ca9a0`, mit den unveränderten Phase-3-Korrekturen und der Phase-4-Integration. Minecraft **1.20.1**, Forge **47.4.20**, Mod-ID **`hbm_m`**. **Kein fertiges Release und keine Originalparitätsfreigabe.**
 

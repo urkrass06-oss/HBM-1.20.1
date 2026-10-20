@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: LGPL-3.0-only
+# Console commands ONLY for a disposable, loopback-only test world.
+# Stop before the next stage and perform the UI observations in the report.
+gamemode creative @a
+gamerule doDaylightCycle false
+time set day
+fill -20 99 -20 20 99 20 minecraft:stone
+setblock 0 100 0 hbm_m:machine_battery
+data merge block 0 100 0 {energy:123456L}
+setblock 5 100 0 hbm_m:machine_battery_schrabidium
+setblock 6 100 0 hbm_m:wire_coated
+setblock 7 100 0 hbm_m:machine_battery_schrabidium
+data merge block 5 100 0 {energy:20000000L,modeOnNoSignal:3,modeOnSignal:3}
+data merge block 7 100 0 {energy:0L,modeOnNoSignal:3,modeOnSignal:3}
+data merge block 7 100 0 {modeOnNoSignal:1,modeOnSignal:1}
+data merge block 5 100 0 {modeOnNoSignal:2,modeOnSignal:2}
+setblock -8 100 0 hbm_m:fluid_tank
+data merge block -8 100 0 {tank_type:"minecraft:water",tank_amount:16000}
+setblock -8 100 8 hbm_m:fluid_tank
+data merge block -8 100 8 {mode:2s,tank_type:"minecraft:water"}
+fill -9 100 3 -9 100 7 hbm_m:fluid_duct
+setblock 0 100 8 hbm_m:rbmk_console
+setblock 3 100 8 hbm_m:rbmk_control
+data merge block 0 100 8 {ox:3,oy:100,oz:8}
+tp HBMClientOne 0.5 100 -2.5 0 20
+tp HBMClientTwo 1.5 100 -2.5 18.4 20
+give HBMClientOne hbm_m:battery
+list

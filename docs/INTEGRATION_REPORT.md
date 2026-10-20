@@ -1,4 +1,18 @@
-# HBM Complete Port – Phase 4: Modernized-Integration
+# HBM Complete Port – Modernized-Integration
+
+## Aktualisierung: Phase 5
+
+Am **20. Oktober 2026** wurde die in `main` über PR #5 integrierte Basis (`de6083c75c6dbb586d66cb6606d023d66c1ba26a`) auf Forge **47.4.23** erweitert geprüft. Die unveränderte Phase-4-JAR startet dort auf einem dedizierten Server und zwei echten Produktionsclients; ein begrenzter Singleplayer-Test wurde ebenfalls ausgeführt. Konkrete Befunde, Nachtests und offene Fälle: [FORGE_MULTIPLAYER_REPORT.md](FORGE_MULTIPLAYER_REPORT.md).
+
+Die zusätzliche externe Integration ist mit `python3 tools/integrate_modernized.py <neuer-externer-checkout> --phase5` reproduzierbar. Modernized-Commit, Minecraft 1.20.1, Mod-ID `hbm_m`, Phase-3-/Phase-4-Patches und regulärer Forge-47.4.20-Build bleiben erhalten. Ein zusätzlicher [Phase-5-Patch](../tools/modernized/phase5-multiplayer.patch) korrigiert laufende RBMK-Konsolendaten, Paketgrenzen/Menüautorisierung, doppelte Energie-Netzaufrufe und FE-Grenzwerte. Die Dateiherkunft bleibt der dokumentierte M-Pin; vorhandene Header und Lizenztexte bleiben unverändert, `integration/notices/CHANGES-AND-CREDITS.txt` nennt die Änderungen vom 20. Oktober. `integration/provenance.json` erfasst den zusätzlichen Patchhash und das gesonderte Testprofil.
+
+Die vollständige neue JAR unter `/workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar` hat SHA256 **`056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3`**. Ein Vergleich beider Produktions-JARs belegt: keine Einträge entfernt oder hinzugefügt, alle Assets und Datendateien bytegleich; ausschließlich vier Klassen, Metadaten und Änderungsvermerk unterscheiden sich. **14/14 GameTests auf beiden Forge-Versionen** und **2/2 Produktionsserverstarts auf 47.4.20** sind ausgeführt. Vollständiger aktueller Nachweis: [BUILD_STATUS.md](BUILD_STATUS.md).
+
+Öffentlich ergänzt werden eigene Test-/Startwerkzeuge, Testfälle, der kleine GPL-Änderungspatch und Textprotokolle. Die Rechteentscheidung aus Phase 4 gilt unverändert: keine vollständigen ungeklärten Spielquellen, Assets, Bilder, Welten oder JARs werden veröffentlicht. Die CI wiederholt getrennte Datengenerierung, Build, Java-/Ressourcen-Paketgate, beide Produktionsserver-Versionen und beide GameTest-Laufzeiten; neue CI-Ausführungen werden erst nach tatsächlichem Abschluss als bestanden gewertet.
+
+Die korrigierte JAR wurde anschließend auch auf dem dedizierten Forge-47.4.23-Server mit **zwei echten Produktionsclients** und erneutem gemeinsamem Beitritt nach Save/Restart geprüft. Der RBMK-Livefehler ist in diesen Nachtests behoben; Energie-, Fluid- und Inventarzustände blieben erhalten. Ein zusätzlicher begrenzter Singleplayer-Nachtest der korrigierten JAR und beide regulären Client-Exits sind ausgeführt. Offene Asset-/Rendererprobleme, Online-/Last- und vollständige Spiel-/Modpackabnahmen bleiben ausdrücklich offen.
+
+## Archiv: Phase 4
 
 Tests und technische Integration: **19. Oktober 2026 (UTC)**; Abschlussprüfung: **20. Oktober 2026**. Tatsächlich ausgeführte Prüfungen und Artefakthashes: [BUILD_STATUS.md](BUILD_STATUS.md). Offene Abnahmen: [REMAINING_ISSUES.md](REMAINING_ISSUES.md).
 

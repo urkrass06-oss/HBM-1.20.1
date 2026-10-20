@@ -18,9 +18,10 @@ import time
 
 import modernized_build as base
 
-FORGE = "1.20.1-47.4.20"
-INSTALLER_URL = f"https://maven.minecraftforge.net/net/minecraftforge/forge/{FORGE}/forge-{FORGE}-installer.jar"
-INSTALLER_SHA256 = "0ebcf198609f925e0018842a79473ef74fda78534f86d82f2c0fdb26449c1fa4"
+INSTALLERS = {
+    "47.4.20": "0ebcf198609f925e0018842a79473ef74fda78534f86d82f2c0fdb26449c1fa4",
+    "47.4.23": "75cfcb11f60cc641dc83757c1357c08c9bdba255ec529feb115c5e89a59cf75a",
+}
 
 
 def java_command(java17, trust_store):
@@ -118,12 +119,19 @@ def main():
     parser.add_argument("directory", help="New external test directory; existing paths are refused")
     parser.add_argument("--java17-home", required=True)
     parser.add_argument("--trust-store")
+    parser.add_argument("--forge", choices=INSTALLERS, default="47.4.20")
     parser.add_argument("--accept-eula", action="store_true", help="Accept https://aka.ms/MinecraftEULA for this isolated test")
     parser.add_argument("--allow-offline-auth-failure", action="store_true",
                         help="Record the specific Yggdrasil public-key error separately in this offline loopback test")
     parser.add_argument("--observe-seconds", type=int, default=30)
     parser.add_argument("--startup-timeout", type=int, default=240)
+    parser.add_argument("--heap-mb", type=int, default=3072, help="Maximum server heap; 1600 was used for the constrained two-client environment")
     args = parser.parse_args()
+    forge = "1.20.1-" + args.forge
+    installer_url = f"https://maven.minecraftforge.net/net/minecraftforge/forge/{forge}/forge-{forge}-installer.jar"
+    installer_sha256 = INSTALLERS[args.forge]
+    if args.heap_mb < 512:
+        raise ValueError("Use a server heap of at least 512 MB")
     if not args.accept_eula:
         raise ValueError("Explicit --accept-eula is required; user must authorize EULA acceptance")
     directory = base.external(args.directory)
@@ -135,10 +143,10 @@ def main():
     # Forge's CDN rejected Python urllib here (HTTP 403); the Phase-3 curl path works.
     # Keep the inherited proxy, normal TLS verification, and mandatory content checksum.
     download_command = ["curl", "--fail", "--silent", "--show-error", "--location", "--retry", "2",
-                        "--max-time", "180", "--output", str(installer), INSTALLER_URL]
+                        "--max-time", "180", "--output", str(installer), installer_url]
     subprocess.run(download_command, check=True, timeout=600)
     data = installer.read_bytes()
-    if hashlib.sha256(data).hexdigest() != INSTALLER_SHA256:
+    if hashlib.sha256(data).hexdigest() != installer_sha256:
         raise ValueError("Forge installer checksum mismatch")
     install_command = [*java, "-jar", str(installer), "--installServer"]
     with (directory / "install.log").open("w") as output:
@@ -155,10 +163,10 @@ def main():
         "level-name=integration-test-world\nlevel-seed=42012001\n"
         "view-distance=4\nsimulation-distance=4\nmax-players=2\nspawn-protection=0\n"
     )
-    command = [*java, "-Xms512M", "-Xmx3G", f"@libraries/net/minecraftforge/forge/{FORGE}/unix_args.txt", "nogui"]
+    command = [*java, "-Xms512M", f"-Xmx{args.heap_mb}M", f"@libraries/net/minecraftforge/forge/{forge}/unix_args.txt", "nogui"]
     result = {"utc": datetime.now(timezone.utc).isoformat(), "jar": str(jar),
-              "jar_sha256": hashlib.sha256(jar.read_bytes()).hexdigest(), "forge": FORGE,
-              "installer_url": INSTALLER_URL, "installer_sha256": INSTALLER_SHA256,
+              "jar_sha256": hashlib.sha256(jar.read_bytes()).hexdigest(), "forge": forge,
+              "installer_url": installer_url, "installer_sha256": installer_sha256,
               "download_command": download_command,
               "install_command": install_command, "bind": f"127.0.0.1:{port}",
               "eula": "accepted-for-isolated-test", "runs": []}

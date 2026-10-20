@@ -1,0 +1,214 @@
+{
+  "changes.patch": {
+    "sha256": "59e7c824ebcfea806d19d2bcde6b328577aca5f22a74f5dee46995b768569a43",
+    "origin": "Small derivative of pinned Modernized files, including reviewed patch context; behavioral references pinned to O.",
+    "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0; O aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "authors": [
+      "RaptorDev",
+      "TRFFuchs",
+      "Modernized contributors",
+      "HBM Complete Port contributors"
+    ],
+    "license": "GPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "evidence/provenance.json": {
+    "sha256": "7620ca80dc0bbde2b6aab30765fce8649af4eccbdbfe1da6723be6fa334c9ffa",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "evidence/reproduction.md": {
+    "sha256": "d2f2f2e4a6ea300c0c9fd353a5568050e72c6017651aa33aed08f3c8a11d3e17",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "evidence/results.json": {
+    "sha256": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "evidence/validation.md": {
+    "sha256": "49e57176d83b40882371a97dafad004f43dd48680a38055d43659bdf0eb3252c",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "gametest/com/hbm/integration/nuclear/BreederGameTests.java": {
+    "sha256": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": {
+    "sha256": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java": {
+    "sha256": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "GPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "overlay/com/hbm_m/item/nuclear/BreedingRodItem.java": {
+    "sha256": "bba16cb39fe4781f8a8a69dc0b8da94f789196e6d16682d8678bf79803d3c876",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "GPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "requests/N05-research-flux-source.json": {
+    "sha256": "5a05459b83590e4979f4c46fc09107dbd7c0963b7ce6a37a0217870a2b581eb6",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "requests/R-01-test-loader.json": {
+    "sha256": "f62bc1d6f33300bcca499f28da182f1abfba6555ed967450c274bed733ade024",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "requests/R-N01-breeding-rods.json": {
+    "sha256": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "requests/R-N01-display.json": {
+    "sha256": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96",
+    "origin": "Authored N-01 implementation/test/metadata for HBM Complete Port; original references and detailed per-source chain in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored code/tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Existing notices retained; authored headers identify changes and date. GPL/LGPL license texts remain at repository root.",
+      "Behavioral reference: HBM, The Bobcat and contributors, where applicable."
+    ],
+    "review": "Codex, 2026-10-20: current payload checked as a small source-only delivery; all patch context reviewed, no full upstream class bodies/assets/worlds/binaries imported. Normalized patch repeats empty lines as empty replacements without changing the resulting Java bytes; test-only helpers are nested to meet the actual loader source/test contract. Historical result records remain tied to their actual tested commit.",
+    "publication_status": "cleared"
+  },
+  "evidence/r01-followup.json": {
+    "origin": "Authored N-01 source/test/evidence for HBM Complete Port. Detailed per-source provenance in evidence/provenance.json.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af task basis; prior authored tests at 0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "GPL/LGPL root license texts and individual source headers preserved."
+    ],
+    "review": "Codex, 2026-10-20: individually reviewed source-only payload, including patch context; no copied full source trees, assets, worlds or binaries.",
+    "publication_status": "cleared",
+    "sha256": "fe8f8a8cdfb23ae8cead797427d38dae7393eb7a7cc11887776dbd8391c68a9b"
+  }
+}

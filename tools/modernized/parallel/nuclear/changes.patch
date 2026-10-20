@@ -1,0 +1,376 @@
+--- a/src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java
+@@ -1,3 +1,8 @@
++/* SPDX-License-Identifier: GPL-3.0-only
++ * Modernized scaffold: RaptorDev, TRFFuchs and contributors.
++ * N-01, 2026-10-20: original flux breeding, persistence and synchronization.
++ * Behavioral reference: HBM, The Bobcat and contributors, aee05a40f10fb7bb9b042b65eccaa449ecc1672d.
++ */
+ package com.hbm_m.blockentity.machines;
+-
++
+ import org.jetbrains.annotations.NotNull;
+@@ -7,6 +12,7 @@
+ import com.hbm_m.blockentity.ModBlockEntities;
+ import com.hbm_m.capability.ModCapabilities;
+ import com.hbm_m.inventory.menu.MachineBreederMenu;
++import com.hbm_m.inventory.recipes.BreederRecipes;
+ import com.hbm_m.item.fekal_electric.ItemCreativeBattery;
+-
++
+ import net.minecraft.core.BlockPos;
+@@ -40,7 +46,8 @@
+     private static final long MAX_POWER = 1_000_000;
+     private static final long MAX_RECEIVE = 1_000;
+     private static final int TANK_CAPACITY = 8_000;
+-    private static final int DEFAULT_DURATION = 600;
++    public static final int PROGRESS_SCALE = 10_000;
++    public static final int DATA_COUNT = 4;
+-
++
+     private final FluidTank tank = new FluidTank(TANK_CAPACITY) {
+         @Override
+@@ -53,25 +60,34 @@
+     };
+     private final LazyOptional<IFluidHandler> tankHandler = LazyOptional.of(() -> tank);
+-
++
+-    private int progress = 0;
+-    private int duration = DEFAULT_DURATION;
++    private float progress;
++    private int flux;
+     private boolean isOn = false;
+-
++
+     protected final ContainerData data = new ContainerData() {
+         @Override
+         public int get(int index) {
+             return switch (index) {
+-                case 0 -> progress;
++                case 0 -> getProgressScaled(PROGRESS_SCALE);
+                 case 1 -> getDuration();
++                case 2 -> flux & 0xffff;
++                case 3 -> (flux >>> 16) & 0xffff;
+                 default -> 0;
+             };
+         }
+-
++
+         @Override
+-        public void set(int index, int value) {}
++        public void set(int index, int value) {
++            switch (index) {
++                case 0 -> progress = value / (float) PROGRESS_SCALE;
++                case 2 -> flux = (flux & 0xffff0000) | (value & 0xffff);
++                case 3 -> flux = (flux & 0xffff) | ((value & 0xffff) << 16);
++                default -> { }
++            }
++        }
+-
++
+         @Override
+         public int getCount() {
+-            return 2;
++            return DATA_COUNT;
+         }
+     };
+@@ -89,24 +105,47 @@
+         entity.chargeFromBattery();
+         entity.transferFluidsFromItems();
+-
++
+-        entity.isOn = false;
+-        if (entity.canProcess()) {
+-            entity.progress++;
+-            entity.setEnergyStored(entity.getEnergyStored() - entity.getPowerRequired());
+-            entity.isOn = true;
+-
+-            if (entity.progress >= entity.getDuration()) {
+-                entity.progress = 0;
+-                entity.processItem();
++        float oldProgress = entity.progress;
++        int oldFlux = entity.flux;
++        boolean wasOn = entity.isOn;
++        // Recompute every tick, including immediately after reload. Saved flux is display state.
++        entity.flux = collectFlux(level, pos);
++        BreederRecipes.Recipe recipe = BreederRecipes.getRecipe(entity.inventory.getStackInSlot(SLOT_INPUT));
++        entity.isOn = entity.canProcess(recipe);
++        if (entity.isOn) {
++            // Both operands of the quotient are ints in O. Do not interpolate the ratio.
++            entity.progress += 0.0025F * (entity.flux / recipe.flux());
++            if (entity.progress >= 1.0F) {
++                entity.progress = 0.0F;
++                entity.processItem(recipe);
+             }
++        } else {
++            entity.progress = 0.0F;
++        }
++        if (oldProgress != entity.progress || oldFlux != entity.flux || wasOn != entity.isOn) {
+             entity.setChanged();
+             entity.sendUpdateToClient();
+-        } else {
+-            if (entity.progress != 0) {
+-                entity.progress = 0;
+-                entity.setChanged();
++        }
++    }
++
++    private static int collectFlux(Level level, BlockPos pos) {
++        int total = 0;
++        // O checks exactly these four horizontal neighbours, at the controller's Y.
++        for (Direction direction : new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST}) {
++            BlockPos sourcePos = pos.relative(direction);
++            if (!level.hasChunkAt(sourcePos)) continue;
++            var source = level.getBlockEntity(sourcePos);
++            if (source instanceof UniversalMachinePartBlockEntity part) {
++                BlockPos core = part.getControllerPos();
++                if (core == null || !level.hasChunkAt(core)) continue;
++                source = level.getBlockEntity(core);
++            }
++            if (source != null && !source.isRemoved() && source instanceof ResearchReactorFluxSource reactor) {
++                // Do not deduplicate: O sums each contacting research-reactor face.
++                total += reactor.getTotalFlux();
+             }
+         }
++        return total;
+     }
+-
++
+     private void chargeFromBattery() {
+@@ -154,21 +193,42 @@
+         }
+     }
+-
++
+-    private boolean canProcess() {
+-        if (inventory.getStackInSlot(SLOT_INPUT).isEmpty()) return false;
+-        if (getEnergyStored() < getPowerRequired()) return false;
+-        return false;
++    private boolean canProcess(BreederRecipes.Recipe recipe) {
++        if (recipe == null || flux < recipe.flux()) return false;
++        ItemStack result = recipe.result();
++        ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT);
++        int limit = Math.min(inventory.getSlotLimit(SLOT_OUTPUT), result.getMaxStackSize());
++        if (output.isEmpty()) return result.getCount() <= limit;
++        return ItemStack.isSameItemSameTags(output, result)
++                && output.getCount() <= limit - result.getCount();
+     }
+-
++
+-    private void processItem() {
++    private void processItem(BreederRecipes.Recipe recipe) {
++        if (!canProcess(recipe)) return;
++        ItemStack result = recipe.result();
++        ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT).copy();
++        if (output.isEmpty()) output = result;
++        else output.grow(result.getCount());
++        inventory.setStackInSlot(SLOT_OUTPUT, output);
++        ItemStack input = inventory.getStackInSlot(SLOT_INPUT).copy();
++        input.shrink(1);
++        inventory.setStackInSlot(SLOT_INPUT, input);
+     }
+-
++
+     public int getPowerRequired() {
+-        return 1000;
++        return 0; // Neither HE nor fuel/fluid is consumed by the O breeder.
+     }
+-
++
+     public int getDuration() {
+-        return duration;
++        return PROGRESS_SCALE; // Normalized menu denominator, not a fixed tick duration.
++    }
++
++    public int getFlux() {
++        return flux;
++    }
++
++    public float getProcessProgress() {
++        return progress;
+     }
+-
++
+     public long getPowerScaled(int scale) {
+@@ -177,8 +237,7 @@
+     }
+-
++
+     public int getProgressScaled(int scale) {
+-        int dur = getDuration();
+-        return dur <= 0 ? 0 : (progress * scale) / dur;
++        return (int) (progress * scale);
+     }
+-
++
+     public FluidTank getTank() {
+@@ -206,6 +265,7 @@
+                 || stack.getCapability(ModCapabilities.HBM_ENERGY_PROVIDER).isPresent()
+                 || stack.getItem() instanceof ItemCreativeBattery;
+         }
++        if (slot == SLOT_INPUT) return BreederRecipes.getRecipe(stack) != null;
+         if (slot == SLOT_OUTPUT || slot == SLOT_FLUID_OUTPUT) {
+             return false;
+         }
+@@ -232,7 +292,8 @@
+     protected void saveAdditional(CompoundTag tag) {
+         super.saveAdditional(tag);
+         tag.put("tank", tank.writeToNBT(new CompoundTag()));
+-        tag.putInt("progress", progress);
+-        tag.putInt("duration", duration);
++        tag.putFloat("progress", progress);
++        tag.putInt("flux", flux);
++        tag.putInt("duration", getDuration());
+         tag.putBoolean("isOn", isOn);
+     }
+@@ -243,7 +304,9 @@
+         if (tag.contains("tank")) {
+             tank.readFromNBT(tag.getCompound("tank"));
+         }
+-        progress = tag.getInt("progress");
+-        duration = tag.contains("duration") ? tag.getInt("duration") : DEFAULT_DURATION;
++        // The old M scaffold used integer ticks; those are not normalized O progress.
++        float savedProgress = tag.contains("progress", net.minecraft.nbt.Tag.TAG_FLOAT) ? tag.getFloat("progress") : 0;
++        progress = Float.isFinite(savedProgress) && savedProgress >= 0 && savedProgress < 1 ? savedProgress : 0;
++        flux = tag.getInt("flux");
+         isOn = tag.getBoolean("isOn");
+     }
+--- a/src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java
++++ b/src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java
+@@ -1,3 +1,7 @@
++/* SPDX-License-Identifier: GPL-3.0-only
++ * Modernized menu: RaptorDev, TRFFuchs and contributors.
++ * N-01, 2026-10-20: original breeding input and additive full-width flux synchronization.
++ */
+ package com.hbm_m.inventory.menu;
+-
++
+ import com.hbm_m.block.ModBlocks;
+@@ -5,6 +9,7 @@
+ import com.hbm_m.capability.ModCapabilities;
+ import com.hbm_m.interfaces.ILongEnergyMenu;
+ import com.hbm_m.inventory.ModItemStackHandlerContainer;
++import com.hbm_m.inventory.recipes.BreederRecipes;
+ import com.hbm_m.item.fekal_electric.ItemCreativeBattery;
+ import com.hbm_m.network.ModPacketHandler;
+ import com.hbm_m.network.packet.PacketSyncEnergy;
+@@ -65,12 +70,14 @@
+         this.data = data;
+         this.player = inv.player;
+-
++
+-        checkContainerDataCount(data, 2);
++        checkContainerDataCount(data, MachineBreederBlockEntity.DATA_COUNT);
+         addDataSlots(data);
+-
++
+         this.machineInventory = new ModItemStackHandlerContainer(blockEntity.getInventory(), blockEntity::setChanged);
+-
++
+-        this.addSlot(new Slot(machineInventory, SLOT_INPUT, 62, 45));
++        this.addSlot(new Slot(machineInventory, SLOT_INPUT, 62, 45) {
++            @Override public boolean mayPlace(ItemStack stack) { return BreederRecipes.getRecipe(stack) != null; }
++        });
+         this.addSlot(new Slot(machineInventory, SLOT_BATTERY, 152, 72) {
+             @Override
+             public boolean mayPlace(ItemStack stack) {
+@@ -127,5 +134,9 @@
+     public MachineBreederBlockEntity getBlockEntity() {
+         return blockEntity;
++    }
++
++    public int getFlux() {
++        return (data.get(2) & 0xffff) | ((data.get(3) & 0xffff) << 16);
+     }
+-
++
+     public int getProgress() {
+@@ -209,7 +220,9 @@
+             isBattery = isBattery || stack.getCapability(ForgeCapabilities.ENERGY).isPresent();
+             //?}
+-
++
+-            if (isBattery) {
++            if (BreederRecipes.getRecipe(stack) != null) {
++                if (!moveItemStackTo(stack, SLOT_INPUT, SLOT_INPUT + 1, false)) return ItemStack.EMPTY;
++            } else if (isBattery) {
+                 if (!moveItemStackTo(stack, SLOT_BATTERY, SLOT_BATTERY + 1, false)) {
+                     return ItemStack.EMPTY;
+                 }
+@@ -218,12 +231,6 @@
+                     return ItemStack.EMPTY;
+                 }
+             } else {
+-                if (!moveItemStackTo(stack, SLOT_UPGRADE_1, SLOT_UPGRADE_2 + 1, false)) {
+-                    if (!moveItemStackTo(stack, SLOT_FLUID_ID, SLOT_FLUID_ID + 1, false)) {
+-                        if (!moveItemStackTo(stack, SLOT_INPUT, SLOT_INPUT + 1, false)) {
+-                            return ItemStack.EMPTY;
+-                        }
+-                    }
+-                }
++                return ItemStack.EMPTY;
+             }
+         }
+--- a/src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java
++++ b/src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java
+@@ -1,3 +1,8 @@
++/* SPDX-License-Identifier: GPL-3.0-only
++ * Modernized block: RaptorDev, TRFFuchs and contributors.
++ * N-01, 2026-10-20: restore O's one-by-one, three-high breeder footprint,
++ * allowing the horizontal research-reactor contacts used by its flux process.
++ */
+ package com.hbm_m.block.machines;
+-
++
+ import java.util.Map;
+@@ -52,35 +57,9 @@
+     }
+-
++
+     private static MultiblockStructureHelper defineStructureNew() {
+-        // GIT MachineFusionBreeder: 3×5×4 + corner fluid proxies at y=0
+-        String[] layer0 = {
+-            "OOO",
+-            "BOB",
+-            "BCB",
+-            "OOO",
+-            "OOO"
+-        };
+-        String[] layer1 = {
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO"
+-        };
+-        String[] layer2 = {
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO"
+-        };
+-        String[] layer3 = {
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO",
+-            "OOO"
+-        };
++        String[] layer0 = { "C" };
++        String[] layer1 = { "O" };
++        String[] layer2 = { "O" };
+-
++
+         Map<Character, PartRole> roleMap = Map.of(
+             'C', PartRole.CONTROLLER,
+@@ -96,7 +75,7 @@
+         );
+-
++
+         return MultiblockStructureHelper.createFromLayersWithRolesAndSides(
+-            new String[][]{layer0, layer1, layer2, layer3},
++            new String[][]{layer0, layer1, layer2},
+             symbolMap,
+             () -> ModBlocks.UNIVERSAL_MACHINE_PART.get().defaultBlockState(),
+             roleMap,

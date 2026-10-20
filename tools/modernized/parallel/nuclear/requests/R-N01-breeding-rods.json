@@ -1,0 +1,128 @@
+{
+  "id": "R-N01-breeding-rods",
+  "owner": "R",
+  "status": "pending",
+  "required_before_integration": true,
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "registry_kind": "minecraft:item",
+  "namespace": "hbm_m",
+  "changes": [
+    {
+      "path": "src/main/java/com/hbm_m/item/ModItems.java",
+      "id": "hbm_m:rod",
+      "old_class": null,
+      "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_EMPTY.get()), BreedingRodItem.Size.SINGLE)",
+      "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
+      "properties": {
+        "max_stack_size": 64,
+        "variant_tag": "breedingType",
+        "default_variant": "LITHIUM",
+        "crafting_remainder": "rod_empty / rod_dual_empty / rod_quad_empty respectively (existing IDs)"
+      }
+    },
+    {
+      "path": "src/main/java/com/hbm_m/item/ModItems.java",
+      "id": "hbm_m:rod_dual",
+      "old_class": null,
+      "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_DUAL_EMPTY.get()), BreedingRodItem.Size.DUAL)",
+      "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
+      "properties": {
+        "max_stack_size": 64,
+        "variant_tag": "breedingType",
+        "default_variant": "LITHIUM",
+        "crafting_remainder": "rod_empty / rod_dual_empty / rod_quad_empty respectively (existing IDs)"
+      }
+    },
+    {
+      "path": "src/main/java/com/hbm_m/item/ModItems.java",
+      "id": "hbm_m:rod_quad",
+      "old_class": null,
+      "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_QUAD_EMPTY.get()), BreedingRodItem.Size.QUAD)",
+      "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
+      "properties": {
+        "max_stack_size": 64,
+        "variant_tag": "breedingType",
+        "default_variant": "LITHIUM",
+        "crafting_remainder": "rod_empty / rod_dual_empty / rod_quad_empty respectively (existing IDs)"
+      }
+    },
+    {
+      "path": "src/main/java/com/hbm_m/item/ModItems.java",
+      "id": "hbm_m:meteorite_sword_etched",
+      "old_class": null,
+      "new_class": "existing appropriate sword item implementation after W review",
+      "binding": "ModItems.ITEMS",
+      "instruction": "No substitution with meteorite_sword or meteorite_sword_seared: distinct original identities. Register source-backed weapon behavior with W; test-only Item fixture is not a production sword implementation."
+    },
+    {
+      "path": "src/main/java/com/hbm_m/item/ModItems.java",
+      "id": "hbm_m:meteorite_sword_bred",
+      "old_class": null,
+      "new_class": "existing appropriate sword item implementation after W review",
+      "binding": "ModItems.ITEMS",
+      "instruction": "No substitution with meteorite_sword or meteorite_sword_seared: distinct original identities. Register source-backed weapon behavior with W; test-only Item fixture is not a production sword implementation."
+    }
+  ],
+  "preserve_existing_ids": [
+    "breeder",
+    "rod_quad_np237",
+    "rod_quad_uranium",
+    "rod_quad_lead",
+    "meteorite_sword",
+    "meteorite_sword_seared"
+  ],
+  "initialization": "No recipe serializer or new packet. BreederRecipes resolves the pinned O default recipes from the registered rod classes/types. Missing bindings fail closed.",
+  "variant_contract": {
+    "types_in_original_metadata_order": [
+      "LITHIUM",
+      "TRITIUM",
+      "CO",
+      "CO60",
+      "TH232",
+      "THF",
+      "U235",
+      "NP237",
+      "U238",
+      "PU238",
+      "PU239",
+      "RGP",
+      "WASTE",
+      "LEAD",
+      "URANIUM",
+      "RA226",
+      "AC227"
+    ],
+    "representation": "No metadata in modern items: validated breedingType enum name in stack NBT; absent tag is LITHIUM. Malformed enum rejects processing. Existing flattened quad Np-237 and Uranium IDs remain valid recipe inputs.",
+    "size_flux_multiplier": [
+      1,
+      2,
+      3
+    ]
+  },
+  "resources": [
+    {
+      "owner": "R",
+      "types": [
+        "item models",
+        "variant-aware presentation",
+        "translations"
+      ],
+      "instruction": "Supply independently authored or individually cleared assets. No source asset bytes from N. Preserve typed rod identity in display; all variant translations/models must be reviewed."
+    }
+  ],
+  "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+  "tests": [
+    "breederProcessesRegisteredRecipe",
+    "breederStopsWithoutFlux",
+    "breederPersistsMidCycle",
+    "breederDefaultRecipeVariants",
+    "breederSynchronizesTwoObservers",
+    "breederRequiresProductionBindings"
+  ],
+  "dependency_commit": null,
+  "api_version": "breeder-flux-v1",
+  "weapon_review_required": "The two missing sword stages require W owner review of their proper item behavior before R registration. No fabricated sword statistics or replacement identities supplied by N."
+}

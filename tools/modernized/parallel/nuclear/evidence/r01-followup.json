@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "tool_tests": {
+    "passed": 52,
+    "failed": 0,
+    "checkout": "unmodified detached rendering-tools worktree"
+  },
+  "actual_policy_sha256": "6117ecbf26a4733c2bc7e429952220c93787f27f451e02586b4d20f4a449e6d5",
+  "actual_loader_integration": {
+    "result": "rejected as required",
+    "delivery_commit": "5c568686600406793eb471cfd07f4486cc806627",
+    "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+    "command": [
+      "python3",
+      "tools/integrate_modernized.py",
+      "/workspace/hbm-nuclear-check/r01-immutable-5c568686",
+      "--phase5",
+      "--delivery",
+      "nuclear@5c568686600406793eb471cfd07f4486cc806627"
+    ],
+    "exit_code": 1,
+    "message": "Integration failed: Target outside owner's exact reservation: src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java",
+    "log_sha256": "f9193df703dc5bf7f5bbaeec60dda52bc6ad32af0e29787b418d8829854723a0",
+    "destination_exists": false,
+    "central_policy_changed": false
+  },
+  "readonly_conditional_schema_check": {
+    "result": "pass",
+    "only_hypothetical_change": "six requested owner entries added to in-memory policy copy",
+    "runtime_mutation": false,
+    "counts_as_integration": false
+  },
+  "strict_patch_check": {
+    "passed": true,
+    "production_bytes_unchanged": true
+  },
+  "new_game_test_run": {
+    "source_commit": "5c568686600406793eb471cfd07f4486cc806627",
+    "command_record": {
+      "utc": "20261020T173742715681Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23",
+        "-Pmodernized.gameTests=true"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T173742715681Z-runGameTestServer.log",
+      "exit_code": 1,
+      "log_sha256": "6485d5a7a1c48174cfde84f41f66317429a0a1aa712305252b8c1032c43bf153"
+    },
+    "required_total": 22,
+    "passed": 21,
+    "existing_passed": 14,
+    "new_functional_passed": 7,
+    "failed_required": [
+      "breederrequiresproductionbindings"
+    ],
+    "error_lines": [
+      "[17:39:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key",
+      "[17:39:18] [Server thread/ERROR] [minecraft/LogTestReporter]: breederrequiresproductionbindings failed! R-N01-breeding-rods unresolved: test-only item fixtures were needed; production feature BLOCKED"
+    ],
+    "fixture_layout": "public static nested BreederGameTests.BreederTestContent; no standalone fixture source remains",
+    "counts_as_G3_pass": false
+  },
+  "historical_baseline_ci": {
+    "head": "3d7b313e046d948f843b7bc9d5c509f8833a1f72",
+    "runs": [
+      {
+        "id": 39424498985,
+        "conclusion": "success"
+      },
+      {
+        "id": 39424498989,
+        "conclusion": "success"
+      }
+    ],
+    "nuclear_feature_coverage": false
+  },
+  "production_source_binding": {
+    "source_change": false,
+    "result_hashes": {
+      "src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java": "c2af8692402e94e5995c50c859533af2da335fd43cd5dd91dcbb5929499cc47d",
+      "src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java": "cda504b53512e74b78876d518bfb2b97f8e47ae8111eb3a21374672a7910e2f8",
+      "src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java": "99fd1652dc576e72b4c3655e0b86360e4c0a8ca1683a6e513a10a1da68c3dff0"
+    },
+    "production_jar_sha256": "8b449e2272fa28369cbb46f8752ebbdbec83e9196d55d9d13db84722c00a18d0",
+    "G2_rebuild_required_for_this_test_layout_change": false
+  },
+  "unresolved_reservation_count": 6
+}

@@ -10,7 +10,7 @@ Stand: **20.10.2026 (UTC)**. Geprüfter `main`: **`ff1eef39e870b9e4322d7a2d8b30f
 | Modernized M | `Raptor324/HBM-Modernized@0365cef5956016913095eeeb9366f26c601ca9a0`; nur Variante `1.20.1-forge` |
 | Aktive Basis I | M + `forge-1.20.1.patch` + `phase4-integration.patch` + `phase5-multiplayer.patch` + Foundation-/GameTest-Overlay, erzeugt durch `tools/integrate_modernized.py … --phase5` |
 | Gemeinsames Ziel | Minecraft **1.20.1**, Forge **47.4.23**, Mod-/Minecraft-JDK **17**, Build-JDK **21**, Gradle **9.3.1**, Namespace vorerst **`hbm_m`** |
-| Bisheriger Build-Pin | **47.4.20**; 47.4.23 ist bereits als Runtime und GameTest-Ziel geprüft. Ein neuer Produktionsbuild gegen 47.4.23 ist ein zusätzliches Gate, kein bereits ausgeführter Nachweis. |
+| Buildprofile nach R-02 | Kompatibilität **47.4.20** bleibt erhalten; der explizite Produktionsbuild **47.4.23** ist nun zusätzlich geprüft, siehe [Buildbericht](RENDERING_BUILD_REPORT.md). |
 | Historisches Rootprojekt | Forge 47.4.10 / Gradle 8.8, drei Foundation-Klassen. Dessen JAR enthält keine Modernized-Spielinhalte. |
 
 Gelesen: [Vergleich](MODERNIZED_COMPARISON.md), [Migration](MODERNIZED_MIGRATION.md), [Phase-3-Buildbericht](MODERNIZED_BUILD_REPORT.md), [Integration](INTEGRATION_REPORT.md), [Buildstatus](BUILD_STATUS.md), [Forge-/Mehrspielerbericht](FORGE_MULTIPLAYER_REPORT.md), [offene Punkte](REMAINING_ISSUES.md), [Importcheckliste](MODERNIZED_IMPORT_CHECKLIST.md), [Datenverträge](DATA_CONTRACTS.md) und [Originalmatrix](FEATURE_MATRIX.md). Historische Aussagen dieser Berichte beziehen sich auf ihre jeweiligen SHAs. Für den aktuellen Prüfstand hat Phase 5 Vorrang; die Originalmatrix bleibt der Umfangskatalog.
@@ -95,7 +95,7 @@ export HBM_JAVA17=/absolute/toolchains/jdk-17
 python3 tools/integrate_modernized.py "$HBM_CHECK_ROOT/modernized" --phase5
 ```
 
-**Historische Übergabe vor R-01:** Der Helfer lud nur die vorhandene Phase-5-Basis. Der implementierte Bereichsloader und sein Manifestvertrag stehen nun in [parallel/README.md](../tools/modernized/parallel/README.md); Auswahl erfolgt explizit mit `--delivery AREA@COMMIT`. Die folgende manuelle Übergangslösung ist damit überholt: Eine freigegebene Bereichslieferung konnte gezielt mit `git -C "$HBM_CHECK_ROOT/modernized" apply --check /absolute/changes.patch`, danach `apply` und Kopieren ihrer explizit gelisteten eigenen Overlay-/Testdateien eingespielt werden. Keine unkontrollierten `cp -r`-Vollbäume. Neue Dateien nicht in den getrackten M-Pin committen: `modernized_build.py` verlangt `HEAD == M-Pin`. Der erzeugte `integration/provenance.json` beschreibt zunächst nur die Basis; die Bereichshashes müssen bis R-01 zusätzlich separat erfasst werden.
+Seit R-01 existiert der explizite Bereichsloader: [Manifestvertrag und Reservierungen](../tools/modernized/parallel/README.md). Auswahl ausschließlich mit `--delivery AREA@COMMIT`; Abhängigkeiten ebenfalls explizit wählen. Erst wird die gesamte Auswahl geprüft, dann Phase 3→4→5 und die Lieferungen im temporären externen Baum angewendet. Bestehende Ziele werden nicht überschrieben, M-HEAD bleibt der Pin. `integration/provenance.json` erfasst nun sämtliche Lieferungen und vorbereiteten Arbeitsdateien mit Hashes. Die frühere manuelle Patch-/Kopierübergabe ist damit überholt. Der in `policy.json` eingefrorene gemeinsame Loader-Basis-SHA ist `997b15c9d60dd293e9c436663e90a95140ab13af`; konkrete R-01/R-02-Lieferung und ausgeführte Nachweise stehen im [Buildbericht](RENDERING_BUILD_REPORT.md).
 
 Produktionsprofil explizit gegen **47.4.23** bauen; jeder Aufruf erhält denselben Override. Der reguläre 47.4.20-Pin wird dadurch nicht stillschweigend geändert:
 
@@ -118,7 +118,8 @@ python3 tools/modernized_build.py run "$HBM_CHECK_ROOT/modernized" build sources
   --profile production --gradle-arg=-Pdeps.forge=47.4.23
 export HBM_CHECK_JAR="$HBM_CHECK_ROOT/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar"
 python3 tools/audit_modernized.py jar "$HBM_CHECK_JAR" \
-  --generated-source "$HBM_CHECK_ROOT/modernized/src/generated/resources"
+  --generated-source "$HBM_CHECK_ROOT/modernized/src/generated/resources" \
+  --provenance "$HBM_CHECK_ROOT/modernized/integration/provenance.json"
 sha256sum "$HBM_CHECK_JAR"
 python3 tools/test_modernized_server.py "$HBM_CHECK_JAR" "$HBM_CHECK_ROOT/server-47.4.23" \
   --forge 47.4.23 --java17-home "$HBM_JAVA17" --accept-eula

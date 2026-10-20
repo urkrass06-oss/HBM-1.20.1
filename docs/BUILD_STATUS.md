@@ -1,5 +1,17 @@
 # Build- und Teststatus
 
+## R-01/R-02: expliziter Produktionsbuild 47.4.23
+
+Stand **20.10.2026**, gemeinsame Basis `997b15c9d60dd293e9c436663e90a95140ab13af`.
+Der sichere Bereichsloader und die getrennten Profile `production` (Forge 47.4.23)
+und `compatibility` (47.4.20) sind implementiert und geprüft: **52/52 Werkzeugtests**,
+pro Profil zwei bytegleiche Datagenläufe, separater Build/Sources-JAR, Java-17-/Paketgate,
+**2/2 Produktionsserverstarts** und **16/16 required GameTests** (14 unverändert + 2 neu).
+Der bisherige Kompatibilitätspin und die Root-Foundation bleiben erhalten.
+Artefakthashes, exakte Test-IDs, Ressourcenpriorität, Fehlbelege und Grenzen:
+[Rendering-Buildbericht](RENDERING_BUILD_REPORT.md). Die folgenden Abschnitte
+bleiben historische Nachweise ihrer jeweiligen SHAs. Keine neue Rendering-/Releasefreigabe.
+
 ## Phase 5: zusätzliche Forge-47.4.23-Prüfung
 
 Stand **20. Oktober 2026 (UTC)**, Arbeitsbasis `main = de6083c75c6dbb586d66cb6606d023d66c1ba26a`. Vollständiger Umfang, Fehlversuche und Reproduktion: [Forge-/Mehrspielerbericht](FORGE_MULTIPLAYER_REPORT.md). Modernized-Pin und `hbm_m` unverändert; Minecraft **1.20.1**, regulärer Build **Forge 47.4.20**.

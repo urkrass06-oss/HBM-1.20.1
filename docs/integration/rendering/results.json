@@ -1,0 +1,598 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "shared_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "baseline": {
+    "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "files": {
+      "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+      "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+      "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f",
+      "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+      "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+      "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+      "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+      "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+      "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+    }
+  },
+  "tool_tests": {
+    "passed": 52,
+    "command": "python3 -m unittest discover -s tools -p 'test_modernized_*.py' -q"
+  },
+  "profiles": [
+    {
+      "engine_commit": "acffbfd370cc5167e4a241f85fb5a8875d2ca887",
+      "delivery_commit": "1536b6eff7a0fbe2f1662108ce17424e69fe036b",
+      "profile": "production",
+      "forge": "47.4.23",
+      "jar_sha256": "17ceab39ededbda4e7896e351cd1349b01382d68f12b686543a0e2b0803d4c99",
+      "provenance_sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+      "datagen_manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700",
+      "gametests": {
+        "forge": "47.4.23",
+        "required_passed": 16,
+        "ids": [
+          "batterylongenergyandinventoryroundtrip",
+          "batteryticksinserverworld",
+          "declaredregistrydeltaexists",
+          "energymanagerrunsonceperleveltick",
+          "fluidsimulationequivalenceandpersistence",
+          "forgeenergyboundsandsimulation",
+          "highenergyunitmustfitincludingremainder",
+          "rbmkcontrolandemergencyshutdown",
+          "rbmkincrementalpacketappliescolumns",
+          "rbmkpacketrejectsinvalidactionsandnumbers",
+          "rbmkpacketrejectsmalformedpayloads",
+          "rbmkrequiresthematchingnearbyopenmenu",
+          "registriesandgeneratedrecipes",
+          "singleowningmodcontainer",
+          "tankmultiblockformsandpersists",
+          "wiretransfersenergywithoutloss"
+        ],
+        "source_ids": [
+          "modernizedintegrationtests.batterylongenergyandinventoryroundtrip",
+          "modernizedintegrationtests.batteryticksinserverworld",
+          "modernizedintegrationtests.registriesandgeneratedrecipes",
+          "modernizedsystemstests.energymanagerrunsonceperleveltick",
+          "modernizedsystemstests.fluidsimulationequivalenceandpersistence",
+          "modernizedsystemstests.forgeenergyboundsandsimulation",
+          "modernizedsystemstests.highenergyunitmustfitincludingremainder",
+          "modernizedsystemstests.rbmkcontrolandemergencyshutdown",
+          "modernizedsystemstests.rbmkincrementalpacketappliescolumns",
+          "modernizedsystemstests.rbmkpacketrejectsinvalidactionsandnumbers",
+          "modernizedsystemstests.rbmkpacketrejectsmalformedpayloads",
+          "modernizedsystemstests.rbmkrequiresthematchingnearbyopenmenu",
+          "modernizedsystemstests.tankmultiblockformsandpersists",
+          "modernizedsystemstests.wiretransfersenergywithoutloss",
+          "renderingintegrationtests.declaredregistrydeltaexists",
+          "renderingintegrationtests.singleowningmodcontainer"
+        ]
+      },
+      "report_audit_commit": "c2fdf8a429be1886bae8b1411a8782a0240c058d",
+      "jar_bytes": 44925653,
+      "jar_path": "/workspace/hbm-r-check/verified-artifacts-production/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+      "datagen_files": 7952,
+      "prepared_files": 8148,
+      "jar_entries": 16856,
+      "class_major_counts": {
+        "61": 1915
+      },
+      "nested": [
+        {
+          "name": "META-INF/jarjar/architectury-forge-9.2.14.jar",
+          "sha256": "47d5eca3d83aae1ac1d4a70116727715bd7ef4c077d228fee873065cbca94687",
+          "class_major_counts": {
+            "52": 1,
+            "60": 381
+          }
+        },
+        {
+          "name": "META-INF/jarjar/mixinconstraints-1.1.0.jar",
+          "sha256": "67e1fca9cb518f8afb356105c7816587e02880c2acca3bbdb6e08c8e967fc1be",
+          "class_major_counts": {
+            "61": 21
+          }
+        }
+      ],
+      "server_runs": [
+        {
+          "done": true,
+          "startup_seconds": 70.731,
+          "observed_seconds": 30,
+          "save_confirmed": true,
+          "exit_code": 0,
+          "passed": true,
+          "unexpected_error_lines": [],
+          "environment_error_lines": [
+            "[12:34:16] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+          ]
+        },
+        {
+          "done": true,
+          "startup_seconds": 32.756,
+          "observed_seconds": 30,
+          "save_confirmed": true,
+          "exit_code": 0,
+          "passed": true,
+          "unexpected_error_lines": [],
+          "environment_error_lines": [
+            "[12:36:00] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+          ]
+        }
+      ],
+      "commands": [
+        {
+          "utc": "20261020T123117634129Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-production",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runData",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.23"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-production-logs/20261020T123117634129Z-runData.log",
+          "profile": "production",
+          "forge": "47.4.23",
+          "integration_provenance_sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T123212702172Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-production",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runData",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.23"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-production-logs/20261020T123212702172Z-runData.log",
+          "profile": "production",
+          "forge": "47.4.23",
+          "integration_provenance_sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T123259276049Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-production",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:build",
+            ":1.20.1-forge:sourcesJar",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.23"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-production-logs/20261020T123259276049Z-build-sourcesJar.log",
+          "profile": "production",
+          "forge": "47.4.23",
+          "integration_provenance_sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T123644885936Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-production",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runGameTestServer",
+            "--stacktrace",
+            "-Pmodernized.gameTests=true",
+            "-Pdeps.forge=47.4.23"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-production-logs/20261020T123644885936Z-runGameTestServer.log",
+          "profile": "production",
+          "forge": "47.4.23",
+          "integration_provenance_sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+          "exit_code": 0
+        }
+      ],
+      "external_evidence": [
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/server-command.log",
+          "sha256": "ace2c6353f0089c2fcce809884e4f67555c4c2dbd3b0a295edf957dd64619bc8",
+          "bytes": 1876
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/gametests-command.log",
+          "sha256": "0ae3e17b26ed5ce4fa3ddb6abbcec400b3a743d3772012a8a6d4e953c3409267",
+          "bytes": 482
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/runData-2-command.log",
+          "sha256": "c043869a7dc888d57796b546d180542ecc5dbf0622227d68f9366c2e13d6c2a0",
+          "bytes": 424
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/build-command.log",
+          "sha256": "c1979bf171ac9cbc3901ab6166f118d4365d53971f246b5af68c61dd8bb24d67",
+          "bytes": 465
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/20261020T123644885936Z-runGameTestServer.log",
+          "sha256": "a185ab1d1775671fd80d2dd6d7e1c1107a7978600fa2d3bd458de39081a1d291",
+          "bytes": 38758
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/20261020T123117634129Z-runData.log",
+          "sha256": "cef27e0f8c5f12cd3038b7455e05ec614ad84260b7d64cd5104bdc5c59644f02",
+          "bytes": 13156
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/prepare.log",
+          "sha256": "23efde5bac1bbc172af99fd30b4ab588db4fc2faa6e394629c54df4b15110832",
+          "bytes": 1228
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/runData-1-command.log",
+          "sha256": "fc415757be7130b961b594db8ab460aa0f86c3cb4a657a724722e4714c60a9d3",
+          "bytes": 424
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/20261020T123212702172Z-runData.log",
+          "sha256": "93439ec72c4423efdaaa76181ac4487a5d0c2047c4b70b7c8b25d120ce6870dc",
+          "bytes": 9780
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/20261020T123259276049Z-build-sourcesJar.log",
+          "sha256": "4ccd99566402539b44575741c1a7970c00c008ce23d0a8fea6bb5a2f580f6ecb",
+          "bytes": 3412
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/jar-audit.txt",
+          "sha256": "cbb5a61270240a9fbae1e586946d734229b62c5e5bc6220ac23706b8fdeb8026",
+          "bytes": 3534
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/gametests-audit.json",
+          "sha256": "7572f20c17236964a889b65213d47bb149c6991b1bc79ea75ccb0b21372dfbc6",
+          "bytes": 1775
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production/integration/provenance.json",
+          "sha256": "dfbcd966603dda87060549821c8a19b94ec1aaba50e54618e4f872076a1ae6c9",
+          "bytes": 4589961
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-server-47.4.23/server-1.log",
+          "sha256": "8169cece5a085b8ec51c4c8aa2f532cb7b75a7bd782d159d934ba9a655bf70ae",
+          "bytes": 27466
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-server-47.4.23/server-2.log",
+          "sha256": "e3fa96d5cfa8d3a40f2f74e55ccd0cb35f382985bdff2d254ed074345aacfeca",
+          "bytes": 18833
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production/versions/1.20.1-forge/run-gametest/hbm-gametest-results.xml",
+          "sha256": "5ac9bfc55b3cab8906edf050c01d07a25ec9b7866bc91f1722e682276254da05",
+          "bytes": 1575
+        }
+      ]
+    },
+    {
+      "engine_commit": "c2fdf8a429be1886bae8b1411a8782a0240c058d",
+      "delivery_commit": "1536b6eff7a0fbe2f1662108ce17424e69fe036b",
+      "profile": "compatibility",
+      "forge": "47.4.20",
+      "jar_sha256": "17ceab39ededbda4e7896e351cd1349b01382d68f12b686543a0e2b0803d4c99",
+      "provenance_sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+      "datagen_manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700",
+      "gametests": {
+        "forge": "47.4.20",
+        "required_passed": 16,
+        "ids": [
+          "batterylongenergyandinventoryroundtrip",
+          "batteryticksinserverworld",
+          "declaredregistrydeltaexists",
+          "energymanagerrunsonceperleveltick",
+          "fluidsimulationequivalenceandpersistence",
+          "forgeenergyboundsandsimulation",
+          "highenergyunitmustfitincludingremainder",
+          "rbmkcontrolandemergencyshutdown",
+          "rbmkincrementalpacketappliescolumns",
+          "rbmkpacketrejectsinvalidactionsandnumbers",
+          "rbmkpacketrejectsmalformedpayloads",
+          "rbmkrequiresthematchingnearbyopenmenu",
+          "registriesandgeneratedrecipes",
+          "singleowningmodcontainer",
+          "tankmultiblockformsandpersists",
+          "wiretransfersenergywithoutloss"
+        ],
+        "source_ids": [
+          "modernizedintegrationtests.batterylongenergyandinventoryroundtrip",
+          "modernizedintegrationtests.batteryticksinserverworld",
+          "modernizedintegrationtests.registriesandgeneratedrecipes",
+          "modernizedsystemstests.energymanagerrunsonceperleveltick",
+          "modernizedsystemstests.fluidsimulationequivalenceandpersistence",
+          "modernizedsystemstests.forgeenergyboundsandsimulation",
+          "modernizedsystemstests.highenergyunitmustfitincludingremainder",
+          "modernizedsystemstests.rbmkcontrolandemergencyshutdown",
+          "modernizedsystemstests.rbmkincrementalpacketappliescolumns",
+          "modernizedsystemstests.rbmkpacketrejectsinvalidactionsandnumbers",
+          "modernizedsystemstests.rbmkpacketrejectsmalformedpayloads",
+          "modernizedsystemstests.rbmkrequiresthematchingnearbyopenmenu",
+          "modernizedsystemstests.tankmultiblockformsandpersists",
+          "modernizedsystemstests.wiretransfersenergywithoutloss",
+          "renderingintegrationtests.declaredregistrydeltaexists",
+          "renderingintegrationtests.singleowningmodcontainer"
+        ]
+      },
+      "jar_bytes": 44925653,
+      "jar_path": "/workspace/hbm-r-check/verified-artifacts-compatibility/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+      "datagen_files": 7952,
+      "prepared_files": 8148,
+      "jar_entries": 16856,
+      "class_major_counts": {
+        "61": 1915
+      },
+      "nested": [
+        {
+          "name": "META-INF/jarjar/architectury-forge-9.2.14.jar",
+          "sha256": "47d5eca3d83aae1ac1d4a70116727715bd7ef4c077d228fee873065cbca94687",
+          "class_major_counts": {
+            "52": 1,
+            "60": 381
+          }
+        },
+        {
+          "name": "META-INF/jarjar/mixinconstraints-1.1.0.jar",
+          "sha256": "67e1fca9cb518f8afb356105c7816587e02880c2acca3bbdb6e08c8e967fc1be",
+          "class_major_counts": {
+            "61": 21
+          }
+        }
+      ],
+      "server_runs": [
+        {
+          "done": true,
+          "startup_seconds": 71.595,
+          "observed_seconds": 30,
+          "save_confirmed": true,
+          "exit_code": 0,
+          "passed": true,
+          "unexpected_error_lines": [],
+          "environment_error_lines": [
+            "[12:44:46] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+          ]
+        },
+        {
+          "done": true,
+          "startup_seconds": 35.401,
+          "observed_seconds": 30,
+          "save_confirmed": true,
+          "exit_code": 0,
+          "passed": true,
+          "unexpected_error_lines": [],
+          "environment_error_lines": [
+            "[12:46:31] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+          ]
+        }
+      ],
+      "commands": [
+        {
+          "utc": "20261020T124154772178Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-compatibility",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runData",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.20"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124154772178Z-runData.log",
+          "profile": "compatibility",
+          "forge": "47.4.20",
+          "integration_provenance_sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T124236971749Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-compatibility",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runData",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.20"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124236971749Z-runData.log",
+          "profile": "compatibility",
+          "forge": "47.4.20",
+          "integration_provenance_sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T124312604524Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-compatibility",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:build",
+            ":1.20.1-forge:sourcesJar",
+            "--stacktrace",
+            "-Pdeps.forge=47.4.20"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124312604524Z-build-sourcesJar.log",
+          "profile": "compatibility",
+          "forge": "47.4.20",
+          "integration_provenance_sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+          "exit_code": 0
+        },
+        {
+          "utc": "20261020T124718570485Z",
+          "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "cwd": "/workspace/hbm-r-check/verified-compatibility",
+          "command": [
+            "./gradlew",
+            "--no-daemon",
+            "--console=plain",
+            "--max-workers=2",
+            "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+            "-Porg.gradle.java.installations.auto-download=false",
+            ":1.20.1-forge:runGameTestServer",
+            "--stacktrace",
+            "-Pmodernized.gameTests=true",
+            "-Pdeps.forge=47.4.20"
+          ],
+          "jdk21": "/workspace/toolchains/jdk-21.0.12.1+1",
+          "jdk17": "/workspace/toolchains/jdk-17.0.20.1+1",
+          "log": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124718570485Z-runGameTestServer.log",
+          "profile": "compatibility",
+          "forge": "47.4.20",
+          "integration_provenance_sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+          "exit_code": 0
+        }
+      ],
+      "external_evidence": [
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/server-command.log",
+          "sha256": "a9f977c18d9f2c4917224e1414b23212ac686a064cf77666b750653bcb1603f5",
+          "bytes": 1876
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124312604524Z-build-sourcesJar.log",
+          "sha256": "7e3b72547e5d85eade1697147747a1bee47350a91aa96fdeaf49e549b182156e",
+          "bytes": 44595
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124236971749Z-runData.log",
+          "sha256": "eac4b5ca51bf05b50a12554ec2b21c981c23bda1e5307b0cfb4a7facf1c42136",
+          "bytes": 9816
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124154772178Z-runData.log",
+          "sha256": "e72cc14a516e89bdb9bf49ae0f548191b5baf7bb6c466c7c55bc8ae1570022c1",
+          "bytes": 13201
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/gametests-command.log",
+          "sha256": "0739eeeb8090550ad825acff21cbcd736f706a40139b80a6b5b432523457eea8",
+          "bytes": 488
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/runData-2-command.log",
+          "sha256": "8cf59ac5bd79a5353b2229d7e233a9e5f47cd0b594caaee6ea6acab5fb9f6748",
+          "bytes": 430
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/build-command.log",
+          "sha256": "8730640304e69ace6a2daa34879294da46f2624107526c336a8fb974e59687b2",
+          "bytes": 471
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/prepare.log",
+          "sha256": "abb5e3998125f849d0665c3ef951862c5f7523111a506df36d0747a771cedee9",
+          "bytes": 1231
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/runData-1-command.log",
+          "sha256": "110818d493d1921ed1efb9d855467bdd9862e6c4ddc9654e59c24490d7f4c834",
+          "bytes": 430
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/20261020T124718570485Z-runGameTestServer.log",
+          "sha256": "9fd1f83a75ad191864739902c41e5f333616741925d33713ac6bb68104a0a885",
+          "bytes": 33755
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/jar-audit.txt",
+          "sha256": "cbb5a61270240a9fbae1e586946d734229b62c5e5bc6220ac23706b8fdeb8026",
+          "bytes": 3534
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/gametests-audit.json",
+          "sha256": "ae6ca0faab0538aac54ca9a976819e2819c46b9813c36eec04bf9778ef90ee75",
+          "bytes": 1775
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility/integration/provenance.json",
+          "sha256": "0b994aca65eb886ce0a0668b0c4b9d1cb2fa2c8ad57abb0ff6bb89d94e9cc333",
+          "bytes": 4589961
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-server-47.4.20/server-1.log",
+          "sha256": "d7c7cff560db674fba3eda34eb407e629a4ce99ccb5f53d059203059290a1f5b",
+          "bytes": 27269
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-server-47.4.20/server-2.log",
+          "sha256": "e42811a8c0e495f99dc7abafbaed958fa70afb9c7c1d1d2176d43b73fc663833",
+          "bytes": 18931
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility/versions/1.20.1-forge/run-gametest/hbm-gametest-results.xml",
+          "sha256": "d3c7e8b33ecf092f91e58dafc79ca07918929fe18bfcd96686f6d6a763d2667f",
+          "bytes": 1574
+        }
+      ]
+    }
+  ],
+  "scope": "R-01/R-02 tooling and build verification; no client rendering or original parity claim",
+  "publication": "Only independently authored tools/tests and reviewed text metadata; upstream trees, generated resources, source archives, evaluation JARs and worlds remain external.",
+  "rejected_checks": [
+    {
+      "path": "/workspace/hbm-r-check/final-production-logs/jar-audit.txt",
+      "sha256": "ea0c3eb188f435b12e470ec13b54595e77fabc4c5cd5c65304f7f7fe202679af",
+      "reason": "Initial exact-byte gate rejected the 124 existing main-resource overrides"
+    },
+    {
+      "path": "/workspace/hbm-r-check/verified-production-logs/gametests-audit-prefix-failure.txt",
+      "sha256": "7880d29a2649ff91615f6dc2cfae80324f3dc5519b1acb2055f3447b5bd3fe93",
+      "reason": "Initial report parser expected class prefixes although Forge PrefixGameTestTemplate(false) emits bare method names"
+    }
+  ]
+}

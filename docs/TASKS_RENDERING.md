@@ -15,6 +15,11 @@ R besitzt sämtliche Client-/Screen-/Rendererdateien, zentrale Register, Ressour
 
 **Zuerst R-01 und R-02:** Bereichslieferungen reproduzierbar einspielen und den Produktionsbuild explizit auf Forge 47.4.23 prüfen. Die vorhandene Integration hat bereits Forge-47.4.23-Runtime- und GameTest-Nachweise, ihr regulärer Produktionsbuild-Pin bleibt an der Basis 47.4.20. Keine Behauptung eines bereits erfolgten 47.4.23-Produktionsbuilds.
 
+R-01 und R-02 sind implementiert und geprüft: 52 Werkzeugtests, beide Buildprofile,
+pro Forge-Version zwei Serverstarts und 16 required GameTests. Exakte Commits,
+JAR-Hashes, Fehlbelege und verbleibende Grenzen: [Buildbericht](RENDERING_BUILD_REPORT.md).
+Die nachfolgende Tabelle bleibt die Aufgaben- und Abnahmespezifikation.
+
 ## Priorisierte Implementierungsaufträge
 
 | Task / Priorität / Feature | Konkrete Klassen/Dateien und Lieferung | Abhängigkeiten | Überprüfbare Abnahme |

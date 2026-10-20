@@ -29,7 +29,7 @@
         "Raptor",
         "razchexlitiel"
       ],
-      "review_scope": "Only exact delta and adjacent context lines in changes.patch, not the complete file.",
+      "review_scope": "Exact singleton and ticking-chunk lifecycle deltas and adjacent context only; no complete network implementation import.",
       "license": "GPL-3.0-only for this derivative patch; existing notices preserved",
       "license_evidence": [
         "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
@@ -37,7 +37,7 @@
         "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE"
       ],
       "review_status": "belegt-for-listed-small-hunks",
-      "result_sha256": "bcb7e4e9bc54efeb7d936f82b984b17f42448c383c06a3c2a746527d965837d0",
+      "result_sha256": "9a73429deaecbaf3df2506246d54b1dc1852cd71ad6e1d234b8aa3ca319701fb",
       "changes": "M-01 lifecycle/pressure correction, 2026-10-20, generated with Codex for the repository maintainer."
     },
     {
@@ -123,8 +123,23 @@
       "source_path": "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
       "git_blob": "62ef61fa905bf9047f4312790fca247ceb33e20d",
       "sha256": "078d57158f74a9ef931e16103a3d662835931c50f8557b160553bdd487aa0686",
-      "publication_status": "inspection-only-no-file-import",
-      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review."
+      "publication_status": "small-delta-and-context-reviewed-only",
+      "file_notices": "No per-file copyright or license header in inspected M-01 file; repository GPLv3 declaration applies subject to origin review.",
+      "result_sha256": "57263829294ec708a32cfa46c70eff8a6bdb4b3f97835fa62c53225efe2d26d7",
+      "origin": "Added by Raptor at 83e9a2eeda9c87d755a54d700f3c27d8e781bab4 under block/entity/machines; renamed at c136c6dacb9528fe930dc98101bd5a190abcdcd2. Only the constructor context and newly written persistence callback are published. No original pump implementation is imported or claimed as verified.",
+      "creation_commit": "83e9a2eeda9c87d755a54d700f3c27d8e781bab4",
+      "creation_blob": "3ff793ef5404a90b4bc00884772eaf49f2580ffa",
+      "rename_commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+      "authors": [
+        "Raptor and Modernized contributors; original HBM credits retained"
+      ],
+      "license": "GPL-3.0-only for the small derivative patch",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE",
+        "https://github.com/Raptor324/HBM-Modernized/commit/83e9a2eeda9c87d755a54d700f3c27d8e781bab4"
+      ],
+      "review_status": "belegt-for-listed-small-hunks",
+      "review_scope": "Constructor and newly authored onContentsChanged callback only; no full-file or process-parity approval."
     },
     {
       "source_repository": "https://github.com/Raptor324/HBM-Modernized.git",
@@ -156,27 +171,27 @@
   ],
   "published_files": [
     {
+      "path": "README.md",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; identity facts and own observations only.",
+      "review_status": "belegt"
+    },
+    {
+      "path": "area.json",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; identity facts and own observations only.",
+      "review_status": "belegt"
+    },
+    {
       "path": "audit_network_jar.py",
       "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
       "license": "LGPL-3.0-only",
       "review_status": "belegt"
     },
     {
-      "path": "area.json",
-      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
-      "license": "Repository documentation/metadata; upstream identity facts only.",
-      "review_status": "belegt"
-    },
-    {
-      "path": "requests/R-01-machines-tests.json",
-      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
-      "license": "Repository documentation/metadata; upstream identity facts only.",
-      "review_status": "belegt"
-    },
-    {
       "path": "evidence/original-contracts.json",
       "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
-      "license": "Repository documentation/metadata; upstream identity facts only.",
+      "license": "Repository documentation/metadata; identity facts and own observations only.",
       "review_status": "belegt"
     },
     {
@@ -186,9 +201,15 @@
       "review_status": "belegt"
     },
     {
+      "path": "requests/R-01-machines-tests.json",
+      "origin": "Independent M-01 contribution generated with Codex for the repository maintainer, 2026-10-20; no copied game source/assets.",
+      "license": "Repository documentation/metadata; identity facts and own observations only.",
+      "review_status": "belegt"
+    },
+    {
       "path": "changes.patch",
       "license": "GPL-3.0-only",
-      "origin": "Four individually reviewed upstream deltas including context; per-file identities and chain above.",
+      "origin": "Five individually reviewed upstream deltas including context; per-file identities and chain above.",
       "review_status": "belegt-for-listed-small-hunks"
     }
   ],

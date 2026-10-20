@@ -91,6 +91,25 @@ public final class MachineNetworkTests {
         h.succeed();
     }
 
+    @GameTest(template = "empty")
+    public static void pumpTransfersAreScheduledForSaving(GameTestHelper h) {
+        var pos = h.absolutePos(new BlockPos(2, 2, 2));
+        var level = h.getLevel();
+        var entity = pump(level, pos, 0);
+        var chunk = level.getChunkAt(pos);
+        try {
+            chunk.setUnsaved(false);
+            h.assertTrue(entity.transferFluid(Fluids.WATER, 0, 60) == 0,
+                    "Pump rejected the controlled network insertion");
+            h.assertTrue(chunk.isUnsaved(), "Pump insertion did not schedule changed fluid for saving");
+            chunk.setUnsaved(false);
+            entity.useUpFluid(Fluids.WATER, 0, 30);
+            h.assertTrue(entity.getAllTanks()[0].getFill() == 30, "Pump extraction amount changed");
+            h.assertTrue(chunk.isUnsaved(), "Pump extraction did not schedule changed fluid for saving");
+        } finally { chunk.setUnsaved(true); }
+        h.succeed();
+    }
+
     private static MachineBatteryBlockEntity battery(ServerLevel level, BlockPos pos, boolean output, long he) {
         level.setBlockAndUpdate(pos, ModBlocks.MACHINE_BATTERY_SCHRABIDIUM.get().defaultBlockState());
         var entity = (MachineBatteryBlockEntity) level.getBlockEntity(pos);
@@ -175,6 +194,26 @@ public final class MachineNetworkTests {
         h.runAfterDelay(10, () -> awaitFlow(h, level, center, attempts - 1, afterFlow));
     }
 
+    private static void awaitRebuild(GameTestHelper h, ServerLevel level, BlockPos center,
+                                     int attempts, Runnable afterRebuild) {
+        var manager = EnergyNetworkManager.get(level);
+        var wire = manager.getNode(center);
+        var source = manager.getNode(center.east());
+        var target = manager.getNode(center.west());
+        var fluid = UniNodespace.getNode(level, center.south(4), FluidNetProvider.forFluid(Fluids.WATER));
+        boolean energyReady = wire != null && source != null && target != null
+                && wire.getNetwork() != null && wire.getNetwork() == source.getNetwork()
+                && wire.getNetwork() == target.getNetwork();
+        if (energyReady && fluid != null && fluid.net != null && !fluid.isExpired()) {
+            afterRebuild.run();
+            return;
+        }
+        h.assertTrue(attempts > 0, "Reloaded graph did not reconnect: wire=" + (wire != null)
+                + ", source=" + (source != null) + ", target=" + (target != null)
+                + ", energyReady=" + energyReady + ", fluidReady=" + (fluid != null && fluid.net != null));
+        h.runAfterDelay(10, () -> awaitRebuild(h, level, center, attempts - 1, afterRebuild));
+    }
+
     @GameTest(template = "empty", timeoutTicks = 200)
     public static void splitMergePreservesAmounts(GameTestHelper h) {
         var level = h.getLevel();
@@ -239,22 +278,15 @@ public final class MachineNetworkTests {
                 portalTickets(level, center);
                 level.getChunk(center.getX() >> 4, center.getZ() >> 4);
                 level.getChunk((center.getX() - 1) >> 4, center.getZ() >> 4);
-                h.runAfterDelay(20, () -> {
+                h.runAfterDelay(20, () -> awaitRebuild(h, level, center, 20, () -> {
                     balance(h, level, center, 20_000_000L, 18_000);
                     var restored = (WireBlockEntity) level.getBlockEntity(center);
                     h.assertTrue(restored != wire, "Chunk did not create a fresh block entity");
                     h.assertTrue(restored.getCapability(ModCapabilities.HBM_ENERGY_CONNECTOR).isPresent(),
                             "Reloaded connector capability absent");
-                    var manager = EnergyNetworkManager.get(level);
-                    h.assertTrue(manager.getNode(center) != null && manager.getNode(center).getNetwork() != null
-                            && manager.getNode(center.east()).getNetwork() == manager.getNode(center.west()).getNetwork(),
-                            "Reloaded energy graph did not reconnect");
-                    var fluidNode = UniNodespace.getNode(level, center.south(4), FluidNetProvider.forFluid(Fluids.WATER));
-                    h.assertTrue(fluidNode != null && fluidNode.net != null && !fluidNode.isExpired(),
-                            "Reloaded valve did not rebuild its network");
                     clear(level, center);
                     h.succeed();
-                });
+                }));
             }));
         }));
     }

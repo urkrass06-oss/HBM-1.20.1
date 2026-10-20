@@ -97,7 +97,7 @@
   "modified_external_files": [
     {
       "path": "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
-      "sha256": "bcb7e4e9bc54efeb7d936f82b984b17f42448c383c06a3c2a746527d965837d0"
+      "sha256": "9a73429deaecbaf3df2506246d54b1dc1852cd71ad6e1d234b8aa3ca319701fb"
     },
     {
       "path": "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
@@ -110,6 +110,10 @@
     {
       "path": "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
       "sha256": "a37fb46c59add2fbdc266eb6e41d57421a83c42cbf063e7fb1297702af509f5c"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
+      "sha256": "57263829294ec708a32cfa46c70eff8a6bdb4b3f97835fa62c53225efe2d26d7"
     }
   ],
   "requires": [
@@ -124,12 +128,16 @@
   "required_registrations": [],
   "deliverables": [
     {
+      "path": "README.md",
+      "sha256": "7150fcbe03f78e1f99dc3c651e092592e7c3529b114264d4e164e0472e8a3434"
+    },
+    {
       "path": "audit_network_jar.py",
-      "sha256": "08e11fd7ddca225f2a4d499e929bc20da00d0105a288750c5abf98d6db13c15d"
+      "sha256": "6ba443911b5ce5c400fd0905daf870f75c74e018cb41e1c2c7317660a75d7c43"
     },
     {
       "path": "changes.patch",
-      "sha256": "358cb2877ba831106d56b2fa0745656f096b8f792634a1dcebcff6ed91b27bde"
+      "sha256": "b525859aea3e8e1f5e860d84ac523e67c80ea43af9bb21f1c140ccd4ceccba81"
     },
     {
       "path": "evidence/original-contracts.json",
@@ -137,15 +145,15 @@
     },
     {
       "path": "gametest/com/hbm/integration/machines/MachineNetworkTests.java",
-      "sha256": "da48a5661e35bdd321b7132ace1ca9bd1eb8474f2220bc6d6156e50dae0beed0"
+      "sha256": "a919c1d0e80097c1533601a79a934695228038c5d134acd16785cd4a0fe84f72"
     },
     {
       "path": "requests/R-01-machines-tests.json",
-      "sha256": "81ea5c6f7b11a275db326eeba6884d72db77ce113af9efd0111b2bda0e00419b"
+      "sha256": "ad83a7c7c3b2f72b276730f686df248c423a3b44710f688429575fa04a410a38"
     },
     {
       "path": "rights.json",
-      "sha256": "e5f5aa07a910c4912db1123688c99099b06dde65ecb0730f66f8d56a81ad0eba"
+      "sha256": "d2d78ffe5b55d267c925a1b713655df6153270c88110a2ec75082b931a6f6b5c"
     }
   ],
   "rights": "rights.json",

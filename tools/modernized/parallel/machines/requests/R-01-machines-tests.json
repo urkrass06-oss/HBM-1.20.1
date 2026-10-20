@@ -7,12 +7,13 @@
   "depends_on": "R-01",
   "status": "requested",
   "integration_commit": null,
-  "purpose": "Include the M-01 delivery and its seven required tests through the serialized area loader.",
+  "purpose": "Include the M-01 delivery and its eight required tests through the serialized area loader.",
   "production_paths": [
     "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
     "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
     "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java",
-    "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java"
+    "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+    "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java"
   ],
   "test_source": "gametest/com/hbm/integration/machines/MachineNetworkTests.java",
   "test_destination": "integration/src/gametest/java/com/hbm/integration/machines/MachineNetworkTests.java",
@@ -24,10 +25,11 @@
     "networkUnloadReloadConservesAmounts",
     "networksAreDimensionLocal",
     "pressureAndSubstanceStaySeparate",
-    "splitMergePreservesAmounts"
+    "splitMergePreservesAmounts",
+    "pumpTransfersAreScheduledForSaving"
   ],
   "expected_existing_tests": 14,
-  "expected_total_tests": 21,
+  "expected_total_tests": 22,
   "template": "hbm_m:empty (existing independent Phase-4 template)",
   "forge": "47.4.23",
   "registry_changes": [],
@@ -43,7 +45,7 @@
   "acceptance": [
     "Validate base, patch, overlay, test and per-file rights hashes before writing.",
     "Apply after the unchanged Phase-3/4/5 base, reject collisions and non-allowlisted paths.",
-    "All 14 existing and seven M-01 tests must execute as required tests; NO-SOURCE and zero tests fail.",
+    "All 14 existing and eight M-01 tests must execute as required tests; NO-SOURCE and zero tests fail.",
     "Exclude test classes and templates from the production JAR; audit the production JAR separately.",
     "Bind the resulting integration commit and API version back into machines/area.json."
   ]

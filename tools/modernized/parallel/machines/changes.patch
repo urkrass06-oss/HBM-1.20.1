@@ -1,13 +1,40 @@
-M-01 network lifecycle and pressure corrections, 2026-10-20.
+M-01 network lifecycle, pressure and persistence corrections, 2026-10-20.
 SPDX-License-Identifier: GPL-3.0-only
 Derived from the pinned Modernized sources; upstream and original HBM credits
 remain applicable. Exact file/context provenance and scope: rights.json.
 
 diff --git a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
-index 81eb35a..ca2caa4 100644
+index 81eb35a..ff3f264 100644
 --- a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
 +++ b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
-@@ -447,9 +447,8 @@ public class EnergyNetwork {
+@@ -26,6 +26,7 @@ import com.mojang.logging.LogUtils;
+ import net.minecraft.core.BlockPos;
+ import net.minecraft.core.Direction;
+ import net.minecraft.server.level.ServerLevel;
++import net.minecraft.world.level.ChunkPos;
+ import net.minecraft.world.level.block.entity.BlockEntity;
+
+ /**
+@@ -49,7 +50,8 @@ public class EnergyNetwork {
+         // 1. Валидация узлов
+         // System.out.println("TEST HOTSWAP");
+         int sizeBefore = nodes.size();
+-        nodes.removeIf(node -> !node.isValid(level) || node.getNetwork() != this);
++        // M-01, 2026-10-20: probing full, non-ticking chunks renews vanilla load tickets.
++        nodes.removeIf(node -> node.getNetwork() != this || (isTicking(level, node.getPos()) && !node.isValid(level)));
+
+         if (nodes.size() < sizeBefore) {
+             verifyConnectivity();
+@@ -72,7 +74,7 @@ public class EnergyNetwork {
+         Map<IEnergyReceiver, BatteryInfo> uniqueBatteries = new IdentityHashMap<>();
+
+         for (EnergyNode node : nodes) {
+-            if (!level.isLoaded(node.getPos())) continue;
++            if (!isTicking(level, node.getPos())) continue;
+             BlockEntity be = level.getBlockEntity(node.getPos());
+             if (be == null) continue;
+
+@@ -447,9 +449,8 @@ public class EnergyNetwork {
      public void removeNode(EnergyNode node) {
          if (!nodes.remove(node)) return;
          node.setNetwork(null);
@@ -19,6 +46,17 @@ index 81eb35a..ca2caa4 100644
              manager.removeNetwork(this);
          } else {
              verifyConnectivity();
+@@ -508,4 +509,8 @@ public class EnergyNetwork {
+     }
+
+     public UUID getId() { return id; }
+-}
+\ No newline at end of file
++
++    private static boolean isTicking(ServerLevel level, BlockPos pos) {
++        return level.shouldTickBlocksAt(ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4));
++    }
++}
 diff --git a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java b/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
 index db6798f..4b9ad44 100644
 --- a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
@@ -47,6 +85,25 @@ index db6798f..4b9ad44 100644
      @Override
      public void onChunkUnloaded() {
          super.onChunkUnloaded();
+diff --git a/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
+index 62ef61f..3749e30 100644
+--- a/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
+@@ -51,7 +51,13 @@ public class FluidPumpBlockEntity extends BlockEntity implements IFluidStandardT
+
+     public FluidPumpBlockEntity(BlockPos pos, BlockState state) {
+         super(ModBlockEntities.FLUID_PUMP_BE.get(), pos, state);
+-        tank = new FluidTank(Fluids.EMPTY, bufferSize);
++        // M-01, 2026-10-20: network transfers must dirty the owning chunk for persistence.
++        tank = new FluidTank(Fluids.EMPTY, bufferSize) {
++            @Override
++            public void onContentsChanged() {
++                FluidPumpBlockEntity.this.setChanged();
++            }
++        };
+     }
+
+     // =====================================================================================
 diff --git a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
 index 9b07138..09e8ca6 100644
 --- a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java

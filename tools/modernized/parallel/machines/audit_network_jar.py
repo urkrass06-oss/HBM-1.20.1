@@ -15,6 +15,7 @@ EXPECTED_CLASSES = {
     "com/hbm_m/api/energy/WireBlockEntity.class",
     "com/hbm_m/blockentity/machines/FluidValveBlockEntity.class",
     "com/hbm_m/inventory/fluid/tank/FluidTank.class",
+    "com/hbm_m/blockentity/machines/FluidPumpBlockEntity.class",
 }
 
 
@@ -43,7 +44,8 @@ def audit(baseline, candidate):
     allowed = lambda name: name in EXPECTED_CLASSES or (
         "$" in name and name.split("$", 1)[0] + ".class" in EXPECTED_CLASSES
     )
-    if added or removed or not EXPECTED_CLASSES.issubset(changed) or not all(map(allowed, changed)):
+    if (removed or not all(map(allowed, added))
+            or not EXPECTED_CLASSES.issubset(changed) or not all(map(allowed, changed))):
         raise ValueError(f"Unexpected M-01 delta: added={added}, removed={removed}, changed={changed}")
     return {
         "baseline_sha256": BASELINE_SHA256,

@@ -5,6 +5,8 @@ import contextlib
 import io
 import json
 from pathlib import Path
+import re
+import shutil
 import tempfile
 import unittest
 import zipfile
@@ -96,6 +98,70 @@ class PackageTests(unittest.TestCase):
 
     def test_missing_mod_entrypoint_rejected(self):
         self.entries["com/hbm/HbmPort.class"] = self.bytecode(61)
+        with self.assertRaises(ValueError):
+            self.check()
+
+
+class ReportTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        (self.root / "integration/src/gametest/java").mkdir(parents=True)
+        (self.root / "integration/provenance.json").write_text('{"deliveries":[]}')
+        repo = Path(__file__).resolve().parents[1]
+        self.ids = []
+        for folder in ("gametest", "phase5-gametest"):
+            for source in (repo / "tools/modernized" / folder).rglob("*.java"):
+                shutil.copyfile(source, self.root / "integration/src/gametest/java" / source.name)
+                text = source.read_text()
+                cls = re.search(r"public final class (\w+)", text)[1]
+                self.ids += [(cls + "." + method).lower() for method in
+                             re.findall(r"@GameTest\([^)]*\)\s+public static void (\w+)\(", text)]
+        self.report = self.root / "report.xml"
+        self.log = self.root / "run.log"
+        self.log.write_text("Forge 47.4.23\nAll 14 required tests passed :)\n")
+        self.write_report(self.ids)
+
+    def write_report(self, names, child=""):
+        self.report.write_text("<testsuite>" + "".join(f'<testcase name="{name}">{child}</testcase>' for name in names) + "</testsuite>")
+
+    def check(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            audit.gametests(argparse.Namespace(checkout=self.root, report=self.report, log=self.log, forge="47.4.23"))
+
+    def test_exact_fourteen_required_ids_pass(self):
+        self.assertEqual(len(self.ids), 14)
+        self.check()
+
+    def test_zero_tests_rejected(self):
+        self.write_report([])
+        with self.assertRaises(ValueError):
+            self.check()
+
+    def test_correct_count_with_wrong_id_rejected(self):
+        self.write_report([*self.ids[:-1], "unrelated.test"])
+        with self.assertRaises(ValueError):
+            self.check()
+
+    def test_failures_errors_and_skips_rejected(self):
+        for child in ("<failure/>", "<error/>", "<skipped/>"):
+            self.write_report(self.ids, child)
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_wrong_runtime_version_rejected(self):
+        self.log.write_text("Forge 47.4.20\nAll 14 required tests passed :)\n")
+        with self.assertRaises(ValueError):
+            self.check()
+
+    def test_missing_success_summary_rejected(self):
+        self.log.write_text("Forge 47.4.23\nBUILD SUCCESSFUL\n")
+        with self.assertRaises(ValueError):
+            self.check()
+
+    def test_declared_but_missing_area_test_rejected(self):
+        (self.root / "integration/provenance.json").write_text(json.dumps({"deliveries": [{"manifest": {"tests": [{"id": "area.missing"}]}}]}))
         with self.assertRaises(ValueError):
             self.check()
 

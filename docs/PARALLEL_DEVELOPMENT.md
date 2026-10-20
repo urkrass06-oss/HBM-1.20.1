@@ -95,7 +95,7 @@ export HBM_JAVA17=/absolute/toolchains/jdk-17
 python3 tools/integrate_modernized.py "$HBM_CHECK_ROOT/modernized" --phase5
 ```
 
-**Stand heute:** Der Helfer lädt nur die vorhandene Phase-5-Basis. Er hat noch keinen Bereichsloader. R-01 implementiert und testet diesen. Vorher kann eine freigegebene Bereichslieferung gezielt mit `git -C "$HBM_CHECK_ROOT/modernized" apply --check /absolute/changes.patch`, danach `apply` und Kopieren ihrer explizit gelisteten eigenen Overlay-/Testdateien eingespielt werden. Keine unkontrollierten `cp -r`-Vollbäume. Neue Dateien nicht in den getrackten M-Pin committen: `modernized_build.py` verlangt `HEAD == M-Pin`. Der erzeugte `integration/provenance.json` beschreibt zunächst nur die Basis; die Bereichshashes müssen bis R-01 zusätzlich separat erfasst werden.
+**Historische Übergabe vor R-01:** Der Helfer lud nur die vorhandene Phase-5-Basis. Der implementierte Bereichsloader und sein Manifestvertrag stehen nun in [parallel/README.md](../tools/modernized/parallel/README.md); Auswahl erfolgt explizit mit `--delivery AREA@COMMIT`. Die folgende manuelle Übergangslösung ist damit überholt: Eine freigegebene Bereichslieferung konnte gezielt mit `git -C "$HBM_CHECK_ROOT/modernized" apply --check /absolute/changes.patch`, danach `apply` und Kopieren ihrer explizit gelisteten eigenen Overlay-/Testdateien eingespielt werden. Keine unkontrollierten `cp -r`-Vollbäume. Neue Dateien nicht in den getrackten M-Pin committen: `modernized_build.py` verlangt `HEAD == M-Pin`. Der erzeugte `integration/provenance.json` beschreibt zunächst nur die Basis; die Bereichshashes müssen bis R-01 zusätzlich separat erfasst werden.
 
 Produktionsprofil explizit gegen **47.4.23** bauen; jeder Aufruf erhält denselben Override. Der reguläre 47.4.20-Pin wird dadurch nicht stillschweigend geändert:
 
@@ -103,19 +103,19 @@ Produktionsprofil explizit gegen **47.4.23** bauen; jeder Aufruf erhält denselb
 python3 tools/modernized_build.py run "$HBM_CHECK_ROOT/modernized" runData \
   --java21-home "$HBM_JAVA21" --java17-home "$HBM_JAVA17" \
   --gradle-home "$HBM_CHECK_ROOT/gradle-home" --log-dir "$HBM_CHECK_ROOT/logs" \
-  --gradle-arg=-Pdeps.forge=47.4.23
+  --profile production --gradle-arg=-Pdeps.forge=47.4.23
 python3 tools/audit_modernized.py resources "$HBM_CHECK_ROOT/modernized/src/generated/resources" \
   --output "$HBM_CHECK_ROOT/datagen.sha256"
 python3 tools/modernized_build.py run "$HBM_CHECK_ROOT/modernized" runData \
   --java21-home "$HBM_JAVA21" --java17-home "$HBM_JAVA17" \
   --gradle-home "$HBM_CHECK_ROOT/gradle-home" --log-dir "$HBM_CHECK_ROOT/logs" \
-  --gradle-arg=-Pdeps.forge=47.4.23
+  --profile production --gradle-arg=-Pdeps.forge=47.4.23
 python3 tools/audit_modernized.py resources "$HBM_CHECK_ROOT/modernized/src/generated/resources" \
   --compare "$HBM_CHECK_ROOT/datagen.sha256"
 python3 tools/modernized_build.py run "$HBM_CHECK_ROOT/modernized" build sourcesJar \
   --java21-home "$HBM_JAVA21" --java17-home "$HBM_JAVA17" \
   --gradle-home "$HBM_CHECK_ROOT/gradle-home" --log-dir "$HBM_CHECK_ROOT/logs" \
-  --gradle-arg=-Pdeps.forge=47.4.23
+  --profile production --gradle-arg=-Pdeps.forge=47.4.23
 export HBM_CHECK_JAR="$HBM_CHECK_ROOT/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar"
 python3 tools/audit_modernized.py jar "$HBM_CHECK_JAR" \
   --generated-source "$HBM_CHECK_ROOT/modernized/src/generated/resources"
@@ -125,7 +125,7 @@ python3 tools/test_modernized_server.py "$HBM_CHECK_JAR" "$HBM_CHECK_ROOT/server
 python3 tools/modernized_build.py run "$HBM_CHECK_ROOT/modernized" runGameTestServer \
   --java21-home "$HBM_JAVA21" --java17-home "$HBM_JAVA17" \
   --gradle-home "$HBM_CHECK_ROOT/gradle-home" --log-dir "$HBM_CHECK_ROOT/logs" \
-  --gradle-arg=-Pmodernized.gameTests=true --gradle-arg=-Pdeps.forge=47.4.23
+  --gradle-arg=-Pmodernized.gameTests=true --profile production --gradle-arg=-Pdeps.forge=47.4.23
 ```
 
 Der JAR-Name gilt für die unveränderte Phase-5-Version. Nach einer Versionsänderung den tatsächlich gebauten Dateinamen im Manifest aktualisieren; kein beliebiges `*.jar` auswählen. Testprofil erst nach Audit/Hash der Produktions-JAR starten, um Test-JARs nicht mit dieser zu verwechseln. EULA nur nach Lesen/Annahme durch den Betreiber; das Beispiel ist für entsprechend autorisierte isolierte Tests. In der Cloud gegebenenfalls `--trust-store /etc/ssl/certs/java/cacerts` verwenden, Proxy/TLS beibehalten. `--allow-offline-auth-failure` nur bei dem exakt dokumentierten Offline-Loopback-Fall aus Phase 5; keine anderen Logfehler ausblenden.

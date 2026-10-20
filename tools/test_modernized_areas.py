@@ -185,8 +185,16 @@ class DeliveryTests(unittest.TestCase):
         self.assertEqual([d["area"] for d in order], ["rendering", "machines"])
 
     def test_game_test_requires_separate_declared_package(self):
-        self.a["manifest"]["files"][0]["source"] = "gametest/com/hbm/integration/nuclear/Wrong.java"
-        self.reject([seal(self.a)])
+        source = "gametest/com/hbm/integration/nuclear/Wrong.java"
+        target = "integration/src/gametest/java/com/hbm/integration/nuclear/Wrong.java"
+        item = delivery("machines", target)
+        self.policy["owners"][target] = "machines"
+        item["files"][source] = item["files"].pop("overlay/New.java")
+        item["manifest"]["files"][0]["source"] = source
+        item["manifest"]["tests"] = [{"id": "wrong.test", "source": source, "required": True}]
+        with self.assertRaisesRegex(ValueError, "separate package"):
+            self.run_delivery([seal(item)])
+        self.assertFalse(self.target.exists())
 
     def test_noncentral_registry_rejected(self):
         self.a["manifest"]["registrations"] = [{"registry": "block", "id": "hbm_m:fixture"}]

@@ -40,7 +40,10 @@ Nur Rendering darf zentrale Requestlieferungen anbieten. Zyklen sind Fehler.
   und dürfen kein vorhandenes Ziel ersetzen. Tests kommen aus
   `gametest/com/hbm/integration/AREA/` und gehen ausschließlich nach
   `integration/src/gametest/java/`.
-- `tests`: `{id, source, required: true}` für jeden neuen GameTest.
+- `tests`: `{id, source, required: true}` für jeden neuen GameTest. `id` ist
+  die kleingeschriebene Quellidentität `Klasse.Methode`; der JUnit-Audit leitet
+  daraus den tatsächlichen Forge-Namen gemäß `@PrefixGameTestTemplate` ab.
+  Bei `false` lautet dieser nur `methode`; auch diese Namen müssen eindeutig sein.
 - `registrations`: zentrale Requests `{registry, id, class, bindings,
   initialization, resources, tests, request}`; Identität ist `(registry, id)`.
   Namespace `hbm_m`, keine doppelten Identitäten. Ohne Registeränderung `[]`.
@@ -70,3 +73,29 @@ ungeklärte Dateien. Der eigene generierte Testvertrag bleibt im Testprofil.
 Die Miniaturtests verwenden selbst geschriebene Daten und benötigen weder
 Minecraft, Modernized, JDK noch Netzwerk. Volle Spielbäume, generierte Ressourcen
 und Evaluations-JARs verbleiben extern; keine CI-Artefaktuploads.
+
+## Produktions- und Kompatibilitätsprofil (R-02)
+
+`modernized_build.py run … --profile production` setzt bei **jedem** Aufruf
+`-Pdeps.forge=47.4.23`; `--profile compatibility` erhält 47.4.20 und bleibt
+aus Kompatibilitätsgründen der Default. Abweichende Forge-Overrides werden
+abgewiesen. Datagen einzeln zweimal ausführen und die Ressourcenmanifeste
+vergleichen, danach `build sourcesJar` separat. `runGameTestServer` aktiviert
+ausschließlich für seinen eigenen Aufruf das Testprofil. Produktionsarchive
+vorher auditieren und für Serverstarts separat sichern.
+
+Der JAR-Audit erhält `--generated-source …/src/generated/resources` und
+`--provenance …/integration/provenance.json`. Er prüft Bytecode einschließlich
+Jar-in-Jar, den alleinigen Foundation-Einstieg, generierte Pfade, deklarierte
+Produktionsklassen/Registerressourcen und ausgeschlossene Bereichstests.
+`../resource-overrides.json` erfasst die bestehende Priorität von 124
+Main-Ressourcen gegenüber generierten Varianten als exakte Hashpaare. Neue oder
+veränderte Abweichungen sind Fehler; diese Bestandsakte klärt keine Assetrechte
+und bestätigt keine Darstellung.
+
+Die Rendering-Testlieferung installiert den Minecraft-JUnit-Reporter für die
+gesamte Suite und prüft Mod-Initialisierung/Registryvertrag. Danach verlangt
+`audit_modernized.py gametests CHECKOUT --report XML --log LOG --forge VERSION`
+die exakten 14 bisherigen und alle deklarierten neuen required IDs, ohne Fehler,
+Skips oder Ersatztests. Reproduktion beider Profile: Integrationsworkflow und
+[Buildbericht](../../../docs/RENDERING_BUILD_REPORT.md).

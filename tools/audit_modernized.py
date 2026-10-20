@@ -161,13 +161,19 @@ def gametests(args):
     checkout = Path(args.checkout)
     provenance = json.loads((checkout / "integration/provenance.json").read_text())
     expected = set()
+    runtime_names = {}
     for source in sorted((checkout / "integration/src/gametest/java").rglob("*.java")):
         text = source.read_text()
         cls = re.search(r"public (?:final )?class (\w+)", text)
+        prefix = not re.search(r"@PrefixGameTestTemplate\(\s*false\s*\)", text)
         for annotation, method in re.findall(r"@GameTest\((.*?)\)\s+public static void (\w+)\(", text, re.S):
             if re.search(r"required\s*=\s*false", annotation):
                 raise ValueError("Optional integration GameTest is forbidden")
-            expected.add((cls[1] + "." + method).lower())
+            logical_id = (cls[1] + "." + method).lower()
+            if logical_id in expected:
+                raise ValueError("Duplicate source GameTest identity")
+            expected.add(logical_id)
+            runtime_names[logical_id] = logical_id if prefix else method.lower()
     declared = {t["id"] for d in provenance["deliveries"] for t in d["manifest"]["tests"]}
     baseline = set()
     repo = Path(__file__).resolve().parents[1]
@@ -178,15 +184,19 @@ def gametests(args):
             baseline.update((cls + "." + m).lower() for m in re.findall(r"@GameTest\([^)]*\)\s+public static void (\w+)\(", text))
     if len(baseline) != 14 or expected != baseline | declared:
         raise ValueError("Expected the unchanged 14 baseline IDs plus exactly the declared area tests")
+    required_runtime_names = set(runtime_names.values())
+    if len(required_runtime_names) != len(expected):
+        raise ValueError("Duplicate Forge runtime GameTest name")
     report = ET.parse(args.report).getroot()
     cases = report.findall(".//testcase")
     actual = [case.attrib["name"].removeprefix("hbm_m:").lower() for case in cases]
-    if len(actual) != len(expected) or set(actual) != expected or report.findall(".//failure") or report.findall(".//error") or report.findall(".//skipped"):
-        raise ValueError(f"GameTest report differs from required IDs: expected {sorted(expected)}, actual {actual}")
+    if len(actual) != len(expected) or set(actual) != required_runtime_names or report.findall(".//failure") or report.findall(".//error") or report.findall(".//skipped"):
+        raise ValueError(f"GameTest report differs from required IDs: expected {sorted(required_runtime_names)}, actual {actual}")
     log = Path(args.log).read_text()
     if f"All {len(expected)} required tests passed" not in log or args.forge not in log:
         raise ValueError("Missing required success summary or actual Forge version")
-    print(json.dumps({"forge": args.forge, "required_passed": len(actual), "ids": sorted(actual)}, indent=2))
+    print(json.dumps({"forge": args.forge, "required_passed": len(actual), "ids": sorted(actual),
+                      "source_ids": sorted(expected)}, indent=2))
 
 
 def main():

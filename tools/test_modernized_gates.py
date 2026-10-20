@@ -126,7 +126,7 @@ class ReportTests(unittest.TestCase):
                 shutil.copyfile(source, self.root / "integration/src/gametest/java" / source.name)
                 text = source.read_text()
                 cls = re.search(r"public final class (\w+)", text)[1]
-                self.ids += [(cls + "." + method).lower() for method in
+                self.ids += [method.lower() for method in
                              re.findall(r"@GameTest\([^)]*\)\s+public static void (\w+)\(", text)]
         self.report = self.root / "report.xml"
         self.log = self.root / "run.log"
@@ -151,6 +151,11 @@ class ReportTests(unittest.TestCase):
 
     def test_correct_count_with_wrong_id_rejected(self):
         self.write_report([*self.ids[:-1], "unrelated.test"])
+        with self.assertRaises(ValueError):
+            self.check()
+
+    def test_runtime_names_follow_prefix_false_annotation(self):
+        self.write_report(["unwantedclassprefix." + name for name in self.ids])
         with self.assertRaises(ValueError):
             self.check()
 

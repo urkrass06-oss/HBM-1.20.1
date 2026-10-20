@@ -1,0 +1,7 @@
+UTC: 2026-10-19T19:28:19.418706+00:00
+CWD: /workspace/HBM-1.20.1
+COMMAND: timeout 600 python3 tools/modernized_build.py run /workspace/scratch/modernized-phase3/replay-verified runData --java21-home /workspace/scratch/modernized-phase3/jdks/jdk-21.0.12.1+1 --java17-home /workspace/scratch/modernized-phase3/jdks/jdk-17.0.20.1+1 --gradle-home /workspace/scratch/modernized-phase3/gradle-home --log-dir /workspace/scratch/modernized-phase3/runner-logs --trust-store /etc/ssl/certs/java/cacerts --gradle-arg=--info
+
+Running ./gradlew --no-daemon --console=plain --max-workers=2 -Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME -Porg.gradle.java.installations.auto-download=false :1.20.1-forge:runData --stacktrace --info
+Log: /workspace/scratch/modernized-phase3/runner-logs/20261019T192819676142Z-runData.log
+Exit 0; full output: /workspace/scratch/modernized-phase3/runner-logs/20261019T192819676142Z-runData.log

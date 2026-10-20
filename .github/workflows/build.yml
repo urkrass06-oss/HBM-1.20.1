@@ -1,0 +1,50 @@
+name: Historical foundation and original inventory
+
+on:
+  push:
+    branches: [main, 'foundation/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Check out port
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Verify wrapper bootstrap
+        run: echo 'cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8  gradle/wrapper/gradle-wrapper.jar' | sha256sum --check --strict
+
+      - name: Fetch exact original reference
+        run: |
+          git init "$RUNNER_TEMP/hbm-original"
+          git -C "$RUNNER_TEMP/hbm-original" remote add origin https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT.git
+          git -C "$RUNNER_TEMP/hbm-original" fetch --depth 1 origin aee05a40f10fb7bb9b042b65eccaa449ecc1672d
+          git -C "$RUNNER_TEMP/hbm-original" checkout --detach FETCH_HEAD
+
+      - name: Test and verify static inventory
+        env:
+          HBM_ORIGINAL_SOURCE: ${{ runner.temp }}/hbm-original
+        run: |
+          python3 -m unittest discover -s tools -p 'test_inventory_original.py' -v
+          python3 tools/inventory_original.py --source "$HBM_ORIGINAL_SOURCE" --check
+
+      - name: Build historical foundation (not the Modernized integration artifact)
+        run: ./gradlew --no-daemon build sourcesJar

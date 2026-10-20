@@ -1,0 +1,11 @@
+UTC: 2026-10-19T19:30:40.294924+00:00
+CWD: /workspace/scratch/modernized-phase3
+COMMAND: python3 inspect-packaging.py
+
+hbm_m-0.2.1-alpha+1.20.1-forge-javadoc.jar bytes 7460785 SHA256 76cea95e5c32cd8867ec4887dc6227947d271eb6fae173e3ccff46945afc5899
+LICENSE preserved, no duplicate entries or datagen cache/platform classes
+Traceback (most recent call last):
+  File "/workspace/scratch/modernized-phase3/inspect-packaging.py", line 12, in <module>
+    assert not any('.cache' in Path(n).parts for n in names),'Datagen cache packaged'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Datagen cache packaged

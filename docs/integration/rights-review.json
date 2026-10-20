@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-19",
+  "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+  "decision": "Full integration only in temporary external checkout; no public game-source/asset import or binary upload.",
+  "resource_files": 6720,
+  "png_files": 4869,
+  "ogg_files": 118,
+  "obj_files": 252,
+  "anchors": [
+    {
+      "source_path": "src/main/java/com/hbm_m/powerarmor/resist/DamageResistanceHandler.java",
+      "git_blob": "1e462bb55b2d990770c2f25eff387a15c1a98b0e",
+      "sha256": "6ae8d48ad6b3984cfceeae474b7e6f5a7c57de377b02c11c0598724a161eb90c",
+      "review_status": "open-external-only",
+      "finding": "Contains @author hbm (ported to 1.20.1); root GPL declaration alone does not resolve the complete code provenance chain."
+    },
+    {
+      "source_path": "src/main/resources/assets/hbm_m/models/block/doors/cargo_door.obj",
+      "git_blob": "777ffa3453dfd9fc24bc3fe7eb05c25601e20415",
+      "sha256": "7b393b1721cc5a354ae722dec7e8316b1a4a1064acf2f0ed253dd124c1d2ccac",
+      "review_status": "open-external-only",
+      "finding": "Header: Made By TheVitya2127. No individual license/permission found in the inspected model/header and repository notices."
+    },
+    {
+      "source_path": "src/main/resources/assets/hbm_m/models/trophy/su47/su47.obj",
+      "git_blob": "9af3bf70d45e56bf468444dc4fe1bdc73394c6e1",
+      "sha256": "94b0f04a2410ea220badab375e44977e2dd9b4c9d0fb4370bf7585c8d145f934",
+      "review_status": "open-external-only",
+      "finding": "Header credits ImageToStl.com, an exporter; no creator/license for the input model established."
+    }
+  ],
+  "libraries": {
+    "mixinconstraints": {
+      "version": "1.1.0",
+      "source_commit": "07544882c2473ac282976f290b023c28d12c539b",
+      "source_jar_sha256": "c6e56a3269ce080278e9cd4983d6cac9512e7a287cbc9a8d72308b505b52fe0d",
+      "java_files_byte_identical": 19,
+      "differing_java_files": 0,
+      "license": "MIT",
+      "copyright": "Copyright (c) 2023 Moulberry",
+      "status": "License text and source correspondence evidenced; no library binary uploaded."
+    },
+    "architectury": {
+      "version": "9.2.14",
+      "examined_commit": "22caa2810877d03f0653cbcd0e1ea0114fcf6dd0",
+      "source_jar_sha256": "702f097752fff4644c27fc043ef698a6f2073cb74ab513bf53864d0f1a888ac5",
+      "java_files_byte_identical": 141,
+      "differing_java_files": 69,
+      "status": "LGPL text and artifact source available. This comparison does not establish an exact release Git commit; remapping/build differences unresolved."
+    }
+  }
+}

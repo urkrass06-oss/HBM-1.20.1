@@ -1,0 +1,7 @@
+UTC: 2026-10-19T19:20:07.645452+00:00
+CWD: /workspace/scratch/modernized-phase3/server
+COMMAND: curl --fail --location --retry 2 --max-time 120 --output forge-installer.jar https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-installer.jar
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 34 8628k   34 2991k    0     0  5575k      0  0:00:01 --:--:--  0:00:01 5571k100 8628k  100 8628k    0     0  12.9M      0 --:--:-- --:--:-- --:--:-- 12.9M

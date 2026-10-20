@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-19T21:42:13.828338+00:00",
+  "jar": "/workspace/scratch/modernized-phase4/integrated/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar",
+  "jar_sha256": "ba2be84cf560bb0eb6f145a4477c4a2098d18fa8c671378fcd081a9f416c64e9",
+  "forge": "1.20.1-47.4.20",
+  "installer_url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-installer.jar",
+  "installer_sha256": "0ebcf198609f925e0018842a79473ef74fda78534f86d82f2c0fdb26449c1fa4",
+  "download_command": [
+    "curl",
+    "--fail",
+    "--silent",
+    "--show-error",
+    "--location",
+    "--retry",
+    "2",
+    "--max-time",
+    "180",
+    "--output",
+    "/workspace/scratch/modernized-phase4/server-final/forge-installer.jar",
+    "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-installer.jar"
+  ],
+  "install_command": [
+    "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+    "-Dhttp.proxyHost=proxy",
+    "-Dhttp.proxyPort=8080",
+    "-Dhttps.proxyHost=proxy",
+    "-Dhttps.proxyPort=8080",
+    "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+    "-jar",
+    "/workspace/scratch/modernized-phase4/server-final/forge-installer.jar",
+    "--installServer"
+  ],
+  "bind": "127.0.0.1:58727",
+  "eula": "accepted-for-isolated-test",
+  "runs": [
+    {
+      "utc": "2026-10-19T21:42:13.964460+00:00",
+      "command": [
+        "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Xms512M",
+        "-Xmx3G",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/scratch/modernized-phase4/server-final",
+      "transcript": "/workspace/scratch/modernized-phase4/server-final/server-1.log",
+      "done": true,
+      "startup_seconds": 123.647,
+      "observed_seconds": 30,
+      "save_confirmed": true,
+      "exit_code": 0,
+      "error_lines": [
+        "[21:42:48] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "environment_error_lines": [
+        "[21:42:48] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "unexpected_error_lines": [],
+      "passed": true
+    },
+    {
+      "utc": "2026-10-19T21:44:54.316631+00:00",
+      "command": [
+        "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Xms512M",
+        "-Xmx3G",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/scratch/modernized-phase4/server-final",
+      "transcript": "/workspace/scratch/modernized-phase4/server-final/server-2.log",
+      "done": true,
+      "startup_seconds": 68.138,
+      "observed_seconds": 30,
+      "save_confirmed": true,
+      "exit_code": 0,
+      "error_lines": [
+        "[21:45:34] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "environment_error_lines": [
+        "[21:45:34] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "unexpected_error_lines": [],
+      "passed": true
+    }
+  ]
+}

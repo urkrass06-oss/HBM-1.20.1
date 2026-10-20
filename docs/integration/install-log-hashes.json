@@ -1,0 +1,36 @@
+[
+  {
+    "local_full_log": "/workspace/scratch/modernized-phase4/server-verified/install.log",
+    "bytes": 1195441,
+    "sha256": "e6bbc3095e517acbaf20ff09af122487a7aa577fc757ee2a7dadd7fea8a33c0a",
+    "line_count": 22346,
+    "published_excerpt": "transcripts/server-before-painting-fix-install-summary.txt",
+    "excerpt_line_ranges": [
+      [
+        1,
+        8
+      ],
+      [
+        22331,
+        22346
+      ]
+    ]
+  },
+  {
+    "local_full_log": "/workspace/scratch/modernized-phase4/server-final/install.log",
+    "bytes": 1195054,
+    "sha256": "f8c9cb38892f236f056232f92a8978e004442cc821561054ee1be6743d3b6237",
+    "line_count": 22346,
+    "published_excerpt": "transcripts/server-final-install-summary.txt",
+    "excerpt_line_ranges": [
+      [
+        1,
+        8
+      ],
+      [
+        22331,
+        22346
+      ]
+    ]
+  }
+]

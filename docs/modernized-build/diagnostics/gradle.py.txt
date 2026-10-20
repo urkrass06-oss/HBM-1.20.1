@@ -1,0 +1,13 @@
+import os,pathlib,subprocess,sys,urllib.parse
+root=pathlib.Path(__file__).resolve().parent
+env=os.environ.copy()
+env['JAVA_HOME']=str(root/'jdks/jdk-21.0.12.1+1')
+env['GRADLE_USER_HOME']=str(root/'gradle-home')
+opts=[]
+for scheme in ('http','https'):
+    proxy=urllib.parse.urlsplit(env.get(scheme.upper()+'_PROXY',''))
+    if proxy.hostname:
+        opts.extend([f'-D{scheme}.proxyHost={proxy.hostname}', f'-D{scheme}.proxyPort={proxy.port or 80}'])
+opts.append('-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts')
+env['GRADLE_OPTS']=' '.join(opts)
+sys.exit(subprocess.run(['./gradlew','--no-daemon','--console=plain','--max-workers=2',*opts,*sys.argv[1:]],env=env).returncode)

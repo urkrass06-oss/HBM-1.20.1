@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "scope": "Only listed license texts are imported. No Modernized game source or assets cleared for publication.",
+  "files": [
+    {
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "LICENSE",
+      "git_blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "target_path": "third_party_licenses/MODERNIZED_GPL-3.0.txt",
+      "changes": "none; verbatim copy",
+      "review_status": "cleared-license-text-only",
+      "evidence": "GPL-3.0 license text; explicit permission to redistribute verbatim; software/asset rights not inferred",
+      "reviewer": "Codex technical provenance review",
+      "date": "2026-10-19"
+    },
+    {
+      "source_repository": "https://github.com/Moulberry/MixinConstraints",
+      "source_commit": "07544882c2473ac282976f290b023c28d12c539b",
+      "source_path": "LICENSE",
+      "git_blob": "ae2916d3ee9ed129cd6d7bb919a213e0e40a00ee",
+      "sha256": "d1719cceec677ea0cac7ac126134881509c00627f14dd4b7b08eaa908498dab6",
+      "target_path": "third_party_licenses/MIXINCONSTRAINTS_LICENSE.txt",
+      "changes": "none; verbatim copy",
+      "review_status": "cleared-license-text-only",
+      "evidence": "MIT; Copyright (c) 2023 Moulberry; all 19 source-JAR Java files byte-identical",
+      "reviewer": "Codex technical provenance review",
+      "date": "2026-10-19"
+    },
+    {
+      "source_repository": "https://github.com/architectury/architectury-api",
+      "source_commit": "22caa2810877d03f0653cbcd0e1ea0114fcf6dd0",
+      "source_path": "LICENSE.md",
+      "git_blob": "751e50dae9fb1b46fd3946b010d10d8a2446b0b6",
+      "sha256": "1171d2933e66dbe4720bfe0ab30d5a519409c96adffca4358bc86f94ca59c654",
+      "target_path": "third_party_licenses/ARCHITECTURY_LICENSE.md",
+      "changes": "none; verbatim copy",
+      "review_status": "cleared-license-text-only",
+      "evidence": "LGPL-3.0 license text; verbatim redistribution permitted; exact release source commit unresolved",
+      "reviewer": "Codex technical provenance review",
+      "date": "2026-10-19"
+    }
+  ]
+}

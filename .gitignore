@@ -1,0 +1,31 @@
+# Gradle output and local toolchains
+.gradle/
+build/
+.jdk/
+__pycache__/
+*.py[cod]
+
+# Development game directories, including worlds and EULA acceptance
+run/
+run-client/
+run-server/
+logs/
+crash-reports/
+
+# IDE metadata and output
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+out/
+*.launch
+
+# Operating-system files
+.DS_Store
+Thumbs.db

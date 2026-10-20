@@ -4,13 +4,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'tools/integrate_modernized.py'
-      - 'tools/modernized_build.py'
-      - 'tools/audit_modernized.py'
-      - 'tools/test_modernized_server.py'
-      - 'tools/modernized_client.py'
-      - 'tools/modernized_server_session.py'
-      - 'tools/modernized_xinput.py'
+      - 'tools/*.py'
       - 'tools/modernized/**'
       - 'third_party_licenses/**'
       - 'src/main/java/com/hbm/**'
@@ -26,50 +20,72 @@ concurrency:
 jobs:
   forge-integration:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: production
+            forge: 47.4.23
+          - profile: compatibility
+            forge: 47.4.20
+    env:
+      HBM_PROFILE: ${{ matrix.profile }}
+      HBM_FORGE: ${{ matrix.forge }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
           distribution: temurin
           java-version: '17'
       - name: Keep runtime JDK path
         run: echo "JAVA17_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
-      - name: Check integration tool syntax
+      - name: Verify loader, package and profile gates
         run: |
-          python3 -m py_compile tools/integrate_modernized.py tools/modernized_build.py \
-            tools/audit_modernized.py tools/test_modernized_server.py tools/modernized_client.py \
-            tools/modernized_server_session.py tools/modernized_xinput.py
+          python3 -m py_compile tools/*.py
+          python3 -m unittest discover -s tools -p 'test_modernized_*.py' -v
       - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
           distribution: temurin
           java-version: '21'
-      - name: Prepare external integration
-        run: python3 tools/integrate_modernized.py "$RUNNER_TEMP/hbm-phase5/modernized" --phase5
-      - name: Generate resources and build Forge artifact
+      - name: Prepare external integration with explicit rendering delivery
+        run: python3 tools/integrate_modernized.py "$RUNNER_TEMP/hbm-phase5/modernized" --phase5 --delivery "rendering@$GITHUB_SHA"
+      - name: Generate twice, compare bytes, then build in a separate invocation
         run: |
           python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runData \
-            --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+            --profile "$HBM_PROFILE" --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+          python3 tools/audit_modernized.py resources "$RUNNER_TEMP/hbm-phase5/modernized/src/generated/resources" \
+            --output "$RUNNER_TEMP/hbm-phase5/datagen.sha256"
+          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runData \
+            --profile "$HBM_PROFILE" --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+          python3 tools/audit_modernized.py resources "$RUNNER_TEMP/hbm-phase5/modernized/src/generated/resources" \
+            --compare "$RUNNER_TEMP/hbm-phase5/datagen.sha256"
           python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" build sourcesJar \
-            --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+            --profile "$HBM_PROFILE" --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
           python3 tools/audit_modernized.py jar \
             "$RUNNER_TEMP/hbm-phase5/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar" \
-            --generated-source "$RUNNER_TEMP/hbm-phase5/modernized/src/generated/resources"
+            --generated-source "$RUNNER_TEMP/hbm-phase5/modernized/src/generated/resources" \
+            --provenance "$RUNNER_TEMP/hbm-phase5/modernized/integration/provenance.json"
       - name: Isolated production server, save and restart
         run: |
-          for runtime_forge in 47.4.20 47.4.23; do
-            python3 tools/test_modernized_server.py \
-              "$RUNNER_TEMP/hbm-phase5/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar" \
-              "$RUNNER_TEMP/hbm-phase5/server-$runtime_forge" \
-              --forge "$runtime_forge" --java17-home "$JAVA17_HOME" --accept-eula
-          done
-      - name: Run integration GameTests in a separate profile
+          python3 tools/test_modernized_server.py \
+            "$RUNNER_TEMP/hbm-phase5/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar" \
+            "$RUNNER_TEMP/hbm-phase5/server-$HBM_FORGE" \
+            --forge "$HBM_FORGE" --java17-home "$JAVA17_HOME" --accept-eula
+      - name: Run 14 baseline plus declared area GameTests separately
         run: |
-          for runtime_forge in 47.4.20 47.4.23; do
-            python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runGameTestServer \
-              --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs" \
-              --gradle-arg=-Pmodernized.gameTests=true --gradle-arg="-Pdeps.forge=$runtime_forge"
-          done
-      # No upload-artifact: unreviewed upstream source/assets and evaluation JARs stay private.
+          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runGameTestServer \
+            --profile "$HBM_PROFILE" --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+          python3 - <<'PYTEST'
+          import json, os, subprocess
+          from pathlib import Path
+          root = Path(os.environ["RUNNER_TEMP"]) / "hbm-phase5"
+          record = json.loads((root / "logs/commands.jsonl").read_text().splitlines()[-1])
+          subprocess.run(["python3", "tools/audit_modernized.py", "gametests", str(root / "modernized"),
+              "--report", str(root / "modernized/versions/1.20.1-forge/run-gametest/hbm-gametest-results.xml"),
+              "--log", record["log"], "--forge", os.environ["HBM_FORGE"]], check=True)
+          PYTEST
+      # No source/asset/test/JAR/screenshot/world uploads or release publication.

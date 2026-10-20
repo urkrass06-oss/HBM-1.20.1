@@ -23,6 +23,27 @@ REPO = Path(__file__).resolve().parents[1]
 PATCH = REPO / "tools/modernized/forge-1.20.1.patch"
 TASKS = ("tasks", "javaToolchains", "runData", "build", "sourcesJar", "runServer",
          "runClient", "runGameTestServer", "clean", "dependencies")
+PROFILES = {"production": "47.4.23", "compatibility": "47.4.20"}
+
+
+def profile_arguments(profile, arguments, tasks):
+    forge = PROFILES[profile]
+    overrides = [arg for arg in arguments if arg.startswith("-Pdeps.forge=")]
+    if any(arg != f"-Pdeps.forge={forge}" for arg in overrides):
+        raise ValueError(f"Forge override conflicts with {profile} profile ({forge})")
+    if any(arg.startswith(("-Pdeps.minecraft=", "-Pmod.id=")) for arg in arguments):
+        raise ValueError("Minecraft target and namespace are fixed")
+    if {"build", "sourcesJar"} & set(tasks) and "-Pmodernized.gameTests=true" in arguments:
+        raise ValueError("Production packaging and GameTests require separate invocations")
+    result = [arg for arg in arguments if not arg.startswith("-Pdeps.forge=")]
+    if "runGameTestServer" in tasks:
+        if tasks != ["runGameTestServer"]:
+            raise ValueError("Run GameTests separately from other tasks")
+        if "-Pmodernized.gameTests=false" in result:
+            raise ValueError("GameTest task requires the test profile")
+        if "-Pmodernized.gameTests=true" not in result:
+            result.append("-Pmodernized.gameTests=true")
+    return [*result, f"-Pdeps.forge={forge}"]
 
 
 def external(path):
@@ -77,6 +98,7 @@ def jdk(path, major):
 def run(args):
     if "runData" in args.tasks and len(args.tasks) != 1:
         raise ValueError("Run runData by itself, then build in a separate invocation: runData depends on classes/processResources")
+    arguments = profile_arguments(args.profile, args.gradle_arg, args.tasks)
     checkout = external(args.checkout)
     pinned(checkout)
     java21 = jdk(args.java21_home, 21)
@@ -108,11 +130,15 @@ def run(args):
     command = [wrapper, "--no-daemon", "--console=plain", "--max-workers=2",
         "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
         "-Porg.gradle.java.installations.auto-download=false",
-        *[f":1.20.1-forge:{task}" for task in args.tasks], "--stacktrace", *args.gradle_arg]
+        *[f":1.20.1-forge:{task}" for task in args.tasks], "--stacktrace", *arguments]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     log = logs / f"{stamp}-{'-'.join(args.tasks)}.log"
     record = {"utc": stamp, "upstream": PIN, "cwd": str(checkout), "command": command,
-        "jdk21": str(java21), "jdk17": str(java17), "log": str(log)}
+        "jdk21": str(java21), "jdk17": str(java17), "log": str(log),
+        "profile": args.profile, "forge": PROFILES[args.profile]}
+    provenance = checkout / "integration/provenance.json"
+    if provenance.exists():
+        record["integration_provenance_sha256"] = hashlib.sha256(provenance.read_bytes()).hexdigest()
     print(f"Running {shlex.join(command)}\nLog: {log}", flush=True)
     with log.open("w", encoding="utf-8") as output:
         output.write(json.dumps(record, ensure_ascii=False) + "\n")
@@ -138,6 +164,8 @@ def main():
     build.add_argument("--gradle-home", required=True)
     build.add_argument("--log-dir", required=True)
     build.add_argument("--trust-store")
+    build.add_argument("--profile", choices=PROFILES, default="compatibility",
+                       help="production pins Forge 47.4.23; compatibility preserves 47.4.20")
     build.add_argument("--gradle-arg", action="append", default=[], help="Use --gradle-arg=--info, for example")
     args = parser.parse_args()
     return prepare(args) if args.action == "prepare" else run(args)

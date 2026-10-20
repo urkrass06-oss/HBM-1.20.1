@@ -8,8 +8,10 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import re
 import sys
 import zipfile
+import xml.etree.ElementTree as ET
 
 
 def resources(args):
@@ -85,6 +87,36 @@ def jar(args):
         raise ValueError("Classes requiring newer Java or preview features were found")
     if record.get("mixin_side_overlap"):
         raise ValueError("Client/server mixins are also listed as common mixins")
+    if record["platform_classes_in_outer_jar"]:
+        raise ValueError("Minecraft/Forge classes bundled in the outer mod JAR")
+    provenance = json.loads(Path(args.provenance).read_text()) if getattr(args, "provenance", None) else {"deliveries": []}
+    with zipfile.ZipFile(path) as archive:
+        names = set(archive.namelist())
+        forbidden = {"data/hbm_m/structures/empty.nbt", "hbm-parallel-contract.json"}
+        test_prefixes = ["com/hbm/integration/Modernized"]
+        registrations = []
+        for delivery in provenance["deliveries"]:
+            manifest = delivery["manifest"]
+            registrations += manifest["registrations"]
+            for change in manifest["files"]:
+                if change["target"].startswith("integration/src/gametest/java/"):
+                    test_prefixes.append(change["target"].removeprefix("integration/src/gametest/java/").removesuffix(".java"))
+                elif change["target"].endswith(".java") and change["source"] is not None:
+                    relative = change["target"].split("src/main/java/", 1)[-1].removesuffix(".java") + ".class"
+                    if relative not in names:
+                        raise ValueError(f"Declared production overlay absent from JAR: {relative}")
+        leaked = sorted(n for n in names if n in forbidden or any(n.startswith(prefix) for prefix in test_prefixes)
+                        or re.match(r"com/hbm/integration/(machines|weapons|nuclear|rendering)/", n))
+        if leaked:
+            raise ValueError(f"Test-only content in production JAR: {leaked}")
+        entrypoints = [n for n in names if n.endswith(".class") and b"Lnet/minecraftforge/fml/common/Mod;" in archive.read(n)]
+        if entrypoints != ["com/hbm/HbmPort.class"]:
+            raise ValueError(f"Expected sole Foundation @Mod entrypoint: {entrypoints}")
+        for registry in registrations:
+            required = [registry["class"].replace(".", "/") + ".class", *registry["resources"]]
+            if any(name not in names for name in required):
+                raise ValueError(f"Declared registry delta not packaged: {registry['registry']}/{registry['id']}")
+        print(f"Entrypoint/test isolation/declared registry package gates passed ({len(registrations)} new registrations).")
     if args.generated_source:
         generated = Path(args.generated_source).resolve(strict=True)
         expected = {str(p.relative_to(generated)).replace("\\", "/")
@@ -95,12 +127,48 @@ def jar(args):
             missing = sorted(expected - set(archive.namelist()))
             if missing:
                 raise ValueError(f"{len(missing)} generated resources missing from JAR; first: {missing[:5]}")
+            changed = [name for name in sorted(expected) if archive.read(name) != (generated / name).read_bytes()]
+            if changed:
+                raise ValueError(f"Generated resource bytes differ in JAR: {changed[:5]}")
             unexpected_tests = [n for n in archive.namelist()
                                 if n.startswith("com/hbm/integration/Modernized") or n == "data/hbm_m/structures/empty.nbt"]
             if unexpected_tests:
                 raise ValueError(f"Test-only content in production JAR: {unexpected_tests}")
         print(f"Generated-resource packaging gate passed: {len(expected)} paths present; no integration test classes/template.")
     print("Bytecode gate passed for Java 17, including nested JARs; API/linkage and gameplay require runtime tests.")
+
+
+def gametests(args):
+    """Require the exact named required test set, not merely Gradle exit zero."""
+    checkout = Path(args.checkout)
+    provenance = json.loads((checkout / "integration/provenance.json").read_text())
+    expected = set()
+    for source in sorted((checkout / "integration/src/gametest/java").rglob("*.java")):
+        text = source.read_text()
+        cls = re.search(r"public (?:final )?class (\w+)", text)
+        for annotation, method in re.findall(r"@GameTest\((.*?)\)\s+public static void (\w+)\(", text, re.S):
+            if re.search(r"required\s*=\s*false", annotation):
+                raise ValueError("Optional integration GameTest is forbidden")
+            expected.add((cls[1] + "." + method).lower())
+    declared = {t["id"] for d in provenance["deliveries"] for t in d["manifest"]["tests"]}
+    baseline = set()
+    repo = Path(__file__).resolve().parents[1]
+    for folder in ("gametest", "phase5-gametest"):
+        for source in (repo / "tools/modernized" / folder).rglob("*.java"):
+            text = source.read_text()
+            cls = re.search(r"public (?:final )?class (\w+)", text)[1]
+            baseline.update((cls + "." + m).lower() for m in re.findall(r"@GameTest\([^)]*\)\s+public static void (\w+)\(", text))
+    if len(baseline) != 14 or expected != baseline | declared:
+        raise ValueError("Expected the unchanged 14 baseline IDs plus exactly the declared area tests")
+    report = ET.parse(args.report).getroot()
+    cases = report.findall(".//testcase")
+    actual = [case.attrib["name"].removeprefix("hbm_m:").lower() for case in cases]
+    if len(actual) != len(expected) or set(actual) != expected or report.findall(".//failure") or report.findall(".//error") or report.findall(".//skipped"):
+        raise ValueError(f"GameTest report differs from required IDs: expected {sorted(expected)}, actual {actual}")
+    log = Path(args.log).read_text()
+    if f"All {len(expected)} required tests passed" not in log or args.forge not in log:
+        raise ValueError("Missing required success summary or actual Forge version")
+    print(json.dumps({"forge": args.forge, "required_passed": len(actual), "ids": sorted(actual)}, indent=2))
 
 
 def main():
@@ -113,8 +181,14 @@ def main():
     jar_parser = commands.add_parser("jar")
     jar_parser.add_argument("source")
     jar_parser.add_argument("--generated-source", help="Require every generated resource and reject integration-test content in the production JAR")
+    jar_parser.add_argument("--provenance", help="Verify declared production overlays, registry delta and test isolation")
+    tests_parser = commands.add_parser("gametests")
+    tests_parser.add_argument("checkout")
+    tests_parser.add_argument("--report", required=True)
+    tests_parser.add_argument("--log", required=True)
+    tests_parser.add_argument("--forge", choices=("47.4.20", "47.4.23"), required=True)
     args = parser.parse_args()
-    resources(args) if args.action == "resources" else jar(args)
+    {"resources": resources, "jar": jar, "gametests": gametests}[args.action](args)
 
 
 if __name__ == "__main__":

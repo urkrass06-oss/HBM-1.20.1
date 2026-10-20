@@ -1,0 +1,20 @@
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /workspace/scratch/modernized-phase5/final/.git/
+From https://github.com/Raptor324/HBM-Modernized
+ * branch            0365cef5956016913095eeeb9366f26c601ca9a0 -> FETCH_HEAD
+HEAD is now at 0365cef Remove auto-datagen workflow; runData stays release-only
+Prepared /workspace/scratch/modernized-phase5/final at 0365cef5956016913095eeeb9366f26c601ca9a0; inspect git diff before running Gradle.
+Integrated at /workspace/scratch/modernized-phase5/final; source identities in integration/provenance.json
+Evaluation only: no source/assets/JAR uploaded. Use modernized_build.py run next.

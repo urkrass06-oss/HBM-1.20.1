@@ -1,0 +1,79 @@
+[
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/result.json",
+    "path": "transcripts/baseline-47.4.23-server-result.json",
+    "sha256": "090de3043baaa3cc134e4bc48b0bb5bc560cbb7cf6609342f8bc532f3f6b83c3",
+    "bytes": 3733,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/server-1.log",
+    "path": "transcripts/baseline-47.4.23-server-1.log",
+    "sha256": "b39862afee8c6aae6a72a34f988da3e586e7b5060526e8cb0bd1e9654bfca170",
+    "bytes": 27250,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/server-2.log",
+    "path": "transcripts/baseline-47.4.23-server-2.log",
+    "sha256": "3e306cc3bdd59865bc2224d83e763befbf53dc4f2572caeab068cbe0cc752851",
+    "bytes": 19358,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/server-47.4.23/multiplayer-1.log",
+    "path": "transcripts/baseline-47.4.23-multiplayer.log",
+    "sha256": "8bd6716b9aba624c779a2be9555fa473b12685672237ed4839b9e894b42beb40",
+    "bytes": 37825,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-one-retry/console.log",
+    "path": "transcripts/baseline-client-one.log",
+    "sha256": "e249618f82c00ecd030cb550f7480c8bcb6995b743ccfff099dd3263d3e01927",
+    "bytes": 309399,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-two-retry/console.log",
+    "path": "transcripts/baseline-client-two.log",
+    "sha256": "ffab48867f23423128dc2bb963e7db604451b695463da45af26bd80526c7b0be",
+    "bytes": 269766,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-one-retry/launch.json",
+    "path": "transcripts/baseline-client-one-launch.json",
+    "sha256": "552643e4877db78538708cc11e9cb6076afdb781ba98335f9bee1da8a1d3d3ba",
+    "bytes": 14221,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-two-retry/launch.json",
+    "path": "transcripts/baseline-client-two-launch.json",
+    "sha256": "c4a698eb9e6fbd8ef6b48babb4f22ed3560a23f39bae93b331f1b87e39ca0d51",
+    "bytes": 14222,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-one/console.log",
+    "path": "transcripts/baseline-launcher-module-failure.log",
+    "sha256": "17ad7a293745507eacbb532e7b9259889f6ad24eb19184914bd0f895ca08e0ad",
+    "bytes": 5493,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/baseline-gametests/20261020T055047494771Z-runGameTestServer.log",
+    "path": "transcripts/baseline-47.4.20-gametests.log",
+    "sha256": "8cfc4e395193dd488b580ae836f2fa38382eb8a0f04ff9fdd76b622d47b6372f",
+    "bytes": 53522,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/baseline-gametests/commands.jsonl",
+    "path": "transcripts/baseline-gradle-commands.jsonl",
+    "sha256": "207da9bd346b3afa982365a999d1b42ae2476b1b2fa69c0fd859bac2e1c9587f",
+    "bytes": 744,
+    "kind": "full-original-text"
+  }
+]

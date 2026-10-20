@@ -1,0 +1,16 @@
+{
+  "old_sha256": "ba2be84cf560bb0eb6f145a4477c4a2098d18fa8c671378fcd081a9f416c64e9",
+  "new_sha256": "056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3",
+  "bytes": 44925653,
+  "entries": 16856,
+  "removed": [],
+  "added": [],
+  "changed": [
+    "META-INF/hbm-complete-port/CHANGES-AND-CREDITS.txt",
+    "META-INF/mods.toml",
+    "com/hbm_m/api/energy/EnergyNetworkManager.class",
+    "com/hbm_m/api/energy/LongEnergyWrapper.class",
+    "com/hbm_m/blockentity/machines/MachineRbmkConsoleBlockEntity.class",
+    "com/hbm_m/network/RBMKConsoleControlPacket.class"
+  ]
+}

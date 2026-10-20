@@ -1,0 +1,380 @@
+{
+  "scope": "Local evidence inventory; image bytes are not published and not every captured file was visually reviewed. Concrete observations are named in the report.",
+  "files": [
+    {
+      "path": "/workspace/scratch/modernized-phase5/arena-one.png",
+      "sha256": "5f619dddfed0b6834e3a51087c5a62c1ca0e2757dae889e8961665deba231cc8",
+      "bytes": 11432
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/battery-one.png",
+      "sha256": "f149ea8d437fc314b51567db993988ca81d950454d4883fa79a9fce80eb3542d",
+      "bytes": 44314
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/battery-two.png",
+      "sha256": "6c292de7186b231e3d34555663ad8cb684f6058b360eef0185fa2d0d9192fe80",
+      "bytes": 36939
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-current.png",
+      "sha256": "5cf9f17946604597012f4742c5354f20df56e0d94de7ff50c84ced7e7b1da67c",
+      "bytes": 250
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-finalmenu.png",
+      "sha256": "5c0b463495f68d2516d12e8026b63556900f4ab0a5c10ed6b286327f56499295",
+      "bytes": 19030
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-menu.png",
+      "sha256": "85c02b9268e6fe792097565eeaf5ddb91343cdf3f56664cb74c33d762e9e7c31",
+      "bytes": 4883
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-now.png",
+      "sha256": "9a08c39ac2d4b8df8208ca9f0f0b945dccffb94c5fc80a749e1a0f1c3a906bd4",
+      "bytes": 19384
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-ready.png",
+      "sha256": "432293808c5101aec51bf61e3bc5655e6d87858dc81e071dea351af89ebbc5f0",
+      "bytes": 18946
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-one-start.png",
+      "sha256": "66c58ed9a19bad54f07c5eb17d24991a1d90097f4810b53bde71aeab86c3ed04",
+      "bytes": 4496
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-two-finalmenu.png",
+      "sha256": "e954a3f2b6e8dcba270d1aee3e992f08bc015e5becd5a8ad040b0a5ece90d89f",
+      "bytes": 19397
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-two-menu.png",
+      "sha256": "755ced29d1385644ba3b15e3fcba9b718bef53c4179ad49d2a4a913a181ad924",
+      "bytes": 4494
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/client-two-ready.png",
+      "sha256": "952e65a6828499502697bfd5c3947ae52cc079c87ed1b58dfbe456360089d6a6",
+      "bytes": 19372
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/direct-connect.png",
+      "sha256": "bb95f7a159d3772552e5335a9e756c0426ec9a506364f2bcb0d0040abedeaf1d",
+      "bytes": 10800
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/disconnect-one.png",
+      "sha256": "f122bf38aa9b969b4c71c2453ae08ec0c66c2b7552ff2e118f246313ca1ffad5",
+      "bytes": 22894
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/disconnected-now.png",
+      "sha256": "63742b9f143fd1e25de7521c4a89c7d4485215aba138b45df34d134d3a470148",
+      "bytes": 7917
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/explosion-one.png",
+      "sha256": "d133e42084e9d95f376fb6e79e011574b3abe8047c1df4d29d66d3734a534661",
+      "bytes": 40433
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/explosion-two.png",
+      "sha256": "878a69f6d3675c280a605929bdd8490ae017748ad531c8f96e292e2c03a4510e",
+      "bytes": 40573
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/final-singleplayer-battery.png",
+      "sha256": "fd66120ca53c26b5a6e188505f02a49a8fbf3b6a7be1d0d664ff6fb36d2400c2",
+      "bytes": 88662
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/final-singleplayer-loaded.png",
+      "sha256": "a57c1a38cafc40070eef1980f55ddc1413ef76e7f8f916b99029554c1ada7636",
+      "bytes": 113625
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/final-singleplayer-saved.png",
+      "sha256": "e82f91362b4b6400d7b8e79db0e04e1ed0f5da5123a76045a9feaae7199c5011",
+      "bytes": 355259
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-battery-insert-one.png",
+      "sha256": "9e8cccb942adc6fa4f7c84bec9e1ba0b9d6c383117491c0f504c9ee4b3c5501c",
+      "bytes": 53840
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-battery-insert-two.png",
+      "sha256": "d968681a7da7b73f6a9a6eb49e5f99c816beb59f7f5afe73980bbc933adbfedc",
+      "bytes": 71928
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-battery-remove-two.png",
+      "sha256": "5d1f98c1b5cecedf4ac109e6e35b9931d937cdf7de0f23d8e54a69ca9146929e",
+      "bytes": 66993
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-disconnected-one.png",
+      "sha256": "6ae1808c32a616ec132ba82ce3b4740eda8ccee97bde3856809f9441a90fdcfa",
+      "bytes": 7897
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-grenade-one.png",
+      "sha256": "43da860a5e0bc068266ff2ee0a4b6dc6366f23a996fcace382f6c5774adf3b6e",
+      "bytes": 50172
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-grenade-two.png",
+      "sha256": "0f075e7c201e4a91d4bf5a749a2215b945de000422eee96bb34eca796b3f91e9",
+      "bytes": 46508
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-one-in-world.png",
+      "sha256": "2dc483a7b7e01a8fa737be5b4477e869041eab748c0f8d4491cee3c2c41f97a8",
+      "bytes": 41223
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-one-loading.png",
+      "sha256": "f104ef7740406601b36f83b53a8e8af151eb3a43d60f989f61ccd22eb2174c78",
+      "bytes": 8771
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-one-reconnect.png",
+      "sha256": "bb95f7a159d3772552e5335a9e756c0426ec9a506364f2bcb0d0040abedeaf1d",
+      "bytes": 10800
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-tank-18000-one.png",
+      "sha256": "826d3f73cd18a51f1d06eaa19d3ef756c97a71a66175aab005973c015d37d18b",
+      "bytes": 46401
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-tank-18000-two.png",
+      "sha256": "9ee44e47c544f56ca83efd3a511e773c2290e7be1ab53462a723f5783d887f8a",
+      "bytes": 54021
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-tank-drained-one.png",
+      "sha256": "62d8d8fca0903ead7195fd86a39e0b80b971ca37b3cea4a85e92cb9a010879d0",
+      "bytes": 46931
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-tank-drained-two.png",
+      "sha256": "6621840660ba8f54687fcc1b2bd077bc4de4398d1d538aa1a4cc3d3d72013dd1",
+      "bytes": 54497
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-tank-inventory-one.png",
+      "sha256": "5125c5a84542af23dbf64ab84b6cd17ba57a9656430a52b21726888041d3d865",
+      "bytes": 48255
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-two-in-world.png",
+      "sha256": "878a69f6d3675c280a605929bdd8490ae017748ad531c8f96e292e2c03a4510e",
+      "bytes": 40573
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/fixed-two-loading.png",
+      "sha256": "0a6316b1bb16c276e7e24af71d1f159d842d578943d37e8d0ebff4a0b54e7a38",
+      "bytes": 45332
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/inventory-give.png",
+      "sha256": "f129e9948f9c411716128ae87f0d40774e23b0c0df53140a02b994c64a75099c",
+      "bytes": 45891
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/inventory-insert-one.png",
+      "sha256": "ae2d6bbc24c2c8186c4d67b0e3e4ffbd8884ea395c2d1fe36a69c8dac39aa3a8",
+      "bytes": 44331
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/inventory-insert-two.png",
+      "sha256": "07e0d1740035f1a4e09b19019cba5d269c2d260fa1262ec8d9a0bf249af7598d",
+      "bytes": 58998
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/inventory-remove-one.png",
+      "sha256": "0dafe841e1156cd00b80ec11e284387e92d2c9f0cc84ae6bdda6bfc97e1b121f",
+      "bytes": 41402
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/inventory-remove-two.png",
+      "sha256": "a9f7a0446f6e4d0e459199cbab1a44185a8ad8d6fee97ed546aeb891d4e12827",
+      "bytes": 56697
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/menu-one.png",
+      "sha256": "92b9147bb3d582d12e923e570da6f96e2a6ac578de7c9522ee6694334ce7c745",
+      "bytes": 365181
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/menu-two.png",
+      "sha256": "e1f67bba0e6a71e68aeb5c4d0a7da7109ac6e804c9d15190a7b3b3fe591f50b2",
+      "bytes": 387842
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/mp-list-one.png",
+      "sha256": "258e4aa2ebdd8cf5a3cd144617df45a5797d05ad59de1630dc8d3acfac1285e0",
+      "bytes": 13608
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/mp-list-two.png",
+      "sha256": "258e4aa2ebdd8cf5a3cd144617df45a5797d05ad59de1630dc8d3acfac1285e0",
+      "bytes": 13608
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-added-one.png",
+      "sha256": "7f9f9ef08be70c30b685bef6004edc4735678d4e5ed5f0d1582f03286d4a8404",
+      "bytes": 29692
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-added-two.png",
+      "sha256": "7989d063b5054fd03bee54b06ed69982a94cca857d74a176bf89a7d76d306446",
+      "bytes": 36123
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-az5-one.png",
+      "sha256": "6c7afec77646275ce6cd9297b7c19f785870b1b354b5e92811160c486fac26e9",
+      "bytes": 29365
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-az5-two.png",
+      "sha256": "50be2db2a508a48907c2f19147bdd920289f8664ebf97fba77649c1aff27b81a",
+      "bytes": 35685
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-initial-one.png",
+      "sha256": "b60cb9102accaad4938f19fc496346c8f75d23665260d1f2408657c6625aaf7c",
+      "bytes": 17648
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-initial-two.png",
+      "sha256": "c6f53a31b7e02f5e7477b47b25f1f6025a2a014d4187ebf2057a425e7eb4776b",
+      "bytes": 22412
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-removed-one.png",
+      "sha256": "1667d21c704077c048c16f2e7807d56d854e302b49668c63222fe40edc838402",
+      "bytes": 16644
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-removed-two.png",
+      "sha256": "2f236bc5cfd2af4c12ef19a7dae8cd136992b15d14adddd50946f83f64091dcd",
+      "bytes": 21237
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-set25-one.png",
+      "sha256": "ce3a668558f5cd9ba95d03f0ba13aa94cf8ebcac2c7630837ecc1395e97aad0d",
+      "bytes": 29160
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-fixed-set25-two.png",
+      "sha256": "8102252bcf39e11cf65a6b0cf1f28b2b042612830e7d0784d184f8758ecf9646",
+      "bytes": 35653
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-one.png",
+      "sha256": "c948aba84d7ff1a1998f6624c8a9ff60ca5f1f00b6249fe98d29a78cf3274c25",
+      "bytes": 17308
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rbmk-two.png",
+      "sha256": "33bea9f7484b1ec8ccb3694417af422139ca8aa918610539d4b5343cce5e2df2",
+      "bytes": 22275
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rejoin-final-one.png",
+      "sha256": "c76b3682a303199816b72046fffef93086d0fe15b4491861587929e662d89cfe",
+      "bytes": 8364
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rejoined-world-one.png",
+      "sha256": "886c5df6b422c4a65e304ed9dea7df07458b84f6488596067c41af1b09637b35",
+      "bytes": 53689
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/rejoined-world-two.png",
+      "sha256": "b87e4447964d4bde8bc4102dc4db5737b2b7fb1cd53ea4ffe1f3112d05313b73",
+      "bytes": 48910
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/reload-tank-18000-one.png",
+      "sha256": "e5816e110b4986d8f18d479ed4040052ed2af6516a9e2b758f8ad5382e1da75f",
+      "bytes": 52277
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/reload-tank-18000-two.png",
+      "sha256": "dfb1de767d3f129a90ed2ebeb3affa96c2361b60d6cbf162d8feb81f00f9068c",
+      "bytes": 59541
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/singleplayer-battery.png",
+      "sha256": "fd66120ca53c26b5a6e188505f02a49a8fbf3b6a7be1d0d664ff6fb36d2400c2",
+      "bytes": 88662
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/singleplayer-list.png",
+      "sha256": "b0a016522b4734999d5754584fc1202fe6591d47ba816d9ed975a578e0b45378",
+      "bytes": 29046
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/singleplayer-loaded.png",
+      "sha256": "7664800c0cc34468724ef5b0b967c30ba7f7864c21104fae99eb60ff7d79d09b",
+      "bytes": 117901
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/singleplayer-saved.png",
+      "sha256": "449838e6acf8d54fa673865774f47c7780be8d59d4c89a8b7ef6b218b13ec6e0",
+      "bytes": 364691
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/tank-one.png",
+      "sha256": "5d25cd95d8f19fd2768531aa68aeeabb88340b5f6968712ee4e19d8e55a90a6e",
+      "bytes": 44083
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/tank-render-one.png",
+      "sha256": "3953d0c7831136502e322c302752cd0aefbdde9d93308e390b65c768b9dd2612",
+      "bytes": 74399
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/tank-render-two.png",
+      "sha256": "86d92bf9dad6a66eff7e68dba00c5f8542d4b51a6117bfde55084780b7b24566",
+      "bytes": 87874
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/tank-two.png",
+      "sha256": "d76d82e5b3ce8cf7156f77c8c08e686468755d13cc38a853032a8e938810bef5",
+      "bytes": 51403
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/two-clients-one.png",
+      "sha256": "6686de98ff70c3cf6b02fb747585929d5c2e797af7ee642624bbafa6d29ec8de",
+      "bytes": 157829
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/two-clients-two.png",
+      "sha256": "4a1ceb9627af1de96a7823141109cf9e154c152fc78219c78f3ca3d1ff1ae41b",
+      "bytes": 154109
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/water-bucket-one.png",
+      "sha256": "c2dacedc5f7f2b95591a5d58adef1c928b13205ffeb2f62e473595955e32ed81",
+      "bytes": 44857
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/water-bucket-two.png",
+      "sha256": "d46216e0a9d00147c109641ef16906104e97f81b35b4777b2514002374de9733",
+      "bytes": 52332
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase5/weapon-one.png",
+      "sha256": "270577c1de2c8be4e8532e10b91c4afdff0d7c90c87e825b41cd457fc27e5a0d",
+      "bytes": 42350
+    }
+  ]
+}

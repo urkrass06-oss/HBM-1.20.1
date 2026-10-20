@@ -1,0 +1,65 @@
+[
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-one-fixed/console.log",
+    "path": "transcripts/phase5-client-one.log",
+    "sha256": "3946747c2f895476d71329c703136dd9d7c825f1de095f2a53a560372f1ce9b5",
+    "bytes": 342081,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-two-fixed/console.log",
+    "path": "transcripts/phase5-client-two.log",
+    "sha256": "29be0306fb273de0dd9a9fef55e3b2323a3f6954452a083d0c2b5ed23eb02c29",
+    "bytes": 303021,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-one-fixed/launch.json",
+    "path": "transcripts/phase5-client-one-launch.json",
+    "sha256": "c21e55e0e92d62924bedce22be8d3620182472ecca9567ad7fd5efb6ac9709cb",
+    "bytes": 14363,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/client-two-fixed/launch.json",
+    "path": "transcripts/phase5-client-two-launch.json",
+    "sha256": "159cf3289333284356f5a4d0f45957a59686fdacf630861bdc53fc1137e8722f",
+    "bytes": 14363,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/verified-resources.txt",
+    "path": "transcripts/phase5-resource-check.txt",
+    "sha256": "f7c01204cd8dbf7bfe2978af433fbc5f5d5c4285d8ba3792ac6365e91bd4355f",
+    "bytes": 162,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-build/commands.jsonl",
+    "path": "transcripts/final-build-commands.jsonl",
+    "sha256": "f8ddc8758e69e6ce04b9868891f2cb3ca33ec516967c99a41bcabe9d1cd2ed2e",
+    "bytes": 749,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/verified-build/commands.jsonl",
+    "path": "transcripts/verified-build-commands.jsonl",
+    "sha256": "6d26bb621f2e02b61e410e6afd7a983987d3644236e866783ff587b616dbb111",
+    "bytes": 719,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-gametests-47.4.20/commands.jsonl",
+    "path": "transcripts/final-gametests-47.4.20-commands.jsonl",
+    "sha256": "7425f5e068f4b82795440b5b10dd2b3d635f7d008f22f1dc65a496b9c75b0049",
+    "bytes": 744,
+    "kind": "full-original-text"
+  },
+  {
+    "source": "/workspace/scratch/modernized-phase5/logs/final-gametests-47.4.23/commands.jsonl",
+    "path": "transcripts/final-gametests-47.4.23-commands.jsonl",
+    "sha256": "a2f291aa687fd4b6bb2cc043bea1ed52872ee6dd2d045c16155bfd536ef3e7c9",
+    "bytes": 768,
+    "kind": "full-original-text"
+  }
+]

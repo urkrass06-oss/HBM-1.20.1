@@ -85,6 +85,21 @@ def jar(args):
         raise ValueError("Classes requiring newer Java or preview features were found")
     if record.get("mixin_side_overlap"):
         raise ValueError("Client/server mixins are also listed as common mixins")
+    if args.generated_source:
+        generated = Path(args.generated_source).resolve(strict=True)
+        expected = {str(p.relative_to(generated)).replace("\\", "/")
+                    for p in generated.rglob("*") if p.is_file() and ".cache" not in p.relative_to(generated).parts}
+        if not expected:
+            raise ValueError("No generated resources to verify")
+        with zipfile.ZipFile(path) as archive:
+            missing = sorted(expected - set(archive.namelist()))
+            if missing:
+                raise ValueError(f"{len(missing)} generated resources missing from JAR; first: {missing[:5]}")
+            unexpected_tests = [n for n in archive.namelist()
+                                if n.startswith("com/hbm/integration/Modernized") or n == "data/hbm_m/structures/empty.nbt"]
+            if unexpected_tests:
+                raise ValueError(f"Test-only content in production JAR: {unexpected_tests}")
+        print(f"Generated-resource packaging gate passed: {len(expected)} paths present; no integration test classes/template.")
     print("Bytecode gate passed for Java 17, including nested JARs; API/linkage and gameplay require runtime tests.")
 
 
@@ -97,6 +112,7 @@ def main():
     resource_parser.add_argument("--compare")
     jar_parser = commands.add_parser("jar")
     jar_parser.add_argument("source")
+    jar_parser.add_argument("--generated-source", help="Require every generated resource and reject integration-test content in the production JAR")
     args = parser.parse_args()
     resources(args) if args.action == "resources" else jar(args)
 

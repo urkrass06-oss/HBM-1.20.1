@@ -1,0 +1,286 @@
+{"utc": "20261020T060433601972Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase5/final", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:runGameTestServer", "--stacktrace", "-Pmodernized.gameTests=true", "-Pdeps.forge=47.4.23", "-Dorg.gradle.jvmargs=-Xmx1G"], "jdk21": "/workspace/scratch/modernized-phase4/toolchains/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase5/logs/final-gametests-47.4.23/20261020T060433601972Z-runGameTestServer.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Running Stonecutter 0.8
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :1.20.1-forge:stonecutterPrepare UP-TO-DATE
+> Task :1.20.1-forge:stonecutterGenerate UP-TO-DATE
+
+> Task :1.20.1-forge:createMinecraftArtifacts
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Loaded 121 artifacts from /workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/tmp/createMinecraftArtifacts/nfrt_artifact_manifest.properties
+  WARNING: de.oceanlabs.mcp:mcp_config:1.20.1-20230612.114412@zip is not present in the artifact manifest
+*** Started working on downloadJson
+ ✓ Completed downloadJson in 0.03s
+*** Started working on downloadClient
+*** Started working on downloadClientMappings
+*** Started working on downloadServer
+ ✓ Completed downloadServer in 0.03s
+ ✓ Completed downloadClientMappings in 0.03s
+ ✓ Completed downloadClient in 0.03s
+*** Started working on mergeMappings
+ ♻ Used cache of mergeMappings in 0.03s
+*** Started working on createMappings
+ ♻ Used cache of createMappings in 0.00s
+*** Started working on stripClient
+ ♻ Used cache of stripClient in 0.00s
+*** Started working on extractServer
+ ♻ Used cache of extractServer in 0.00s
+*** Started working on stripServer
+ ♻ Used cache of stripServer in 0.00s
+*** Started working on merge
+ ♻ Used cache of merge in 0.00s
+*** Started working on rename
+ ♻ Used cache of rename in 0.00s
+*** Started working on stripSideAnnotations
+ ♻ Used cache of stripSideAnnotations in 0.00s
+*** Started working on decompile
+ ♻ Used cache of decompile in 0.00s
+*** Started working on inject
+ ✓ Completed inject in 2.02s
+*** Started working on patch
+ ↳ Running external tool io.codechicken:DiffPatch:2.0.0.36:all
+ ✓ Completed patch in 2.93s
+*** Started working on applyNeoforgePatches
+ ↳ Running external tool io.codechicken:DiffPatch:2.0.0.36:all
+ ✓ Completed applyNeoforgePatches in 2.48s
+*** Started working on transformSources
+  WARNING: net.minecraftforge:mergetool:1.1.7:api is not present in the artifact manifest
+  WARNING: org.jetbrains:annotations:24.0.1 is not present in the artifact manifest
+ ↳ Running external tool net.neoforged.jst:jst-cli-bundle:1.0.74
+ ✓ Completed transformSources in 23.75s
+*** Started working on remapSrgSourcesToOfficial
+ ✓ Completed remapSrgSourcesToOfficial in 6.36s
+*** Started working on applyParchment
+  WARNING: net.minecraftforge:mergetool:1.1.7:api is not present in the artifact manifest
+  WARNING: org.jetbrains:annotations:24.0.1 is not present in the artifact manifest
+ ↳ Running external tool net.neoforged.jst:jst-cli-bundle:1.0.74
+ ✓ Completed applyParchment in 43.75s
+*** Started working on recompile
+  WARNING: org.jetbrains:annotations:24.0.1 is not present in the artifact manifest
+ 89 items on the compile classpath
+ 0 items on the sourcepath
+ Compiling 5453 source files
+Copied 1283 resource files
+ ✓ Completed recompile in 75.89s
+*** Started working on sourcesAndCompiledWithNeoForge
+ ✓ Completed sourcesAndCompiledWithNeoForge in 3.14s
+Total runtime: 161.51s
+
+
+> Task :1.20.1-forge:kspKotlin
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+
+> Task :1.20.1-forge:kspKotlin FROM-CACHE
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+> Task :1.20.1-forge:compileJava FROM-CACHE
+> Task :1.20.1-forge:processResources
+> Task :1.20.1-forge:classes
+
+> Task :1.20.1-forge:downloadAssets
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+Loaded 121 artifacts from /workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/tmp/downloadAssets/nfrt_artifact_manifest.properties
+  WARNING: de.oceanlabs.mcp:mcp_config:1.20.1-20230612.114412@zip is not present in the artifact manifest
+Downloading asset index 5
+Using Minecraft asset root: /workspace/scratch/modernized-phase4/gradle-home/caches/neoformruntime/assets
+  ↓ https://piston-meta.mojang.com/v1/packages/50ce48459eb9e29836662862273d7b15d41c2c33/5.json
+
+> Task :1.20.1-forge:writeGameTestServerLegacyClasspath
+> Task :1.20.1-forge:prepareGameTestServerRun
+
+> Task :1.20.1-forge:runGameTestServer
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+2026-10-20 06:08:14,405 main WARN Advanced terminal features are not available in this environment
+[06:08:14] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgegametestserveruserdev, --gameDir, ., --fml.forgeVersion, 47.4.23, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, mixins.hbm_m.json]
+[06:08:14] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.18.55
+[06:08:14] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgegametestserveruserdev
+[06:08:14] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23141!/ Service=ModLauncher Env=SERVER
+[06:08:15] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.23/ef56cfb608a4356c3f99dd6a4fa81ce33029bcde/fmlcore-1.20.1-47.4.23.jar is missing mods.toml file
+[06:08:15] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.23/103ee0ecf6e5e4a971ee1ae68384e96fd73b097f/javafmllanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[06:08:15] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.23/2531b2da1460bc09c8ec3bf946e641de664b460d/lowcodelanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[06:08:15] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.23/eebf4eae01f6fde63717bb38b77f9b6b1b50f8/mclanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[06:08:15] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[06:08:18] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[06:08:18] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgegametestserveruserdev' with arguments [--gameDir, .]
+[06:08:18] [main/WARN] [mixin/]: Reference map 'mixins.hbm_m.refmap.json' for mixins.hbm_m.json could not be read. If this is a development environment you can ignore this message
+[06:08:19] [main/INFO] [mixin/]: Remapping refMap architectury-forge-refmap.json using /workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[06:08:19] [main/INFO] [mixin/]: Remapping refMap architectury-common-refmap.json using /workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[06:08:30] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1 with MCP 20230612.114412
+[06:08:30] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.23 Initialized
+[06:08:30] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Initializing Hbm's Nuclear Tech Mod Modernized
+[06:08:31] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[06:08:34] [modloading-worker-0/INFO] [co.hb.HbmPort/]: HBM Complete Port Modernized integration initialized (hbm_m).
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:give_template
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:update_battery
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_assembler_recipe
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_chem_recipe
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:toggle_wood_burner
+[06:08:34] [NTM-Version-Checker/INFO] [co.hb.ma.MainRegistry/]: Searching for new versions on Modrinth (1.20.1 / forge)...
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:build_missile
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:fluid_tank_mode
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:detonate_all
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_active_point
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:clear_point
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:sync_point
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:anvil_craft
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:anvil_select_recipe
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:door_model
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:fluid_identifier_ctrl
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:item_designator
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:update_radar
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:zirnox_control
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:rbmk_console_control
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:soyuz_launcher_control
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:soldering_station_control
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:turret_control
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:mining_drill_toggle
+[06:08:34] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:config_edit
+[06:08:34] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: [Fallout] Loaded 141 default fallout substitution rules
+[06:08:35] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Common setup finished
+[06:08:35] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[06:08:36] [NTM-Version-Checker/INFO] [co.hb.ma.MainRegistry/]: Modrinth is up to date (latest: 0.2.1-alpha, current: 0.2.1-phase5-dev).
+[06:08:36] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.4.23 Target: 47.4.28
+[06:08:41] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[06:08:41] [main/WARN] [ne.mi.co.ForgeHooks/WP]: The following mods have version differences that were not resolved:
+forge (version 47.4.20 -> 47.4.23)
+Things may not work well.
+[06:08:44] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.23.jar%23143!/assets/.mcassetsroot' uses unexpected schema
+[06:08:44] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.23.jar%23143!/data/.mcassetsroot' uses unexpected schema
+[06:08:46] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key
+com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:119) ~[authlib-4.0.43.jar%2383!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:91) ~[authlib-4.0.43.jar%2383!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo.fetch(YggdrasilServicesKeyInfo.java:94) ~[authlib-4.0.43.jar%2383!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo.lambda$get$1(YggdrasilServicesKeyInfo.java:81) ~[authlib-4.0.43.jar%2383!/:?] {}
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[?:?] {}
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[?:?] {}
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.Net.pollConnect(Native Method) ~[?:?] {}
+	at sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[?:?] {}
+	at sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[?:?] {}
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?] {}
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?] {}
+	at java.net.Socket.connect(Socket.java:633) ~[?:?] {}
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304) ~[?:?] {}
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:178) ~[?:?] {}
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:541) ~[?:?] {}
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:646) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:267) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:381) ~[?:?] {}
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:196) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1310) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1151) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1080) ~[?:?] {}
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:181) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1719) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1644) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224) ~[?:?] {}
+	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:140) ~[authlib-4.0.43.jar%2383!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:96) ~[authlib-4.0.43.jar%2383!/:?] {}
+	... 9 more
+[06:08:49] [main/INFO] [minecraft/RecipeManager]: Loaded 16 recipes
+[06:08:50] [main/INFO] [minecraft/AdvancementList]: Loaded 1827 advancements
+[06:08:51] [main/INFO] [ne.mi.ga.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [hbm_m]
+[06:08:53] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Loading 0 nodes for dimension minecraft:overworld
+[06:08:53] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:overworld...
+[06:08:53] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:08:53] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Loading 0 nodes for dimension minecraft:the_nether
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_nether...
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Loading 0 nodes for dimension minecraft:the_end
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_end...
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:09:03] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:03] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:14] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:14] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:15] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:15] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[06:09:17] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 13527 ms
+[06:09:17] [Server thread/INFO] [minecraft/GameTestServer]: Started game test server
+[06:09:17] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.ServerLifecycleHandler/]: [HBM-NETWORK] Server has started, rebuilding energy networks for all dimensions...
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:overworld...
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_nether...
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_end...
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.ServerLifecycleHandler/]: [HBM-NETWORK] Energy network rebuild complete.
+[06:09:17] [Server thread/INFO] [co.hb.ap.en.WireBlock/]: [WIRE] Block removed at BlockPos{x=20, y=-58, z=1}, removing from network
+[06:09:17] [Server thread/INFO] [minecraft/GameTestBatchRunner]: Running test batch 'defaultBatch:1' (14 tests)...
+[06:09:17] [Server thread/INFO] [minecraft/GameTestServer]: 14 tests are now running!
+[06:09:18] [Server thread/INFO] [co.hb.ap.en.WireBlock/]: [WIRE] Block placed at BlockPos{x=20, y=-58, z=1}, adding to network immediately
+[06:09:18] [Server thread/INFO] [co.hb.ma.MainRegistry/]: Player Block{hbm_m:rbmk_console} placed multiblock at BlockPos{x=55, y=-58, z=1} with 2 parts: [(55,-56,1), (55,-57,1)]
+[06:09:18] [Server thread/INFO] [co.hb.ma.MainRegistry/]: Player Block{hbm_m:fluid_tank} placed multiblock at BlockPos{x=2, y=-58, z=11} with 38 parts: [(1,-58,13), (4,-56,11), (4,-56,12), (3,-56,13), (1,-58,11), (0,-58,12), (2,-58,13), (3,-56,11), (4,-56,13), (0,-58,11), (4,-58,12), (3,-58,13), (2,-56,11), (4,-58,13), (1,-56,11), (0,-56,11), (0,-57,12), (0,-57,13), (4,-57,11), (1,-57,13), (3,-57,11), (2,-57,13), (2,-57,11), (4,-57,12), (3,-57,13), (1,-57,11), (4,-57,13), (0,-57,11), (0,-56,12), (1,-56,12), (0,-56,13), (4,-58,11), (2,-56,12), (1,-56,13), (3,-58,11), (0,-58,13), (3,-56,12), (2,-56,13)]
+[06:09:18] [Server thread/INFO] [co.hb.ma.MainRegistry/]: Player Block{hbm_m:rbmk_console} placed multiblock at BlockPos{x=19, y=-58, z=11} with 2 parts: [(19,-56,11), (19,-57,11)]
+[06:09:18] [Server thread/INFO] [co.hb.ma.MainRegistry/]: Player Block{hbm_m:rbmk_console} placed multiblock at BlockPos{x=21, y=-58, z=11} with 2 parts: [(21,-56,11), (21,-57,11)]
+[06:09:19] [Server thread/INFO] [minecraft/GameTestServer]: [++_+++++__++++]
+[06:09:20] [Server thread/INFO] [minecraft/GameTestServer]: [++_+++++++++++]
+[06:09:20] [Server thread/INFO] [minecraft/GameTestServer]: [++++++++++++++]
+[06:09:20] [Server thread/INFO] [minecraft/GameTestServer]: ========= 14 GAME TESTS COMPLETE ======================
+[06:09:20] [Server thread/INFO] [minecraft/GameTestServer]: All 14 required tests passed :)
+[06:09:20] [Server thread/INFO] [minecraft/GameTestServer]: ====================================================
+[06:09:20] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[06:09:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[06:09:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[06:09:28] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[06:09:31] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[06:09:33] [Server thread/INFO] [minecraft/GameTestServer]: Game test server shutting down
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase5/final/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 5m
+14 actionable tasks: 6 executed, 2 from cache, 6 up-to-date

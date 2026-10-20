@@ -1,0 +1,235 @@
+2026-10-20 05:37:35,150 main WARN Advanced terminal features are not available in this environment
+[05:37:35] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.23, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[05:37:35] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.18.55
+[05:37:35] [main/WARN] [ne.mi.fm.lo.FMLConfig/CORE]: Configuration file /workspace/scratch/modernized-phase5/server-47.4.23/config/fml.toml is not correct. Correcting
+[05:37:35] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
+[05:37:35] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowLogHelpMessage] was corrected from null to true
+[05:37:35] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false
+[05:37:35] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowShowCPU] was corrected from null to false
+[05:37:35] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[05:37:35] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/workspace/scratch/modernized-phase5/server-47.4.23/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[05:37:35] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.23/fmlcore-1.20.1-47.4.23.jar is missing mods.toml file
+[05:37:35] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.23/javafmllanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[05:37:35] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.23/lowcodelanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[05:37:35] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.23/mclanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[05:37:35] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[05:37:37] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[05:37:37] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[05:37:43] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1 with MCP 20230612.114412
+[05:37:43] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.23 Initialized
+[05:37:43] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Initializing Hbm's Nuclear Tech Mod Modernized
+[05:37:43] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[05:37:45] [modloading-worker-0/INFO] [co.hb.HbmPort/]: HBM Complete Port Modernized integration initialized (hbm_m).
+[05:37:45] [NTM-Version-Checker/INFO] [co.hb.ma.MainRegistry/]: Searching for new versions on Modrinth (1.20.1 / forge)...
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:give_template
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:update_battery
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_assembler_recipe
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_chem_recipe
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:toggle_wood_burner
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:build_missile
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:fluid_tank_mode
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:detonate_all
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:set_active_point
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:clear_point
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:sync_point
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:anvil_craft
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:anvil_select_recipe
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:door_model
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:fluid_identifier_ctrl
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:item_designator
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:update_radar
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:zirnox_control
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:rbmk_console_control
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:soyuz_launcher_control
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:soldering_station_control
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:turret_control
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:mining_drill_toggle
+[05:37:45] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id hbm_m:config_edit
+[05:37:45] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: [Fallout] Loaded 141 default fallout substitution rules
+[05:37:45] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Common setup finished
+[05:37:45] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[05:37:45] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.4.23 Target: 47.4.28
+[05:37:45] [NTM-Version-Checker/INFO] [co.hb.ma.MainRegistry/]: Modrinth is up to date (latest: 0.2.1-alpha, current: 0.2.1-phase4-dev).
+[05:37:48] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[05:37:48] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23103!/assets/.mcassetsroot' uses unexpected schema
+[05:37:48] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase5/server-47.4.23/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23103!/data/.mcassetsroot' uses unexpected schema
+[05:37:49] [main/INFO] [minecraft/RecipeManager]: Loaded 16 recipes
+[05:37:49] [main/INFO] [minecraft/AdvancementList]: Loaded 1827 advancements
+[05:37:50] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.20.1
+[05:37:50] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[05:37:50] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[05:37:50] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[05:37:50] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:59275
+[05:37:50] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using epoll channel type
+[05:37:50] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[05:37:50] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[05:37:50] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[05:37:50] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file ./integration-test-world/serverconfig/forge-server.toml is not correct. Correcting
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[05:37:51] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
+[05:37:51] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "integration-test-world"
+[05:37:51] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:overworld...
+[05:37:51] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:37:51] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:37:53] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key
+com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:119) ~[authlib-4.0.43.jar%2375!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:91) ~[authlib-4.0.43.jar%2375!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo.fetch(YggdrasilServicesKeyInfo.java:94) ~[authlib-4.0.43.jar%2375!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo.lambda$get$1(YggdrasilServicesKeyInfo.java:81) ~[authlib-4.0.43.jar%2375!/:?] {}
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[?:?] {}
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[?:?] {}
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.Net.pollConnect(Native Method) ~[?:?] {}
+	at sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[?:?] {}
+	at sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[?:?] {}
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?] {}
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?] {}
+	at java.net.Socket.connect(Socket.java:633) ~[?:?] {}
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304) ~[?:?] {}
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:178) ~[?:?] {}
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:541) ~[?:?] {}
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:646) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:267) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:381) ~[?:?] {}
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:196) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1310) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1151) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1080) ~[?:?] {}
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:181) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1719) ~[?:?] {}
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1644) ~[?:?] {}
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224) ~[?:?] {}
+	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:140) ~[authlib-4.0.43.jar%2375!/:?] {}
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:96) ~[authlib-4.0.43.jar%2375!/:?] {}
+	... 9 more
+[05:37:56] [Worker-Main-1/WARN] [minecraft/UniformHeight]: Empty height range: [3 absolute-64 above bottom]
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_end...
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_nether...
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:37:59] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:37:59] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[05:38:00] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:00] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:00] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:01] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:01] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:02] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:02] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:03] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:03] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:04] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:04] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:05] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:05] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:06] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:06] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:07] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:07] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:08] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:08] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:09] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:09] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:10] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:10] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:11] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:11] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:12] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:13] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:14] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:14] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:15] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:15] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:16] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:16] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:17] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:17] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:18] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:18] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:19] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:19] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:20] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:20] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:21] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:21] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:22] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:22] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:23] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:23] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:24] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:24] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:25] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:25] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:26] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:26] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:27] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:27] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:28] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:28] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:29] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:29] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:30] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:30] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:31] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:31] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:32] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:32] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:33] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:33] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:34] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:34] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:35] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:35] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:37] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:37] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[05:38:37] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 42%
+[05:38:37] [Worker-Main-1/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 68%
+[05:38:39] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 39941 ms
+[05:38:39] [Server thread/INFO] [minecraft/DedicatedServer]: Done (48.738s)! For help, type "help"
+[05:38:39] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.ServerLifecycleHandler/]: [HBM-NETWORK] Server has started, rebuilding energy networks for all dimensions...
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:overworld...
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_end...
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Starting full network rebuild for dimension minecraft:the_nether...
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Pruned node list: 0 total -> 0 valid.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.EnergyNetworkManager/]: [NETWORK] Rebuild completed. Found 0 networks.
+[05:38:39] [Server thread/INFO] [co.hb.ap.en.ServerLifecycleHandler/]: [HBM-NETWORK] Energy network rebuild complete.
+[05:38:39] [Server thread/INFO] [minecraft/MinecraftServer]: There are 0 of a max of 2 players online: 
+[05:38:42] [Server thread/WARN] [minecraft/MinecraftServer]: Can't keep up! Is the server overloaded? Running 2080ms or 41 ticks behind
+[05:39:09] [Server thread/INFO] [minecraft/MinecraftServer]: Saving the game (this may take a moment!)
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (integration-test-world): All chunks are saved
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[05:39:10] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[integration-test-world]'/minecraft:overworld
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[integration-test-world]'/minecraft:the_end
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[integration-test-world]'/minecraft:the_nether
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (integration-test-world): All chunks are saved
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[05:39:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved

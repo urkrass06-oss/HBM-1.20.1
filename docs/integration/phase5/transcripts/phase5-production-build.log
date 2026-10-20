@@ -1,0 +1,553 @@
+{"utc": "20261020T060152151552Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase5/final", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:build", ":1.20.1-forge:sourcesJar", "--stacktrace", "-Dorg.gradle.jvmargs=-Xmx1G"], "jdk21": "/workspace/scratch/modernized-phase4/toolchains/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase5/logs/verified-build/20261020T060152151552Z-build-sourcesJar.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Running Stonecutter 0.8
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :1.20.1-forge:stonecutterPrepare UP-TO-DATE
+> Task :1.20.1-forge:stonecutterGenerate UP-TO-DATE
+> Task :1.20.1-forge:createMinecraftArtifacts UP-TO-DATE
+> Task :1.20.1-forge:kspKotlin FROM-CACHE
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+> Task :1.20.1-forge:compileJava FROM-CACHE
+> Task :1.20.1-forge:processResources
+> Task :1.20.1-forge:classes
+> Task :1.20.1-forge:jarJar UP-TO-DATE
+> Task :1.20.1-forge:jar
+
+> Task :1.20.1-forge:javadoc
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/item/radiation_meter/ItemGeigerCounter.java:23: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemGeigerCounter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/item/radiation_meter/ItemDosimeter.java:23: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemDosimeter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/item/radiation_meter/ItemDigammaDiagnostic.java:15: error: reference not found
+ * Порт {@link com.hbm.items.tool.ItemDigammaDiagnostic} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/gui/FluidGuiRendering.java:24: error: reference not found
+ * <p>Для Forge 1.20 {@link IClientFluidTypeExtensions#getStillTexture(FluidStack)} возвращает id вида
+                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/implementations/MachineRadarScreenRenderer.java:38: error: reference not found
+ *      берётся из {@link MachineRadarScreenBakedModel} (часть {@code Plane}) и рендерится
+                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/entity/mob/RenderCreeperUniversal.java:16: error: reference not found
+ * Порт {@link com.hbm.render.entity.mob.RenderCreeperUniversal} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/MachineChemicalPlantBakedModel.java:24: error: reference not found
+ * Поворот в BER: {@link MultipartFacingTransforms#chemicalPlantBakedRotationY}.
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/dae/DaeModel.java:25: error: reference not found
+ * buffers are baked by {@link DaeModelRenderer}. Parsing is deliberately lenient since
+                               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/multiblock/MultiblockSideTuples.java:5: error: reference not found
+ * {@link MultiblockStructureHelper#createFromLayersWithRoles(String[][], Map, Supplier, Map, Map, Map, Map, Map)}:
+          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/bomb/BlockTaint.java:43: error: reference not found
+ * Порт {@link com.hbm.blocks.bomb.BlockTaint} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockFallout.java:30: error: reference not found
+ * Тонкий слой радиоактивных осадков (порт {@link com.hbm.blocks.generic.BlockFallout} 1.7.10).
+                                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockSellafieldOre.java:17: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockSellafieldOre} — sellafite-руда с оверлеем и кастомным дропом.
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockHazardFalling.java:16: error: reference not found
+ * Падающий hazard-блок (порт {@link com.hbm.blocks.generic.BlockHazardFalling} 1.7.10).
+                                     ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockSlag.java:8: error: reference not found
+ * Блок шлака (порт {@link com.hbm.blocks.generic.BlockSlag} 1.7.10).
+                           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockOre.java:17: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockOre} 1.7.10.
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockAbsorber.java:23: error: reference not found
+ * Поглотитель радиации с четырьмя уровнями (порт {@link com.hbm.blocks.generic.BlockAbsorber} 1.7.10).
+                                                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockHazard.java:19: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.BlockHazard} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/BlockHazard.java:32: error: reference not found
+    /** {@link com.hbm.blocks.generic.BlockHazard.ExtDisplayEffect} (1.7.10). */
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/generic/WasteEarth.java:9: error: reference not found
+ * Порт {@link com.hbm.blocks.generic.WasteEarth} — waste_mycelium и аналоги.
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/machines/GeigerCounterBlock.java:35: error: reference not found
+ * Порт {@link com.hbm.blocks.machine.GeigerCounter} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/machines/BlockDecon.java:19: error: reference not found
+ * Порт {@link com.hbm.blocks.machine.BlockDecon} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/blockentity/machines/DeconBlockEntity.java:18: error: reference not found
+ * Порт {@link com.hbm.tileentity.machine.TileEntityDecon} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/blockentity/machines/GeigerCounterBlockEntity.java:21: error: reference not found
+ * Порт {@link com.hbm.tileentity.machine.TileEntityGeiger} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/blockentity/machines/FluidDuctBlockEntity.java:48: error: reference not found
+ * «skin»; на Fabric {@link com.hbm_m.client.model.loading.MtlData} читает это поле, JSON {@code mtl_override}
+                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/FullBrightParticleRenderType.java:18: error: reference not found
+ * Как {@link com.hbm.render.entity.effect.RenderTorex} 1.7.10: {@code RenderHelper.disableStandardItemLighting()}.
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/helper/VomitParticleCreator.java:17: error: reference not found
+ * Рвота при радиационной болезни. Порт {@link com.hbm.main.ClientProxy} type {@code vomit} (1.7.10).
+                                               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AJRArmorModelLoader.java:15: error: unknown tag: name
+ * Names MUST match "o <name>" in {@code ajr.obj}.
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/BismuthArmorModelLoader.java:16: error: unknown tag: name
+ * Names MUST match "o <name>" in {@code bismuth.obj}.
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/hazard/HazardRegistry.java:24: error: reference not found
+ * Регистрация опасностей предметов и блоков. Порт {@link com.hbm.hazard.HazardRegistry} (1.7.10).
+                                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/hazard/HazardSystem.java:26: error: malformed HTML
+ * Система работает по принципу приоритетов: Теги < Предметы.
+                                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/config/GeneralConfig.java:4: error: reference not found
+ * Общие флаги. Порт {@link com.hbm.config.GeneralConfig} (1.7.10), минимальный набор.
+                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/config/RadiationConfig.java:4: error: reference not found
+ * Флаги отключения типов опасностей. Порт {@link com.hbm.config.RadiationConfig} (1.7.10).
+                                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/effect/TaintEffect.java:29: error: reference not found
+ * Порт {@link com.hbm.potion.HbmPotion#taint} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/extprop/HbmLivingProps.java:11: error: reference not found
+ * Данные живых сущностей (радиация). Порт {@link com.hbm.extprop.HbmLivingProps} (1.7.10), минимальный набор для радиации.
+                                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/api/entity/IRadiationImmune.java:5: error: reference not found
+ * Порт {@link api.hbm.entity.IRadiationImmune} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/handler/EntityEffectHandler.java:34: error: reference not found
+ * Порт {@link com.hbm.handler.EntityEffectHandler} (1.7.10), радиационная часть.
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/handler/HazmatRegistry.java:17: error: reference not found
+ * Радиационное сопротивление брони. Порт {@link com.hbm.handler.HazmatRegistry} (1.7.10).
+                                                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/mob/EntityCreeperPhosgene.java:22: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperPhosgene} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/mob/EntityCreeperTainted.java:24: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperTainted} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/mob/EntityCreeperNuclear.java:34: error: reference not found
+ * Порт {@link com.hbm.entity.mob.EntityCreeperNuclear} (1.7.10).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/effect/EntityMist.java:28: error: reference not found
+ * Облако жидкости/газа (урон, яд, коррозия). Порт {@link com.hbm.entity.effect.EntityMist} (1.7.10).
+                                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/util/ArmorUtil.java:12: error: reference not found
+ * Минимальный порт проверок брони для {@link ContaminationUtil}. Полный {@link com.hbm.util.ArmorUtil} — по мере переноса FSB/роб.
+                                                                                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/util/ContaminationUtil.java:25: error: reference not found
+ * Утилиты контаминации. Порт {@link com.hbm.util.ContaminationUtil} (1.7.10).
+                                     ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/event/HazardEventHandler.java:14: error: reference not found
+ * Опасности выброшенных предметов (гидрореактивность, взрыв в огне). Порт логики {@link com.hbm.hazard.HazardSystem#updateHeldItem} (1.7.10).
+                                                                                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/event/PlayerHazardHandler.java:10: error: reference not found
+ * Применение опасностей инвентаря игрока. Порт {@link com.hbm.hazard.HazardSystem#updatePlayerInventory} (1.7.10).
+                                                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/creativetabs/MissileTab.java:12: error: reference not found
+ * Порт {@link com.hbm.creativetabs.MissileTab} — иконка вкладки и доп. предметы (кастомные ракеты).
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/creativetabs/NukeTab.java:14: error: reference not found
+ * Порт {@link com.hbm.creativetabs.NukeTab} — иконка и фон креативной вкладки бомб.
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:59: warning: no @return
+    protected String[] getPartNamesInternal() {
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:51: warning: no @param for modelName
+    protected static ArmorItem.Type resolveItemArmorType(@Nullable ResourceLocation modelName) {
+                                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:51: warning: no @return
+    protected static ArmorItem.Type resolveItemArmorType(@Nullable ResourceLocation modelName) {
+                                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:62: warning: no @param for newTransforms
+    public abstract AbstractArmorBakedModel withTransforms(ItemTransforms newTransforms);
+                                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:62: warning: no @return
+    public abstract AbstractArmorBakedModel withTransforms(ItemTransforms newTransforms);
+                                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:34: warning: no comment
+    protected final IArmorModelConfig config;
+                                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/render/AbstractArmorBakedModel.java:39: warning: no comment
+    protected AbstractArmorBakedModel(Map<String, BakedModel> parts, ItemTransforms transforms,
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:75: warning: no comment
+        String[] getPartNames();
+                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:221: warning: no comment
+    protected abstract boolean shouldSkipWorldRendering(@Nullable BlockState state);
+                               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:35: warning: no comment
+    public AbstractExplosionParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:151: warning: no comment
+        T create(ClientLevel level, double x, double y, double z, SpriteSet sprites,
+          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:132: warning: no comment
+        protected final ParticleFactory<T> factory;
+                                           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:131: warning: no comment
+        protected final SpriteSet sprites;
+                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/explosions/AbstractExplosionParticle.java:134: warning: no comment
+        public Provider(SpriteSet sprites, ParticleFactory<T> factory) {
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:24: warning: no comment
+public abstract class AbstractGpuMesh {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:28: warning: no comment
+    protected int eboId = -1;
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:29: warning: no comment
+    protected int indexCount = 0;
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:30: warning: no comment
+    protected boolean initialized = false;
+                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:26: warning: no comment
+    protected int vaoId = -1;
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:27: warning: no comment
+    protected int vboId = -1;
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:40: warning: no comment
+    public float[] getObjBbox() {
+                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractGpuMesh.java:44: warning: no comment
+    protected void setObjBboxFrom(SingleMeshVboRenderer.VboData data) {
+                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:25: warning: no comment
+public abstract class AbstractMultipartBakedModel implements BakedModel {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:27: warning: no comment
+    protected final Map<String, BakedModel> parts;
+                                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:28: warning: no comment
+    protected final ItemTransforms transforms;
+                                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:41: warning: no comment
+    protected AbstractMultipartBakedModel(Map<String, BakedModel> parts, ItemTransforms transforms) {
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:302: warning: no comment
+    public void clearCaches() {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:231: warning: no comment
+    protected List<String> getItemRenderPartNames() {
+                           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:46: warning: no comment
+    public BakedModel getPart(String name) {
+                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:50: warning: no comment
+    public Map<String, BakedModel> getPartModels() {
+                                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:133: warning: no comment
+    protected List<BakedQuad> getQuadsForModelData(
+                              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:227: warning: no comment
+    protected BlockState getStateForPart(@Nullable BlockState state) {
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/model/AbstractMultipartBakedModel.java:223: warning: no comment
+    protected boolean shouldSkipSideRendering(@Nullable BlockState state, @Nullable Direction side) {
+                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:51: warning: no comment
+    protected final IArmorLayerConfig config;
+                                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:45: warning: no comment
+    protected static final float DEFAULT_Z_FIGHTING_SCALE = 1.015F; 
+                                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:44: warning: no comment
+    protected static final float PIXEL_SCALE = 1.0F / 16.0F;
+                                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:62: warning: no comment
+    public AbstractObjArmorLayer(RenderLayerParent<T, M> parent) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:273: warning: no comment
+    public static void clearAllCaches() {
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:267: warning: no comment
+    public void clearPivotCache() {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:67: warning: no comment
+    protected abstract IArmorLayerConfig createConfig();
+                                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:163: warning: no comment
+    protected Vec3 getBasePivot(String partName, ModelPart bone, boolean crouching) {
+                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:121: warning: no comment
+    protected final void renderPart(PoseStack poseStack, MultiBufferSource buffer, int light, BakedModel partModel, ModelPart bone, String partName, boolean crouching) {
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/powerarmor/layer/AbstractObjArmorLayer.java:80: warning: no comment
+    protected final void renderSlot(PoseStack poseStack, MultiBufferSource buffer, int light, T entity, EquipmentSlot slot) {
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:41: warning: no @return
+    protected boolean flipV() { return true; }
+                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:46: warning: no @param for texture
+    protected ResourceLocation mapAtlasForTexture(ResourceLocation texture) { return null; }
+                               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:46: warning: no @return
+    protected ResourceLocation mapAtlasForTexture(ResourceLocation texture) { return null; }
+                               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:31: warning: no comment
+public abstract class AbstractObjPartModelLoader<T extends BakedModel> implements IGeometryLoader<AbstractObjPartModelLoader.ObjPartGeometry<T>> {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:58: warning: no comment
+    public static class ObjPartGeometry<T extends BakedModel> implements IUnbakedGeometry<ObjPartGeometry<T>> {
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:172: warning: no comment
+    protected static class SinglePartBakingContext implements IGeometryBakingContext {
+                     ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:34: warning: no comment
+    protected abstract T createBakedModel(HashMap<String, BakedModel> bakedParts, 
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:33: warning: no comment
+    protected abstract Set<String> getPartNames(JsonObject jsonObject);
+                                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:64: warning: no comment
+        public ObjPartGeometry(ResourceLocation modelLocation, Set<String> partNames, boolean flipV,
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/loader/AbstractObjPartModelLoader.java:177: warning: no comment
+        public SinglePartBakingContext(IGeometryBakingContext parent, String visiblePart, AbstractObjPartModelLoader<?> loader) {
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:39: warning: no @param for blockEntity
+    protected BakedModel getModel(T blockEntity) {
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:39: warning: no @return
+    protected BakedModel getModel(T blockEntity) {
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:50: warning: no @param for animator
+    protected void setupBlockTransform(LegacyAnimator animator, T blockEntity) {
+                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:50: warning: no @param for blockEntity
+    protected void setupBlockTransform(LegacyAnimator animator, T blockEntity) {
+                   ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:64: warning: no @return
+    public Matrix4f getCurrentModelViewMatrix() {
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:175: warning: no @param for model
+    public static BakedModel unwrapFabricForwardingModels(BakedModel model) {
+                             ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:175: warning: no @return
+    public static BakedModel unwrapFabricForwardingModels(BakedModel model) {
+                             ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:32: warning: no comment
+public abstract class AbstractPartBasedRenderer<T extends BlockEntity, M extends BakedModel>
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:45: warning: no comment
+    protected abstract Direction getFacing(T blockEntity);
+                                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:112: warning: no comment
+    protected final Minecraft getMinecraft() {
+                              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:44: warning: no comment
+    protected abstract M getModelType(BakedModel rawModel);
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:116: warning: no comment
+    protected boolean isInViewFrustum(T blockEntity) {
+                      ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/AbstractPartBasedRenderer.java:46: warning: no comment
+    protected abstract void renderParts(T blockEntity, M model, LegacyAnimator animator, float partialTick,
+                            ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:123: warning: no comment
+    public static class AssemblerArm {
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:32: warning: no comment
+    public AdvancedAssemblerClientTicker() {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:50: warning: no comment
+    public void clientTick(Level level, BlockPos pos, BlockState state, MachineAdvancedAssemblerBlockEntity entity) {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:46: warning: no comment
+    public AssemblerArm[] getArms() {
+                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:42: warning: no comment
+    public float getPrevRingAngle() {
+                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:38: warning: no comment
+    public float getRingAngle() {
+                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:116: warning: no comment
+    public void onRemoved() {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:124: warning: no comment
+        public float[] angles = new float[4];
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:125: warning: no comment
+        public float[] prevAngles = new float[4];
+                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:135: warning: no comment
+        public AssemblerArm() {
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:195: warning: no comment
+        public void chooseNewArmPosition(RandomSource random) {
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:143: warning: no comment
+        public void returnToNullPos() {
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:158: warning: no comment
+        public void updateArm(Level level, BlockPos pos, RandomSource random) {
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/machine/AdvancedAssemblerClientTicker.java:139: warning: no comment
+        public void updateInterp() {
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/sound/AdvancedAssemblerSoundInstance.java:19: warning: no comment
+public class AdvancedAssemblerSoundInstance extends AbstractTickableSoundInstance {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/sound/AdvancedAssemblerSoundInstance.java:22: warning: no comment
+    public AdvancedAssemblerSoundInstance(BlockPos pos) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:322: warning: no comment
+    public static class Provider extends AbstractExplosionParticle.Provider<AgentOrangeParticle> {
+                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:36: warning: no comment
+    public AgentOrangeParticle(ClientLevel level, double x, double y, double z,
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/particle/custom/AgentOrangeParticle.java:323: warning: no comment
+        public Provider(SpriteSet sprites) {
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:23: warning: no comment
+public class AirBombBlock extends Block implements IDetonatable {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:25: warning: no comment
+    public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/explosives/AirBombBlock.java:28: warning: no comment
+    public AirBombBlock(Properties props) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/item/grenades_and_activators/AirBombItem.java:18: warning: no comment
+public class AirBombItem extends Item {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/item/grenades_and_activators/AirBombItem.java:21: warning: no comment
+    public AirBombItem(Properties properties, RegistrySupplier<? extends EntityType<?>> airBombProjectile) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:34: warning: no comment
+public class AirBombProjectileEntity extends ThrowableItemProjectile {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:48: warning: no comment
+    public AirBombProjectileEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:52: warning: no comment
+    public AirBombProjectileEntity(Level level, LivingEntity thrower) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:56: warning: no comment
+    public AirBombProjectileEntity(Level level, LivingEntity thrower, float planeYaw) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:73: warning: no comment
+    public float getSynchedYaw() {
+                 ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/entity/grenades/AirBombProjectileEntity.java:67: warning: no comment
+    public void syncYawWithPlane(float planeYaw) {
+                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/implementations/AirBombProjectileEntityRenderer.java:16: warning: no comment
+public class AirBombProjectileEntityRenderer extends EntityRenderer<AirBombProjectileEntity> {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/implementations/AirBombProjectileEntityRenderer.java:20: warning: no comment
+    public AirBombProjectileEntityRenderer(EntityRendererProvider.Context context) {
+           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/explosives/AirNukeBombBlock.java:23: warning: no comment
+public class AirNukeBombBlock extends Block implements IDetonatable {
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/explosives/AirNukeBombBlock.java:25: warning: no comment
+    public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/hazard/HazardSystem.java:140: error: @param name not found
+     * @param type  Тип искомой опасности.
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:339: error: unknown tag: key
+    /** Ключ локализации названия поля: config.hbm_m.field.<key> */
+                                                           ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:344: error: unknown tag: key
+    /** Ключ локализации тултипа поля: config.hbm_m.field.<key>.tooltip */
+                                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/config/schema/ConfigSchema.java:349: error: unknown tag: category
+    /** Ключ локализации категории: config.hbm_m.category.<category> */
+                                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/handler/HazmatRegistry.java:71: error: reference not found
+    /** {@link com.hbm.handler.HazmatRegistry#initDefault()} */
+               ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/hazard/type/HazardTypeRadiation.java:23: error: reference not found
+     * 1:1 с {@link com.hbm.hazard.type.HazardTypeRadiation#onUpdate} (1.7.10).
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/shader/IrisRenderBatch.java:284: error: reference not found
+     * {@link com.hbm_m.client.render.compat.ShaderCompatibilityDetector#isRenderingShadowPass()}
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/blockentity/machines/MachineMiningDrillBlockEntity.java:527: error: reference not found
+     * {@link MachineMiningDrillRenderer} bzw. dessen Ur-Aequivalent {@code RenderExcavator}). Ohne
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/module/machine/MachineModuleChemplant.java:40: error: @param name not found
+     * @param level мир (для поиска рецепта)
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/MdiGeometryAtlas.java:354: error: reference not found
+     * После {@link ShaderInstance#apply()} / Embeddium chunk-батчей часть массивов
+                    ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/culling/MdiRenderFrameGate.java:28: error: reference not found
+    /** Call once per render frame after {@link InstancedRenderFrame#present}. */
+                                                ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/ModBlocks.java:172: error: reference not found
+    /** Порт {@code rad_absorber} ({@link com.hbm.blocks.generic.BlockAbsorber}). */
+                                          ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/block/ModBlocks.java:1879: error: reference not found
+    /** Порт {@code block_schrabidium_cluster} ({@link com.hbm.blocks.generic.BlockRotatablePillar}). */
+                                                       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:156: error: unknown tag: BlockState
+     * @param symbolMap Карта символов на Supplier<BlockState>
+                                                  ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:167: error: unknown tag: example
+     * @example
+       ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:745: error: reference not found
+     * Как полный {@link #createFromLayersWithRoles(String[][], Map, Supplier, Map, Map, Map, Map, Map)},
+                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/multiblock/MultiblockStructureHelper.java:867: error: @param name not found
+     * @param localOffset Локальная позиция части
+              ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/client/render/entity/mob/RenderCreeperUniversal.java:75: error: reference not found
+    /** Заражённый крипер — как в {@link com.hbm.main.ClientProxy} 1.7.10. */
+                                         ^
+/workspace/scratch/modernized-phase5/final/src/main/java/com/hbm_m/blockentity/machines/SoyuzLauncherBlockEntity.java:302: error: bad HTML entity
+    /** 0 = not required (satellite mode), 1 = required but missing/not-ready, 2 = present & ready. */
+                                                                                           ^
+66 errors
+100 warnings
+
+> Task :1.20.1-forge:javadocJar UP-TO-DATE
+
+> Task :1.20.1-forge:reobfJar
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+
+> Task :1.20.1-forge:sourcesJar
+> Task :1.20.1-forge:assemble
+> Task :1.20.1-forge:kspTestKotlin NO-SOURCE
+> Task :1.20.1-forge:compileTestKotlin NO-SOURCE
+> Task :1.20.1-forge:compileTestJava NO-SOURCE
+> Task :1.20.1-forge:processTestResources NO-SOURCE
+> Task :1.20.1-forge:testClasses UP-TO-DATE
+> Task :1.20.1-forge:test NO-SOURCE
+> Task :1.20.1-forge:check UP-TO-DATE
+> Task :1.20.1-forge:build
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase5/final/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 45s
+16 actionable tasks: 5 executed, 2 from cache, 9 up-to-date

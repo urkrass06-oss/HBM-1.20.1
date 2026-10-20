@@ -8,6 +8,9 @@ on:
       - 'tools/modernized_build.py'
       - 'tools/audit_modernized.py'
       - 'tools/test_modernized_server.py'
+      - 'tools/modernized_client.py'
+      - 'tools/modernized_server_session.py'
+      - 'tools/modernized_xinput.py'
       - 'tools/modernized/**'
       - 'third_party_licenses/**'
       - 'src/main/java/com/hbm/**'
@@ -34,28 +37,39 @@ jobs:
           java-version: '17'
       - name: Keep runtime JDK path
         run: echo "JAVA17_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
+      - name: Check integration tool syntax
+        run: |
+          python3 -m py_compile tools/integrate_modernized.py tools/modernized_build.py \
+            tools/audit_modernized.py tools/test_modernized_server.py tools/modernized_client.py \
+            tools/modernized_server_session.py tools/modernized_xinput.py
       - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
           distribution: temurin
           java-version: '21'
       - name: Prepare external integration
-        run: python3 tools/integrate_modernized.py "$RUNNER_TEMP/hbm-phase4/modernized"
+        run: python3 tools/integrate_modernized.py "$RUNNER_TEMP/hbm-phase5/modernized" --phase5
       - name: Generate resources and build Forge artifact
         run: |
-          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase4/modernized" runData \
-            --gradle-home "$RUNNER_TEMP/hbm-phase4/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase4/logs"
-          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase4/modernized" build sourcesJar \
-            --gradle-home "$RUNNER_TEMP/hbm-phase4/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase4/logs"
+          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runData \
+            --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
+          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" build sourcesJar \
+            --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs"
           python3 tools/audit_modernized.py jar \
-            "$RUNNER_TEMP/hbm-phase4/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar"
+            "$RUNNER_TEMP/hbm-phase5/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar" \
+            --generated-source "$RUNNER_TEMP/hbm-phase5/modernized/src/generated/resources"
       - name: Isolated production server, save and restart
         run: |
-          python3 tools/test_modernized_server.py \
-            "$RUNNER_TEMP/hbm-phase4/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar" \
-            "$RUNNER_TEMP/hbm-phase4/server" --java17-home "$JAVA17_HOME" --accept-eula
+          for runtime_forge in 47.4.20 47.4.23; do
+            python3 tools/test_modernized_server.py \
+              "$RUNNER_TEMP/hbm-phase5/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar" \
+              "$RUNNER_TEMP/hbm-phase5/server-$runtime_forge" \
+              --forge "$runtime_forge" --java17-home "$JAVA17_HOME" --accept-eula
+          done
       - name: Run integration GameTests in a separate profile
         run: |
-          python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase4/modernized" runGameTestServer \
-            --gradle-home "$RUNNER_TEMP/hbm-phase4/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase4/logs" \
-            --gradle-arg=-Pmodernized.gameTests=true
+          for runtime_forge in 47.4.20 47.4.23; do
+            python3 tools/modernized_build.py run "$RUNNER_TEMP/hbm-phase5/modernized" runGameTestServer \
+              --gradle-home "$RUNNER_TEMP/hbm-phase5/gradle-home" --log-dir "$RUNNER_TEMP/hbm-phase5/logs" \
+              --gradle-arg=-Pmodernized.gameTests=true --gradle-arg="-Pdeps.forge=$runtime_forge"
+          done
       # No upload-artifact: unreviewed upstream source/assets and evaluation JARs stay private.

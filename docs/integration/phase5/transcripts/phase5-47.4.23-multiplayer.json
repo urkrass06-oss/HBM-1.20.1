@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-20T06:10:40.956274+00:00",
+  "command": [
+    "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+    "-Dhttp.proxyHost=proxy",
+    "-Dhttp.proxyPort=8080",
+    "-Dhttps.proxyHost=proxy",
+    "-Dhttps.proxyPort=8080",
+    "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+    "-Dterminal.jline=false",
+    "-Dterminal.ansi=false",
+    "-XX:ActiveProcessorCount=2",
+    "-Xms256M",
+    "-Xmx1600M",
+    "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+    "nogui"
+  ],
+  "cwd": "/workspace/scratch/modernized-phase5/server-47.4.23",
+  "jar": "/workspace/scratch/modernized-phase5/final/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+  "jar_sha256": "056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3",
+  "forge": "47.4.23",
+  "bind": "127.0.0.1:59275",
+  "transcript": "/workspace/scratch/modernized-phase5/server-47.4.23/multiplayer-fixed.log",
+  "world": "integration-test-world",
+  "eula": "accepted-for-isolated-test",
+  "done": true,
+  "error_lines": [
+    "[06:11:26] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+  ],
+  "save_confirmed": true,
+  "startup_seconds": 117.126,
+  "exit_code": 0,
+  "duration_seconds": 466.073,
+  "environment_error_lines": [
+    "[06:11:26] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+  ],
+  "unexpected_error_lines": [],
+  "passed_start_save_stop": true
+}

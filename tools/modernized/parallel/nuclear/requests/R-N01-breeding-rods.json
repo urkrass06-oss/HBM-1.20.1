@@ -12,7 +12,7 @@
       "id": "hbm_m:rod",
       "old_class": null,
       "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
-      "constructor": "new BreedingRodItem(new Item.Properties(), BreedingRodItem.Size.SINGLE)",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_EMPTY.get()), BreedingRodItem.Size.SINGLE)",
       "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
       "properties": {
         "max_stack_size": 64,
@@ -26,7 +26,7 @@
       "id": "hbm_m:rod_dual",
       "old_class": null,
       "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
-      "constructor": "new BreedingRodItem(new Item.Properties(), BreedingRodItem.Size.DUAL)",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_DUAL_EMPTY.get()), BreedingRodItem.Size.DUAL)",
       "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
       "properties": {
         "max_stack_size": 64,
@@ -40,7 +40,7 @@
       "id": "hbm_m:rod_quad",
       "old_class": null,
       "new_class": "com.hbm_m.item.nuclear.BreedingRodItem",
-      "constructor": "new BreedingRodItem(new Item.Properties(), BreedingRodItem.Size.QUAD)",
+      "constructor": "new BreedingRodItem(new Item.Properties().craftRemainder(ModItems.ROD_QUAD_EMPTY.get()), BreedingRodItem.Size.QUAD)",
       "binding": "ModItems.ITEMS; new RegistrySupplier<Item>",
       "properties": {
         "max_stack_size": 64,
@@ -123,5 +123,6 @@
     "breederRequiresProductionBindings"
   ],
   "dependency_commit": null,
-  "api_version": "breeder-flux-v1"
+  "api_version": "breeder-flux-v1",
+  "weapon_review_required": "The two missing sword stages require W owner review of their proper item behavior before R registration. No fabricated sword statistics or replacement identities supplied by N."
 }

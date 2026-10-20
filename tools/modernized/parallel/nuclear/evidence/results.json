@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "tested_code_commit": "0be6f4ce86019cf805caabce3d770a19a9fc3eae",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+  "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+  "forge": "47.4.23",
+  "build_jdk": "Temurin 21.0.9+10",
+  "runtime_jdk": "Temurin 17.0.17+10",
+  "gradle": "9.3.1",
+  "commands": [
+    {
+      "utc": "20261020T075055682483Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T075055682483Z-runData.log",
+      "exit_code": 0,
+      "log_sha256": "c3d0d3055ab17d8d6a05da0f14a89a65bd74be72b364d33e73218511ef455880"
+    },
+    {
+      "utc": "20261020T123120415702Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runData",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T123120415702Z-runData.log",
+      "exit_code": 0,
+      "log_sha256": "f6a893b643d1d20b0188de11bc10b200847395e4547a533212983bb369ef89df"
+    },
+    {
+      "utc": "20261020T123154441986Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:build",
+        ":1.20.1-forge:sourcesJar",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T123154441986Z-build-sourcesJar.log",
+      "exit_code": 0,
+      "log_sha256": "0ffe2dca289f0c74ac9c611917e6e00b85bcade1816e1df2d7b7f6807f6264e9"
+    },
+    {
+      "utc": "20261020T123337632750Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23",
+        "-Pmodernized.gameTests=true"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T123337632750Z-runGameTestServer.log",
+      "exit_code": 1,
+      "log_sha256": "292ec8b327d10e2c53fe979a65c93148eca9e546b3973c6c07d43b16ae8aae68"
+    },
+    {
+      "utc": "20261020T123724429602Z",
+      "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "cwd": "/workspace/hbm-nuclear-check/modernized",
+      "command": [
+        "./gradlew",
+        "--no-daemon",
+        "--console=plain",
+        "--max-workers=2",
+        "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+        "-Porg.gradle.java.installations.auto-download=false",
+        ":1.20.1-forge:runGameTestServer",
+        "--stacktrace",
+        "-Pdeps.forge=47.4.23",
+        "-Pmodernized.gameTests=true"
+      ],
+      "jdk21": "/workspace/hbm-nuclear-check/toolchains/jdk-21.0.9+10",
+      "jdk17": "/workspace/hbm-nuclear-check/toolchains/jdk-17.0.17+10",
+      "log": "/workspace/hbm-nuclear-check/logs/20261020T123724429602Z-runGameTestServer.log",
+      "exit_code": 1,
+      "log_sha256": "bcd536506259170cb110f35843cb833187fa214220d369702e66aea1daf6e7fe"
+    }
+  ],
+  "production_jar": {
+    "jar_sha256": "8b449e2272fa28369cbb46f8752ebbdbec83e9196d55d9d13db84722c00a18d0",
+    "entrypoints": [
+      "com/hbm/HbmPort.class"
+    ],
+    "test_classes_in_production": [],
+    "forge": "47.4.23",
+    "bytecode_and_generated_resources": "passed audit_modernized.py"
+  },
+  "production_class_major_counts": {
+    "61": 1923
+  },
+  "nested_jars": [
+    {
+      "name": "META-INF/jarjar/architectury-forge-9.2.14.jar",
+      "sha256": "47d5eca3d83aae1ac1d4a70116727715bd7ef4c077d228fee873065cbca94687",
+      "class_major_counts": {
+        "52": 1,
+        "60": 381
+      }
+    },
+    {
+      "name": "META-INF/jarjar/mixinconstraints-1.1.0.jar",
+      "sha256": "67e1fca9cb518f8afb356105c7816587e02880c2acca3bbdb6e08c8e967fc1be",
+      "class_major_counts": {
+        "61": 21
+      }
+    }
+  ],
+  "generated_resources": {
+    "files": 7952,
+    "manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700",
+    "two_runs_identical": true
+  },
+  "test_methods": {
+    "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": [
+      "registriesAndGeneratedRecipes",
+      "batteryLongEnergyAndInventoryRoundTrip",
+      "batteryTicksInServerWorld"
+    ],
+    "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": [
+      "highEnergyUnitMustFitIncludingRemainder",
+      "rbmkRequiresTheMatchingNearbyOpenMenu",
+      "forgeEnergyBoundsAndSimulation",
+      "wireTransfersEnergyWithoutLoss",
+      "energyManagerRunsOncePerLevelTick",
+      "rbmkIncrementalPacketAppliesColumns",
+      "fluidSimulationEquivalenceAndPersistence",
+      "tankMultiblockFormsAndPersists",
+      "rbmkControlAndEmergencyShutdown",
+      "rbmkPacketRejectsMalformedPayloads",
+      "rbmkPacketRejectsInvalidActionsAndNumbers"
+    ],
+    "tools/modernized/parallel/nuclear/gametest/com/hbm/integration/nuclear/BreederGameTests.java": [
+      "breederProcessesRegisteredRecipe",
+      "breederStopsWithoutFlux",
+      "breederPersistsMidCycle",
+      "breederDefaultRecipeVariants",
+      "breederReadsHorizontalResearchContacts",
+      "breederSynchronizesTwoObservers",
+      "breederTicksInServerWorld",
+      "breederRequiresProductionBindings"
+    ]
+  },
+  "gametests": {
+    "required_total": 22,
+    "passed": 21,
+    "failed_required": [
+      "breederrequiresproductionbindings"
+    ],
+    "existing_passed": 14,
+    "new_functional_passed": 7,
+    "production_binding_guard_failed": 1,
+    "exit_code": 1,
+    "fixture_items": "rod, rod_dual, rod_quad, meteorite_sword_etched, meteorite_sword_bred; only when production bindings absent",
+    "fixture_source": "nuclear_test_flux_source is test-only; not a production research reactor"
+  },
+  "error_lines": [
+    "[12:38:43] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key",
+    "[12:38:58] [Server thread/ERROR] [minecraft/LogTestReporter]: breederrequiresproductionbindings failed! R-N01-breeding-rods unresolved: test-only item fixtures were needed; production feature BLOCKED"
+  ],
+  "gates": {
+    "G1": "Small source delivery scope/pins/per-file provenance/hashes checked; integration dependencies unresolved.",
+    "G2": "Passed for this local production artifact on Forge 47.4.23. Known upstream Javadoc errors remain tolerated, not a clean Javadoc pass.",
+    "G3": "BLOCKED/FAILED: 21/22 required tests passed; production binding guard remains red.",
+    "G4": "Not executed: no two production-server startups or post-restart process query.",
+    "G5": "Not executed: no two real connected production clients. Two packet/menu observers are a transport test only.",
+    "G6": "Partial: serialized NBT roundtrip, stale-source reset and registered world ticks tested; normal unload/reload/dimension/reconnect/singleplayer copy not proven.",
+    "G7": "Source-supported only; pinned O JDK8 runtime not measured. All 31 default recipe facts and float/int timing exercised in port tests; configurable O JSON overrides not ported.",
+    "G8": "Not executed; requires all deliveries and two-hour mixed integration run."
+  },
+  "runtime_publication": "No upstream source tree, generated assets, raw transcripts, worlds or JAR uploaded.",
+  "fresh_phase5_replay": {
+    "path": "/workspace/hbm-nuclear-check/replay",
+    "profile": "phase5",
+    "patch_apply_check": true,
+    "three_production_results_match": true,
+    "note": "Replayed after code commit; source hashes equal the tested/built implementation. No extra runtime-parity claim."
+  }
+}

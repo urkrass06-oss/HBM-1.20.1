@@ -14,12 +14,16 @@
         {
           "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
           "author": "TRFFuchs; co-author Copilot",
-          "change": "file added (BE originally under block/entity/machines)"
+          "change": "File added; BE original path under block/entity/machines, block/menu at their current paths."
         },
         {
           "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
           "author": "Raptor",
-          "change": "BE package rename/refactor; menu stays at same path"
+          "change": "BE renamed from block/entity/machines to blockentity/machines."
+        },
+        {
+          "commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "change": "Pinned publication-source identity; exact blob and sha256 recorded above. Provenance anchors do not claim every intermediate commit is listed."
         }
       ],
       "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
@@ -47,12 +51,11 @@
         {
           "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
           "author": "TRFFuchs; co-author Copilot",
-          "change": "file added (BE originally under block/entity/machines)"
+          "change": "File added; BE original path under block/entity/machines, block/menu at their current paths."
         },
         {
-          "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
-          "author": "Raptor",
-          "change": "BE package rename/refactor; menu stays at same path"
+          "commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "change": "Pinned publication-source identity; exact blob and sha256 recorded above. Provenance anchors do not claim every intermediate commit is listed."
         }
       ],
       "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
@@ -80,12 +83,16 @@
         {
           "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
           "author": "TRFFuchs; co-author Copilot",
-          "change": "file added (BE originally under block/entity/machines)"
+          "change": "File added; BE original path under block/entity/machines, block/menu at their current paths."
         },
         {
           "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
           "author": "Raptor",
-          "change": "BE package rename/refactor; menu stays at same path"
+          "change": "Block modified in multiblock refactor."
+        },
+        {
+          "commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+          "change": "Pinned publication-source identity; exact blob and sha256 recorded above. Provenance anchors do not claim every intermediate commit is listed."
         }
       ],
       "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
@@ -240,7 +247,7 @@
       "license": "LGPL-3.0-only",
       "review_status": "belegt-for-small-source-delivery",
       "reviewer": "Codex, 2026-10-20",
-      "sha256": "f031f28a5e0f6ec42083a00840556f7ec5ba699c73a761b6789ce8aedf1d4faf"
+      "sha256": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df"
     },
     {
       "delivery": "requests/R-N01-display.json",
@@ -264,7 +271,7 @@
       "license": "LGPL-3.0-only",
       "review_status": "belegt",
       "reviewer": "Codex, 2026-10-20",
-      "sha256": "f1f0336f9fa661a156f83b6e073e22f08efeb2b17256a5eada69b205a339a487"
+      "sha256": "5ae55edd09a26ce84d595daef065e0f86e0fd28798f763f9fc861bb9cb4d53ee"
     },
     {
       "delivery": ".gitattributes",
@@ -273,6 +280,14 @@
       "review_status": "belegt",
       "reviewer": "Codex, 2026-10-20",
       "sha256": "b95b69e0ae35a7ec3cf5ebd831f9d4a29f5d9eeb5e175eeed8e57d06c7867bbb"
+    },
+    {
+      "delivery": "evidence/results.json",
+      "origin": "New sanitized task evidence and metadata, no copied game-source bodies/assets/worlds/binaries.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b"
     }
   ],
   "metadata_files": {

@@ -130,7 +130,7 @@ class ReportTests(unittest.TestCase):
                              re.findall(r"@GameTest\([^)]*\)\s+public static void (\w+)\(", text)]
         self.report = self.root / "report.xml"
         self.log = self.root / "run.log"
-        self.log.write_text("Forge 47.4.23\nAll 14 required tests passed :)\n")
+        self.log.write_text("[main/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1\nAll 14 required tests passed :)\n")
         self.write_report(self.ids)
 
     def write_report(self, names, child=""):
@@ -166,12 +166,13 @@ class ReportTests(unittest.TestCase):
                 self.check()
 
     def test_wrong_runtime_version_rejected(self):
-        self.log.write_text("Forge 47.4.20\nAll 14 required tests passed :)\n")
+        # A correct command/header must not hide a wrongly loaded Forge module.
+        self.log.write_text('{"forge":"47.4.23"}\n[main/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.20, for MC 1.20.1\nAll 14 required tests passed :)\n')
         with self.assertRaises(ValueError):
             self.check()
 
     def test_missing_success_summary_rejected(self):
-        self.log.write_text("Forge 47.4.23\nBUILD SUCCESSFUL\n")
+        self.log.write_text("[main/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1\nBUILD SUCCESSFUL\n")
         with self.assertRaises(ValueError):
             self.check()
 

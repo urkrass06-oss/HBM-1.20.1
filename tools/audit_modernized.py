@@ -193,7 +193,9 @@ def gametests(args):
     if len(actual) != len(expected) or set(actual) != required_runtime_names or report.findall(".//failure") or report.findall(".//error") or report.findall(".//skipped"):
         raise ValueError(f"GameTest report differs from required IDs: expected {sorted(required_runtime_names)}, actual {actual}")
     log = Path(args.log).read_text()
-    if f"All {len(expected)} required tests passed" not in log or args.forge not in log:
+    loaded_forge = re.search(r"^\[[^\n]+\bForgeMod/FORGEMOD\]: Forge mod loading, version "
+                             + re.escape(args.forge) + r", for MC 1\.20\.1\b", log, re.M)
+    if f"All {len(expected)} required tests passed" not in log or not loaded_forge:
         raise ValueError("Missing required success summary or actual Forge version")
     print(json.dumps({"forge": args.forge, "required_passed": len(actual), "ids": sorted(actual),
                       "source_ids": sorted(expected)}, indent=2))

@@ -7,11 +7,10 @@
     "modernized": "0365cef5956016913095eeeb9366f26c601ca9a0"
   },
   "delivery_hashes": {
-    "changes.patch": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "changes.patch": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
     "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
     "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
-    "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
-    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8",
+    "requests/R-01-test-profile.json": "8ed7ebbc4cdf914eecde581a1f7ef56f20de3f8beea4030a5c0d6c5851439d6d",
     "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19"
   },
   "profile": {
@@ -152,8 +151,8 @@
   },
   "gates": {
     "G1": {
-      "status": "local-scope-and-delta-review-passed; integration-blocked",
-      "detail": "Only weapons delivery files and TASKS_WEAPONS.md; individual source/hunk review and fresh replay passed. R-01 commit/API delivery still unavailable; no fabricated dependency SHA."
+      "status": "local-scope-and-delta-review-passed; central-reservations-block-integration",
+      "detail": "R-01 exists at c63be0f5bcf43ff1d1f8b4febb25f831a15fc047. W delivery converted to its exact manifest/rights/test/dependency contract;4new W targets are absent from R-maintained policy. Explicit request supplied; no W mutation of central policy."
     },
     "G2": {
       "status": "passed-with-known-javadoc-debt",
@@ -1419,5 +1418,51 @@
       "bytes": 30768
     }
   ],
-  "screenshot_distribution": "Metadata only; all images remain external and are not cleared for upload."
+  "screenshot_distribution": "Metadata only; all images remain external and are not cleared for upload.",
+  "manifest_compatibility": {
+    "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+    "api_version": "1",
+    "status": "blocked-on4central-owner-reservations",
+    "missing_exact_owners": {
+      "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java": "weapons",
+      "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java": "weapons",
+      "src/main/java/com/hbm_m/network/WeaponPacketAccess.java": "weapons",
+      "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "weapons"
+    },
+    "request": "requests/R-01-test-profile.json",
+    "preserved_basis": "997b15c9d60dd293e9c436663e90a95140ab13af"
+  },
+  "patch_format_replay": {
+    "previous_patch_sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
+    "current_patch_sha256": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
+    "blank_context_lines_encoded_as_unchanged_delete_add": 50,
+    "apply_check_exit_code": 0,
+    "apply_exit_code": 0,
+    "patched_files": 8,
+    "all_result_hashes_match_tested_production_sources": true,
+    "production_bytes_changed": false,
+    "legal_notice_preface": "Preserved as evidence/PATCH-NOTICES.txt for strict R-01 unified patch format",
+    "nonempty_boundary_context": "Adjacent pinned-source lines retain ordinary context at hunk boundaries; reviewed under the same per-file source/license records."
+  },
+  "rights_hash_binding": "Current rights manifest is bound by area.json; checks.json omits its hash to avoid a cyclic checks/rights hash dependency.",
+  "loader_preflight": {
+    "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+    "mode": "pure validation; no checkout/application and no central policy file changed",
+    "authoritative_result": "rejected",
+    "reason": "Target outside owner's exact reservation: src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+    "schema_diagnostic_only": {
+      "result": "remaining schema/hash/rights/dependency/test declarations accepted with proposed owners in a disposable in-memory dictionary",
+      "areas": [
+        "rendering",
+        "weapons"
+      ],
+      "authority": "Not an integration pass or authorization; R must publish reservations."
+    },
+    "policy_entries_requested": {
+      "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java": "weapons",
+      "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java": "weapons",
+      "src/main/java/com/hbm_m/network/WeaponPacketAccess.java": "weapons",
+      "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "weapons"
+    }
+  }
 }

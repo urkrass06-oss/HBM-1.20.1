@@ -3,7 +3,8 @@
 Basis: `997b15c9d60dd293e9c436663e90a95140ab13af`, Branch `port/weapons`.
 Minecraft 1.20.1, Forge **47.4.23**, Build-JDK 21, Mod-/Laufzeit-JDK 17,
 Gradle 9.3.1. O/M-Pins und Einzeldateihashes stehen in
-[area.json](../area.json) und [rights.json](../rights.json).
+[area.json](../area.json) und [rights.json](../rights.json); die ausführliche Einzelakte liegt in
+[rights-review.json](rights-review.json).
 
 ## Reproduziert und korrigiert
 
@@ -53,7 +54,7 @@ Die bestehenden 66 Javadocfehler/100 Warnungen sind weiterhin offene Arbeit.
 
 | Gate | Tatsächlicher Stand |
 | --- | --- |
-| G1 | Bereichspfade, Herkunft jedes gelieferten Deltas einschließlich Kontext, Pins und frisches Patch-Replay geprüft. Zentrale R-01-Lieferung/Commit fehlt; Integration bleibt blockiert. |
+| G1 | Bereichspfade, Herkunft jedes gelieferten Deltas einschließlich Kontext, Pins und frisches Patch-Replay geprüft. R-01 liegt bei `c63be0f5…` vor; vier exakte Dateireservierungen fehlen noch in seiner zentralen Policy. Manifest/Rechteakte folgen nun dem Loadervertrag; Integration bleibt bis zur R-Ergänzung blockiert. |
 | G2 | Zwei bytegleiche Datagenläufe, getrenntes `build sourcesJar`, Audit und Hash erfolgreich auf 47.4.23. Kein sauberer Javadoc-Nachweis. |
 | G3 | 24/24 required Tests, davon 14 unverändert und zehn Waffenprüfungen. |
 | G4 | Bestanden: zwei initiale Produktionsstarts mit je 30 Sekunden, Save/Stop und Exit 0; zusätzliche Mehrspieler-/Neustartsitzungen ebenfalls sauber beendet. Neun NBT-/Inventarabfragen nach Neustart identisch. EULA ausdrücklich angenommen. |
@@ -113,13 +114,24 @@ nur geprüfte Textwerte, Befehle und SHA256-Nachweise; keine Asset-/Bildbytes.
 
 ## Einspielen und Nachweise
 
-Bis R-01 gilt ausschließlich der manuelle Weg aus
-`docs/PARALLEL_DEVELOPMENT.md`, Abschnitt 5: **frische externe** Phase-5-Basis
-erzeugen, `git apply --check changes.patch`, dann `git apply changes.patch`.
-Die zwei Quellen aus dem [R-Request](../requests/R-01-test-profile.json) einzeln
-an ihre ausdrücklich genannten, noch nicht vorhandenen Zielpfade kopieren.
-Der Helfer gehört nach `src/main/java`, die Testklasse ausschließlich nach
-`integration/src/gametest/java`. Keine Register-/Rendereränderung ist nötig.
+Der zentrale R-01-Loader liegt in PR #9 bei
+`c63be0f5bcf43ff1d1f8b4febb25f831a15fc047` (API `1`) vor.
+Diese Lieferung folgt seinem Manifest-, Payload-, Rechte- und Test-ID-Vertrag
+und bindet den konkreten Commit als Abhängigkeit. Es fehlen noch genau vier
+Reservierungen in der von R gepflegten Policy: `MachineRadarBlockEntity`,
+`MultiDetonatorItem`, `WeaponPacketAccess` und `WeaponsTests` mit den vollständigen
+Pfaden im [Request](../requests/R-01-test-profile.json). W ändert diese zentrale
+Policy nicht. Vorher ist die autoritative Integration gesperrt; kein angeblich
+erfolgreicher Loaderlauf wird aus den historischen manuellen Tests abgeleitet.
+Nach R-Ergänzung muss die gemeinsame Suite **26** erforderliche Tests enthalten:
+14 unveränderte Basis-, zwei R- und zehn W-Tests.
+
+Die abgeschlossenen lokalen Läufe verwendeten den damals gewählten expliziten
+Patch-/Kopierweg aus Abschnitt 5. Die 50 leeren Patch-Kontextzeilen sind jetzt
+als wirkungsgleiche Leerzeilen-Ersetzung codiert; dadurch entfällt die lokale
+`.gitattributes`-Sonderdatei. Ein erneuter Patchcheck und Anwendung auf alle acht
+Vorbilddateien bestätigen identische Ergebnisbytes zur getesteten Produktion.
+Produktionshilfe und Testquelle bleiben bytegleich.
 
 Alle Datagen-/Build-/GameTestaufrufe müssen `--gradle-arg=-Pdeps.forge=47.4.23`
 führen. Für GameTests zusätzlich `--gradle-arg=-Pmodernized.gameTests=true`;

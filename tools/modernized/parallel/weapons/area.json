@@ -43,13 +43,19 @@
     "src/main/java/com/hbm_m/network/WeaponPacketAccess.java",
     "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java"
   ],
-  "requires": [],
+  "requires": [
+    {
+      "area": "rendering",
+      "commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+      "api_version": "1"
+    }
+  ],
   "pending_dependencies": [
     {
       "task": "R-01",
-      "api_version": 1,
-      "commit": null,
-      "reason": "Area GameTest discovery/loader is not present at target_base; manual explicit staging allowed by PARALLEL_DEVELOPMENT section 5."
+      "reason": "Exact4central policy owner entries requested; current R delivery cannot authorize these targets.",
+      "base_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+      "request": "requests/R-01-test-profile.json"
     }
   ],
   "registrations": [],
@@ -77,11 +83,7 @@
   "external_test_files": [
     "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java"
   ],
-  "patch": {
-    "path": "changes.patch",
-    "sha256": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
-    "base": "unchanged Phase-3/4/5 integration; all eight affected upstream files are byte-identical to M pin before this delta"
-  },
+  "patch": "changes.patch",
   "overlays": [
     {
       "source": "overlay/com/hbm_m/network/WeaponPacketAccess.java",
@@ -91,23 +93,54 @@
   ],
   "tests": [
     {
+      "id": "weaponstests.weaponpacketsrejectinvalidtargets",
       "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
-      "target": "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java",
-      "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
-      "required_test_names": [
-        "weaponPacketsRejectInvalidTargets",
-        "missileAssemblyRequiresItsMatchingMenu",
-        "radarRejectsWrongMenuAndKeepsLinkedScreenAccess",
-        "detonatorUsesHeldServerItemAndDimension",
-        "radarValidatesLoadedReceiverAndDetectedEntity",
-        "weaponDecodersBoundPayloads",
-        "grenadeHasOwnerAndOneDetonation",
-        "grenadeCollisionCannotDetonateTwiceReentrantly",
-        "grenadeFuseAndOwnerSurviveNbtRoundTrip",
-        "soyuzRequiresItsMatchingMenu"
-      ],
-      "baseline_required_count": 14,
-      "total_required_count": 24
+      "required": true
+    },
+    {
+      "id": "weaponstests.missileassemblyrequiresitsmatchingmenu",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.radarrejectswrongmenuandkeepslinkedscreenaccess",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.detonatorusesheldserveritemanddimension",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.radarvalidatesloadedreceiveranddetectedentity",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.weapondecodersboundpayloads",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.grenadehasownerandonedetonation",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.grenadecollisioncannotdetonatetwicereentrantly",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.grenadefuseandownersurvivenbtroundtrip",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
+    },
+    {
+      "id": "weaponstests.soyuzrequiresitsmatchingmenu",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "required": true
     }
   ],
   "rights_file": "rights.json",
@@ -146,12 +179,16 @@
     ]
   },
   "public_delivery_hashes": {
-    "changes.patch": "f19c1771a25d88f670f6587465799e926210bc1b8aac3830b19c93e9eeaa23c2",
-    "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
+    "rights.json": "caf00b1f34c2453b47d551d26b178bad1da24e24db2a10766bb5a4658d66d370",
+    "changes.patch": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
+    "requests/R-01-test-profile.json": "8ed7ebbc4cdf914eecde581a1f7ef56f20de3f8beea4030a5c0d6c5851439d6d",
+    "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19",
+    "evidence/rights-review.json": "e84a311066fa9eccb20f6566d13f959a958021a13d16ffad8b38512a9b0b6d7e",
+    "evidence/PATCH-NOTICES.txt": "5644addc51f3252e1169620d12d1e5f20630e991800093e72cbf237799c5c326",
+    "evidence/checks.json": "c1ba924118e5c8bcd7f73dd51415a2f6843369f0615321e34df11ac010843026",
+    "evidence/README.md": "fb57d3f5516fdf6f4a737495aff452d66962ce5339c781dbcbc7d4602f7ea6d9",
     "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
-    "rights.json": "53ec704ded22a23f6a2a2f1a5bb74813e5cec2de5caa43a57f15a18130d9b063",
-    "requests/R-01-test-profile.json": "5bd311f060b3be6ea8b5202ce0c912cc3977dbab4a4213c19fa8fe6245710dc8",
-    "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19"
+    "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5"
   },
   "file_owners": {
     "src/main/java/com/hbm_m/network/DetonateAllPacket.java": "W / Agent B",
@@ -166,5 +203,135 @@
     "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "W / Agent B"
   },
   "runtime_tested_delivery_commit": "494da12957638953e854cde8d4a8276d27b74d87",
-  "runtime_request": "requests/R-02-runtime-ui.json"
+  "runtime_request": "requests/R-02-runtime-ui.json",
+  "kind": "area",
+  "api_version": "1",
+  "baseline": {
+    "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "files": {
+      "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+      "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+      "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f",
+      "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+      "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+      "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+      "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+      "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+      "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+    }
+  },
+  "patch_details": {
+    "path": "changes.patch",
+    "sha256": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
+    "base": "unchanged Phase-3/4/5 integration; all eight affected upstream files are byte-identical to M pin before this delta"
+  },
+  "files": [
+    {
+      "target": "src/main/java/com/hbm_m/network/DetonateAllPacket.java",
+      "source": null,
+      "before_sha256": "d5244a7ad872746c235d18febfb4bdf94d570e3f5e6673598b5cdcf2f003ced2",
+      "sha256": "8b20316fc459bd9bfbcc429b82a736de8a084fdf624a3979095df805ba1fd585"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/network/BuildMissilePacket.java",
+      "source": null,
+      "before_sha256": "1463776bb26644e76728612d17eb5fdbc50365ed1a3141f40a1a526242a19354",
+      "sha256": "06db123f073d88759954ace3dda9799b39ccf58a5c85279aec7b556aa78c4387"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/network/TurretControlPacket.java",
+      "source": null,
+      "before_sha256": "2f8d51cd78a79bab21e75cf35334b1923d5718683d36895a7970d36435a0f2fd",
+      "sha256": "1d7f8b4dc267ea70fa47ca8a92421e8f330a62f1e95c21cdb4b46d9bbe1b6613"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java",
+      "source": null,
+      "before_sha256": "c79bd506675a0fc44db18daf3ab572291748ef074f86b49b562931197b0a297d",
+      "sha256": "8ef25c67e174abb78f3b691a175f2e9da9210f7626d9179953e0e22b4415cf9c"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java",
+      "source": null,
+      "before_sha256": "2f28edc4b26f0c8d30f5e4074cc9fe1c3c901b1dc03d7f6c5e323201106be10b",
+      "sha256": "e08dca7569083bcd4bd9634240969040cf6edfbb092e7c684644d0e2a502a438"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java",
+      "source": null,
+      "before_sha256": "78e323e62cc839ccd004496ace8828cf047d848859fc958e1f5f190224c2618c",
+      "sha256": "d4209a61c9ea237cef55404db745d48240f2e1933f6cd899738debd6ffc794e7"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java",
+      "source": null,
+      "before_sha256": "4b9e4437578bde261c99008cb6b9c153a0716f512b4426b0b12213f3d27898d1",
+      "sha256": "afa455bec0343507d505c8f17f0ffb001fcbacbd4a1d4d188b532d0fbc3d35f4"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java",
+      "source": null,
+      "before_sha256": "b2a2f3e7355de9167cc19231bf2b2e35a93b6cf68b738a0f448f2b4965d2511e",
+      "sha256": "1e237956731357268d4f2f37aea775cb13a06285e828b9a9c36162a295c56f13"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/network/WeaponPacketAccess.java",
+      "source": "overlay/com/hbm_m/network/WeaponPacketAccess.java",
+      "before_sha256": null,
+      "sha256": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5"
+    },
+    {
+      "target": "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java",
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "before_sha256": null,
+      "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88"
+    }
+  ],
+  "test_sources": [
+    {
+      "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+      "target": "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java",
+      "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+      "required_test_names": [
+        "weaponPacketsRejectInvalidTargets",
+        "missileAssemblyRequiresItsMatchingMenu",
+        "radarRejectsWrongMenuAndKeepsLinkedScreenAccess",
+        "detonatorUsesHeldServerItemAndDimension",
+        "radarValidatesLoadedReceiverAndDetectedEntity",
+        "weaponDecodersBoundPayloads",
+        "grenadeHasOwnerAndOneDetonation",
+        "grenadeCollisionCannotDetonateTwiceReentrantly",
+        "grenadeFuseAndOwnerSurviveNbtRoundTrip",
+        "soyuzRequiresItsMatchingMenu"
+      ],
+      "baseline_required_count": 14,
+      "total_required_count": 24
+    }
+  ],
+  "requests": [
+    "requests/R-01-test-profile.json",
+    "requests/R-02-runtime-ui.json"
+  ],
+  "evidence": [
+    "evidence/PATCH-NOTICES.txt",
+    "evidence/README.md",
+    "evidence/checks.json",
+    "evidence/rights-review.json"
+  ],
+  "rights_review_file": "evidence/rights-review.json",
+  "payloads": {
+    "rights.json": "caf00b1f34c2453b47d551d26b178bad1da24e24db2a10766bb5a4658d66d370",
+    "changes.patch": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
+    "requests/R-01-test-profile.json": "8ed7ebbc4cdf914eecde581a1f7ef56f20de3f8beea4030a5c0d6c5851439d6d",
+    "requests/R-02-runtime-ui.json": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19",
+    "evidence/rights-review.json": "e84a311066fa9eccb20f6566d13f959a958021a13d16ffad8b38512a9b0b6d7e",
+    "evidence/PATCH-NOTICES.txt": "5644addc51f3252e1169620d12d1e5f20630e991800093e72cbf237799c5c326",
+    "evidence/checks.json": "c1ba924118e5c8bcd7f73dd51415a2f6843369f0615321e34df11ac010843026",
+    "evidence/README.md": "fb57d3f5516fdf6f4a737495aff452d66962ce5339c781dbcbc7d4602f7ea6d9",
+    "gametest/com/hbm/integration/weapons/WeaponsTests.java": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+    "overlay/com/hbm_m/network/WeaponPacketAccess.java": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5"
+  },
+  "loader_expected_required_count": 26
 }

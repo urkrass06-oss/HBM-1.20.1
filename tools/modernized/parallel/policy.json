@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "baseline": {
+    "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "files": {
+      "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+      "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+      "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f",
+      "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+      "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+      "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+      "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+      "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+      "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+    }
+  },
+  "owners": {
+    "src/main/java/com/hbm_m/api/energy/EnergyNetworkManager.java": "machines",
+    "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java": "machines",
+    "src/main/java/com/hbm_m/api/energy/LongEnergyWrapper.java": "machines",
+    "src/main/java/com/hbm_m/api/energy/HbmForgeWrapper.java": "machines",
+    "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java": "machines",
+    "src/main/java/com/hbm_m/api/fluids/FluidNet.java": "machines",
+    "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java": "machines",
+    "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java": "machines",
+    "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java": "machines",
+    "src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java": "nuclear",
+    "src/main/java/com/hbm_m/item/grenades_and_activators/GrenadeItem.java": "weapons",
+    "src/main/java/com/hbm_m/entity/grenades/GrenadeProjectileEntity.java": "weapons",
+    "src/main/java/com/hbm_m/network/DetonateAllPacket.java": "weapons",
+    "src/main/java/com/hbm_m/network/BuildMissilePacket.java": "weapons",
+    "src/main/java/com/hbm_m/network/TurretControlPacket.java": "weapons",
+    "src/main/java/com/hbm_m/network/UpdateRadarC2SPacket.java": "weapons",
+    "src/main/java/com/hbm_m/network/SoyuzLauncherControlPacket.java": "weapons",
+    "src/main/java/com/hbm_m/block/ModBlocks.java": "rendering",
+    "src/main/java/com/hbm_m/item/ModItems.java": "rendering",
+    "src/main/java/com/hbm_m/blockentity/ModBlockEntities.java": "rendering",
+    "src/main/java/com/hbm_m/entity/ModEntities.java": "rendering",
+    "src/main/java/com/hbm_m/inventory/menu/ModMenuTypes.java": "rendering",
+    "src/main/java/com/hbm_m/recipe/ModRecipes.java": "rendering",
+    "src/main/java/com/hbm_m/network/ModPacketHandler.java": "rendering",
+    "src/main/java/com/hbm_m/sound/ModSounds.java": "rendering",
+    "integration/src/gametest/java/com/hbm/integration/rendering/RenderingIntegrationTests.java": "rendering"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "area": "rendering",
+  "kind": "area",
+  "baseline": {
+    "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "files": {
+      "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+      "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+      "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f",
+      "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+      "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+      "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+      "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+      "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+      "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+    }
+  },
+  "tasks": [
+    "R-01",
+    "R-02"
+  ],
+  "features": [
+    "BASE-001",
+    "BASE-004",
+    "BASE-007",
+    "BASE-011",
+    "CLIENT-002"
+  ],
+  "api_version": "1",
+  "requires": [],
+  "patch": null,
+  "files": [
+    {
+      "target": "integration/src/gametest/java/com/hbm/integration/rendering/RenderingIntegrationTests.java",
+      "source": "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java",
+      "before_sha256": null,
+      "sha256": "650d15f800cbd1212c5bae5b902b58f5d39ff4852e13197154d49f55f4fc2a09"
+    }
+  ],
+  "payloads": {
+    "evidence/origin.txt": "b6e46cacf937d5fc01c8e745ca1b6aea7c8c4bb2f9f54d25d9d64a1a9f190cc5",
+    "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java": "650d15f800cbd1212c5bae5b902b58f5d39ff4852e13197154d49f55f4fc2a09",
+    "rights.json": "cb607be7f20d3f885a21175214e4df6d9210877439d2992f887ec5c87c15e090"
+  },
+  "registrations": [],
+  "tests": [
+    {
+      "id": "renderingintegrationtests.singleowningmodcontainer",
+      "source": "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java",
+      "required": true
+    },
+    {
+      "id": "renderingintegrationtests.declaredregistrydeltaexists",
+      "source": "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java",
+      "required": true
+    }
+  ],
+  "evidence": [
+    "evidence/origin.txt"
+  ]
+}

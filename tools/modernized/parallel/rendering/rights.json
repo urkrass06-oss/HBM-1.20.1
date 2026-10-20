@@ -1,0 +1,30 @@
+{
+  "evidence/origin.txt": {
+    "sha256": "b6e46cacf937d5fc01c8e745ca1b6aea7c8c4bb2f9f54d25d9d64a1a9f190cc5",
+    "origin": "independently authored for HBM Complete Port R-01/R-02",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "SPDX-License-Identifier: LGPL-3.0-only"
+    ],
+    "review": "Own generic Forge integration checks; no copied upstream implementation, patch context or assets.",
+    "publication_status": "cleared"
+  },
+  "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java": {
+    "sha256": "650d15f800cbd1212c5bae5b902b58f5d39ff4852e13197154d49f55f4fc2a09",
+    "origin": "independently authored for HBM Complete Port R-01/R-02",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "SPDX-License-Identifier: LGPL-3.0-only"
+    ],
+    "review": "Own generic Forge integration checks; no copied upstream implementation, patch context or assets.",
+    "publication_status": "cleared"
+  }
+}

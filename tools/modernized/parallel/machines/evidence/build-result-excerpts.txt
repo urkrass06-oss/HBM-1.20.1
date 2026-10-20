@@ -1,0 +1,23 @@
+SOURCE /workspace/hbm-check-machines/accepted-production-logs/20261020T125718637326Z-runData.log SHA256 ec0ed9b24821fd9a42dbed95f718def3f7a4f2eaf23aee343c223242a511e30d (selected result lines, not a full log)
+BUILD SUCCESSFUL in 2m 50s
+SOURCE /workspace/hbm-check-machines/accepted-production-logs/20261020T130010989271Z-runData.log SHA256 8aff60effce96c19a428c8aa832b94f9f2df44d81ac1a0b9a6080ccfec2a4c19 (selected result lines, not a full log)
+BUILD SUCCESSFUL in 1m 7s
+SOURCE /workspace/hbm-check-machines/accepted-production-logs/20261020T130122477077Z-build-sourcesJar.log SHA256 5d467f618fa4d8cf6c51d160c718cbe54d08709395ba3355047af43c85fea0bb (selected result lines, not a full log)
+66 errors
+100 warnings
+BUILD SUCCESSFUL in 51s
+SOURCE /workspace/hbm-check-machines/accepted-gametest-logs/20261020T130422944630Z-runGameTestServer.log SHA256 2a95a1f6e4d7f43bcb03d660d955ab7483321716117e7c9197b3d7a4cf17fb11 (selected result lines, not a full log)
+[13:06:11] [Server thread/INFO] [minecraft/GameTestServer]: ========= 22 GAME TESTS COMPLETE ======================
+[13:06:11] [Server thread/INFO] [minecraft/GameTestServer]: All 22 required tests passed :)
+BUILD SUCCESSFUL in 1m 53s
+SOURCE /workspace/hbm-check-machines/baseline-current-gametest-logs/20261020T125718683887Z-runGameTestServer.log SHA256 9af46c81a40a48d6afbd9b8aa5ce1c68806bc0efffa158033b70fa2a029c8162 (selected result lines, not a full log)
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]: ========= 22 GAME TESTS COMPLETE ======================
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]: 7 required tests failed :(
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - capabilitiesinvalidateonremoval
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - singletonnetworkcanreconnect
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - splitmergepreservesamounts
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - valveunloadreleasesnodeimmediately
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - networkunloadreloadconservesamounts
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - pumptransfersarescheduledforsaving
+[13:01:22] [Server thread/INFO] [minecraft/GameTestServer]:    - pressureandsubstancestayseparate
+BUILD FAILED in 4m 12s

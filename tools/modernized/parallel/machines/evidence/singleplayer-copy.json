@@ -1,0 +1,13 @@
+{
+  "source": "/workspace/hbm-check-machines/server-47.4.23/machines-test-world",
+  "copy": "/workspace/hbm-check-machines/client-one/saves/M01Checkpoint",
+  "copied_only_after_server_exit0": true,
+  "source_level_dat_sha256": "0fc6a91f0e04b637ecb37daeea2f40d17093c420eb84ac85ae0e365ae3896526",
+  "copy_level_dat_sha256": "d45d4c5ced05414a36c2bfe46b76d8eee88b4e4d0d46b599bc42e3dbd48346f6",
+  "copy_config_changes": [
+    "LevelName=M01Checkpoint",
+    "allowCommands=true (inspect values through actual integrated server commands)"
+  ],
+  "source_unmodified": true,
+  "jar_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d"
+}

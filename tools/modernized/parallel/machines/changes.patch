@@ -1,0 +1,170 @@
+diff --git a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
+--- a/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
++++ b/src/main/java/com/hbm_m/api/energy/EnergyNetwork.java
+@@ -25,8 +25,9 @@
+-
++
+ import net.minecraft.core.BlockPos;
+ import net.minecraft.core.Direction;
+ import net.minecraft.server.level.ServerLevel;
++import net.minecraft.world.level.ChunkPos;
+ import net.minecraft.world.level.block.entity.BlockEntity;
+-
++
+ /**
+  * ===================================================================
+@@ -48,9 +49,10 @@
+     public void tick(ServerLevel level) {
+         // 1. Валидация узлов
+         // System.out.println("TEST HOTSWAP");
+         int sizeBefore = nodes.size();
+-        nodes.removeIf(node -> !node.isValid(level) || node.getNetwork() != this);
++        // M-01, 2026-10-20: probing full, non-ticking chunks renews vanilla load tickets.
++        nodes.removeIf(node -> node.getNetwork() != this || (isTicking(level, node.getPos()) && !node.isValid(level)));
+-
++
+         if (nodes.size() < sizeBefore) {
+             verifyConnectivity();
+         }
+@@ -71,9 +73,9 @@
+         Map<IEnergyReceiver, IEnergyReceiver> uniqueMachines = new IdentityHashMap<>();
+         Map<IEnergyReceiver, BatteryInfo> uniqueBatteries = new IdentityHashMap<>();
+-
++
+         for (EnergyNode node : nodes) {
+-            if (!level.isLoaded(node.getPos())) continue;
++            if (!isTicking(level, node.getPos())) continue;
+             BlockEntity be = level.getBlockEntity(node.getPos());
+             if (be == null) continue;
+-
++
+             Optional<IEnergyProvider> providerCap;
+@@ -446,11 +448,10 @@
+-
++
+     public void removeNode(EnergyNode node) {
+         if (!nodes.remove(node)) return;
+         node.setNetwork(null);
+-        if (nodes.size() < 2) {
+-            for (EnergyNode remainingNode : nodes) remainingNode.setNetwork(null);
+-            nodes.clear();
++        // M-01, 2026-10-20: retain a live singleton so a later neighbor can join it.
++        if (nodes.isEmpty()) {
+             manager.removeNetwork(this);
+         } else {
+             verifyConnectivity();
+         }
+@@ -507,5 +508,9 @@
+         manager.removeNetwork(other);
+     }
+-
++
+     public UUID getId() { return id; }
+-}
+\ No newline at end of file
++
++    private static boolean isTicking(ServerLevel level, BlockPos pos) {
++        return level.shouldTickBlocksAt(ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4));
++    }
++}
+diff --git a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java b/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
+--- a/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
++++ b/src/main/java/com/hbm_m/api/energy/WireBlockEntity.java
+@@ -25,7 +25,7 @@
+ public class WireBlockEntity extends BlockEntity implements IEnergyConnector {
+-
++
+     //? if forge {
+-    private final LazyOptional<IEnergyConnector> hbmConnector = LazyOptional.of(() -> this);
++    private LazyOptional<IEnergyConnector> hbmConnector = LazyOptional.of(() -> this);
+      //?}
+-
++
+     public WireBlockEntity(BlockPos pos, BlockState state) {
+@@ -72,6 +72,14 @@
+         hbmConnector.invalidate();
+     }
+-
++
++    // M-01 lifecycle correction, 2026-10-20; upstream GPLv3 notices retained.
++    @Override
++    public void reviveCaps() {
++        super.reviveCaps();
++        hbmConnector.invalidate();
++        hbmConnector = LazyOptional.of(() -> this);
++    }
++
+     @Override
+     public void onChunkUnloaded() {
+         super.onChunkUnloaded();
+diff --git a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
+--- a/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java
+@@ -173,7 +173,8 @@
+     //? if forge {
+     @Override
+     public void onChunkUnloaded() {
+-        if (node != null) node.expired = true;
++        // M-01, 2026-10-20: release topology now rather than waiting for the reaper.
++        if (level instanceof ServerLevel sl) destroyCurrentNode(sl);
+         super.onChunkUnloaded();
+     }
+     //?}
+diff --git a/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java b/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
+--- a/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
++++ b/src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java
+@@ -247,6 +247,8 @@
+             this.conformedFluid = fluid;
+         }
+         //? if forge {
++        // M-01, 2026-10-20: MK2 callers already match pressure; Forge containers do not.
++        if (pressure != 0) return fillInternal(fluid, amountMb);
+         return forgeStorage.fill(new FluidStack(fluid, amountMb), IFluidHandler.FluidAction.EXECUTE);
+         //?}
+         //? if fabric {
+@@ -275,8 +277,22 @@
+-
++
+     public int fillInternal(Fluid fluid, int amountMb) {
+         if (amountMb <= 0 || fluid == Fluids.EMPTY || fluid == null) return 0;
+-        //? if forge {
+-        return forgeStorage.fill(new FluidStack(fluid, amountMb), IFluidHandler.FluidAction.EXECUTE);
++        if (pressure < 0 || pressure > com.hbm_m.api.fluids.IFluidUserMK2.HIGHEST_VALID_PRESSURE) return 0;
++        //? if forge {
++        // M-01, 2026-10-20: internal pressure-aware transfer bypasses only the ambient-pressure gate.
++        if (isFluidTypeExplicitlySet(conformedFluid)
++                && !VanillaFluidEquivalence.sameSubstance(conformedFluid, fluid)) return 0;
++        FluidStack stored = forgeStorage.getFluid();
++        FluidStack incoming = harmonizeForgeFillResource(stored, new FluidStack(fluid, amountMb));
++        if (!stored.isEmpty() && !stored.isFluidEqual(incoming)) return 0;
++        int accepted = Math.min(amountMb, Math.max(0, capacity - getFluidAmountMb()));
++        if (accepted == 0) return 0;
++        FluidStack next = stored.isEmpty() ? incoming.copy() : stored.copy();
++        next.setAmount(getFluidAmountMb() + accepted);
++        if (!isFluidTypeExplicitlySet(conformedFluid)) conformedFluid = fluid;
++        forgeStorage.setFluid(next);
++        onContentsChanged();
++        return accepted;
+         //?}
+         //? if fabric {
+         /*try (Transaction tx = Transaction.openOuter()) {
+diff --git a/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java b/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
+--- a/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
++++ b/src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java
+@@ -51,7 +51,13 @@
+-
++
+     public FluidPumpBlockEntity(BlockPos pos, BlockState state) {
+         super(ModBlockEntities.FLUID_PUMP_BE.get(), pos, state);
+-        tank = new FluidTank(Fluids.EMPTY, bufferSize);
++        // M-01, 2026-10-20: network transfers must dirty the owning chunk for persistence.
++        tank = new FluidTank(Fluids.EMPTY, bufferSize) {
++            @Override
++            public void onContentsChanged() {
++                FluidPumpBlockEntity.this.setChanged();
++            }
++        };
+     }
+-
++
+     // =====================================================================================

@@ -1,0 +1,138 @@
+SOURCE /workspace/hbm-check-machines/server-47.4.23/m01-multiplayer.log SHA256 552ebb19b9cc9a03300a089934952a1374630747b1ba88ac2292daab882ef2f3 (selected result lines, not full log)
+[17:38:24] [Server thread/INFO] [minecraft/DedicatedServer]: Done (131.690s)! For help, type "help"
+[17:39:00] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne joined the game
+[17:39:06] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo joined the game
+[17:39:32] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_ARENA_LOADED
+[17:39:40] [Server thread/INFO] [minecraft/MinecraftServer]: 517, 100, 512 has the following block data: 0L
+[17:39:40] [Server thread/INFO] [minecraft/MinecraftServer]: 519, 100, 512 has the following block data: 20000000L
+[17:40:12] [Server thread/INFO] [minecraft/MinecraftServer]: 512, 100, 512 has the following block data: {Size: 2, Items: []}
+[17:40:12] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: [{Slot: 0b, id: "hbm_m:battery", Count: 1b}]
+[17:40:12] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo has the following entity data: []
+[17:40:37] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 16000
+[17:40:37] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 0s
+[17:41:00] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 0
+[17:41:00] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 520 has the following block data: 18000
+[17:41:00] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 1s
+[17:41:00] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: [{Slot: 0b, id: "hbm_m:battery", Count: 1b}, {Slot: 1b, id: "minecraft:bucket", Count: 1b}]
+[17:41:00] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo has the following entity data: [{Slot: 0b, id: "minecraft:bucket", Count: 1b}]
+[17:41:57] [Server thread/INFO] [minecraft/MinecraftServer]: 515, 100, 520 has the following block data: 0.25d
+[17:41:57] [Server thread/INFO] [minecraft/MinecraftServer]: 515, 100, 520 has the following block data: 0.8836599999999979d
+[17:42:14] [Server thread/INFO] [minecraft/MinecraftServer]: 515, 100, 520 has the following block data: 0.0d
+[17:42:14] [Server thread/INFO] [minecraft/MinecraftServer]: 515, 100, 520 has the following block data: 0.0d
+[17:42:51] [Server thread/INFO] [minecraft/MinecraftServer]: entity.hbm_m.grenade_projectile has the following entity data: [I; -2013071434, -1252638963, -1855311903, -38967003]
+[17:42:51] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_GLASS_BEFORE
+[17:43:02] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_GRENADE_FINISHED
+[17:43:02] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: [I; -2013071434, -1252638963, -1855311903, -38967003]
+[17:43:32] [Server thread/INFO] [minecraft/MinecraftServer]: entity.hbm_m.grenade_projectile has the following entity data: [I; -2013071434, -1252638963, -1855311903, -38967003]
+[17:43:32] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_FLOOR_BEFORE
+[17:43:47] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_FLOOR_DESTROYED
+[17:43:47] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_GRENADE_FINISHED_2
+[17:43:47] [Server thread/INFO] [minecraft/MinecraftServer]: 524, 100, 512 has the following block data: {t_amount: 7000, t_p: 3s, t_max: 18000, t_type: "minecraft:water", x: 524, facing: "north", y: 100, z: 512, id: "hbm_m:fluid_pump_be", priority: 2b, bufferSize: 18000}
+[17:44:01] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_DIMENSION_UNLOAD_BEGIN
+[17:44:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_ARENA_UNLOADED
+[17:44:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_TANKS_UNLOADED
+[17:44:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_PUMP_UNLOADED
+[17:44:36] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: "minecraft:the_nether"
+[17:44:36] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo has the following entity data: "minecraft:the_nether"
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_AFTER_NORMAL_RELOAD
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: 517, 100, 512 has the following block data: 0L
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: 519, 100, 512 has the following block data: 20000000L
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 0
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 520 has the following block data: 18000
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: 524, 100, 512 has the following block data: {t_amount: 7000, t_p: 3s, t_max: 18000, t_type: "minecraft:water", x: 524, facing: "north", y: 100, z: 512, id: "hbm_m:fluid_pump_be", priority: 2b, bufferSize: 18000}
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: [{Slot: 0b, id: "hbm_m:battery", Count: 1b}, {Slot: 1b, id: "minecraft:bucket", Count: 1b}, {Slot: 2b, id: "hbm_m:grenade", Count: 1b}]
+[17:45:08] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo has the following entity data: [{Slot: 0b, id: "minecraft:bucket", Count: 1b}]
+[17:45:49] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_REBUILT_NETWORK_REVERSE_TRANSFER
+[17:45:49] [Server thread/INFO] [minecraft/MinecraftServer]: 517, 100, 512 has the following block data: 20000000L
+[17:45:49] [Server thread/INFO] [minecraft/MinecraftServer]: 519, 100, 512 has the following block data: 0L
+[17:45:49] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 18000
+[17:45:49] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 520 has the following block data: 0
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_PRE_SAVE_CHECKPOINT
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: 517, 100, 512 has the following block data: 20000000L
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: 519, 100, 512 has the following block data: 0L
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 18000
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 520 has the following block data: 0
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: 524, 100, 512 has the following block data: {t_amount: 7000, t_p: 3s, t_max: 18000, t_type: "minecraft:water", x: 524, facing: "north", y: 100, z: 512, id: "hbm_m:fluid_pump_be", priority: 2b, bufferSize: 18000}
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[17:49:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[17:49:22] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[17:49:22] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne left the game
+[17:49:25] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:overworld
+[17:49:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:the_end
+[17:49:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:the_nether
+[17:49:29] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+SOURCE /workspace/hbm-check-machines/server-47.4.23/m01-reload.log SHA256 8350336bb4f248a138cf33b6e9d9b3e572532f5ebb880996486c36d36dcf2bb1 (selected result lines, not full log)
+[17:50:52] [Server thread/INFO] [minecraft/DedicatedServer]: Done (20.713s)! For help, type "help"
+[17:51:21] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne joined the game
+[17:51:24] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo joined the game
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] M01_AFTER_SERVER_RESTART
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: 517, 100, 512 has the following block data: 20000000L
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: 519, 100, 512 has the following block data: 0L
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 512 has the following block data: 18000
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: 504, 100, 520 has the following block data: 0
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: 524, 100, 512 has the following block data: {t_amount: 7000, t_p: 3s, t_max: 18000, t_type: "minecraft:water", x: 524, facing: "north", y: 100, z: 512, id: "hbm_m:fluid_pump_be", priority: 2b, bufferSize: 18000}
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne has the following entity data: [{Slot: 0b, id: "hbm_m:battery", Count: 1b}, {Slot: 1b, id: "minecraft:bucket", Count: 1b}, {Slot: 2b, id: "hbm_m:grenade", Count: 1b}]
+[17:51:29] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo has the following entity data: [{Slot: 0b, id: "minecraft:bucket", Count: 1b}]
+[17:51:43] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[17:51:43] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[17:51:43] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[17:51:43] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientTwo left the game
+[17:51:47] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:overworld
+[17:51:49] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:the_nether
+[17:51:49] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[machines-test-world]'/minecraft:the_end
+[17:51:49] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+SOURCE /workspace/hbm-check-machines/client-one/console.log SHA256 b5172ddde0e17303a6cea44e3ad8b9d85622071dd7931eee9b1d46789f89b054 (selected result lines, not full log)
+[17:36:39] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources
+[17:39:07] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] HBMClientTwo joined the game
+[17:39:32] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_ARENA_LOADED
+[17:42:51] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GLASS_BEFORE
+[17:43:02] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GRENADE_FINISHED
+[17:43:32] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_FLOOR_BEFORE
+[17:43:47] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_FLOOR_DESTROYED
+[17:43:47] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GRENADE_FINISHED_2
+[17:43:49] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources
+[17:44:01] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_DIMENSION_UNLOAD_BEGIN
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_ARENA_UNLOADED
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_TANKS_UNLOADED
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_PUMP_UNLOADED
+[17:45:08] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_AFTER_NORMAL_RELOAD
+[17:45:49] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_REBUILT_NETWORK_REVERSE_TRANSFER
+[17:49:12] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_PRE_SAVE_CHECKPOINT
+[17:51:25] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] HBMClientTwo joined the game
+[17:51:29] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_AFTER_SERVER_RESTART
+[17:52:47] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne joined the game
+[17:53:23] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] 517, 100, 512 has the following block data: 20000000L
+[17:53:27] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] 519, 100, 512 has the following block data: 0L
+[17:53:30] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] 504, 100, 512 has the following block data: 18000
+[17:53:34] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] 504, 100, 520 has the following block data: 0
+[17:53:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] 524, 100, 512 has the following block data: {t_amount: 7000, t_p: 3s, t_max: 18000, t_type: "minecraft:water", x: 524, facing: "north", y: 100, z: 512, id: "hbm_m:fluid_pump_be", priority: 2b, bufferSize: 18000}
+[17:53:39] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] HBMClientOne has the following entity data: [{Slot: 0b, id: "hbm_m:battery", Count: 1b}, {Slot: 1b, id: "minecraft:bucket", Count: 1b}, {Slot: 2b, id: "hbm_m:grenade", Count: 1b}]
+[17:53:57] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:overworld
+[17:53:57] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:the_end
+[17:53:57] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:the_nether
+[17:54:18] [Server thread/INFO] [minecraft/MinecraftServer]: HBMClientOne left the game
+[17:54:18] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[17:54:19] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:overworld
+[17:54:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:the_end
+[17:54:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[M01Checkpoint]'/minecraft:the_nether
+[17:54:20] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[17:55:08] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+SOURCE /workspace/hbm-check-machines/client-two/console.log SHA256 371db0afa6786f671140edfc82f2b14a9b38b5775dd600d714ae85b905becb92 (selected result lines, not full log)
+[17:36:39] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources
+[17:39:32] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_ARENA_LOADED
+[17:42:51] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GLASS_BEFORE
+[17:43:02] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GRENADE_FINISHED
+[17:43:32] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_FLOOR_BEFORE
+[17:43:47] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_FLOOR_DESTROYED
+[17:43:47] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_GRENADE_FINISHED_2
+[17:43:49] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources
+[17:44:01] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_DIMENSION_UNLOAD_BEGIN
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_ARENA_UNLOADED
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_TANKS_UNLOADED
+[17:44:36] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_PUMP_UNLOADED
+[17:45:09] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_AFTER_NORMAL_RELOAD
+[17:45:49] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_REBUILT_NETWORK_REVERSE_TRANSFER
+[17:49:12] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_PRE_SAVE_CHECKPOINT
+[17:49:22] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] HBMClientOne left the game
+[17:51:29] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] [Server] M01_AFTER_SERVER_RESTART
+[17:52:11] [Render thread/INFO] [minecraft/Minecraft]: Stopping!

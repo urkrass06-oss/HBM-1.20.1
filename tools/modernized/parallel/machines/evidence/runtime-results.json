@@ -1,0 +1,137 @@
+{
+  "status": "completed-isolated-machine-runtime-checks-with-open-integration-and-rendering-gates",
+  "code_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "production_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "forge": "47.4.23",
+  "seed": 42012001,
+  "bind": "127.0.0.1:42397",
+  "online_mode": false,
+  "clients": [
+    "HBMClientOne",
+    "HBMClientTwo"
+  ],
+  "common_connection_verified": {
+    "start_utc": "2026-10-20T17:39:06Z",
+    "both_online_checkpoint_utc": "2026-10-20T17:49:12Z",
+    "minimum_seconds": 606
+  },
+  "machine_results": {
+    "battery_inventory_roundtrip": "Client 1 -> machine -> client 2 -> machine -> client 1; exactly one battery, machine and client 2 empty",
+    "he_transfer_initial": [
+      0,
+      20000000
+    ],
+    "he_transfer_after_unload_reverse": [
+      20000000,
+      0
+    ],
+    "tank_input": "16000 mB fixture + two actual client water buckets (1000 each)",
+    "tank_transfer_initial": [
+      0,
+      18000
+    ],
+    "tank_transfer_after_unload_reverse": [
+      18000,
+      0
+    ],
+    "isolated_pump_after_unload": {
+      "fluid": "minecraft:water",
+      "amount_mb": 7000,
+      "pressure": 3,
+      "capacity_mb": 18000
+    }
+  },
+  "normal_unload": {
+    "no_forced_chunks": true,
+    "dimension": "minecraft:the_nether",
+    "confirmed_utc": "2026-10-20T17:44:36Z",
+    "actual_unloaded_positions": [
+      [
+        512,
+        100,
+        512
+      ],
+      [
+        504,
+        100,
+        520
+      ],
+      [
+        524,
+        100,
+        512
+      ]
+    ],
+    "confirmation": "execute in minecraft:overworld unless loaded ... run say ...; loaded only by returning actual players",
+    "return_utc": "2026-10-20T17:44:59Z",
+    "conserved": true,
+    "reverse_network_transfers_prove_rebuild": true
+  },
+  "additional_base_scenarios": {
+    "rbmk": "Two clients: target 0.25, screen CONTROL propagated; live column added and removed; client 2 target 0.50; AZ-5 issued by both, final level=targetLevel=0.",
+    "grenade": "Real client 1 item use, owner matches player UUID. First throw did not destroy the chosen wall block. Second throw toward glass floor destroyed checked block (527,99,525); projectile completed. Creative mode retains grenade item by design.",
+    "resource_reload": "F3+T on both clients completed with existing model/texture ERRORs; request to R, not counted as a clean rendering gate."
+  },
+  "first_server_start_save_stop": true,
+  "open_limitations": [
+    "Central R policy request and combined 24-test integration not accepted yet.",
+    "Existing client model/texture failures; cannot mark all G5 rendering checks green.",
+    "No O/JDK8 runtime comparison, online-authentication test, real modpack test or combined two-hour stability run.",
+    "Creative isolated fixtures prove lifecycle/balances, not survival progression.",
+    "Software rendering and startup/dimension-generation overload warnings preclude TPS claims."
+  ],
+  "server_restart": {
+    "second_done_utc": "2026-10-20T17:50:52Z",
+    "client_rejoins_utc": [
+      "2026-10-20T17:51:21Z",
+      "2026-10-20T17:51:24Z"
+    ],
+    "checkpoint_utc": "2026-10-20T17:51:29Z",
+    "stop_utc": "2026-10-20T17:51:43Z",
+    "done_to_stop_seconds": 51,
+    "he": [
+      20000000,
+      0
+    ],
+    "tank_mb": [
+      18000,
+      0
+    ],
+    "pump_mb": 7000,
+    "pump_pressure": 3,
+    "inventories_unchanged": true,
+    "both_start_save_stop_exit0": true
+  },
+  "singleplayer": {
+    "world_copy": "singleplayer-copy.json",
+    "loaded_utc": "2026-10-20T17:52:47Z",
+    "actual_integrated_server_queries_utc": "2026-10-20T17:53:23Z to 17:53:39Z",
+    "he": [
+      20000000,
+      0
+    ],
+    "tank_mb": [
+      18000,
+      0
+    ],
+    "pump": {
+      "fluid": "minecraft:water",
+      "amount_mb": 7000,
+      "pressure": 3,
+      "capacity_mb": 18000
+    },
+    "inventory_unchanged": true,
+    "tank_menu_mb": 18000,
+    "save_and_quit_to_title_requested": true,
+    "source_world_was_not_edited_for_SP_configuration": true,
+    "save_and_quit_to_title_confirmed": true,
+    "all_dimensions_saved_utc": "2026-10-20T17:54:20Z"
+  },
+  "fixture_adjustments_retained_in_external_logs": [
+    "Clients first connected before Done and were explicitly reconnected after world startup.",
+    "Initial remote fixture commands before players loaded the arena returned position-not-loaded; repeated only after actual player loading.",
+    "Initial bucket clicks hit identifier slots and made no mutation; corrected to documented container input slot, then verified 16000+1000+1000=18000 mB.",
+    "An unknown grenade_standard item command was corrected to the existing grenade ID; no registry change.",
+    "First grenade did not destroy the selected wall block; second checked floor fixture demonstrated block damage."
+  ]
+}

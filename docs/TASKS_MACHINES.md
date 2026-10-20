@@ -32,3 +32,72 @@ Alle genannten M-Pfade müssen am Pin bzw. mit den Basispatches existieren oder 
 Jede Lieferung enthält Implementierung, bereichseigene erforderliche GameTests, konkrete O-Rezept-/Prozessdaten und die Registry-/Screenrequests an R. Bei unbekannter Laufzeitparität die Quellherleitung und offene O-Messung nennen; keine bestehende Rezeptkette entfernen. G1–G7 pro Lieferung, G8 am Integrationsstand.
 
 Zwei echte Clients bedienen dieselbe Maschine gleichzeitig, setzen/entnehmen Inputs in entgegengesetzter Richtung und prüfen HE/Fluid/Slots während des Prozesses. Danach ohne Forcechunks entladen/laden und Server neu starten: Zwischenfortschritt, Stofftypen/-druck und Mengen erhalten; keine zweite Ausgabe. Neue Maschinen müssen aus den dokumentierten Rezepten erreichbar sein. Tests mit Kreativquellen dürfen Isolation belegen, ersetzen aber die Survivalabnahme nicht.
+
+## M-01-Lieferung vom 20.10.2026
+
+Gemeinsamer Startcommit: `997b15c9d60dd293e9c436663e90a95140ab13af`,
+eigener Branch `port/machines`. M/O bleiben an den oben festgelegten Pins.
+[Liefermanifest](../tools/modernized/parallel/machines/area.json),
+[Rechte je Payload](../tools/modernized/parallel/machines/rights.json) und
+[Quell-/Kontextakte](../tools/modernized/parallel/machines/evidence/source-rights.json).
+Nur fünf der neun reservierten Produktionsdateien ändern sich:
+`EnergyNetwork`, `WireBlockEntity`, `FluidTank`, `FluidPumpBlockEntity`,
+`FluidValveBlockEntity`. Der kleine GPLv3-Patch behebt sechs nachgewiesene Fehler:
+verwaiste Einzelknoten, erneuerte Ladetickets durch Abfragen ruhender Chunks,
+endgültig invalidierte Draht-Capabilities, zurückgehaltene Ventilnetzknoten,
+abgewiesene interne Drucktransfers und nicht zur Speicherung gemeldete Pumpenpuffer.
+Signaturen, HE-Einheiten, IDs, Menüs und Pakete bleiben erhalten.
+
+Acht eigene erforderliche Regressionen ergänzen unverändert alle 14 Basistests.
+Mit exakt derselben Testquelle bestehen auf unveränderter Phase 5 nur **15/22**;
+sieben neue Prüfungen scheitern. Mit den Korrekturen bestehen **22/22** auf
+Forge 47.4.23 / Java 17. Der Entladetest verlangt tatsächlich nicht mehr geladene
+Chunks, neue BlockEntity-Identitäten und wieder aufgebaute Netze; auslaufende
+Vanilla-Portaltickets ersetzen keine permanente Entladung. Er prüft
+20.000.000 HE / 18.000 mB, daneben getrennte Dimensionen, Split/Merge,
+Capabilities, Simulation, Stoff/Druck 0–5 sowie Pumpen-Speichermeldungen.
+
+[Buildnachweis](../tools/modernized/parallel/machines/evidence/build-summary.json):
+zweimal identische Datagen mit 7.952 Pfaden, separates `build sourcesJar`,
+Java-17-/Jar-in-Jar-/Produktionsaudit erfolgreich. Kein Testinhalt und keine
+entfernten Dateien/Ressourcen im Produktionspaket. Die bekannten 66
+Javadocfehler und 100 Warnungen sind weiterhin offen. Produktions-SHA256:
+`46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d`.
+
+R-01 ist mit `c63be0f5bcf43ff1d1f8b4febb25f831a15fc047` / API `1`
+konkret gebunden. Der strenge Loader blockiert die noch fehlende zentrale
+Testzieldatei-Reservierung; der [exakte Request an R](../tools/modernized/parallel/machines/requests/R-01-machines-policy.json)
+liegt bei. Zentrale Dateien wurden nicht geändert. Die 22 Tests wurden gemäß
+Abschnitt 5 des Parallelvertrags manuell auf der eingefrorenen Phase-5-Basis
+ausgeführt; die kombinierte 24er-Suite mit R ist noch kein bestandener Nachweis.
+
+Originalverträge sind [quellgestützt](../tools/modernized/parallel/machines/evidence/original-contracts.json);
+G7 benötigt weiterhin den getrennten O-/JDK8-Messlauf. G8 folgt erst nach der
+geprüften Zusammenführung aller vier Lieferungen. Offene zentrale Requests
+und Gates halten den Code-PR im Draft; dies ist keine vollständige Port- oder
+Originalparitätsfreigabe.
+
+Die Produktion lief mit zwei echten Clients mindestens **606 s** gemeinsam
+(17:39:06–17:49:12 UTC). Batterieinventar in beide Richtungen, zwei Wassereimer,
+Tankmoduspaket, HE-/Fluidbilanz sowie RBMK- und echte Spielergranatenaktionen
+wurden geprüft. Beide Spieler wechselten in den Nether; drei entfernte
+Arenachunks waren nachweislich ungeladen. Nach Rückkehr übertrugen beide Netze
+auch in Gegenrichtung ohne Verlust. Zwei Dedicated-Serverstarts, jeweils mehr
+als 30 s nach `Done`, Save/Stop und Exit 0, bestätigen nach Neustart
+20.000.000 HE, 18.000 mB, unveränderte Inventare und 7.000 mB Wasser bei Druck 3
+im separaten Pumpenpuffer. Beide Clientmenüs zeigen erneut 18.000 mB.
+[Runtimebefund](../tools/modernized/parallel/machines/evidence/runtime-results.json)
+und Loghashes dokumentieren Grenzen und Messpunkte. Beim Resource-Reload
+treten bestehende Modell-/Texturfehler auf; der
+[Request an R](../tools/modernized/parallel/machines/requests/R-02-machines-client-assets.json)
+hält die vollständige G5-Darstellungsabnahme offen. Keine TPS-Garantie,
+Survival- oder Onlineauthentifizierungsabnahme aus diesen isolierten Kreativtests.
+
+Die nach Exit 0 erzeugte Einzelspieler-Weltkopie wurde mit derselben JAR
+geladen. Das echte Tankmenü und integrierte Serverabfragen bestätigen erneut
+20.000.000 HE, 18.000 mB, 7.000 mB Wasser bei Druck 3 und das unveränderte
+Spielerinventar; anschließend regulär gespeichert und zum Titel zurückgekehrt.
+Die Kopie erhält nur einen eigenen Weltnamen und aktivierte Prüfkommandos;
+die ursprüngliche Serverwelt bleibt unverändert. Die
+[Gateakte](../tools/modernized/parallel/machines/evidence/gates.json) hält
+bestandene Teilschritte und offene Abnahmen einzeln fest.

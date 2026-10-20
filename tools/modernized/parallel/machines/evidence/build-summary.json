@@ -1,0 +1,20 @@
+{
+  "code_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "forge": "47.4.23",
+  "build_jdk": "21.0.12.1+1",
+  "runtime_jdk": "17.0.20.1+1",
+  "gradle": "9.3.1",
+  "datagen_runs": 2,
+  "datagen_paths": 7952,
+  "datagen_manifest_sha256": "cc5e858c1c85e6f409141d2a1eaa558731001551b3cabb1182d307a7893c2700",
+  "production_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "required_tests": 22,
+  "existing_tests": 14,
+  "new_tests": 8,
+  "positive_passed": 22,
+  "negative_baseline_passed": 15,
+  "negative_baseline_failed": 7,
+  "full_logs_external": true,
+  "javadoc": "66 errors and 100 warnings tolerated by existing upstream build; not a passed Javadoc check",
+  "R_integration": "Not yet accepted; policy reservation request pending. These 22 tests use manual delivery on frozen Phase-5 basis, without R two new tests."
+}

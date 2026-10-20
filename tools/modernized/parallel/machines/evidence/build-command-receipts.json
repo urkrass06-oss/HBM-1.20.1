@@ -1,0 +1,115 @@
+[
+  {
+    "utc": "20261020T125718637326Z",
+    "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "cwd": "/workspace/hbm-check-machines/final-modernized",
+    "command": [
+      "./gradlew",
+      "--no-daemon",
+      "--console=plain",
+      "--max-workers=2",
+      "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+      "-Porg.gradle.java.installations.auto-download=false",
+      ":1.20.1-forge:runData",
+      "--stacktrace",
+      "-Pdeps.forge=47.4.23"
+    ],
+    "jdk21": "/workspace/hbm-check-machines/toolchains/jdk-21.0.12.1+1",
+    "jdk17": "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1",
+    "log": "/workspace/hbm-check-machines/accepted-production-logs/20261020T125718637326Z-runData.log",
+    "exit_code": 0,
+    "log_sha256": "ec0ed9b24821fd9a42dbed95f718def3f7a4f2eaf23aee343c223242a511e30d",
+    "log_bytes": 11356
+  },
+  {
+    "utc": "20261020T130010989271Z",
+    "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "cwd": "/workspace/hbm-check-machines/final-modernized",
+    "command": [
+      "./gradlew",
+      "--no-daemon",
+      "--console=plain",
+      "--max-workers=2",
+      "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+      "-Porg.gradle.java.installations.auto-download=false",
+      ":1.20.1-forge:runData",
+      "--stacktrace",
+      "-Pdeps.forge=47.4.23"
+    ],
+    "jdk21": "/workspace/hbm-check-machines/toolchains/jdk-21.0.12.1+1",
+    "jdk17": "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1",
+    "log": "/workspace/hbm-check-machines/accepted-production-logs/20261020T130010989271Z-runData.log",
+    "exit_code": 0,
+    "log_sha256": "8aff60effce96c19a428c8aa832b94f9f2df44d81ac1a0b9a6080ccfec2a4c19",
+    "log_bytes": 9793
+  },
+  {
+    "utc": "20261020T130122477077Z",
+    "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "cwd": "/workspace/hbm-check-machines/final-modernized",
+    "command": [
+      "./gradlew",
+      "--no-daemon",
+      "--console=plain",
+      "--max-workers=2",
+      "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+      "-Porg.gradle.java.installations.auto-download=false",
+      ":1.20.1-forge:build",
+      ":1.20.1-forge:sourcesJar",
+      "--stacktrace",
+      "-Pdeps.forge=47.4.23"
+    ],
+    "jdk21": "/workspace/hbm-check-machines/toolchains/jdk-21.0.12.1+1",
+    "jdk17": "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1",
+    "log": "/workspace/hbm-check-machines/accepted-production-logs/20261020T130122477077Z-build-sourcesJar.log",
+    "exit_code": 0,
+    "log_sha256": "5d467f618fa4d8cf6c51d160c718cbe54d08709395ba3355047af43c85fea0bb",
+    "log_bytes": 44678
+  },
+  {
+    "utc": "20261020T130422944630Z",
+    "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "cwd": "/workspace/hbm-check-machines/final-modernized",
+    "command": [
+      "./gradlew",
+      "--no-daemon",
+      "--console=plain",
+      "--max-workers=2",
+      "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+      "-Porg.gradle.java.installations.auto-download=false",
+      ":1.20.1-forge:runGameTestServer",
+      "--stacktrace",
+      "-Pdeps.forge=47.4.23",
+      "-Pmodernized.gameTests=true"
+    ],
+    "jdk21": "/workspace/hbm-check-machines/toolchains/jdk-21.0.12.1+1",
+    "jdk17": "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1",
+    "log": "/workspace/hbm-check-machines/accepted-gametest-logs/20261020T130422944630Z-runGameTestServer.log",
+    "exit_code": 0,
+    "log_sha256": "2a95a1f6e4d7f43bcb03d660d955ab7483321716117e7c9197b3d7a4cf17fb11",
+    "log_bytes": 30903
+  },
+  {
+    "utc": "20261020T125718683887Z",
+    "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "cwd": "/workspace/hbm-check-machines/modernized",
+    "command": [
+      "./gradlew",
+      "--no-daemon",
+      "--console=plain",
+      "--max-workers=2",
+      "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+      "-Porg.gradle.java.installations.auto-download=false",
+      ":1.20.1-forge:runGameTestServer",
+      "--stacktrace",
+      "-Pdeps.forge=47.4.23",
+      "-Pmodernized.gameTests=true"
+    ],
+    "jdk21": "/workspace/hbm-check-machines/toolchains/jdk-21.0.12.1+1",
+    "jdk17": "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1",
+    "log": "/workspace/hbm-check-machines/baseline-current-gametest-logs/20261020T125718683887Z-runGameTestServer.log",
+    "exit_code": 1,
+    "log_sha256": "9af46c81a40a48d6afbd9b8aa5ce1c68806bc0efffa158033b70fa2a029c8162",
+    "log_bytes": 56428
+  }
+]

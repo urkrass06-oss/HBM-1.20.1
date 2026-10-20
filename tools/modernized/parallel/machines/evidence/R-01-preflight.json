@@ -1,0 +1,8 @@
+{
+  "machines_commit": "78308f6698a3bbf9877bf940edac2e0486eb7e83",
+  "rendering_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "preflight": "blocked-exactly-at-missing-central-test-reservation",
+  "error": "Target outside owner's exact reservation: integration/src/gametest/java/com/hbm/integration/machines/MachineNetworkTests.java",
+  "writes_performed": false,
+  "policy_changed": false
+}

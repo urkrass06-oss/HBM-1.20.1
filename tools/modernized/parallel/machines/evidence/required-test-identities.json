@@ -1,0 +1,81 @@
+{
+  "expected_total": 22,
+  "sources": [
+    {
+      "source": "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java",
+      "class": "ModernizedIntegrationTests",
+      "methods": [
+        "registriesAndGeneratedRecipes",
+        "batteryLongEnergyAndInventoryRoundTrip",
+        "batteryTicksInServerWorld"
+      ],
+      "forge_ids": [
+        "registriesandgeneratedrecipes",
+        "batterylongenergyandinventoryroundtrip",
+        "batteryticksinserverworld"
+      ],
+      "prefix": false,
+      "required": true
+    },
+    {
+      "source": "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java",
+      "class": "ModernizedSystemsTests",
+      "methods": [
+        "highEnergyUnitMustFitIncludingRemainder",
+        "rbmkRequiresTheMatchingNearbyOpenMenu",
+        "forgeEnergyBoundsAndSimulation",
+        "wireTransfersEnergyWithoutLoss",
+        "energyManagerRunsOncePerLevelTick",
+        "rbmkIncrementalPacketAppliesColumns",
+        "fluidSimulationEquivalenceAndPersistence",
+        "tankMultiblockFormsAndPersists",
+        "rbmkControlAndEmergencyShutdown",
+        "rbmkPacketRejectsMalformedPayloads",
+        "rbmkPacketRejectsInvalidActionsAndNumbers"
+      ],
+      "forge_ids": [
+        "highenergyunitmustfitincludingremainder",
+        "rbmkrequiresthematchingnearbyopenmenu",
+        "forgeenergyboundsandsimulation",
+        "wiretransfersenergywithoutloss",
+        "energymanagerrunsonceperleveltick",
+        "rbmkincrementalpacketappliescolumns",
+        "fluidsimulationequivalenceandpersistence",
+        "tankmultiblockformsandpersists",
+        "rbmkcontrolandemergencyshutdown",
+        "rbmkpacketrejectsmalformedpayloads",
+        "rbmkpacketrejectsinvalidactionsandnumbers"
+      ],
+      "prefix": false,
+      "required": true
+    },
+    {
+      "source": "tools/modernized/parallel/machines/gametest/com/hbm/integration/machines/MachineNetworkTests.java",
+      "class": "MachineNetworkTests",
+      "methods": [
+        "capabilitiesInvalidateOnRemoval",
+        "singletonNetworkCanReconnect",
+        "valveUnloadReleasesNodeImmediately",
+        "pumpTransfersAreScheduledForSaving",
+        "splitMergePreservesAmounts",
+        "networkUnloadReloadConservesAmounts",
+        "networksAreDimensionLocal",
+        "pressureAndSubstanceStaySeparate"
+      ],
+      "forge_ids": [
+        "capabilitiesinvalidateonremoval",
+        "singletonnetworkcanreconnect",
+        "valveunloadreleasesnodeimmediately",
+        "pumptransfersarescheduledforsaving",
+        "splitmergepreservesamounts",
+        "networkunloadreloadconservesamounts",
+        "networksaredimensionlocal",
+        "pressureandsubstancestayseparate"
+      ],
+      "prefix": false,
+      "required": true
+    }
+  ],
+  "evidence": "All 22 required passed in accepted log. Baseline overlay source hashes and exact eight-method source hash are bound in accepted-inputs/area manifest. No test filter or exclusion used.",
+  "combined_R_suite_not_claimed": true
+}

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-20T17:35:38.339572+00:00",
+  "command": [
+    "/workspace/hbm-check-machines/toolchains/jdk-17.0.20.1+1/bin/java",
+    "-Dhttp.proxyHost=proxy",
+    "-Dhttp.proxyPort=8080",
+    "-Dhttps.proxyHost=proxy",
+    "-Dhttps.proxyPort=8080",
+    "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+    "-Dterminal.jline=false",
+    "-Dterminal.ansi=false",
+    "-XX:ActiveProcessorCount=2",
+    "-Xms256M",
+    "-Xmx1600M",
+    "@libraries/net/minecraftforge/forge/1.20.1-47.4.23/unix_args.txt",
+    "nogui"
+  ],
+  "cwd": "/workspace/hbm-check-machines/server-47.4.23",
+  "jar": "/workspace/hbm-check-machines/production-v2/hbm_m-0.2.1-phase5-dev+1.20.1-forge.jar",
+  "jar_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "forge": "47.4.23",
+  "bind": "127.0.0.1:42397",
+  "transcript": "/workspace/hbm-check-machines/server-47.4.23/m01-multiplayer.log",
+  "world": "machines-test-world",
+  "eula": "accepted-for-isolated-test",
+  "done": true,
+  "error_lines": [
+    "[17:36:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+  ],
+  "command_failure_lines": [],
+  "save_confirmed": true,
+  "startup_seconds": 165.748,
+  "exit_code": 0,
+  "duration_seconds": 831.706,
+  "environment_error_lines": [
+    "[17:36:04] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+  ],
+  "unexpected_error_lines": [],
+  "passed_start_save_stop": true
+}

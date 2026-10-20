@@ -1,0 +1,20 @@
+{
+  "baseline_sha256": "056beb76f3410d34aaf5553cfc5439e767c6b258e73edaa1366c66f05b6b77c3",
+  "candidate_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "entries": 16857,
+  "added": [
+    "com/hbm_m/blockentity/machines/FluidPumpBlockEntity$2.class"
+  ],
+  "removed": [],
+  "changed": [
+    "com/hbm_m/api/energy/EnergyNetwork$BatteryInfo.class",
+    "com/hbm_m/api/energy/EnergyNetwork.class",
+    "com/hbm_m/api/energy/WireBlockEntity.class",
+    "com/hbm_m/blockentity/machines/FluidPumpBlockEntity$1.class",
+    "com/hbm_m/blockentity/machines/FluidPumpBlockEntity.class",
+    "com/hbm_m/blockentity/machines/FluidValveBlockEntity.class",
+    "com/hbm_m/inventory/fluid/tank/FluidTank.class"
+  ],
+  "test_content": [],
+  "resources_unchanged": true
+}

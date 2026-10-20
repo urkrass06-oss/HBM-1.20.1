@@ -1,0 +1,14 @@
+[
+  {
+    "injected_entry": "MachineNetworkTests.class",
+    "rejected": true,
+    "reason": "Test content in production JAR: ['com/hbm/integration/machines/MachineNetworkTests.class']",
+    "jar_sha256": "a11f9a70a437d1c48e9f3a287e53466b89ea70e572ec11338f51b4207408d296"
+  },
+  {
+    "injected_entry": "MachineNetworkTests$Endpoint.class",
+    "rejected": true,
+    "reason": "Test content in production JAR: ['com/hbm/integration/machines/MachineNetworkTests$Endpoint.class']",
+    "jar_sha256": "9a47f41c6ae62e1151ce12d0d0dc6cf00e72ec7a3f92bc6b5dd9980866b2c3b1"
+  }
+]

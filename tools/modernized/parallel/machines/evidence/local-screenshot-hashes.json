@@ -1,0 +1,367 @@
+[
+  {
+    "file": "/workspace/hbm-check-machines/screens/arena-1.png",
+    "sha256": "4ee40782476c31cbdce3c4733c7f1f66aaa265d32b00e2965c5cd8a374dde809",
+    "bytes": 107452
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/arena-2.png",
+    "sha256": "2a0b8fc25b7f1080f03b51096f8d26872ef1077c8a236a031d0007ba96a5d5f7",
+    "bytes": 131449
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-insert-2.png",
+    "sha256": "718a7a4d87d98918cd907d9fb484514bb3fd2631d388f6b6abd87bfa6c697c4f",
+    "bytes": 66727
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-open-1.png",
+    "sha256": "6f7f53f3c6f01a17dc407a94808b97e4a7f7740cab014d784d86fe8ee3d9bdb1",
+    "bytes": 51507
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-open-2.png",
+    "sha256": "0377a395b49ccf97fa5fb7464a2fb464932c4fd0f94f43ac60045b72a4e71886",
+    "bytes": 68327
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-removed-1.png",
+    "sha256": "23ff8df2b323a6baf3ca44f692955fa44e64dcb45b9afe4548de5045ba658b89",
+    "bytes": 52667
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-roundtrip-1.png",
+    "sha256": "67822fdd7510574db4006b5bcae003636fe7e250e066bd343ac040dc537b7130",
+    "bytes": 52875
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/battery-roundtrip-2.png",
+    "sha256": "b87f2503e6fdf73c850dd14861bf5d28e9ab6933c7256d29b6d48f7c693f6769",
+    "bytes": 68472
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/before-save-1.png",
+    "sha256": "b0767d3da1efed8f17dbe11fa9ed51ab4341ab3890c4713947f8f292cd0efab4",
+    "bytes": 39656
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/before-save-2.png",
+    "sha256": "9b8a7c737f272af690181db182dcb77800add3d62cac7469940efa9ee760c261",
+    "bytes": 40324
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/built-1.png",
+    "sha256": "ba7fed989115161753e26995726386ca66614e039af651339d786541fb726602",
+    "bytes": 124559
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/connected-one.png",
+    "sha256": "c9feace42eb2c19f1643e2a68eff079c8ef9d4aedcfe21bfc0f1bc5baa5dd6ff",
+    "bytes": 16791
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/disconnected-1.png",
+    "sha256": "13d07fb3fb6f04b792eba99d15e7f64981e0dad8bff65e1bee7861a53e9016e5",
+    "bytes": 15566
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/disconnected-2.png",
+    "sha256": "c60ec2ef40ce487e896810e96170faae02829a4a0cdcc1a567864b2089d12347",
+    "bytes": 15553
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/grenade-after-1.png",
+    "sha256": "1591bd296dca8b56550b0817a07619e214355b3c952882ba638ff700847ee067",
+    "bytes": 38031
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/grenade-after-2.png",
+    "sha256": "f2daa9990f3e7400be9f733c1d427f36cbee81aff705a8e8dec8e8e32c2a979f",
+    "bytes": 64542
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/grenade-prep-1.png",
+    "sha256": "1808139749985059d0703f70a8eb1604b099daf83f650b2779e1357a5ea94ace",
+    "bytes": 37867
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/join-one.png",
+    "sha256": "789cc12e2113f31809b4dc9030a044b040fe614cf4a7c732156a8c287b36ca8d",
+    "bytes": 11514
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/join-two.png",
+    "sha256": "99bb588832c4896f9ecb0b4d27b56bbe0c2879d226671f959d536c4e3c086608",
+    "bytes": 15619
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/nether-1.png",
+    "sha256": "d4b6cb21e88466b3812af9c868a1418a7d5bf1c117296dc796fdbfe83e86f322",
+    "bytes": 94344
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/nether-2.png",
+    "sha256": "6b677715237aa752c7917c5570309a32a17073429089ebf2bb476071ab4f42aa",
+    "bytes": 93937
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/observation-8min-2.png",
+    "sha256": "9b8a7c737f272af690181db182dcb77800add3d62cac7469940efa9ee760c261",
+    "bytes": 40324
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/post-reload-battery-1.png",
+    "sha256": "92c8c3bb3ec03c26e1ba4af8b2d812e2567a84b36c7eddc6c2c14b346eca307f",
+    "bytes": 57655
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/post-reload-battery-2.png",
+    "sha256": "8a4718e53ee23c9582a44e527e465f0edf08074a4b1d15b07068f4a568b5030b",
+    "bytes": 64554
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/post-reload-source18000-1.png",
+    "sha256": "b0767d3da1efed8f17dbe11fa9ed51ab4341ab3890c4713947f8f292cd0efab4",
+    "bytes": 39656
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/post-reload-source18000-2.png",
+    "sha256": "9b8a7c737f272af690181db182dcb77800add3d62cac7469940efa9ee760c261",
+    "bytes": 40324
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/progress-one.png",
+    "sha256": "909adc4bc54bac05204b78d1e6283c68ea7fd49fc71fbe604b0e3364bed1b375",
+    "bytes": 19660
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/progress-two.png",
+    "sha256": "ad0e7efe4045a17f216ad4bc7db94183be89fcda81b1641d53ffe1c57e8f3bdd",
+    "bytes": 19927
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-added-live-1.png",
+    "sha256": "dafa36d6f26afa0939efae4118fb8ee02c14867cdc851447fe68b44c948ca433",
+    "bytes": 26823
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-added-live-2.png",
+    "sha256": "9eebc912011561e917615b4c12e8c5b30ee21c5bc0f79dad1eb0ccc7f29f51de",
+    "bytes": 30637
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-az5-client2-1.png",
+    "sha256": "48768cd9a672dd3219a71d9679af7ee63a5f59c3c0ad4217d337678de66bec44",
+    "bytes": 26737
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-az5-client2-2.png",
+    "sha256": "d90b1fa61c4729245fb6c3afc060e8ad8946fe6d31cc25a9b9f2ec449cb12b6c",
+    "bytes": 30536
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-open-1.png",
+    "sha256": "3be0fffb383d1c859a0efc4ccf337a57c0f83296ec03dd1410fa72656d7f3f3e",
+    "bytes": 24401
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-open-2.png",
+    "sha256": "571d0496b0ed4614b64554125c0fac71c6c7934ed5c095a1d4c09ea4b5f38be3",
+    "bytes": 28355
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-removed-live-1.png",
+    "sha256": "c5d394c4d7ea3d3a6ab3cd82b9515a8e0ee67f6f1b129b7eccd6720a3620e954",
+    "bytes": 24782
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk-removed-live-2.png",
+    "sha256": "147221b262ac70898fac6b0cd9a31ec2328e416639031b44e381a3d757e309a1",
+    "bytes": 28717
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk25-control-1.png",
+    "sha256": "f92b23eef08b9bd1c82f4bac2a14a33cd8c2a46f00967d652395105a9f702767",
+    "bytes": 26555
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rbmk25-control-2.png",
+    "sha256": "d9b4b84ea8db78f2468e56be57913b8decc42abfc4ae8ca2e073bb987d3a854b",
+    "bytes": 30557
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/reconnect-one.png",
+    "sha256": "96b980feb8112f798eaa46c973d179d1761efa6a3d422c7c4a3ba46274417119",
+    "bytes": 22450
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rejoin-1.png",
+    "sha256": "86436f0f39fb3b9c4fad6a935d27b6e403b152994c2a50d84972ffb13621aaca",
+    "bytes": 15971
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/rejoin-2.png",
+    "sha256": "86436f0f39fb3b9c4fad6a935d27b6e403b152994c2a50d84972ffb13621aaca",
+    "bytes": 15971
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/resource-reload-1.png",
+    "sha256": "d517b7aad6d253b6f2bf99d22b6e00300e3390186b89056a2cecf8d737db6f5d",
+    "bytes": 11681
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/restart-tank18000-1.png",
+    "sha256": "81580265638233656c1f3d11834322ae661b588ed04a2443c2c65e4aac369645",
+    "bytes": 40047
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/restart-tank18000-2.png",
+    "sha256": "1d862ef4a7154170f979637e10c0c316c422431bc0231c3961538e0a744c8dd1",
+    "bytes": 40654
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/restart-world-1.png",
+    "sha256": "4c60d3f97fd336ec015f0f96f54fbbd7cb9bd411e299dbb8187f29a8325ca8de",
+    "bytes": 60474
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/restart-world-2.png",
+    "sha256": "0c49285e424920660e4b1d23961a989f84c7e56bd80f09f6045f5c4ef5a73be2",
+    "bytes": 70958
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/reverse-tank-mode-1.png",
+    "sha256": "68939bd2dd12b638a3cd14ffaeb2df3120627702e531c793d419882b65c87e5b",
+    "bytes": 37433
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/reverse-tank-mode-2.png",
+    "sha256": "2a4f7c7e5c313d809f31d2ad9ccbe594c325131527a8757ccfa526f9106a8a13",
+    "bytes": 38575
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/server-list-1.png",
+    "sha256": "8ed6a949496055c3e0616124366e99b7ae0177eb80edccc946a8718cb370e536",
+    "bytes": 23969
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-list-1.png",
+    "sha256": "f7b9b4fb0d436846f0f2c40ce4c04755cd667af8222f91fb286480baa01df6f9",
+    "bytes": 30803
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-loading-1.png",
+    "sha256": "9166352d253c4dc9fb8087ce216116bda669596189c0e6b866cedcbaaf43badd",
+    "bytes": 58610
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-nbt-checkpoint-1.png",
+    "sha256": "eaf3f188821a6df3344955e1a64f0a7d609b8ee14dd55a6fda44ad7afe3b90ed",
+    "bytes": 73802
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-pause-1.png",
+    "sha256": "1384a54424376681942ca256f2d921994dba741d1f2cfbe4c8d543799f3d7be6",
+    "bytes": 55289
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-saving-1.png",
+    "sha256": "9678007f01a5dd18eeeb358368015b11154818eefb6b5076dd3ac62984f91742",
+    "bytes": 11530
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-start-1.png",
+    "sha256": "b465150242dc2ed14bdabd7a3aa8b7ce584bcfcc0e55e3068f8a2d452b50cbc4",
+    "bytes": 11721
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-tank18000-1.png",
+    "sha256": "81580265638233656c1f3d11834322ae661b588ed04a2443c2c65e4aac369645",
+    "bytes": 40047
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/singleplayer-title-1.png",
+    "sha256": "be8d4355fbec465bc224e34a6a2a2a443898ac8a257c3836168eff49c586a08e",
+    "bytes": 372893
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/start-one.png",
+    "sha256": "40572beb7019f95c665092d05c0adc2d5aa35aa337c3d56207b5aae67aa9f2b9",
+    "bytes": 8117
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/start-two.png",
+    "sha256": "ddc577af8017d70ab9eb4117213363366d2e6f3e4c962aeece07aa30823f031a",
+    "bytes": 8109
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-after-fill-1.png",
+    "sha256": "b0aa65aa32d2bc75779c1bba741ae72c15fe0cfed33e4a1c2cf2eeea6bcd4f5f",
+    "bytes": 37674
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-after-fill-2.png",
+    "sha256": "39bfac7d8c69cbc633786d5e9c0e1ce2db88b19bdbc1b92fade4aca274b915a2",
+    "bytes": 47320
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-bucket-correct-2.png",
+    "sha256": "72d48a181c67bcc98a072cd6333d392b18fd1d880c06ecd74ee9baedede3a417",
+    "bytes": 39573
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-first-bucket-2.png",
+    "sha256": "35f8b5ff4dcf86ccf40a9718649f376a70ff8273807a5971790a124107c245f2",
+    "bytes": 39131
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-mode0-1.png",
+    "sha256": "d0d222fb3720bf29d298469cacb567f0c141caa23354dc00ee9e5f7da498bc91",
+    "bytes": 37868
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-mode0-2.png",
+    "sha256": "1fd4c5e6a882a179055da29454a5b86632f222945f19c5cc925df5157a430079",
+    "bytes": 39589
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-open-1.png",
+    "sha256": "12465996d8102099b0890dbafaa7232337595308ddc066fe8c78c233c73f3abd",
+    "bytes": 37121
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-open-2.png",
+    "sha256": "35f8b5ff4dcf86ccf40a9718649f376a70ff8273807a5971790a124107c245f2",
+    "bytes": 39131
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/tank-second-bucket-1.png",
+    "sha256": "39654cdfaeae9d472e33e7c8f033d9c7aaa9b7eb14ca5af3fa4ea20925b6bdf0",
+    "bytes": 37880
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/target-tank18000-1.png",
+    "sha256": "f7b6685e3a973df266498bbc8730397984c38a7288cc73a6b3ae32f32cf2569f",
+    "bytes": 38304
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/target-tank18000-2.png",
+    "sha256": "7df857af1ae710a4e1ee1106f82a809f147154706acbbd407cf6fa842d72c9df",
+    "bytes": 40495
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/title-for-singleplayer-1.png",
+    "sha256": "19e9af6fb4474673793c75bfe9fe4f0c633b46726bddadeeadd4451126118430",
+    "bytes": 376015
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/waiting-persistence-1.png",
+    "sha256": "b0767d3da1efed8f17dbe11fa9ed51ab4341ab3890c4713947f8f292cd0efab4",
+    "bytes": 39656
+  },
+  {
+    "file": "/workspace/hbm-check-machines/screens/waiting-persistence-2.png",
+    "sha256": "9b8a7c737f272af690181db182dcb77800add3d62cac7469940efa9ee760c261",
+    "bytes": 40324
+  }
+]

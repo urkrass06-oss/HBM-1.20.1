@@ -14,8 +14,50 @@
     "review": "Exact small hunks and adjacent context reviewed against pinned source identities and origin histories; no full-file import.",
     "publication_status": "cleared"
   },
+  "evidence/R-01-preflight.json": {
+    "sha256": "5f679717ee80869b5b58d6b082e4b81f729cb3c94685cf98c2ea7da784d7e50a",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
   "evidence/README.md": {
-    "sha256": "90915ccaa75f5a0e12bb95a231b60731ba84edf866b7e301e36eb2788b2c0403",
+    "sha256": "89ac9919a17b5d093448e453d395c481849810026409cdce803ed2524b3fa34d",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/accepted-inputs.json": {
+    "sha256": "62742b7c546cdcfaefe4e5285ce0fa9f4a4c0c6221a815f05cf6f9b38569e062",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/accepted-jar-delta.json": {
+    "sha256": "ce264ef8dd8606b4074f872dc0820e78256cdcdaa6a8e2b76e1315e1663501a3",
     "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
     "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
     "authors": [
@@ -42,6 +84,174 @@
     "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
     "publication_status": "cleared"
   },
+  "evidence/baseline-current-inputs.json": {
+    "sha256": "a338c66cd173b57ef437b086ad0b2484b3d3ea4b5610d18560ff9d67a2d6b590",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/baseline-current-summary.json": {
+    "sha256": "f23b70a434d65d08f9eea6116020e29da8f7251fa815731b1ea9e0624cd314a1",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/build-command-receipts.json": {
+    "sha256": "06f9140d9180f8f1d7e228e29601a00f61d9169403850964fad439aaae2da283",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/build-result-excerpts.txt": {
+    "sha256": "24c8cfc5ea49ed3428149a0b80ad92b184e3cf58d4aaae471a29650fd63122e9",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/build-summary.json": {
+    "sha256": "dc3bddf11d6dc35641d23f12b0bfb3d9db7c7cd635bd9a8dd76ca18b95d25d8d",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/client-session-receipts.json": {
+    "sha256": "059962f242e94d087b32f13d61ed5f04f527d0bdfab6e4b6d682c69ee5d8fb9f",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/exploratory-runs.json": {
+    "sha256": "9a13587a2fc0f02b7a9edf8698134b7ada483ca8e0250705903de0e489c685fd",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/gates.json": {
+    "sha256": "428c62c18ffb2c9ed1753c555fb678dbd6f9cf54e6fab2109648152fc71ae517",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/jar-negative-probes.json": {
+    "sha256": "5b340fd4be7fb0a6c6e30e8472eafa250d23c9773c6d1bd615e942322ed0de8c",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/local-screenshot-hashes.json": {
+    "sha256": "012fad9c363910082c659e493b28575d9f816ad35eb73bead42ca11d5af561e3",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/m01-multiplayer.json": {
+    "sha256": "03f093b343658b4eef57a35e5577ca294ca880ee8169e16ae95bb3ca4c23681e",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/m01-reload.json": {
+    "sha256": "5d829d908f04490ecb27baabdf0936b865c615ed46466bcd1656b6e8a2044910",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
   "evidence/original-contracts.json": {
     "sha256": "18cd07ddf1c6aedcb74d34d2f5cdf1e97ad91bb3719f3e99fecdb98a431bbb40",
     "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
@@ -56,8 +266,92 @@
     "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
     "publication_status": "cleared"
   },
+  "evidence/patch-equivalence.json": {
+    "sha256": "f29f136a047fc99b303946357e68d7e2c344a75857e6de379718ab1530c8c63b",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
   "evidence/patch-notice.txt": {
     "sha256": "0adf4c224cc053a15be0bc929ec7e7bda82778b636efad21e125cc584d1f9f89",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/required-test-identities.json": {
+    "sha256": "6f65b7e5fdaf7d3e50ea405a3876e8ef4b2bb0fe4ce38973ee738d43190b5475",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/runtime-log-receipts.json": {
+    "sha256": "2e0a3cf366ae77bbc515ab5d2de37978a01f74a75e8f19232ad69eb5dae23f86",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/runtime-result-excerpts.txt": {
+    "sha256": "a82e207bcfe1cb520f4344cd8e7f14c3cc9a00e0cbb5d96848fd53c19ae12196",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/runtime-results.json": {
+    "sha256": "11ffd2877d210585b9deab1fa0919ba6d4bc690cb6a750a80b4b68a58f0f256f",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "evidence/singleplayer-copy.json": {
+    "sha256": "33f87e6061d0a8a3b8f51f5a5761672b7dd69eec2c0d53b4e2bb0d6e4adf696f",
     "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
     "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
     "authors": [
@@ -114,6 +408,20 @@
   },
   "requests/R-01-machines-tests.json": {
     "sha256": "e5e4c8b28a88e26fbd1c8b809b548deeec27552bef0411ae28a6607ab304b9e9",
+    "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
+    "authors": [
+      "HBM Complete Port contributors"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": [
+      "Own contribution, 2026-10-20. No approval of full Modernized sources, assets or binaries."
+    ],
+    "review": "Reviewed own text/source or identity facts and selected runtime observations; no credentials, game assets, screenshots, worlds or upstream source dumps.",
+    "publication_status": "cleared"
+  },
+  "requests/R-02-machines-client-assets.json": {
+    "sha256": "fc7f7ebd079c3d3cf72d00e1306f001ac1bd1cb43cbfd9158b753c81574add8e",
     "origin": "Independent contribution generated with Codex for the repository maintainer; own tests, tools, factual metadata or reviewed test observations, no game source/assets.",
     "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; new file has no upstream blob)",
     "authors": [

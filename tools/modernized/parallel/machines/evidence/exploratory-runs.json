@@ -1,0 +1,53 @@
+{
+  "classification": "Earlier failed development/probe runs, not accepted validation. Exact current test source red/green comparison is reported separately.",
+  "fixture_corrections": [
+    "Pressure fixtures must seed buffers internally; external Forge fill intentionally rejects pressure.",
+    "Reset previous arenas to avoid counting saved fixture inputs twice.",
+    "Wait within bounds for chunk promotion and asynchronous energy/fluid graph rebuild instead of premature fixed-tick assertions."
+  ],
+  "compiler_correction": "FluidTank onContentsChanged is public; an initial protected override in the pump probe failed compilation and was corrected before the accepted build.",
+  "runs": [
+    {
+      "log": "/workspace/hbm-check-machines/baseline-gametest-logs/20261020T074312660277Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "a1ea84214982cc6d0a19cabfc98b22839aa70b4ac6fc2df52e7ac9b2ebb2b026",
+      "bytes": 58732
+    },
+    {
+      "log": "/workspace/hbm-check-machines/fixed-first-three-logs/20261020T074956775085Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "062840ab2d6a8461c031fb9fb535c19d837c9ca6ecdd3e09dd040312d5609acd",
+      "bytes": 46241
+    },
+    {
+      "log": "/workspace/hbm-check-machines/fixed-four-logs/20261020T123230290521Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "2a920159da3eb6b187e82929e423e46bcd120db7342fa55eda35383334cd96dc",
+      "bytes": 47142
+    },
+    {
+      "log": "/workspace/hbm-check-machines/final-gametest-logs/20261020T124158554716Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "167323e63b76ec9a53fc708297560adedd3ca03a5f39af30d379f49784e6ef1e",
+      "bytes": 63638
+    },
+    {
+      "log": "/workspace/hbm-check-machines/unload-fix-pump-probe-logs/20261020T124652980689Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "74b1f5b4c86ba950bd4cc0a260cb8d9f528456c14c498db35b0e817e4e4b1405",
+      "bytes": 49183
+    },
+    {
+      "log": "/workspace/hbm-check-machines/pump-fix-rebuild-wait-logs/20261020T125042237358Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "93041285b2bf1220230b51b9fd571f1e44c11b8aa1357c79d817355284ace14c",
+      "bytes": 20237
+    },
+    {
+      "log": "/workspace/hbm-check-machines/pump-fix-rebuild-wait-logs-v2/20261020T125300184254Z-runGameTestServer.log",
+      "exit_code": 1,
+      "sha256": "0a7f7f4a7518f06bfdc7c216dc0f8570f85a957f03425bb0a1d0386a60d772fc",
+      "bytes": 49636
+    }
+  ]
+}

@@ -31,9 +31,13 @@ Datei und den Kontext der kleinen GPLv3-Deltas. Das ist keine Freigabe des
 gesamten Modernized-Bestands. Die neuen Tests und das Auditwerkzeug sind eigene
 Beiträge unter LGPL-3.0-only.
 
-Die serialisierte Bereichseinbindung ist als
-[M-01-R-01](../requests/R-01-machines-tests.json) an R übergeben. Bis zu deren
-Integration gilt die in `docs/PARALLEL_DEVELOPMENT.md` erlaubte gezielte Einbindung:
+R-01 wird unveränderlich an `c63be0f5bcf43ff1d1f8b4febb25f831a15fc047` / API `1`
+gebunden. Dessen strenger Loader akzeptiert Patchformat und Hashvertrag, verweigert
+aber die fehlende zentrale Reservierung der Testzieldatei. Der genaue
+[Policy-Request](../requests/R-01-machines-policy.json) bleibt offen; M hat keine
+zentrale Datei geändert. Der [ursprüngliche Auftrag](../requests/R-01-machines-tests.json)
+ist damit teilweise umgesetzt. Die folgenden tatsächlich ausgeführten Läufe nutzen
+die ausdrücklich erlaubte manuelle Lieferung auf der eingefrorenen Phase-5-Basis:
 
 ```bash
 # Aus dem Zielrepository, mit neuen externen Verzeichnissen und vollständigen JDKs.
@@ -92,9 +96,51 @@ aus einem vorher gescheiterten Lauf nicht erneut als Input gezählt werden.
 
 GameTests ersetzen weder zwei Produktionsclients noch Serverneustarts,
 Singleplayer-Weltkopie oder den Original-Lauf. Die O-Verträge und ihre Grenzen
-sind in [original-contracts.json ](original-contracts.json) dokumentiert;
+sind in [original-contracts.json](original-contracts.json) dokumentiert;
 es gibt keinen behaupteten Minecraft-1.7.10/JDK8-Messnachweis.
 
 Offene zentrale Requests benötigen einen konkreten R-Integrationscommit.
 Originalmessung und G8 nach den vier Bereichslieferungen bleiben eigene Gates.
 Ein noch blockierter PR bleibt gemäß dem Entwicklungsvertrag ein Draft.
+
+## Gemessener Stand
+
+Die bytegleichen fünf Produktionsquellen und die unveränderte Testquelle aus
+`9e436feb93eb15454f1da71d4686f51e68bfe9c6` bestehen **22/22 required GameTests**.
+Auf unveränderter Phase 5 scheitern mit exakt derselben Testquelle sieben neue
+Prüfungen; alle 14 alten bestehen. Zweimal Datagen ergibt 7.952 gleiche Pfade;
+`build sourcesJar` und Java-17-/Produktionspaketaudits bestehen. Die bekannten
+66 Javadocfehler / 100 Warnungen bleiben offen. Produktions-SHA256:
+`46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d`.
+
+[Buildbefund](build-summary.json), [Befehle und vollständige Loghashes](build-command-receipts.json),
+[ausgewählte Ergebniszeilen](build-result-excerpts.txt),
+[bytegleiche Patchresultate](patch-equivalence.json) und
+[Produktionsdelta](accepted-jar-delta.json) unterscheiden Ausgangsfehler, bestandenen
+Korrekturlauf und noch ausstehende zentrale Kombination. Vollständige Logs und
+Spielartefakte verbleiben im externen Prüfverzeichnis.
+
+Zwei echte Clients mit identischem Produktionshash waren mindestens **606 s**
+gemeinsam verbunden. Batterieinventar, je ein echter Wassereimer pro Client,
+Tankmoduspaket, HE-/Fluidtransfer, RBMK-Live-Spalte/Sollwert/Bildschirm/AZ-5
+und Spielergranate wurden bedient. Beide Spieler wechselten in den Nether;
+Vanilla bestätigte drei Arenachunks als ungeladen. Nach Rückkehr funktionierten
+auch die Gegenrichtungs-Transfers ohne Mengenänderung. Zwei Dedicated-Serverläufe
+endeten nach `Done`, Beobachtung, Save/Stop jeweils mit Exit 0; nach Neustart
+blieben Inventare, 20.000.000 HE, 18.000 mB und 7.000 mB Pumpenwasser bei Druck 3
+erhalten. Die Tankmenüs beider Clients bestätigten den Neustartstand.
+
+[Runtimebefund](runtime-results.json) und [ausgewählte Zustandsabfragen](runtime-result-excerpts.txt)
+enthalten die Messungen. Die vollständigen Logs und Screenshots bleiben extern;
+veröffentlicht werden nur geprüfte Textbefunde und Hashes. `F3+T` auf beiden
+Clients zeigte bestehende Modell-/Texturfehler, daher bleibt die vollständige
+G5-Darstellungsabnahme offen und liegt als [R-Request](../requests/R-02-machines-client-assets.json) vor.
+Offline-Loopback, Kreativfixtures und Software-Rendering sind keine Online-,
+Survival-, Modpack- oder TPS-Abnahme.
+
+Die nach sauberem Serverstop kopierte Welt wurde mit derselben Produktions-JAR
+im echten Einzelspieler geladen. Tankmenü und integrierte Serverabfragen
+bestätigten nochmals dieselben Mengen, Stoff, Druck und Inventare; anschließend
+`Save and Quit to Title`, alle Dimensionen gespeichert. Details der reinen
+Prüfkonfiguration stehen in [singleplayer-copy.json](singleplayer-copy.json).
+Die [Gateakte](gates.json) gibt keine pauschale Freigabe offener Gates.

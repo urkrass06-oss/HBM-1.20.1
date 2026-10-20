@@ -1,0 +1,36 @@
+{
+  "delivery_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "upstream_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+  "test_sha256": "c5798811ab4c7ffe9f5aeaeedeb043f5e5c751cfe4b7c1b0b593e95cd72223f8",
+  "area_manifest_sha256": "3bac1b18d5079c8b8bfa586eabd9fa64661717b9bd8f4741d638411cd745db65",
+  "patch_sha256": "b525859aea3e8e1f5e860d84ac523e67c80ea43af9bb21f1c140ccd4ceccba81",
+  "base_patches": {
+    "phase3_patch_sha256": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+    "phase4_patch_sha256": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+    "phase5_patch_sha256": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+  },
+  "forge": "47.4.23",
+  "sources": [
+    {
+      "path": "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
+      "sha256": "9a73429deaecbaf3df2506246d54b1dc1852cd71ad6e1d234b8aa3ca319701fb"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
+      "sha256": "d962dac9553e95250dcb8c970e82a6d748201f4b342b93c5de69620ad2b7dc9c"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java",
+      "sha256": "847b010bf431608cc8412c3442cf7f25040ca84dea4f813b116b5a33b421c8fe"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+      "sha256": "a37fb46c59add2fbdc266eb6e41d57421a83c42cbf063e7fb1297702af509f5c"
+    },
+    {
+      "path": "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
+      "sha256": "57263829294ec708a32cfa46c70eff8a6bdb4b3f97835fa62c53225efe2d26d7"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "delivery_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "test_sha256": "c5798811ab4c7ffe9f5aeaeedeb043f5e5c751cfe4b7c1b0b593e95cd72223f8",
+  "log": "/workspace/hbm-check-machines/baseline-current-gametest-logs/20261020T125718683887Z-runGameTestServer.log",
+  "log_sha256": "9af46c81a40a48d6afbd9b8aa5ce1c68806bc0efffa158033b70fa2a029c8162",
+  "log_bytes": 56428,
+  "gradle_exit": 1,
+  "required_count": 22,
+  "failed_methods": [
+    "capabilitiesinvalidateonremoval",
+    "singletonnetworkcanreconnect",
+    "valveunloadreleasesnodeimmediately",
+    "pumptransfersarescheduledforsaving",
+    "pressureandsubstancestayseparate",
+    "splitmergepreservesamounts",
+    "networkunloadreloadconservesamounts"
+  ],
+  "command": [
+    "./gradlew",
+    "--no-daemon",
+    "--console=plain",
+    "--max-workers=2",
+    "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME",
+    "-Porg.gradle.java.installations.auto-download=false",
+    ":1.20.1-forge:runGameTestServer",
+    "--stacktrace",
+    "-Pdeps.forge=47.4.23",
+    "-Pmodernized.gameTests=true"
+  ]
+}

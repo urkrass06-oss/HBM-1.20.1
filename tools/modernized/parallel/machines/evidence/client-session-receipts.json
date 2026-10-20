@@ -1,0 +1,33 @@
+[
+  {
+    "cwd": "/workspace/hbm-check-machines/client-one",
+    "jar_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+    "forge": "47.4.23",
+    "username": "HBMClientOne",
+    "server": "127.0.0.1:42397",
+    "display": ":99",
+    "offline_test_only": true,
+    "utc": "2026-10-20T17:35:49.581152+00:00",
+    "exit_code": 0,
+    "duration_seconds": 1159.779,
+    "launch_record_sha256": "d0428d16ee492d2e9df0531d58bb3b006fe45b7a98af62bc85563a2e1c6c44e0"
+  },
+  {
+    "cwd": "/workspace/hbm-check-machines/client-two",
+    "jar_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+    "forge": "47.4.23",
+    "username": "HBMClientTwo",
+    "server": "127.0.0.1:42397",
+    "display": ":100",
+    "offline_test_only": true,
+    "utc": "2026-10-20T17:35:50.075490+00:00",
+    "exit_code": 0,
+    "duration_seconds": 982.455,
+    "launch_record_sha256": "e00b80a8766451ec7e0a90d32069c42b48f9c9318213e990b5527870a9658409"
+  },
+  {
+    "ui_action_log": "/workspace/hbm-check-machines/ui-actions.jsonl",
+    "sha256": "1598d873d886baf13e009f93d0cc8f42e87fb14116e224975fdc54d75238888f",
+    "scope": "Real window events, not protocol bots or FakePlayers; local screenshots bind visual observations."
+  }
+]

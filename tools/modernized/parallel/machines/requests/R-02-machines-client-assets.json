@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "request_id": "M-01-R-02-CLIENT-ASSETS",
+  "from": "M",
+  "to": "R",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "status": "reported-not-fixed-in-machines-scope",
+  "production_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "runtime": "Forge 47.4.23 / Minecraft 1.20.1 / Java 17, two real software-rendered clients",
+  "triggers": [
+    "Initial client resource load",
+    "F3+T resource reload while connected"
+  ],
+  "findings": [
+    "Invalid uppercase and parenthesized resource paths (su47 trophy, Prototype model).",
+    "Missing hbm_m:block/ore_acidizer texture.",
+    "Failed to load hbm_m:models/block/bomb/nuke_prototype.json."
+  ],
+  "requested_action": "Review existing resource/model failures and provide rights-cleared replacements or reference fixes within R ownership. No asset bytes or renderer edits are included here.",
+  "acceptance": [
+    "Both real clients reload resources and reconnect without unexpected model/texture ERRORs.",
+    "Keep the M-01 network and inventory results unchanged."
+  ],
+  "evidence": "evidence/runtime-results.json",
+  "classification": "Observed existing resource failures; not proof that M-01 created them. All production resource entries are byte-identical to the Phase-5 baseline."
+}

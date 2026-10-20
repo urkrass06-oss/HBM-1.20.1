@@ -1,0 +1,76 @@
+{
+  "task": "M-01",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "tested_code_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "production_sha256": "46affa601e100d88cd1eb56cb990c6a82dca25a93d995c9544dae7961864307d",
+  "merge_ready": false,
+  "gates": {
+    "G1": {
+      "status": "scope-and-small-delta-rights-reviewed-central-reservation-pending",
+      "evidence": [
+        "source-rights.json",
+        "patch-equivalence.json",
+        "R-01-preflight.json"
+      ],
+      "open": "R owns central policy. Exact new GameTest destination still missing; requests/R-01-machines-policy.json. Whole Modernized/asset distribution remains unapproved."
+    },
+    "G2": {
+      "status": "passed-for-isolated-M-delivery",
+      "evidence": [
+        "build-summary.json",
+        "build-command-receipts.json",
+        "accepted-jar-delta.json",
+        "jar-negative-probes.json"
+      ],
+      "limits": "Known tolerated Javadoc failures remain; no full distribution or rendering approval."
+    },
+    "G3": {
+      "status": "22-of-22-required-passed-on-frozen-Phase5-with-manual-M-delivery",
+      "evidence": [
+        "required-test-identities.json",
+        "build-result-excerpts.txt",
+        "baseline-current-summary.json"
+      ],
+      "open": "Actual R loader policy rejects missing reservation. Fresh combined 24-test delivery with R two tests not yet executed."
+    },
+    "G4": {
+      "status": "passed-two-production-start-save-stop-exit0",
+      "evidence": [
+        "m01-multiplayer.json",
+        "m01-reload.json",
+        "runtime-result-excerpts.txt"
+      ],
+      "limits": "Each observed >=30s after Done; only documented offline-loopback Yggdrasil public-key fetch error excepted. Not online authentication."
+    },
+    "G5": {
+      "status": "machine-and-base-actions-passed-606-seconds-common-connection-rendering-open",
+      "evidence": [
+        "runtime-results.json",
+        "runtime-log-receipts.json",
+        "local-screenshot-hashes.json"
+      ],
+      "open": "Both resource reloads show existing model/texture failures; requests/R-02-machines-client-assets.json. No clean rendering approval."
+    },
+    "G6": {
+      "status": "passed-isolated-lifecycle-scenarios",
+      "evidence": [
+        "runtime-results.json",
+        "singleplayer-copy.json",
+        "runtime-result-excerpts.txt",
+        "build-result-excerpts.txt"
+      ],
+      "limits": "Actual unload, dimensions, reconnect, restart and actual singleplayer-copy load/save tested. Old capability references and dimension-local graphs checked in required GameTests; no forced chunks."
+    },
+    "G7": {
+      "status": "source-supported-only-runtime-comparison-open",
+      "evidence": [
+        "original-contracts.json"
+      ],
+      "open": "No separate original 1.7.10/JDK8 measurement. No original parity or balancing claim."
+    },
+    "G8": {
+      "status": "deferred-to-reviewed-four-area-integration",
+      "open": "Two-hour defined mixed machine/reactor/weapons run after all four reviewed deliveries; hardware/heap/tick/network metrics, real modpack and online authentication remain unmeasured."
+    }
+  }
+}

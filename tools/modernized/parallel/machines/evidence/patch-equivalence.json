@@ -1,0 +1,28 @@
+{
+  "tested_code_commit": "9e436feb93eb15454f1da71d4686f51e68bfe9c6",
+  "strict_patch_sha256": "0f42b1ef1702dfda441f46b5befc9465aa77ccd110133a69d340d36df0539909",
+  "format_only_change": "Removed metadata preamble, encoded empty context as identical remove/add lines, increased EnergyNetwork adjacent context from 3 to 4 lines for strict application. Five resulting sources are byte-identical to accepted build/test inputs.",
+  "apply_check_whitespace_error": true,
+  "result_files": [
+    {
+      "target": "src/main/java/com/hbm_m/api/energy/EnergyNetwork.java",
+      "sha256": "9a73429deaecbaf3df2506246d54b1dc1852cd71ad6e1d234b8aa3ca319701fb"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/api/energy/WireBlockEntity.java",
+      "sha256": "d962dac9553e95250dcb8c970e82a6d748201f4b342b93c5de69620ad2b7dc9c"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/blockentity/machines/FluidValveBlockEntity.java",
+      "sha256": "847b010bf431608cc8412c3442cf7f25040ca84dea4f813b116b5a33b421c8fe"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/inventory/fluid/tank/FluidTank.java",
+      "sha256": "a37fb46c59add2fbdc266eb6e41d57421a83c42cbf063e7fb1297702af509f5c"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/blockentity/machines/FluidPumpBlockEntity.java",
+      "sha256": "57263829294ec708a32cfa46c70eff8a6bdb4b3f97835fa62c53225efe2d26d7"
+    }
+  ]
+}

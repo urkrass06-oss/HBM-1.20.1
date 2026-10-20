@@ -1,0 +1,113 @@
+{
+  "changes.patch": {
+    "sha256": "9e99a8dd9d747701b08c958350c01c9e75d6ce7000a424be2581ca7f695faa16",
+    "origin": "Individually reviewed Modernized derivative delta, including context; per-target source/blob/history review in evidence/rights-review.json",
+    "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "authors": [
+      "Alex",
+      "Raptor",
+      "TRFFuchs",
+      "razchexlitiel"
+    ],
+    "license": "GPL-3.0 (Modernized root declaration; derivative delta only)",
+    "notices": "Preserved preface in evidence/PATCH-NOTICES.txt. Retain upstream GPL/LGPL/copyright notices; only reviewed derivative delta/context, never full-tree/assets/release clearance.",
+    "review": "All8source/preimage/result hashes, individual author histories and license chains retained in evidence/rights-review.json;50blankcontext substitutions replay to identical tested source bytes.",
+    "publication_status": "cleared"
+  },
+  "requests/R-01-test-profile.json": {
+    "sha256": "8ed7ebbc4cdf914eecde581a1f7ef56f20de3f8beea4030a5c0d6c5851439d6d",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "requests/R-02-runtime-ui.json": {
+    "sha256": "90b484b23b98a872118394c00721a100c4c69ec9ad5ebce14f8dbd856e362d19",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "evidence/rights-review.json": {
+    "sha256": "e84a311066fa9eccb20f6566d13f959a958021a13d16ffad8b38512a9b0b6d7e",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "evidence/PATCH-NOTICES.txt": {
+    "sha256": "5644addc51f3252e1169620d12d1e5f20630e991800093e72cbf237799c5c326",
+    "origin": "Preserved own authored license/copyright notice preface formerly in changes.patch; no upstream source or asset body",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "GPL-3.0 (notice accompanying reviewed Modernized derivative delta)",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Original attribution and GPL/LGPL preservation statements retained; detailed file chain in evidence/rights-review.json.",
+    "publication_status": "cleared"
+  },
+  "evidence/checks.json": {
+    "sha256": "c1ba924118e5c8bcd7f73dd51415a2f6843369f0615321e34df11ac010843026",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "evidence/README.md": {
+    "sha256": "fb57d3f5516fdf6f4a737495aff452d66962ce5339c781dbcbc7d4602f7ea6d9",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "gametest/com/hbm/integration/weapons/WeaponsTests.java": {
+    "sha256": "725d20e8012bb9b764804713101097250713cf964493770a2e5a5fe2280d1a88",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  },
+  "overlay/com/hbm_m/network/WeaponPacketAccess.java": {
+    "sha256": "1ed5da590de4a8fff76198e24caa8efcb78ee61e72dced8ee4f8cf1c58e74eb5",
+    "origin": "Own W-01 source/test or factual review/evidence/request metadata; no game asset or full upstream source body copied",
+    "source_commit": "997b15c9d60dd293e9c436663e90a95140ab13af (task basis; own contribution)",
+    "authors": [
+      "HBM Complete Port W-01 contribution via Codex / Agent B"
+    ],
+    "license": "LGPL-3.0-only",
+    "notices": "Retain SPDX headers on own Java; factual metadata references upstream identity/license without distributing assets or full sources.",
+    "review": "Own authored payload reviewed for file scope, source provenance, copied content and secrets; textual evidence/hashes only, no unreviewed image/binary/world bytes.",
+    "publication_status": "cleared"
+  }
+}

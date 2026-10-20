@@ -1,0 +1,7 @@
+W-01: server-authoritative weapon controls and grenade lifetime, 2026-10-20.
+Modernized derivative hunks: GPLv3; upstream notices retained.
+Authors of affected upstream files: Raptor, TRFFuchs, razchexlitiel, Alex.
+Original HBM behavioral references: The Bobcat (hbm) and contributors.
+Individual source identity, history and context review: evidence/rights-review.json.
+New test/helper source files retain their LGPL-3.0-only notices.
+No full source, asset, generated resource, world or binary import authorized.

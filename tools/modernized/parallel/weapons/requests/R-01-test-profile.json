@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "requester": "W / Agent B",
+  "owner": "R",
+  "task": "W-01",
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "requires_task": "R-01",
+  "dependency_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "api_version": "1",
+  "status": "R-01-delivered; pending-central-reservation-extension",
+  "request": "Apply the individually reviewed weapons patch after the unchanged Phase-3/4/5 basis; explicitly stage the listed production overlay and GameTest source. Keep all 14 baseline tests required and unchanged.",
+  "production_overlay": {
+    "source": "overlay/com/hbm_m/network/WeaponPacketAccess.java",
+    "target": "src/main/java/com/hbm_m/network/WeaponPacketAccess.java"
+  },
+  "test_overlay": {
+    "source": "gametest/com/hbm/integration/weapons/WeaponsTests.java",
+    "target": "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java",
+    "holder": "hbm_m",
+    "template": "hbm_m:empty",
+    "test_only": true,
+    "required_tests": [
+      "weaponPacketsRejectInvalidTargets",
+      "missileAssemblyRequiresItsMatchingMenu",
+      "radarRejectsWrongMenuAndKeepsLinkedScreenAccess",
+      "detonatorUsesHeldServerItemAndDimension",
+      "radarValidatesLoadedReceiverAndDetectedEntity",
+      "weaponDecodersBoundPayloads",
+      "grenadeHasOwnerAndOneDetonation",
+      "grenadeCollisionCannotDetonateTwiceReentrantly",
+      "grenadeFuseAndOwnerSurviveNbtRoundTrip",
+      "soyuzRequiresItsMatchingMenu"
+    ]
+  },
+  "registrations": [],
+  "client_renderer_changes": [],
+  "packaging_gate": "Reject com/hbm/integration/weapons/** and all area test structures in both the production runtime JAR and production sources JAR. Verify the one production entry point and retain all existing IDs/resources.",
+  "notices": "Retain LGPL notices on the original test/helper files; handle Modernized derivative patch hunks under GPLv3 and include the individual authors/source identity from evidence/rights-review.json (indexed by rights.json) in integration provenance. No game-source/assets/binaries are cleared for a full import or upload.",
+  "manual_staging": "Historical local24/24 and production runtime used explicit staging before consuming R-01. Current committed delivery now follows R-01 schema; authoritative integration stays blocked until R publishes the exact4reservation entries.",
+  "central_policy_request": {
+    "file": "tools/modernized/parallel/policy.json",
+    "base_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+    "operation": "Add these exact owner entries; preserve all existing owners/baseline hashes. W does not modify this R-owned file.",
+    "owners": {
+      "src/main/java/com/hbm_m/item/grenades_and_activators/MultiDetonatorItem.java": "weapons",
+      "src/main/java/com/hbm_m/blockentity/machines/MachineRadarBlockEntity.java": "weapons",
+      "src/main/java/com/hbm_m/network/WeaponPacketAccess.java": "weapons",
+      "integration/src/gametest/java/com/hbm/integration/weapons/WeaponsTests.java": "weapons"
+    },
+    "acceptance": "Select rendering@<R commit with these reservations> and weapons@<final delivery SHA>; authoritative preflight/apply must pass and all26required tests (14baseline+2R+10W) must run."
+  }
+}

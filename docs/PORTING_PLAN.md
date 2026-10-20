@@ -1,3 +1,7 @@
+# Fortschreibung: Modernized als technische Basis
+
+Phase 4 verwendet den fixierten Modernized-Stand als externe Integrationsbasis. Der folgende ursprüngliche Plan und sein vollständiger Originalumfang bleiben erhalten; die Architekturentscheidung wird durch [MODERNIZED_MIGRATION.md](MODERNIZED_MIGRATION.md) und den tatsächlichen [INTEGRATION_REPORT.md](INTEGRATION_REPORT.md) fortgeschrieben. Neue Funktionen und fehlende Originalfamilien werden dadurch nicht gestrichen oder als fertig markiert.
+
 # Portierungsplan: HBM 1.7.10 → Forge 1.20.1
 
 Stand: **19. Oktober 2026, P0-Inventur und Beginn des technischen P1-Grundgerüsts**. Der erste Planungs-PR enthält die statische Bestandsaufnahme und die [Feature-Matrix](FEATURE_MATRIX.md). Die Folgearbeit ergänzt ein Forge-Grundgerüst und einen begrenzten maschinenlesbaren Registrierungsbestand; Original-Spielfunktionen sind noch nicht implementiert. Der konkrete Prüfstand steht in [DEVELOPMENT.md](DEVELOPMENT.md); die [Datenverträge](DATA_CONTRACTS.md) bleiben ein unimplementierter Spezifikationsentwurf.

@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-19T21:37:06.378281+00:00",
+  "jar": "/workspace/scratch/modernized-phase4/modernized/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar",
+  "jar_sha256": "b14fd893931342c598b190ecef4a2e170b58bede6149e9ad14e7520381345627",
+  "forge": "1.20.1-47.4.20",
+  "installer_url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-installer.jar",
+  "installer_sha256": "0ebcf198609f925e0018842a79473ef74fda78534f86d82f2c0fdb26449c1fa4",
+  "download_command": [
+    "curl",
+    "--fail",
+    "--silent",
+    "--show-error",
+    "--location",
+    "--retry",
+    "2",
+    "--max-time",
+    "180",
+    "--output",
+    "/workspace/scratch/modernized-phase4/server-verified/forge-installer.jar",
+    "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.20/forge-1.20.1-47.4.20-installer.jar"
+  ],
+  "install_command": [
+    "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+    "-Dhttp.proxyHost=proxy",
+    "-Dhttp.proxyPort=8080",
+    "-Dhttps.proxyHost=proxy",
+    "-Dhttps.proxyPort=8080",
+    "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+    "-jar",
+    "/workspace/scratch/modernized-phase4/server-verified/forge-installer.jar",
+    "--installServer"
+  ],
+  "bind": "127.0.0.1:57791",
+  "eula": "accepted-for-isolated-test",
+  "runs": [
+    {
+      "utc": "2026-10-19T21:37:06.422612+00:00",
+      "command": [
+        "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1/bin/java",
+        "-Dhttp.proxyHost=proxy",
+        "-Dhttp.proxyPort=8080",
+        "-Dhttps.proxyHost=proxy",
+        "-Dhttps.proxyPort=8080",
+        "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts",
+        "-Xms512M",
+        "-Xmx3G",
+        "@libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt",
+        "nogui"
+      ],
+      "cwd": "/workspace/scratch/modernized-phase4/server-verified",
+      "transcript": "/workspace/scratch/modernized-phase4/server-verified/server-1.log",
+      "done": true,
+      "startup_seconds": 63.83,
+      "observed_seconds": 30,
+      "save_confirmed": true,
+      "exit_code": 0,
+      "error_lines": [
+        "[21:37:20] [Worker-Main-1/ERROR] [minecraft/TagLoader]: Couldn't load tag minecraft:placeable as it is missing following references: hbm_m:bober1 (from hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar)",
+        "[21:37:24] [Yggdrasil Key Fetcher/ERROR] [mojang/YggdrasilServicesKeyInfo]: Failed to request yggdrasil public key"
+      ],
+      "passed": false
+    }
+  ]
+}

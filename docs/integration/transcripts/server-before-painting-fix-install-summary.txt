@@ -1,0 +1,29 @@
+# Selected installer output; full log: /workspace/scratch/modernized-phase4/server-verified/install.log
+# Full-log SHA256: e6bbc3095e517acbaf20ff09af122487a7aa577fc757ee2a7dadd7fea8a33c0a
+# First 8 and final 16 lines follow; intervening per-class patch output omitted.
+JVM info: Eclipse Adoptium - 17.0.20.1 - 17.0.20.1+1
+java.net.preferIPv4Stack=true
+Current Time: 19/10/2026 21:36:49
+Host: files.minecraftforge.net [172.67.161.211, 104.21.58.163]
+Host: maven.minecraftforge.net [104.21.58.163, 172.67.161.211]
+Host: libraries.minecraft.net [150.171.110.210]
+Host: launchermeta.mojang.com [150.171.110.210]
+Host: piston-meta.mojang.com [150.171.110.211]
+
+# [... per-class patch listing omitted ...]
+  Patching net/minecraft/client/gui/screens/MenuScreens 1/1
+  Patching net/minecraft/client/gui/screens/TitleScreen 1/1
+  Patching net/minecraft/client/main/Main$2 1/1
+  Patching net/minecraft/client/main/Main$1 1/1
+  Patching net/minecraft/client/gui/screens/worldselection/WorldCreationUiState 1/1
+  Patching net/minecraft/client/server/LanServerPinger 1/1
+  Patching net/minecraft/client/main/Main$3 1/1
+  Patching net/minecraft/client/particle/BreakingItemParticle 1/1
+  Patching net/minecraft/client/resources/model/SimpleBakedModel 1/1
+  Patching com/mojang/blaze3d/platform/GlStateManager 1/1
+  Patching net/minecraft/client/multiplayer/MultiPlayerGameMode 1/1
+  Patching net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen$ItemPickerMenu 1/1
+  Patching net/minecraft/client/renderer/entity/ItemRenderer 1/1
+  Patching com/mojang/blaze3d/vertex/VertexFormatElement$Usage$SetupState 1/1
+The server installed successfully
+You can delete this installer file now if you wish

@@ -1,5 +1,7 @@
 # Modernized: Herkunfts- und Lizenzcheckliste vor dem Import
 
+**Fortschreibung Phase 4:** [INTEGRATION_REPORT.md](INTEGRATION_REPORT.md), [Importmanifest](integration/import-manifest.json) und [Rechteprüfung](integration/rights-review.json) dokumentieren die neue Prüfung. Drei Lizenztexte werden unverändert übernommen; MixinConstraints 1.1.0 ist über 19/19 bytegleiche Java-Quellen einem Commit samt MIT-Copyrighttext zugeordnet. Architecturys exakter Release-Gitstand und die wesentlichen Spielcode-/Assetherkunftsfragen bleiben offen. Deshalb findet die vollständige Integration ausschließlich extern statt; keine allgemeine Import- oder Binärfreigabe. Der folgende Phase-3-Stand bleibt als historischer Prüfstand erhalten.
+
 Stand: **19. Oktober 2026 (UTC)**. Diese Checkliste bereitet einen späteren, gesonderten Import vor. **Es wird hier kein Spielquellcode oder Assetbestand übernommen und keine pauschale Rechtefreigabe erteilt.** Der technische Prüfstand steht im [Build-Bericht](MODERNIZED_BUILD_REPORT.md); die fachlichen Anforderungen bleiben in [Vergleich](MODERNIZED_COMPARISON.md), [Migrationsplan](MODERNIZED_MIGRATION.md) und [Feature-Matrix](FEATURE_MATRIX.md) erhalten.
 
 ## 1. Verbindliche Quellen

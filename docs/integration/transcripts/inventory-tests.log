@@ -1,0 +1,17 @@
+test_dirty_java_fails_before_reading_sources (test_inventory_original.ParserTests.test_dirty_java_fails_before_reading_sources) ... ok
+test_duplicate_names_are_preserved (test_inventory_original.ParserTests.test_duplicate_names_are_preserved) ... ok
+test_entity_defaults_explicit_velocity_hex_and_unresolved_range (test_inventory_original.ParserTests.test_entity_defaults_explicit_velocity_hex_and_unresolved_range) ... ok
+test_malformed_and_structural_unicode_inputs_fail (test_inventory_original.ParserTests.test_malformed_and_structural_unicode_inputs_fail) ... ok
+test_multiline_comments_strings_and_nested_argument_boundaries (test_inventory_original.ParserTests.test_multiline_comments_strings_and_nested_argument_boundaries) ... ok
+test_tile_aliases_unresolved_values_and_helper_order (test_inventory_original.ParserTests.test_tile_aliases_unresolved_values_and_helper_order) ... ok
+test_unreachable_tile_put_is_not_silently_dropped (test_inventory_original.ParserTests.test_unreachable_tile_put_is_not_silently_dropped) ... ok
+test_unsupported_else_is_not_mislabelled_unconditional (test_inventory_original.ParserTests.test_unsupported_else_is_not_mislabelled_unconditional) ... ok
+test_wrong_commit_fails_before_write (test_inventory_original.ParserTests.test_wrong_commit_fails_before_write) ... ok
+test_alias_conflict_condition_tracking_and_linkage (test_inventory_original.PinnedOriginalTests.test_alias_conflict_condition_tracking_and_linkage) ... ok
+test_exact_declaration_coverage_and_literal_resolution (test_inventory_original.PinnedOriginalTests.test_exact_declaration_coverage_and_literal_resolution) ... ok
+test_source_hashes_and_committed_artifact_match (test_inventory_original.PinnedOriginalTests.test_source_hashes_and_committed_artifact_match) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 3.518s
+
+OK

@@ -1,0 +1,83 @@
+{"utc": "20261019T213436314206Z", "upstream": "0365cef5956016913095eeeb9366f26c601ca9a0", "cwd": "/workspace/scratch/modernized-phase4/modernized", "command": ["./gradlew", "--no-daemon", "--console=plain", "--max-workers=2", "-Porg.gradle.java.installations.fromEnv=JAVA_HOME,JAVA17_HOME", "-Porg.gradle.java.installations.auto-download=false", ":1.20.1-forge:runData", "--stacktrace"], "jdk21": "/workspace/scratch/modernized-phase4/toolchains/jdk-21.0.12.1+1", "jdk17": "/workspace/scratch/modernized-phase4/toolchains/jdk-17.0.20.1+1", "log": "/workspace/scratch/modernized-phase4/logs/20261019T213436314206Z-runData.log"}
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Running Stonecutter 0.8
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+> Task :1.20.1-forge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :1.20.1-forge:stonecutterPrepare UP-TO-DATE
+> Task :1.20.1-forge:stonecutterGenerate UP-TO-DATE
+> Task :1.20.1-forge:createMinecraftArtifacts UP-TO-DATE
+> Task :1.20.1-forge:kspKotlin UP-TO-DATE
+> Task :1.20.1-forge:compileKotlin NO-SOURCE
+> Task :1.20.1-forge:compileJava UP-TO-DATE
+> Task :1.20.1-forge:processResources
+> Task :1.20.1-forge:classes
+> Task :1.20.1-forge:downloadAssets UP-TO-DATE
+> Task :1.20.1-forge:writeDataLegacyClasspath UP-TO-DATE
+> Task :1.20.1-forge:prepareDataRun UP-TO-DATE
+
+> Task :1.20.1-forge:runData
+Picked up JAVA_TOOL_OPTIONS: "-Dhttp.proxyHost=proxy" "-Dhttp.proxyPort=8080" "-Dhttps.proxyHost=proxy" "-Dhttps.proxyPort=8080" "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
+2026-10-19 21:35:00,416 main WARN Advanced terminal features are not available in this environment
+[21:35:00] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, /workspace/scratch/modernized-phase4/gradle-home/caches/neoformruntime/assets, --gameDir, ., --fml.forgeVersion, 47.4.20, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, mixins.hbm_m.json, --mod, hbm_m, --all, --output, /workspace/scratch/modernized-phase4/modernized/src/generated/resources, --existing, /workspace/scratch/modernized-phase4/modernized/src/main/resources]
+[21:35:00] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.18.55
+[21:35:00] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[21:35:00] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23175!/ Service=ModLauncher Env=CLIENT
+[21:35:00] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.20/e8cc697c69f3911e76caa2f005d9486597cd7448/fmlcore-1.20.1-47.4.20.jar is missing mods.toml file
+[21:35:00] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.20/c354b21002937b393c4f86163a98dccdf1d51e72/javafmllanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[21:35:00] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.20/865d75f8c18329ddb31db5856701ab86609108b5/lowcodelanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[21:35:00] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /workspace/scratch/modernized-phase4/gradle-home/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.20/af599930362212ae937e392709f49047e6abbbf/mclanguage-1.20.1-47.4.20.jar is missing mods.toml file
+[21:35:00] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[21:35:03] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[21:35:03] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, /workspace/scratch/modernized-phase4/gradle-home/caches/neoformruntime/assets, --assetIndex, 5, --mod, hbm_m, --all, --output, /workspace/scratch/modernized-phase4/modernized/src/generated/resources, --existing, /workspace/scratch/modernized-phase4/modernized/src/main/resources]
+[21:35:03] [main/WARN] [mixin/]: Reference map 'mixins.hbm_m.refmap.json' for mixins.hbm_m.json could not be read. If this is a development environment you can ignore this message
+[21:35:03] [main/INFO] [mixin/]: Remapping refMap architectury-forge-refmap.json using /workspace/scratch/modernized-phase4/modernized/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[21:35:03] [main/INFO] [mixin/]: Remapping refMap architectury-common-refmap.json using /workspace/scratch/modernized-phase4/modernized/versions/1.20.1-forge/build/moddev/artifacts/intermediateToNamed.srg
+[21:35:04] [main/INFO] [ne.mi.da.lo.DatagenModLoader/]: Initializing Data Gatherer for mods [hbm_m]
+[21:35:08] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.20, for MC 1.20.1 with MCP 20230612.114412
+[21:35:08] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.20 Initialized
+[21:35:08] [modloading-worker-0/INFO] [co.hb.ma.MainRegistry/]: Initializing Hbm's Nuclear Tech Mod Modernized
+[21:35:09] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering S2C receiver with id architectury:sync_ids
+[21:35:09] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[21:35:11] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase4/modernized/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar%23177!/assets/.mcassetsroot' uses unexpected schema
+[21:35:11] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/workspace/scratch/modernized-phase4/modernized/versions/1.20.1-forge/build/moddev/artifacts/forge-1.20.1-47.4.20.jar%23177!/data/.mcassetsroot' uses unexpected schema
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:block mod id hbm_m
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:block mod id hbm_m finished after 194 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Recipes
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Recipes finished after 160 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Loot Tables
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Loot Tables finished after 246 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:item mod id hbm_m
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:item mod id hbm_m finished after 17 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Registries
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Registries finished after 11 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Tags for minecraft:damage_type mod id hbm_m
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Tags for minecraft:damage_type mod id hbm_m finished after 2 ms
+[21:35:11] [main/INFO] [minecraft/DataGenerator]: Starting provider: Block States: hbm_m
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Block States: hbm_m finished after 496 ms
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Starting provider: Item Models: hbm_m
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Item Models: hbm_m finished after 291 ms
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Starting provider: Languages: ru_ru
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Languages: ru_ru finished after 18 ms
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Starting provider: Languages: en_us
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: Languages: en_us finished after 15 ms
+[21:35:12] [main/INFO] [minecraft/DataGenerator]: All providers took: 1462 ms
+[21:35:12] [main/INFO] [minecraft/HashCache]: Caching: total files: 7952, old count: 7987, new count: 7953, removed stale: 0, written: 0
+
+[Incubating] Problems report is available at: file:///workspace/scratch/modernized-phase4/modernized/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 36s
+14 actionable tasks: 2 executed, 12 up-to-date

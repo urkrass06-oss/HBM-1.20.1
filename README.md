@@ -2,7 +2,9 @@
 
 Ziel ist eine möglichst vollständige, originalgetreue Portierung von [Hbm's Nuclear Tech Mod für Minecraft 1.7.10](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT) auf **Minecraft 1.20.1 mit Forge**. Maßgeblich sind Inhalt, Spielmechanik, Progression, Rezepte, Simulation und Darstellung des Originals. Neue Funktionen haben gegenüber Originaltreue keine Priorität.
 
-**Stand: technisches Grundgerüst in Entwicklung.** Das Projekt enthält einen Forge-Mod-Einstieg mit leeren Block-/Item-Registern und getrennter Clientinitialisierung. Es enthält noch keine portierten Spielfunktionen und ist keine spielbare HBM-Portierung. Die Originalquellen werden separat und unverändert untersucht; die erste maschinenlesbare Inventur erfasst die Entity- und TileEntity-Mappingtabellen.
+**Stand: Phase 4, externe Modernized-Integration in Entwicklung.** Als technische Basis wird HBM Modernized am Commit `0365cef5956016913095eeeb9366f26c601ca9a0` mit Minecraft **1.20.1**, Forge **47.4.20** und zunächst **`hbm_m`** integriert. Wegen offener Asset- und Herkunftsfragen verbleiben vollständiger Quellbestand, Ressourcen und Test-JARs in einem externen Checkout. Dieses Repository enthält die reproduzierbare Integration, geprüfte Lizenztexte und Testbelege. Es ist kein fertiges Release und keine vollständig originalgetreue Portierung.
+
+Das historische Root-Grundgerüst mit leeren Registern bleibt erhalten. Dessen JAR ist kein Modernized-Integrationsartefakt. Der aktive Aufbau und seine Befehle stehen unter [modernized/](modernized/README.md); der tatsächliche Teststand steht im [Buildstatus](docs/BUILD_STATUS.md).
 
 ## Verbindliche Originalreferenz
 
@@ -24,10 +26,13 @@ Die Version stammt aus [`gradle.properties`](https://github.com/HbmMods/Hbm-s-Nu
 - [Entwicklung und Validierung](docs/DEVELOPMENT.md): festgelegte Werkzeuge, Build, Entwicklungsstarts und belegter Prüfstand.
 - [Datenverträge](docs/DATA_CONTRACTS.md): Spezifikationsentwurf für IDs, Speicherformate, Einheiten und Netzwerk; noch keine implementierten Verträge.
 - [Registrierungsinventar](docs/inventory/registrations.json): aus dem fixierten Original erzeugter statischer Teilbestand mit Quellankern und Grenzen.
+- [Integrationsbericht](docs/INTEGRATION_REPORT.md), [Buildstatus](docs/BUILD_STATUS.md) und [offene Punkte](docs/REMAINING_ISSUES.md): Phase 4, Herkunft, Reproduktion, JAR-Pfad/Hash und ausgeführte Tests.
 
 ## Voraussetzungen
 
-Benötigt werden **JDK 17**, Git und eine Internetverbindung für die Buildabhängigkeiten; eine Java-IDE ist optional. Der Build verwendet **Forge 47.4.10**, **ForgeGradle 6.0.54** und den mit SHA256 abgesicherten **Gradle-8.8-Wrapper**. Ein separat installiertes Gradle wird nicht benötigt. Python 3.10 oder neuer wird nur für das Inventurwerkzeug benötigt.
+Für die aktive Modernized-Integration werden vollständige **JDKs 21 und 17**, Git, Python 3.10 oder neuer und eine Internetverbindung benötigt. [modernized/README.md](modernized/README.md) beschreibt die Vorbereitung mit `tools/integrate_modernized.py`; danach laufen die Forge-Tasks mit `tools/modernized_build.py`. Die neue CI prüft diesen externen Build ohne Quell-/Asset-/JAR-Uploads.
+
+Die folgenden Root-Befehle gelten ausschließlich für das erhaltene historische Foundation-Gerüst (**JDK 17**, **Forge 47.4.10**, **ForgeGradle 6.0.54**, **Gradle 8.8**):
 
 ```bash
 ./gradlew build
@@ -41,13 +46,13 @@ Für spätere Vergleichstests wird eine getrennte Originalinstallation mit **JDK
 
 ## Technische Referenzen
 
-[HBM Rebirth](https://github.com/10MeV/HBM-NTM-Rebirth) und [HBM Modernized](https://github.com/Raptor324/HBM-Modernized) dienen ausschließlich zum Verständnis moderner Forge-Techniken. Ihre Erweiterungen, Balanceänderungen oder ausgelassenen Originalfunktionen definieren den Umfang dieses Ports nicht. Geprüfte Referenzcommits und Regeln zur Quellenherkunft stehen im [Portierungsplan](docs/PORTING_PLAN.md).
+[HBM Modernized](https://github.com/Raptor324/HBM-Modernized) ist die technische Integrationsbasis. [HBM Rebirth](https://github.com/10MeV/HBM-NTM-Rebirth) bleibt eine technische Referenz. Erweiterungen, Balanceänderungen oder ausgelassene Originalfunktionen dieser Projekte definieren den Umfang dieses Ports nicht. Geprüfte Referenzcommits und Regeln zur Quellenherkunft stehen im [Portierungsplan](docs/PORTING_PLAN.md).
 
 ## Lizenz und Herkunft
 
 Das Original erklärt in seiner [README](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/README.md#license) **GNU LGPL Version 3**. [`LICENSE`](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE) enthält den GPLv3-Basistext, [`LICENSE.LESSER`](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/blob/aee05a40f10fb7bb9b042b65eccaa449ecc1672d/LICENSE.LESSER) die LGPLv3-Zusatzbedingungen; beide gehören zusammen. Urheber- und Lizenzvermerke des Originals und seiner Mitwirkenden sind bei einer Übernahme zu erhalten.
 
-Die neu geschriebenen Java-Grundgerüstdateien und Python-Inventurwerkzeuge stehen unter **LGPL-3.0-only**; die zugehörigen Texte liegen als [LICENSE](LICENSE) und [LICENSE.LESSER](LICENSE.LESSER) unverändert aus dem fixierten Original bei. Original-Spiellogik und Spielassets wurden noch nicht übernommen. Buildwerkzeuge haben eigene Bedingungen: Die Forge-MDK- und Gradle-Lizenz-/Urhebertexte liegen getrennt unter [third_party_licenses](third_party_licenses/). Die Herkunft ist in [DEVELOPMENT.md](docs/DEVELOPMENT.md) dokumentiert.
+Die neu geschriebenen Java-Grundgerüstdateien und Python-Inventurwerkzeuge stehen unter **LGPL-3.0-only**; die zugehörigen Texte liegen als [LICENSE](LICENSE) und [LICENSE.LESSER](LICENSE.LESSER) unverändert aus dem fixierten Original bei. Die externe Modernized-Gesamtintegration unterliegt **GPLv3**; bestehende LGPL-Dateivermerke bleiben erhalten. Modernized-Spielquellen und Assets werden in diesem PR nicht öffentlich importiert. Die tatsächlich übernommenen Lizenztexte stehen mit Herkunft/Hashes im [Importmanifest](docs/integration/import-manifest.json). Weitere Forge-/Gradle-Vermerke liegen unter [third_party_licenses](third_party_licenses/).
 
 Vor späterer Übernahme und Veröffentlichung sind Quellherkunft, Änderungen und Pflichten zur Bereitstellung des entsprechenden Quellcodes zu dokumentieren. Ein Java-`sources.jar` allein enthält nicht automatisch Buildskripte und alle benötigten Vermerke; veröffentlichte Versionen benötigen einen passenden vollständigen Quellstand. Mitgelieferte Drittanbieter-APIs und einzelne Assets benötigen eine eigene Herkunftsprüfung: Die CoFH-API enthält Team-CoFH-Copyrightvermerke, aber in den untersuchten Dateien keinen separaten ausdrücklichen Lizenztext. Auch Rebirth und Modernized haben eigene Lizenzbedingungen; eine technische Referenz ist keine pauschale Freigabe zur Code- oder Assetübernahme.
 

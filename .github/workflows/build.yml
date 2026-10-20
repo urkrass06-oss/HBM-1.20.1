@@ -1,4 +1,4 @@
-name: Build and original inventory
+name: Historical foundation and original inventory
 
 on:
   push:
@@ -46,5 +46,5 @@ jobs:
           python3 -m unittest discover -s tools -p 'test_inventory_original.py' -v
           python3 tools/inventory_original.py --source "$HBM_ORIGINAL_SOURCE" --check
 
-      - name: Build mod and Java source archive
+      - name: Build historical foundation (not the Modernized integration artifact)
         run: ./gradlew --no-daemon build sourcesJar

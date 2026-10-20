@@ -1,0 +1,29 @@
+{
+  "jar": "/workspace/scratch/modernized-phase4/integrated/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar",
+  "bytes": 44924417,
+  "sha256": "ba2be84cf560bb0eb6f145a4477c4a2098d18fa8c671378fcd081a9f416c64e9",
+  "classes": {
+    "61": 1915
+  },
+  "mod_annotation_holders": [
+    "com/hbm/HbmPort.class"
+  ],
+  "test_entries": [],
+  "source_jar": [
+    {
+      "path": "/workspace/scratch/modernized-phase4/integrated/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge-javadoc.jar",
+      "bytes": 7521764,
+      "sha256": "8ee7045ce8f62df70f4a6267dc8b6f3bc82a59b6397e2d020489a28e604078f6"
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase4/integrated/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge-sources.jar",
+      "bytes": 41977095,
+      "sha256": "ac83f5e3726a52435189ae9e97729e6615386e8ab3fb7946285e267729eb5b5c"
+    },
+    {
+      "path": "/workspace/scratch/modernized-phase4/integrated/versions/1.20.1-forge/build/libs/hbm_m-0.2.1-phase4-dev+1.20.1-forge.jar",
+      "bytes": 44924417,
+      "sha256": "ba2be84cf560bb0eb6f145a4477c4a2098d18fa8c671378fcd081a9f416c64e9"
+    }
+  ]
+}

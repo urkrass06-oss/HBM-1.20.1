@@ -1,3 +1,7 @@
+# Aktueller Integrationsbuild (Phase 4)
+
+Die folgenden bisherigen Root-Buildangaben bleiben als Foundation-Nachweis erhalten. Der aktive Modernized-Aufbau läuft getrennt mit Forge **47.4.20**, JDK **21** für Gradle und Java **17** für Minecraft unter `hbm_m`. Einstieg: [modernized/README.md](../modernized/README.md). Ergebnisse und Grenzen: [INTEGRATION_REPORT.md](INTEGRATION_REPORT.md), [BUILD_STATUS.md](BUILD_STATUS.md), [REMAINING_ISSUES.md](REMAINING_ISSUES.md). Keine vollständigen Upstreamquellen, Assets oder Test-JARs werden veröffentlicht, solange die Herkunftsfragen offen sind.
+
 # Entwicklung und Validierung des Grundgerüsts
 
 Dieses Arbeitspaket beginnt die technischen Grundlagen aus P1 und ergänzt die statische P0-Inventur. Es implementiert keine Originalmaschinen, Gegenstände, Weltgenerierung oder Simulation. P0 und P1 sind noch nicht vollständig abgeschlossen; die [Feature-Matrix](FEATURE_MATRIX.md) erfasst den Unterschied zwischen technischem Einstieg und portiertem Originalinhalt.

@@ -1,0 +1,62 @@
+[
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-after-save.png",
+    "sha256": "936044d3ff541a23edca5d7c373062e7410487e9ef1655784bbde13172fa33d7"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-battery-gui-2.png",
+    "sha256": "dfd8db389ebf2e70e315bc38aa1f9d4a218491d1b92d1450b05c6f16bae19afe"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-battery-gui.png",
+    "sha256": "25dff8b8a20a837ba1d05a17338ca57b1c5d8eddf8dfc3c8c11514051ef22a82"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-battery.png",
+    "sha256": "ec1c5b96d77971398737f2754e87903ae8e7b0bb7c23333000836c16b35da467"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-creative-options.png",
+    "sha256": "1afb811f3d0a900fd058eb7c3837c79506b7ffbd9a0e93a860aea68725d103d4"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-first.png",
+    "sha256": "e22427ecbdbc0154ecd02df9bfa97322cecdd2f75ff58b177bb27f019ad69952"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-main-menu-2.png",
+    "sha256": "a505f4c6968f293da08fcf12b88174d9943905a117d283e0417f45204014f715"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-main-menu.png",
+    "sha256": "ac44c5d2858717843cf749fd573ad46338455c1e03ee79343161db4d1f76be02"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-menu.png",
+    "sha256": "dd483611db35142d8749570a46f8d1ba2c4827a72738a20f593ad24d2ce27c98"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-pause.png",
+    "sha256": "6a53d7c82d665456fc9fe846c3969b9d42e7e9b129149066d952e47a982d51e5"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-world-create.png",
+    "sha256": "d06b37a44bb8292dbf79de69a5f4482886ab17fe4d73a9ddad1e0edf897b2eaa"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-world-loading.png",
+    "sha256": "b1c7b0a59f43cdc74ca4f141f65586ef7ca9473d733745331c618dddecd4e43e"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-world-menu.png",
+    "sha256": "6a815a8e50cedb2c0f9fdfcbd5e724a0476878687ca29d78836d673789952ed5"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-world-options.png",
+    "sha256": "9ef52d7c22e3667292eaa71111ec5ba5a0c3b07e20f859eea096ab5b717ee022"
+  },
+  {
+    "local_path": "/workspace/scratch/modernized-phase4/client-world.png",
+    "sha256": "d9801b5f094e1c0fa212660e91e68b0e296c71eb3bc94fca76a92b639ead923e"
+  }
+]

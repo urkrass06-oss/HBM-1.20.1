@@ -21,7 +21,8 @@ WRAPPER_URL = "https://raw.githubusercontent.com/gradle/gradle/v9.3.1/gradle/wra
 WRAPPER_SHA256 = "b3a875ddc1f044746e1b1a55f645584505f4a10438c1afea9f15e92a7c42ec13"
 REPO = Path(__file__).resolve().parents[1]
 PATCH = REPO / "tools/modernized/forge-1.20.1.patch"
-TASKS = ("tasks", "javaToolchains", "runData", "build", "sourcesJar", "runServer", "dependencies")
+TASKS = ("tasks", "javaToolchains", "runData", "build", "sourcesJar", "runServer",
+         "runClient", "runGameTestServer", "clean", "dependencies")
 
 
 def external(path):

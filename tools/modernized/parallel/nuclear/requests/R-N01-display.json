@@ -1,0 +1,69 @@
+{
+  "id": "R-N01-display",
+  "owner": "R",
+  "status": "pending",
+  "required_before_integration": true,
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "files": [
+    "src/main/java/com/hbm_m/inventory/gui/GUIMachineBreeder.java"
+  ],
+  "registry_changes": [],
+  "menu": "Existing MachineBreederMenu; same 8 slot indices/positions and menu ID",
+  "fields": [
+    {
+      "index": 0,
+      "name": "progress",
+      "type": "int",
+      "unit": "normalized progress * 10000 (display only)",
+      "range": [
+        0,
+        9999
+      ],
+      "initial": 0
+    },
+    {
+      "index": 1,
+      "name": "duration",
+      "type": "int",
+      "unit": "normalized denominator, NOT fixed tick duration",
+      "range": [
+        10000,
+        10000
+      ],
+      "initial": 10000
+    },
+    {
+      "index": 2,
+      "name": "fluxLow",
+      "type": "int",
+      "unit": "unsigned low 16 bits of flux",
+      "initial": 0
+    },
+    {
+      "index": 3,
+      "name": "fluxHigh",
+      "type": "int",
+      "unit": "unsigned high 16 bits of flux",
+      "initial": 0
+    }
+  ],
+  "accessors": [
+    "MachineBreederMenu.getFlux(): reassembled full int",
+    "MachineBreederBlockEntity.getProcessProgress(): exact normalized float (NBT/S2C)",
+    "MachineBreederBlockEntity.getFlux(): current source sum"
+  ],
+  "slots": {
+    "0": "registered breeding recipe input",
+    "1": "existing optional battery",
+    "2": "product, extraction only",
+    "3": "existing fluid-container input",
+    "4": "existing fluid-container output",
+    "5/6": "unchanged unused upgrade slots, no process effect",
+    "7": "existing fluid identifier"
+  },
+  "instructions": "Show flux and the currently required recipe threshold; do not imply heat/fuel/HE or fluid is a condition. Remove misleading speed/efficiency upgrade hints; original speed uses int flux/requiredFlux. Keep existing optional tank/energy storage display. No new C2S action.",
+  "geometry": "N restores original breeder footprint 1x1x3 with bottom controller (formerly M copied fusion breeder footprint). Check renderer/model anchoring and existing-world migration before acceptance; no assets changed by N.",
+  "multiplayer": "Existing BE S2C update packet/tag and vanilla menu data. No network registration changes. G5 requires two real production clients, 10 minutes, current artifact hash. Packet/FakePlayer tests alone are not G5.",
+  "dependency_commit": null,
+  "api_version": "breeder-flux-v1"
+}

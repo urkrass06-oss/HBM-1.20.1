@@ -1,0 +1,27 @@
+{
+  "id": "N05-research-flux-source",
+  "owner": "N-05 (R handles any registry bindings)",
+  "status": "pending-existing-production-blocker",
+  "task": "N-05",
+  "required_for_production_operation": true,
+  "evidence": "At M pin reactor_small is a plain Block with no BlockEntity or simulation. No current production object implements ResearchReactorFluxSource.",
+  "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+  "source_paths": [
+    "src/main/java/com/hbm/tileentity/machine/TileEntityReactorResearch.java#reaction",
+    "src/main/java/com/hbm/blocks/machine/ReactorResearch.java",
+    "src/main/java/com/hbm/tileentity/machine/TileEntityMachineReactorBreeding.java#getInteractions"
+  ],
+  "contract": "Research reactor core must implement com.hbm_m.blockentity.machines.ResearchReactorFluxSource#getTotalFlux() and return its actual current server-simulated totalFlux. The breeder sums four loaded horizontal contacts, resolving UniversalMachinePartBlockEntity to its loaded controller. No persisted constant, injected heat/energy conversion, RBMK substitution, or invented source is acceptable.",
+  "scope": "N-01 supplies only the read contract and consumer, not a replacement research-reactor simulation. N-05 remains separately open as TASKS_NUCLEAR requires. Integrate the small interface contract first if needed to avoid a dependency cycle; do not describe source simulation as already implemented.",
+  "central_requests_required": [
+    "Existing reactor_small ID: bind the real research block/core via R when N-05 is implemented; preserve IDs",
+    "N-05 control/menu/renderer registrations and source-backed plate-fuel simulation are separate deliveries"
+  ],
+  "tests": [
+    "breederReadsHorizontalResearchContacts",
+    "breederTicksInServerWorld",
+    "breederRequiresProductionBindings"
+  ],
+  "dependency_commit": null,
+  "api_version": "breeder-flux-v1"
+}

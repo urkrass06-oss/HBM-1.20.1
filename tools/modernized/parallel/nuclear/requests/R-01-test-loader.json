@@ -1,0 +1,22 @@
+{
+  "id": "R-01-N-01",
+  "owner": "R",
+  "task": "R-01",
+  "status": "pending",
+  "required_before_integration": true,
+  "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+  "changes": [
+    {
+      "path": "tools/integrate_modernized.py / area loader",
+      "contract": "Apply changes.patch only after phase5. Copy exactly the three overlay files reserved in area.json to src/main/java, and both nuclear test classes to integration/src/gametest/java only in the test profile. Preserve all 14 existing tests. Never include test-only source blocks, types or missing-item fixtures in production."
+    }
+  ],
+  "tests": {
+    "required_existing": 14,
+    "new_required": 8,
+    "expected_total": 22,
+    "note": "breederRequiresProductionBindings must fail if missing production items were supplied by fixtures or reactor_small is still generic. Do not filter it out."
+  },
+  "dependency_commit": null,
+  "api_version": "area-loader-v1"
+}

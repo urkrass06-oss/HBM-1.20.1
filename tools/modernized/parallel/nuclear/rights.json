@@ -1,0 +1,285 @@
+{
+  "schema": 1,
+  "scope": "N-01 small source patch and authored delivery only, not full source/asset import or binary clearance",
+  "review_date": "2026-10-20",
+  "modified_upstream_files": [
+    {
+      "delivery": "changes.patch",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java",
+      "git_blob": "0fb59b34b6e3d4ccd3504bede2fc4d8b03608b34",
+      "sha256": "f6f53c1d0dd5843e07e1fe3ac95c2500c22ddc2dfca2d6ebaabf3e95fb3ca2d3",
+      "origin_chain": [
+        {
+          "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
+          "author": "TRFFuchs; co-author Copilot",
+          "change": "file added (BE originally under block/entity/machines)"
+        },
+        {
+          "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+          "author": "Raptor",
+          "change": "BE package rename/refactor; menu stays at same path"
+        }
+      ],
+      "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
+      "license": "GPL-3.0-only",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties (mod.license)",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE"
+      ],
+      "notices_to_preserve": "No original file header removed. Added authors, date/change notice and SPDX. GPL text retained at repository LICENSE and external integration notices.",
+      "review": "Codex, 2026-10-20, manually reviewed both entire files and all published patch context. Small executable scaffold/menu delta only; no assets, third-party API implementations, or original class bodies copied.",
+      "review_status": "belegt-for-this-small-source-delta-only",
+      "target_path": "src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java",
+      "changes": "Pinned O flux process, persistence and S2C/menu contract; no heat/fuel model.",
+      "distribution": "Source patch only under GPLv3; no binary/full M-source redistribution cleared; whole-work Corresponding Source/release gate remains open.",
+      "result_sha256": "c2af8692402e94e5995c50c859533af2da335fd43cd5dd91dcbb5929499cc47d"
+    },
+    {
+      "delivery": "changes.patch",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java",
+      "git_blob": "b9b46fb84c9a1cccf2eb7b804915926e49e766c4",
+      "sha256": "a4ce121314bb19285040e5c47c572b104e183a5991541aee2fb83b05286af6b3",
+      "origin_chain": [
+        {
+          "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
+          "author": "TRFFuchs; co-author Copilot",
+          "change": "file added (BE originally under block/entity/machines)"
+        },
+        {
+          "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+          "author": "Raptor",
+          "change": "BE package rename/refactor; menu stays at same path"
+        }
+      ],
+      "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
+      "license": "GPL-3.0-only",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties (mod.license)",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE"
+      ],
+      "notices_to_preserve": "No original file header removed. Added authors, date/change notice and SPDX. GPL text retained at repository LICENSE and external integration notices.",
+      "review": "Codex, 2026-10-20, manually reviewed both entire files and all published patch context. Small executable scaffold/menu delta only; no assets, third-party API implementations, or original class bodies copied.",
+      "review_status": "belegt-for-this-small-source-delta-only",
+      "target_path": "src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java",
+      "changes": "Pinned O flux process, persistence and S2C/menu contract; no heat/fuel model.",
+      "distribution": "Source patch only under GPLv3; no binary/full M-source redistribution cleared; whole-work Corresponding Source/release gate remains open.",
+      "result_sha256": "cda504b53512e74b78876d518bfb2b97f8e47ae8111eb3a21374672a7910e2f8"
+    },
+    {
+      "delivery": "changes.patch",
+      "source_repository": "https://github.com/Raptor324/HBM-Modernized",
+      "source_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+      "source_path": "src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java",
+      "git_blob": "af02a88e859a293c55ebcfcee9998d1f46313319",
+      "sha256": "a317b81b777cd3f114e54ca6bb05ef582c4f06917cef0d463c951c3f7d209886",
+      "origin_chain": [
+        {
+          "commit": "e3480991069bd85ff6fb2be6f9a357425daa0b67",
+          "author": "TRFFuchs; co-author Copilot",
+          "change": "file added (BE originally under block/entity/machines)"
+        },
+        {
+          "commit": "c136c6dacb9528fe930dc98101bd5a190abcdcd2",
+          "author": "Raptor",
+          "change": "BE package rename/refactor; menu stays at same path"
+        }
+      ],
+      "copyright_and_authors": "Modernized authors RaptorDev, TRFFuchs and contributors; Original HBM The Bobcat and contributors credited for behavioral reference. No individual copyright/third-party API notice in these two source files.",
+      "license": "GPL-3.0-only",
+      "license_evidence": [
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/gradle.properties (mod.license)",
+        "https://github.com/Raptor324/HBM-Modernized/blob/0365cef5956016913095eeeb9366f26c601ca9a0/LICENSE"
+      ],
+      "notices_to_preserve": "No original file header removed. Added authors, date/change notice and SPDX. GPL text retained at repository LICENSE and external integration notices.",
+      "review": "Codex, 2026-10-20, manually reviewed both entire files and all published patch context. Small executable scaffold/menu delta only; no assets, third-party API implementations, or original class bodies copied.",
+      "review_status": "belegt-for-this-small-source-delta-only",
+      "target_path": "src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java",
+      "changes": "Replace copied fusion footprint by pinned O breeder 1x1x3 geometry so horizontal research contacts are possible.",
+      "distribution": "Source patch only under GPLv3; no binary/full M-source redistribution cleared; whole-work Corresponding Source/release gate remains open.",
+      "result_sha256": "99fd1652dc576e72b4c3655e0b86360e4c0a8ca1683a6e513a10a1da68c3dff0"
+    }
+  ],
+  "behavioral_references": [
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/tileentity/machine/TileEntityMachineReactorBreeding.java",
+      "git_blob": "3776b6701f63ea7fe5b90a966ae90cc96afd1795",
+      "sha256": "592323672e294fb0656d94f6397e355019fed6890196df75f42d2b6dfa648631",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/inventory/recipes/BreederRecipes.java",
+      "git_blob": "1ff4b65fbe8fe6fe0c2e0c0283934179d062e9e9",
+      "sha256": "11db1927d7bebd2321da4aaca1121e29f4fbc42bd4e4cd07f57b0e18f00ec895",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/items/machine/ItemBreedingRod.java",
+      "git_blob": "c8c36ca03fc17f62220877c4faf8a67759df84c6",
+      "sha256": "80ec31622b050f61750a0602a81920240a37fb77b50af1498e18bd58043b49dc",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/items/ItemEnumMulti.java",
+      "git_blob": "3d677b7ff676f17dc64ee9502e05e52202bc9c24",
+      "sha256": "2c0759ad699f06a5b66a873cff440c976d9fdc735393b1301544a11a19561dc1",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/blocks/machine/MachineReactorBreeding.java",
+      "git_blob": "29f5fa213120fb6a46cc66cec44d0a6068b4211b",
+      "sha256": "8ed091e33a37fcf5f2012e806201bab100b1a3a2eb27159ae4e592d539200db0",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/blocks/machine/ReactorResearch.java",
+      "git_blob": "db9cee1e1d5f47436d61cdb2460c3a27e3bdb9aa",
+      "sha256": "e994e0e75c17c87fe087a03c9c52ad363c538d86991779e4065c90860e86bf46",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/tileentity/machine/TileEntityReactorResearch.java",
+      "git_blob": "51bb7c5e454f1c53f0cc1486ededc6eb5386984c",
+      "sha256": "aa83d569ff5230afd6e385fffeca224d79b4fb114e028a6a9ad2b5d95e0d418b",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    },
+    {
+      "repository": "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT",
+      "commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+      "path": "src/main/java/com/hbm/items/ModItems.java",
+      "git_blob": "0c2f64fbe44baf5123aa80c0e98455066867c831",
+      "sha256": "6399cb55481dfdd69d0320a5ea2a8d58de83c61145f694bcdea2792ef2435d0b",
+      "license": "LGPL-3.0 (README plus LICENSE and LICENSE.LESSER at this commit)",
+      "publication": "No original file bodies/assets copied. Own implementation of behavioral formulas, variant identities, recipe facts and geometry."
+    }
+  ],
+  "new_delivery_files": [
+    {
+      "delivery": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "804bac362e0ec2a0cb7ab1a9c308ac1373ccca48e29a174d3252d3f8afab2c03"
+    },
+    {
+      "delivery": "gametest/com/hbm/integration/nuclear/BreederTestContent.java",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "90281c8fdba29267fb9d89767f7edec73daf052d5d948a2337b90304fd5539ab"
+    },
+    {
+      "delivery": "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283"
+    },
+    {
+      "delivery": "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "GPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738"
+    },
+    {
+      "delivery": "overlay/com/hbm_m/item/nuclear/BreedingRodItem.java",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "GPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "bba16cb39fe4781f8a8a69dc0b8da94f789196e6d16682d8678bf79803d3c876"
+    },
+    {
+      "delivery": "requests/N05-research-flux-source.json",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "5a05459b83590e4979f4c46fc09107dbd7c0963b7ce6a37a0217870a2b581eb6"
+    },
+    {
+      "delivery": "requests/R-01-test-loader.json",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "193fc6215c6fecb732e0389273a4f9e1ea3dffdf54bacf651d37d0b6fdc65062"
+    },
+    {
+      "delivery": "requests/R-N01-breeding-rods.json",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "f031f28a5e0f6ec42083a00840556f7ec5ba699c73a761b6789ce8aedf1d4faf"
+    },
+    {
+      "delivery": "requests/R-N01-display.json",
+      "origin": "New N-01 code/test/document written for this task; behavioral sources above; no copied upstream class body or assets.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt-for-small-source-delivery",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96"
+    },
+    {
+      "delivery": "evidence/reproduction.md",
+      "origin": "New sanitized task evidence; no copied source/assets/binaries/worlds.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "54d6ec9a7aa81c35ef16c8c972ea8bca4811be46a69a663f8c1b00bc48b127cd"
+    },
+    {
+      "delivery": "evidence/validation.md",
+      "origin": "New sanitized task evidence; no copied source/assets/binaries/worlds.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "f1f0336f9fa661a156f83b6e073e22f08efeb2b17256a5eada69b205a339a487"
+    },
+    {
+      "delivery": ".gitattributes",
+      "origin": "New area-local attribute preserving required unified-diff context whitespace; actual modified Java separately checked with git diff --check.",
+      "license": "LGPL-3.0-only",
+      "review_status": "belegt",
+      "reviewer": "Codex, 2026-10-20",
+      "sha256": "b95b69e0ae35a7ec3cf5ebd831f9d4a29f5d9eeb5e175eeed8e57d06c7867bbb"
+    }
+  ],
+  "metadata_files": {
+    "area.json": "New task metadata; hashes maintained in final area manifest (no self-hash).",
+    "rights.json": "This provenance record; included in final area manifest, no self-hash.",
+    "evidence/": "New, sanitized test findings and command/hash metadata only; no raw source/assets/worlds/binaries."
+  },
+  "excluded": "All complete O/M trees, generated resources, raw runtime transcripts, worlds and binaries stay outside public repository. Historical heat/fuel source is not a dependency or delivery. Root licenses/notices unchanged.",
+  "distribution": "Patch/new GPL files licensed GPL-3.0-only; standalone authored tests/interface retain stated LGPL-3.0-only. Integration includes existing GPL text and notices. Full Corresponding Source, asset and embedded-library release clearance remain open."
+}

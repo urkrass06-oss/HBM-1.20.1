@@ -2,21 +2,81 @@
   "id": "R-01-N-01",
   "owner": "R",
   "task": "R-01",
-  "status": "pending",
+  "status": "R-01 implementation available; exact nuclear policy reservations still pending",
   "required_before_integration": true,
   "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
   "changes": [
     {
-      "path": "tools/integrate_modernized.py / area loader",
-      "contract": "Apply changes.patch only after phase5. Copy exactly the three overlay files reserved in area.json to src/main/java, and both nuclear test classes to integration/src/gametest/java only in the test profile. Preserve all 14 existing tests. Never include test-only source blocks, types or missing-item fixtures in production."
+      "path": "tools/modernized/parallel/policy.json",
+      "owner": "R",
+      "action": "Add exactly requested_owner_entries to owners. Existing breeder BE reservation is already correct. No policy relaxation or inferred family globs."
     }
   ],
   "tests": {
     "required_existing": 14,
-    "new_required": 8,
-    "expected_total": 22,
-    "note": "breederRequiresProductionBindings must fail if missing production items were supplied by fixtures or reactor_small is still generic. Do not filter it out."
+    "nuclear_new_required": 8,
+    "expected_without_rendering_tests": 22,
+    "expected_with_R_test_delivery": 24,
+    "ids": [
+      {
+        "id": "breedergametests.breederprocessesregisteredrecipe",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederstopswithoutflux",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederpersistsmidcycle",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederdefaultrecipevariants",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederreadshorizontalresearchcontacts",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breedersynchronizestwoobservers",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederticksinserverworld",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      },
+      {
+        "id": "breedergametests.breederrequiresproductionbindings",
+        "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+        "required": true
+      }
+    ],
+    "guard": "breederRequiresProductionBindings must remain required and red while production item or research source bindings are absent."
   },
-  "dependency_commit": null,
-  "api_version": "area-loader-v1"
+  "dependency_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "api_version": "area-loader-v1",
+  "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "loader_pr": 9,
+  "policy_source": "tools/modernized/parallel/policy.json",
+  "policy_source_sha256": "6117ecbf26a4733c2bc7e429952220c93787f27f451e02586b4d20f4a449e6d5",
+  "requested_owner_entries": {
+    "src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java": "nuclear",
+    "src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java": "nuclear",
+    "src/main/java/com/hbm_m/inventory/recipes/BreederRecipes.java": "nuclear",
+    "src/main/java/com/hbm_m/item/nuclear/BreedingRodItem.java": "nuclear",
+    "src/main/java/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": "nuclear",
+    "integration/src/gametest/java/com/hbm/integration/nuclear/BreederGameTests.java": "nuclear"
+  },
+  "reason": "The shared PARALLEL_DEVELOPMENT nuclear family ownership already assigns these files to N; R-01 uses an additional exact central reservation list and currently reserves only the breeder BE. N does not change that central policy.",
+  "schema": "N area/rights now match the concrete R-01 Schema 1; one GameTest source declares all eight required IDs, with public static nested test-only fixtures.",
+  "reservation_delivery_commit": null,
+  "no_bypass": "An immutable real integration attempt with the actual central policy must reject the missing reservation before creating the requested destination; no patched policy is used to claim integration success."
 }

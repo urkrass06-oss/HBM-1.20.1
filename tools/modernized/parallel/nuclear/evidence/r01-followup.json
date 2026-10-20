@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "loader_commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+  "tool_tests": {
+    "passed": 52,
+    "failed": 0,
+    "checkout": "unmodified detached rendering-tools worktree"
+  },
+  "actual_policy_sha256": "6117ecbf26a4733c2bc7e429952220c93787f27f451e02586b4d20f4a449e6d5",
+  "actual_loader_integration": "pending immutable-commit rejection check; no successful integration claimed",
+  "readonly_conditional_schema_check": {
+    "result": "pass",
+    "only_hypothetical_change": "six requested owner entries added to in-memory policy copy",
+    "runtime_mutation": false,
+    "counts_as_integration": false
+  },
+  "strict_patch_check": {
+    "passed": true,
+    "production_bytes_unchanged": true
+  },
+  "new_game_test_run": "in progress",
+  "historical_baseline_ci": {
+    "head": "3d7b313e046d948f843b7bc9d5c509f8833a1f72",
+    "runs": [
+      {
+        "id": 39424498985,
+        "conclusion": "success"
+      },
+      {
+        "id": 39424498989,
+        "conclusion": "success"
+      }
+    ],
+    "nuclear_feature_coverage": false
+  }
+}

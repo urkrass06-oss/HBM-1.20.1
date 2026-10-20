@@ -47,33 +47,9 @@
       "path": "integration/src/gametest/java/com/hbm/integration/nuclear/BreederGameTests.java",
       "change": "new-test-only",
       "owner": "N"
-    },
-    {
-      "path": "integration/src/gametest/java/com/hbm/integration/nuclear/BreederTestContent.java",
-      "change": "new-test-only",
-      "owner": "N"
     }
   ],
-  "requires": [
-    {
-      "id": "R-01-N-01",
-      "commit": null,
-      "api_version": "area-loader-v1",
-      "status": "pending; explicit manual install for local checks"
-    },
-    {
-      "id": "R-N01-breeding-rods",
-      "commit": null,
-      "api_version": "breeder-flux-v1",
-      "status": "pending; 5 item bindings absent"
-    },
-    {
-      "id": "R-N01-display",
-      "commit": null,
-      "api_version": "breeder-flux-v1",
-      "status": "pending"
-    }
-  ],
+  "requires": [],
   "pending_requests": [
     "requests/R-01-test-loader.json",
     "requests/R-N01-breeding-rods.json",
@@ -94,24 +70,30 @@
     "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f"
   },
   "delivery_files": {
-    ".gitattributes": "b95b69e0ae35a7ec3cf5ebd831f9d4a29f5d9eeb5e175eeed8e57d06c7867bbb",
-    "changes.patch": "254a27d3f7f132c20c699c2dcc74a897f8da87e7d24742830f11ade0fbd2a32c",
-    "evidence/reproduction.md": "54d6ec9a7aa81c35ef16c8c972ea8bca4811be46a69a663f8c1b00bc48b127cd",
+    "changes.patch": "59e7c824ebcfea806d19d2bcde6b328577aca5f22a74f5dee46995b768569a43",
+    "evidence/provenance.json": "7620ca80dc0bbde2b6aab30765fce8649af4eccbdbfe1da6723be6fa334c9ffa",
+    "evidence/r01-followup.json": "67557e3bc9bc2e877d08912162d58de4f480094c6d35b0474a65ad3a5b6db7f2",
+    "evidence/reproduction.md": "d2f2f2e4a6ea300c0c9fd353a5568050e72c6017651aa33aed08f3c8a11d3e17",
     "evidence/results.json": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b",
-    "evidence/validation.md": "5ae55edd09a26ce84d595daef065e0f86e0fd28798f763f9fc861bb9cb4d53ee",
-    "gametest/com/hbm/integration/nuclear/BreederGameTests.java": "804bac362e0ec2a0cb7ab1a9c308ac1373ccca48e29a174d3252d3f8afab2c03",
-    "gametest/com/hbm/integration/nuclear/BreederTestContent.java": "90281c8fdba29267fb9d89767f7edec73daf052d5d948a2337b90304fd5539ab",
+    "evidence/validation.md": "6a891c188bf3e9c6b7b06d69d7a21889eec4b73359089af737ad21e73f53306a",
+    "gametest/com/hbm/integration/nuclear/BreederGameTests.java": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4",
     "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283",
     "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738",
     "overlay/com/hbm_m/item/nuclear/BreedingRodItem.java": "bba16cb39fe4781f8a8a69dc0b8da94f789196e6d16682d8678bf79803d3c876",
     "requests/N05-research-flux-source.json": "5a05459b83590e4979f4c46fc09107dbd7c0963b7ce6a37a0217870a2b581eb6",
-    "requests/R-01-test-loader.json": "193fc6215c6fecb732e0389273a4f9e1ea3dffdf54bacf651d37d0b6fdc65062",
+    "requests/R-01-test-loader.json": "f62bc1d6f33300bcca499f28da182f1abfba6555ed967450c274bed733ade024",
     "requests/R-N01-breeding-rods.json": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df",
     "requests/R-N01-display.json": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96",
-    "rights.json": "b6d6fb5de6632847231a41613a9dcc1bed06857664236ab3f1a6d18fe7f7bedb"
+    "rights.json": "15552e2cef591928a3b8aa8be55aa4961e992e494782853df912aaf178829102"
   },
   "rights": "rights.json",
-  "evidence": "evidence/validation.md",
+  "evidence": [
+    "evidence/provenance.json",
+    "evidence/r01-followup.json",
+    "evidence/reproduction.md",
+    "evidence/results.json",
+    "evidence/validation.md"
+  ],
   "status": "draft-blocked-on-R-bindings-and-N05-source",
   "reference_decision": "User clarification 2026-10-20: pinned O flux model is binding; no legacy heat/fuel system.",
   "runtime_prerequisites": [
@@ -139,5 +121,145 @@
     "production_jar_sha256": "8b449e2272fa28369cbb46f8752ebbdbec83e9196d55d9d13db84722c00a18d0",
     "G3": "BLOCKED: 21/22 required passed, production-binding guard failed",
     "integration_ready": false
+  },
+  "test_layout": "BreederTestContent is nested in the single BreederGameTests source; every gametest source declares required tests, as required by R-01.",
+  "kind": "area",
+  "api_version": "breeder-flux-v1",
+  "baseline": {
+    "target_base": "997b15c9d60dd293e9c436663e90a95140ab13af",
+    "original_commit": "aee05a40f10fb7bb9b042b65eccaa449ecc1672d",
+    "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+    "files": {
+      "src/main/java/com/hbm/HbmPort.java": "0c8fa8fb78d2186f7ae9366beaab7b6fa96065675434b37900ebe97bda92dca0",
+      "src/main/java/com/hbm/client/ClientSetup.java": "71ff3b62b4123c5420bca7e02a1dc7759c514f3e8cfdcb3aa10e64f075aa484a",
+      "src/main/java/com/hbm/registry/ModRegistries.java": "e3d15780cb7ebbb23acc929da7037892f6114f9df1969e91f067e4470d44289f",
+      "tools/modernized/forge-1.20.1.patch": "ff9bf74fde827a9a5362c196795f7fa849ed26475c3297b73ca8d7cd4f489be4",
+      "tools/modernized/gametest/com/hbm/integration/ModernizedIntegrationTests.java": "1e28e57e5a22850f32cf08584dd632cc123c9bc13f2989e6a30a50123942c301",
+      "tools/modernized/overlay/com/hbm/integration/PortPaintings.java": "a9f1105cd0d253dc0897e35395d71a32389cb3a859713b5a761e3aafa4b529c7",
+      "tools/modernized/phase4-integration.patch": "47ea9a52e6603f0332ba0889ee2b41491d1c128edcc8be2644a97814d3e85d8e",
+      "tools/modernized/phase5-gametest/com/hbm/integration/ModernizedSystemsTests.java": "50533f60ddfba33e216683c3392bea0adf22ec9d9b27274a554fa3fe60d0ca6d",
+      "tools/modernized/phase5-multiplayer.patch": "bb6206c2f1f4872b9dadf70a27634d6b2b0ab13ce56e0e4da1469e91c5f21f7d"
+    }
+  },
+  "tool_dependencies": [
+    {
+      "task": "R-01/R-02",
+      "commit": "c63be0f5bcf43ff1d1f8b4febb25f831a15fc047",
+      "api_version": "R-01-schema-1",
+      "status": "available in PR #9; central exact nuclear reservations pending"
+    }
+  ],
+  "files": [
+    {
+      "target": "src/main/java/com/hbm_m/blockentity/machines/MachineBreederBlockEntity.java",
+      "source": null,
+      "before_sha256": "f6f53c1d0dd5843e07e1fe3ac95c2500c22ddc2dfca2d6ebaabf3e95fb3ca2d3",
+      "sha256": "c2af8692402e94e5995c50c859533af2da335fd43cd5dd91dcbb5929499cc47d"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/inventory/menu/MachineBreederMenu.java",
+      "source": null,
+      "before_sha256": "a4ce121314bb19285040e5c47c572b104e183a5991541aee2fb83b05286af6b3",
+      "sha256": "cda504b53512e74b78876d518bfb2b97f8e47ae8111eb3a21374672a7910e2f8"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/block/machines/MachineBreederBlock.java",
+      "source": null,
+      "before_sha256": "a317b81b777cd3f114e54ca6bb05ef582c4f06917cef0d463c951c3f7d209886",
+      "sha256": "99fd1652dc576e72b4c3655e0b86360e4c0a8ca1683a6e513a10a1da68c3dff0"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/inventory/recipes/BreederRecipes.java",
+      "source": "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java",
+      "before_sha256": null,
+      "sha256": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/item/nuclear/BreedingRodItem.java",
+      "source": "overlay/com/hbm_m/item/nuclear/BreedingRodItem.java",
+      "before_sha256": null,
+      "sha256": "bba16cb39fe4781f8a8a69dc0b8da94f789196e6d16682d8678bf79803d3c876"
+    },
+    {
+      "target": "src/main/java/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java",
+      "source": "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java",
+      "before_sha256": null,
+      "sha256": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283"
+    },
+    {
+      "target": "integration/src/gametest/java/com/hbm/integration/nuclear/BreederGameTests.java",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "before_sha256": null,
+      "sha256": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4"
+    }
+  ],
+  "patch": "changes.patch",
+  "tests": [
+    {
+      "id": "breedergametests.breederprocessesregisteredrecipe",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederstopswithoutflux",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederpersistsmidcycle",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederdefaultrecipevariants",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederreadshorizontalresearchcontacts",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breedersynchronizestwoobservers",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederticksinserverworld",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    },
+    {
+      "id": "breedergametests.breederrequiresproductionbindings",
+      "source": "gametest/com/hbm/integration/nuclear/BreederGameTests.java",
+      "required": true
+    }
+  ],
+  "registrations": [],
+  "requests": [
+    "requests/R-01-test-loader.json",
+    "requests/R-N01-breeding-rods.json",
+    "requests/R-N01-display.json",
+    "requests/N05-research-flux-source.json"
+  ],
+  "loader_status": "Schema converted to real R-01 contract; execution remains blocked by six missing central reservations.",
+  "publication_status": "Source-only delivery reviewed; no runtime or feature-completion claim.",
+  "payloads": {
+    "changes.patch": "59e7c824ebcfea806d19d2bcde6b328577aca5f22a74f5dee46995b768569a43",
+    "evidence/provenance.json": "7620ca80dc0bbde2b6aab30765fce8649af4eccbdbfe1da6723be6fa334c9ffa",
+    "evidence/r01-followup.json": "67557e3bc9bc2e877d08912162d58de4f480094c6d35b0474a65ad3a5b6db7f2",
+    "evidence/reproduction.md": "d2f2f2e4a6ea300c0c9fd353a5568050e72c6017651aa33aed08f3c8a11d3e17",
+    "evidence/results.json": "80ecfca126f932bd60692adcdcaeafcafe44dee8016671d31b5f4627d86e225b",
+    "evidence/validation.md": "6a891c188bf3e9c6b7b06d69d7a21889eec4b73359089af737ad21e73f53306a",
+    "gametest/com/hbm/integration/nuclear/BreederGameTests.java": "e38bfae2909a0350941e2a80c217cf3b165f9bc13a818605b6d1d5dfba8f25c4",
+    "overlay/com/hbm_m/blockentity/machines/ResearchReactorFluxSource.java": "d5166a53ff19fe73217cfea547788e043a00de1997e885f3b8c9ccbb6df8b283",
+    "overlay/com/hbm_m/inventory/recipes/BreederRecipes.java": "0b16f4d44535da75a9ea52f9d9d23713b5306e436658119debf6159be178d738",
+    "overlay/com/hbm_m/item/nuclear/BreedingRodItem.java": "bba16cb39fe4781f8a8a69dc0b8da94f789196e6d16682d8678bf79803d3c876",
+    "requests/N05-research-flux-source.json": "5a05459b83590e4979f4c46fc09107dbd7c0963b7ce6a37a0217870a2b581eb6",
+    "requests/R-01-test-loader.json": "f62bc1d6f33300bcca499f28da182f1abfba6555ed967450c274bed733ade024",
+    "requests/R-N01-breeding-rods.json": "2e2a0845034f6e779b9f0abd195c52e692ca08463c7d0117077805cc214420df",
+    "requests/R-N01-display.json": "63fa95afa84460260e5fa6e4cca6b0055a0ef1b54fa1d7613bb84c69943fac96",
+    "rights.json": "15552e2cef591928a3b8aa8be55aa4961e992e494782853df912aaf178829102"
   }
 }

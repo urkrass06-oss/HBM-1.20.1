@@ -20,7 +20,13 @@
   },
   "tool_tests": {
     "passed": 52,
-    "command": "python3 -m unittest discover -s tools -p 'test_modernized_*.py' -q"
+    "command": "python3 -m unittest discover -s tools -p 'test_modernized_*.py' -q",
+    "final_validation_commit": "1854973612cfc5406c04c9786f0347b965b0a1ea",
+    "external_evidence": {
+      "path": "/workspace/scratch/final-tool-tests-runtime-version.log",
+      "sha256": "bb3fd800cdea4f587d1d3c7cda1ab75d8199b59d4efdd7039f21cb9e81e7775f",
+      "bytes": 172
+    }
   },
   "profiles": [
     {
@@ -299,8 +305,14 @@
           "path": "/workspace/hbm-r-check/verified-production/versions/1.20.1-forge/run-gametest/hbm-gametest-results.xml",
           "sha256": "5ac9bfc55b3cab8906edf050c01d07a25ec9b7866bc91f1722e682276254da05",
           "bytes": 1575
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-production-logs/gametests-runtime-version-audit.json",
+          "sha256": "7572f20c17236964a889b65213d47bb149c6991b1bc79ea75ccb0b21372dfbc6",
+          "bytes": 1775
         }
-      ]
+      ],
+      "runtime_version_audit_commit": "1854973612cfc5406c04c9786f0347b965b0a1ea"
     },
     {
       "engine_commit": "c2fdf8a429be1886bae8b1411a8782a0240c058d",
@@ -577,8 +589,14 @@
           "path": "/workspace/hbm-r-check/verified-compatibility/versions/1.20.1-forge/run-gametest/hbm-gametest-results.xml",
           "sha256": "d3c7e8b33ecf092f91e58dafc79ca07918929fe18bfcd96686f6d6a763d2667f",
           "bytes": 1574
+        },
+        {
+          "path": "/workspace/hbm-r-check/verified-compatibility-logs/gametests-runtime-version-audit.json",
+          "sha256": "ae6ca0faab0538aac54ca9a976819e2819c46b9813c36eec04bf9778ef90ee75",
+          "bytes": 1775
         }
-      ]
+      ],
+      "runtime_version_audit_commit": "1854973612cfc5406c04c9786f0347b965b0a1ea"
     }
   ],
   "scope": "R-01/R-02 tooling and build verification; no client rendering or original parity claim",

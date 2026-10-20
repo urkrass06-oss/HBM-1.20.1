@@ -11,6 +11,7 @@ Stand: **20.10.2026 (UTC)**. Implementierung auf `port/rendering`, ausgehend vom
 | Original O / unveränderter Referenzpin | `aee05a40f10fb7bb9b042b65eccaa449ecc1672d`; kein neuer O-Lauf |
 | Produktionsvorbereitung und Buildwerkzeuge | `acffbfd370cc5167e4a241f85fb5a8875d2ca887` |
 | Korrigierter JUnit-Auswerter und Kompatibilitätslauf | `c2fdf8a429be1886bae8b1411a8782a0240c058d` |
+| Abschließender Audit der geladenen Forge-Modulversion | `1854973612cfc5406c04c9786f0347b965b0a1ea` |
 | Explizit gewählte Rendering-Lieferung | `1536b6eff7a0fbe2f1662108ce17424e69fe036b`; identische Payloads in beiden Profilen |
 | Toolchains | Gradle 9.3.1 / vollständiges Temurin-JDK 21.0.12.1; Mod, Datagen und Server mit JDK 17.0.20.1 |
 | Variante / Namespace | ausschließlich `1.20.1-forge` / `hbm_m` |
@@ -63,7 +64,7 @@ Alle 7.952 generierten Ressourcenpfade sind vorhanden. **7.828** stimmen bytegen
 
 Die Produktions-JAR-Hashes stimmen zwischen Build, gesicherter Datei und Serverergebnis überein. Tests sind ausschließlich an Loopback gebunden, Offlineauthentifizierung, Seed 42012001, Heap 3.072 MB. Der bekannte exakt benannte Yggdrasil-Public-Key-Fehler bleibt separat protokolliert; er ist die einzige zugelassene Umgebungsabweichung. Keine Aussage über Onlineauthentifizierung oder persistenten Fachzustand neuer M/N/W-Inhalte.
 
-Die zwei eigenen Rendering-Tests prüfen einen alleinigen Modcontainer/Delegateneinstieg sowie den loadergenerierten Registryvertrag. Hier sind **0 neue fachliche Registrierungen** deklariert. Die bisherigen 14 Tests wurden unverändert ausgeführt. JUnit-IDs und Quellidentitäten stehen vollständig im Ergebnismanifest. Der erste Berichtsparser erwartete entgegen Forges `@PrefixGameTestTemplate(false)` Klassenpräfixe und wies den tatsächlich bereits erfolgreichen 16er-Lauf ab. Nur der Auswerter wurde korrigiert, der ursprüngliche Fehlerbeleg erhalten und derselbe vollständige JUnit-Bericht danach erfolgreich validiert. Ein neuer Miniaturtest prüft genau diesen Fall; der Kompatibilitätslauf verwendet den korrigierten Auswerter von Beginn an.
+Die zwei eigenen Rendering-Tests prüfen einen alleinigen Modcontainer/Delegateneinstieg sowie den loadergenerierten Registryvertrag. Hier sind **0 neue fachliche Registrierungen** deklariert. Die bisherigen 14 Tests wurden unverändert ausgeführt. JUnit-IDs und Quellidentitäten stehen vollständig im Ergebnismanifest. Der erste Berichtsparser erwartete entgegen Forges `@PrefixGameTestTemplate(false)` Klassenpräfixe und wies den tatsächlich bereits erfolgreichen 16er-Lauf ab. Nur der Auswerter wurde korrigiert, der ursprüngliche Fehlerbeleg erhalten und derselbe vollständige JUnit-Bericht danach erfolgreich validiert. Ein neuer Miniaturtest prüft genau diesen Fall; der Kompatibilitätslauf verwendet den korrigierten Auswerter von Beginn an. Der abschließend verschärfte Versions-Audit prüft die tatsächlich geladene Version in der ForgeMod/FORGEMOD-Startmeldung. Ein passender Befehlskopf kann eine falsche geladene Version nicht verdecken; beide vorhandenen Logs und JUnit-Berichte sowie die 52 Werkzeugtests wurden damit erneut erfolgreich geprüft.
 
 ## Reproduktion und Grenzen
 

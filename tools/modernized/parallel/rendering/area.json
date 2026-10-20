@@ -37,13 +37,13 @@
       "target": "integration/src/gametest/java/com/hbm/integration/rendering/RenderingIntegrationTests.java",
       "source": "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java",
       "before_sha256": null,
-      "sha256": "2c6d8b5e0370de7148bf995fea43f4e840b8337d276b863ef5c63254dc4723dc"
+      "sha256": "650d15f800cbd1212c5bae5b902b58f5d39ff4852e13197154d49f55f4fc2a09"
     }
   ],
   "payloads": {
     "evidence/origin.txt": "b6e46cacf937d5fc01c8e745ca1b6aea7c8c4bb2f9f54d25d9d64a1a9f190cc5",
-    "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java": "2c6d8b5e0370de7148bf995fea43f4e840b8337d276b863ef5c63254dc4723dc",
-    "rights.json": "b9bedaf0be2301d940833a545f7378ac2bea8d67d523c153d8b8aa373ec0b430"
+    "gametest/com/hbm/integration/rendering/RenderingIntegrationTests.java": "650d15f800cbd1212c5bae5b902b58f5d39ff4852e13197154d49f55f4fc2a09",
+    "rights.json": "cb607be7f20d3f885a21175214e4df6d9210877439d2992f887ec5c87c15e090"
   },
   "registrations": [],
   "tests": [

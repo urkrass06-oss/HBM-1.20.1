@@ -12,7 +12,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.gametest.framework.GlobalTestReporter;
-import net.minecraft.gametest.framework.XmlResultReporter;
+import net.minecraft.gametest.framework.JUnitLikeTestReporter;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -27,7 +27,7 @@ public final class RenderingIntegrationTests {
         // Loaded by Forge's test discovery before any test executes. The report
         // covers the entire suite, including the unchanged fourteen regressions.
         try {
-            GlobalTestReporter.replaceWith(new XmlResultReporter(new File("hbm-gametest-results.xml")));
+            GlobalTestReporter.replaceWith(new JUnitLikeTestReporter(new File("hbm-gametest-results.xml")));
         } catch (Exception error) {
             throw new ExceptionInInitializerError(error);
         }

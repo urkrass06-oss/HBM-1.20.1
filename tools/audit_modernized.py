@@ -13,6 +13,14 @@ import sys
 import zipfile
 import xml.etree.ElementTree as ET
 
+RESOURCE_OVERRIDES = Path(__file__).resolve().parent / "modernized/resource-overrides.json"
+
+
+def resource_override(name, generated, packaged, overrides):
+    record = overrides.get(name)
+    return bool(record and hashlib.sha256(generated).hexdigest() == record["generated_sha256"]
+                and hashlib.sha256(packaged).hexdigest() == record["packaged_sha256"])
+
 
 def resources(args):
     source = Path(args.source).resolve(strict=True)
@@ -127,9 +135,19 @@ def jar(args):
             missing = sorted(expected - set(archive.namelist()))
             if missing:
                 raise ValueError(f"{len(missing)} generated resources missing from JAR; first: {missing[:5]}")
-            changed = [name for name in sorted(expected) if archive.read(name) != (generated / name).read_bytes()]
+            overrides = json.loads(RESOURCE_OVERRIDES.read_text())["files"]
+            changed, retained = [], []
+            for name in sorted(expected):
+                data, packed = (generated / name).read_bytes(), archive.read(name)
+                if data == packed:
+                    continue
+                if resource_override(name, data, packed, overrides):
+                    retained.append(name)
+                else:
+                    changed.append(name)
             if changed:
                 raise ValueError(f"Generated resource bytes differ in JAR: {changed[:5]}")
+            print(f"Resource content gate: {len(retained)} explicitly hashed existing main-resource overrides retained.")
             unexpected_tests = [n for n in archive.namelist()
                                 if n.startswith("com/hbm/integration/Modernized") or n == "data/hbm_m/structures/empty.nbt"]
             if unexpected_tests:

@@ -169,8 +169,8 @@ def populate(checkout, phase5, deliveries):
                          "nonnegative saturated Forge Energy values and HIGH-unit capacity check.\n"
                          "Additional isolated regression tests; runtime evaluation on Forge 47.4.23.\n")
     delivery_records = areas.apply(checkout, deliveries)
-    provenance(checkout, records, phase5, delivery_records)
     prepare_game_test_directory(checkout)
+    provenance(checkout, records, phase5, delivery_records)
 
 
 def publish(checkout, builder):

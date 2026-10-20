@@ -1,0 +1,627 @@
+{
+  "schema": 1,
+  "modernized_commit": "0365cef5956016913095eeeb9366f26c601ca9a0",
+  "decision": "Preserve the existing Phase-5 src/main/resources precedence (DuplicatesStrategy.EXCLUDE). These hashes record the evaluated baseline; they do not establish rendering correctness or publication rights. Any changed or additional override requires central review.",
+  "files": {
+    "assets/hbm_m/blockstates/arc_welder.json": {
+      "generated_sha256": "a411298e75546cf56e840548da553ee90c4a4178f880a4298903a15552e311d0",
+      "packaged_sha256": "f34d801501c8446f236d975bfeb8aab65ffcaabf285082dd6f51b4d763571e08",
+      "source": "src/main/resources/assets/hbm_m/blockstates/arc_welder.json"
+    },
+    "assets/hbm_m/blockstates/catalytic_reformer.json": {
+      "generated_sha256": "710f094bf1daa96bcdaeda382177548fb1ff73a36fd2bd91f34f2785a3f48813",
+      "packaged_sha256": "73b907ca4e8706a47e98fa89010c116832497730b5efe245d5693825c63a56da",
+      "source": "src/main/resources/assets/hbm_m/blockstates/catalytic_reformer.json"
+    },
+    "assets/hbm_m/blockstates/chemical_factory.json": {
+      "generated_sha256": "ce085b795c14b9298eddfd2ff769b8b6ed964eeae8816a5befcb762e3df8eded",
+      "packaged_sha256": "92cf66c2132b1d7e92c856f604b7f2c007d94f4d83adbf5bcc1a753ce72ee3d3",
+      "source": "src/main/resources/assets/hbm_m/blockstates/chemical_factory.json"
+    },
+    "assets/hbm_m/blockstates/cooling_tower.json": {
+      "generated_sha256": "bc8334dfc3eb095b790f8902377bb0685a90476aa2f3101dace71a26c2477742",
+      "packaged_sha256": "439212a64e3ec3dedf604bc9cf80da3087de3cd20366f28822ac3504d10d5a47",
+      "source": "src/main/resources/assets/hbm_m/blockstates/cooling_tower.json"
+    },
+    "assets/hbm_m/blockstates/core_emitter.json": {
+      "generated_sha256": "aec9bb6ba570fb8e59e9a67431dd7b5e80679583f64b73eac9ae5640b800540b",
+      "packaged_sha256": "6514f5b6cce33b35be9ec23ee071443cf604e7b8d33030e5fbbe7648b6786c4e",
+      "source": "src/main/resources/assets/hbm_m/blockstates/core_emitter.json"
+    },
+    "assets/hbm_m/blockstates/core_injector.json": {
+      "generated_sha256": "75f38e94c6b28c5dc35e2c2abbb57033085c938a7b68232627b629bef49e90c9",
+      "packaged_sha256": "3a153d564471177d04544ac66197fe13d4330d990532e80df11e003d05a6ac5e",
+      "source": "src/main/resources/assets/hbm_m/blockstates/core_injector.json"
+    },
+    "assets/hbm_m/blockstates/core_receiver.json": {
+      "generated_sha256": "bf89551e43889e7764539219ae2fae3f6da8311235442b094e06484645215837",
+      "packaged_sha256": "6bd92530ce6e869670b6153e3db9f7367a44067a76f49b088d6045b99b39a832",
+      "source": "src/main/resources/assets/hbm_m/blockstates/core_receiver.json"
+    },
+    "assets/hbm_m/blockstates/cracking_tower.json": {
+      "generated_sha256": "2a5d3d9d4cc832cbee5dc0ea72c4c8ffd8f0c0eb0ab80612ff47c9be201a54a4",
+      "packaged_sha256": "0335a0f59842895a574b8beeb1ff60e2545c3ed8506a0eeca4fbf4b04c3ab3ae",
+      "source": "src/main/resources/assets/hbm_m/blockstates/cracking_tower.json"
+    },
+    "assets/hbm_m/blockstates/cyclotron.json": {
+      "generated_sha256": "fa67244f763d977eb5ba53ce83fb347b1c8245caf0ce17a5028a83174d7d4f7d",
+      "packaged_sha256": "4a936ab7205cb98a7ac27a8351ed29528214e3b279a90bbeda335c2dd6150d0b",
+      "source": "src/main/resources/assets/hbm_m/blockstates/cyclotron.json"
+    },
+    "assets/hbm_m/blockstates/derrick.json": {
+      "generated_sha256": "72c499538af656ae34208e002f416420e51dbfac86eb7f07f2042dcf8b4597b5",
+      "packaged_sha256": "8905e7e63bc468b4e651d12a515c05ac935034646d2f06bd66b68046e41b078b",
+      "source": "src/main/resources/assets/hbm_m/blockstates/derrick.json"
+    },
+    "assets/hbm_m/blockstates/fel.json": {
+      "generated_sha256": "060e06eeeb92b39be12ac90145b3a27e84dfd66e0e9fd23d6b40cd76e4e769b3",
+      "packaged_sha256": "11a6dcca3a95f32a6e96238d41b5c84bbdff85627b8a34dc08d55eff96c8f77b",
+      "source": "src/main/resources/assets/hbm_m/blockstates/fel.json"
+    },
+    "assets/hbm_m/blockstates/flare_stack.json": {
+      "generated_sha256": "d87a61d1f2872f4f411099076140d572652f1be22c5e2978332fb8293600da5e",
+      "packaged_sha256": "5fdddcb0309dbca36386de8aec9907c89acb7b885ec5e86693d12f1eb5104d70",
+      "source": "src/main/resources/assets/hbm_m/blockstates/flare_stack.json"
+    },
+    "assets/hbm_m/blockstates/fraction_tower.json": {
+      "generated_sha256": "0d9a30a4038cc19d953f0c68a17367007ef8f940c39027a468cdc213463511fd",
+      "packaged_sha256": "4d60afc43c11f492481fc54d554900b1b8b9d6899553c5afca2306886653238a",
+      "source": "src/main/resources/assets/hbm_m/blockstates/fraction_tower.json"
+    },
+    "assets/hbm_m/blockstates/industrial_turbine.json": {
+      "generated_sha256": "624a3bc39829d56ba1b6e3738fb9255bf712da015287dd4972f74150d6e85da4",
+      "packaged_sha256": "c9dcf37f780ed4fbdc0b75f389427f6c6c51b150be31aba4a48f07eb7f0cd144",
+      "source": "src/main/resources/assets/hbm_m/blockstates/industrial_turbine.json"
+    },
+    "assets/hbm_m/blockstates/large_radar.json": {
+      "generated_sha256": "bb3b0cd5d4e3ce7db48187c78e404234145a0dbcf65b0ae0c8a87a2aa392b6e5",
+      "packaged_sha256": "b96a129c07715b54c1ae8df0f87d9eb042d70577dfca8ce15f3ac2ca6b23074a",
+      "source": "src/main/resources/assets/hbm_m/blockstates/large_radar.json"
+    },
+    "assets/hbm_m/blockstates/liquefactor.json": {
+      "generated_sha256": "9a79f75c234abe42b62b382692cde1d6d4a6eb4db496ed22b6d58f010e4ed724",
+      "packaged_sha256": "e4dde1aec0dcf2323f5b4da3b21729110befee21332b0a975a353ea5aa99ae78",
+      "source": "src/main/resources/assets/hbm_m/blockstates/liquefactor.json"
+    },
+    "assets/hbm_m/blockstates/mining_drill.json": {
+      "generated_sha256": "a4e0ff25c2d97dbf1b2cae7d8c082409348f48c0db116d572356f21f6bec8966",
+      "packaged_sha256": "153a1d613bb23fd80873f422d764b8539ce064e805123f8456fa55f026feb6fc",
+      "source": "src/main/resources/assets/hbm_m/blockstates/mining_drill.json"
+    },
+    "assets/hbm_m/blockstates/mixer.json": {
+      "generated_sha256": "a4071e23bb1834cdf7dc45eba76271db7a07add44fab60d15c0411c92df56928",
+      "packaged_sha256": "589199636d40a5d8b28ea3ddfa957864638c2b3420b7c77f33d4fe083cecae57",
+      "source": "src/main/resources/assets/hbm_m/blockstates/mixer.json"
+    },
+    "assets/hbm_m/blockstates/pumpjack.json": {
+      "generated_sha256": "778aeccf710bc479f22e7fe12a9bd4d139aee115e5a0ffc455d2acfe95eb009e",
+      "packaged_sha256": "1d9cdb542977c9f0a674ce42838b97b13ed0fca4e0e6a0d8f1d4a5694f2a395b",
+      "source": "src/main/resources/assets/hbm_m/blockstates/pumpjack.json"
+    },
+    "assets/hbm_m/blockstates/radar.json": {
+      "generated_sha256": "9eab722703d42a167c312e59b6cd0f41c4e7532322dfce16390913e1bda342cb",
+      "packaged_sha256": "98b5bb9496de5ab28f3d027f3ab369ee04dabafabb1b3d0f2d28ea85f5f5d830",
+      "source": "src/main/resources/assets/hbm_m/blockstates/radar.json"
+    },
+    "assets/hbm_m/blockstates/rbmk_console.json": {
+      "generated_sha256": "c5bad9201de00cfd877a16d8cc5ebd33a9f665e5b37178ad07fdccd81bf84067",
+      "packaged_sha256": "5eb22b5931af373d3442c55e7ef0e52c2ade787b1463ef763d8cc213ad43b48d",
+      "source": "src/main/resources/assets/hbm_m/blockstates/rbmk_console.json"
+    },
+    "assets/hbm_m/blockstates/silex.json": {
+      "generated_sha256": "b3474fb12fda012b73c59a083b2320e306e2daa81f78fa000c6817dbd5e27512",
+      "packaged_sha256": "cca1a750ca522b63bbc0256a49e726eb82e01d1eb8911e30ce6b778ee857e810",
+      "source": "src/main/resources/assets/hbm_m/blockstates/silex.json"
+    },
+    "assets/hbm_m/blockstates/soldering_station.json": {
+      "generated_sha256": "d9f2f3e39c5069838b043df8917036e3c3de10dbd91b7301f2016689bacf194f",
+      "packaged_sha256": "f73ad52aae47ca784e010ff6f81281330fd0a0155aa598f207d0c573ec7e2360",
+      "source": "src/main/resources/assets/hbm_m/blockstates/soldering_station.json"
+    },
+    "assets/hbm_m/blockstates/strawberry_bush.json": {
+      "generated_sha256": "20d2d524f2cd5a22f46479cbb95f2d1a135f39f28915ec173229b4f233c9b961",
+      "packaged_sha256": "eb4c4b0ac21476c056eb55a7af0b1c29c46a17745d6f09ca258147e2fb66bdb5",
+      "source": "src/main/resources/assets/hbm_m/blockstates/strawberry_bush.json"
+    },
+    "assets/hbm_m/blockstates/substation.json": {
+      "generated_sha256": "305a67a563661c50ba9e2c4b77b252b105eb669c8c6b1b6670b9ff788b5e9df9",
+      "packaged_sha256": "7b37f493c543ade2c01dbd3ea9dbbab51a0429b33211324df64b1113a1e46e91",
+      "source": "src/main/resources/assets/hbm_m/blockstates/substation.json"
+    },
+    "assets/hbm_m/blockstates/tower_small.json": {
+      "generated_sha256": "991258c46e4559ca1afc74dafa887aa97e58c857b0c614ebba2acb347ae5adf0",
+      "packaged_sha256": "496ce85a8385984c659cf3409e16974487ce7ec93173e331d2e2d25bf5af5f4e",
+      "source": "src/main/resources/assets/hbm_m/blockstates/tower_small.json"
+    },
+    "assets/hbm_m/blockstates/turbine.json": {
+      "generated_sha256": "78bb040771df6a35e221158650010bb39b037e5c1321db0bf53d6334656108d6",
+      "packaged_sha256": "e40e9b0f1e1cba5718b4a7381827c72f6c4b9c1da0f3fe169c9cba1721464202",
+      "source": "src/main/resources/assets/hbm_m/blockstates/turbine.json"
+    },
+    "assets/hbm_m/blockstates/turbofan.json": {
+      "generated_sha256": "a2fc5b21accfc86b574731121be34835f78b6c7b9c0794b1d691ea7255c44db8",
+      "packaged_sha256": "cfd0c071dd4eb5a44bbc762583c4eff047efdaf3892df4fae1fe78e177937548",
+      "source": "src/main/resources/assets/hbm_m/blockstates/turbofan.json"
+    },
+    "assets/hbm_m/blockstates/vacuum_distill.json": {
+      "generated_sha256": "5f6345c90579fb7833e5820274416a9958b3e54f8854ee58e9c4abe77541977b",
+      "packaged_sha256": "e7be5fcca0e325038edcbc82f37047715a6368222d5b7a128da5b2fe7293afef",
+      "source": "src/main/resources/assets/hbm_m/blockstates/vacuum_distill.json"
+    },
+    "assets/hbm_m/blockstates/zirnox.json": {
+      "generated_sha256": "e1792005a0c09a5cb0960b5e7075196165928e8e8667f2e95c0619132f4de4c5",
+      "packaged_sha256": "88af58c86193cd6cd3dc2adee4a78f782e82b194f6ffbdb59958bce63de2f7df",
+      "source": "src/main/resources/assets/hbm_m/blockstates/zirnox.json"
+    },
+    "assets/hbm_m/models/block/barbed_wire.json": {
+      "generated_sha256": "df339f4a5e6a7a4c1b896701c93b1ea42bf6477f80283bf064140e128afd42f6",
+      "packaged_sha256": "b06696dc5aa68efb4174eea91de0472d5599c3ed041826625649ea1d1deb2186",
+      "source": "src/main/resources/assets/hbm_m/models/block/barbed_wire.json"
+    },
+    "assets/hbm_m/models/block/barbed_wire_fire.json": {
+      "generated_sha256": "a99777508e2f98e36c81d8d2cbfd744b724e12c6d2d92a2f1d217d9dce8f716d",
+      "packaged_sha256": "e8342a08926bee4f1603d845058b7e3a0c4138e1813d85f13465dbae45776278",
+      "source": "src/main/resources/assets/hbm_m/models/block/barbed_wire_fire.json"
+    },
+    "assets/hbm_m/models/block/barbed_wire_poison.json": {
+      "generated_sha256": "0470761c35df401cabe980367656a27af8471bf7321428071d1eaff5c52484d0",
+      "packaged_sha256": "f74e533ba3728eb969f738a135d37267d53f1bb72614798069b8396db6d04231",
+      "source": "src/main/resources/assets/hbm_m/models/block/barbed_wire_poison.json"
+    },
+    "assets/hbm_m/models/block/barbed_wire_rad.json": {
+      "generated_sha256": "35e36712caedd8fd6ad4bd16caa010f5754e2cc1c29ac3c3284ba94807fc8e29",
+      "packaged_sha256": "d67e43e1fc0038e5c044dafa1e887d2a30588d76e84d6f35ad53f69aa9c87605",
+      "source": "src/main/resources/assets/hbm_m/models/block/barbed_wire_rad.json"
+    },
+    "assets/hbm_m/models/block/barbed_wire_wither.json": {
+      "generated_sha256": "ce672e13750e3f945d4a194c51aa4617b0c84da7d9c3b36802e878a48e17f3df",
+      "packaged_sha256": "8509d8b8d895a012f7bd80695d372db5deece29c3c634ab946fad19a49aade17",
+      "source": "src/main/resources/assets/hbm_m/models/block/barbed_wire_wither.json"
+    },
+    "assets/hbm_m/models/block/c4.json": {
+      "generated_sha256": "be51b7ca8e354487598b8fea0d0093a78b446839191b73d38b1b5c4a2ef29405",
+      "packaged_sha256": "87aedf03a16a3635ac0621b50142347d2481af68f63eb3183ba7a0cfdf5cf8ff",
+      "source": "src/main/resources/assets/hbm_m/models/block/c4.json"
+    },
+    "assets/hbm_m/models/block/converter_block.json": {
+      "generated_sha256": "1a022d88de634e8c9025714301be73179c23fa762cf81703ead5d8b2e387f1a3",
+      "packaged_sha256": "38476cf4cd97236d1daee42c97c87a600337a98016efd12fb9a40b9bda2bb114",
+      "source": "src/main/resources/assets/hbm_m/models/block/converter_block.json"
+    },
+    "assets/hbm_m/models/block/decon.json": {
+      "generated_sha256": "a467eeedf74d5cc9ab57f6467136b7d472f919452d9ddf0c4eb0ce5ccc68e07c",
+      "packaged_sha256": "808b6297773d2d4a97fe9ca419de5905248e244585cbe4fdd7dda7215ee6afdb",
+      "source": "src/main/resources/assets/hbm_m/models/block/decon.json"
+    },
+    "assets/hbm_m/models/block/det_miner.json": {
+      "generated_sha256": "ec15b0905a2425efeab62fd6e23ca249e0e913299dfcae32d61ec1a42ebe6718",
+      "packaged_sha256": "de47c453ce697cca73c310286ac051d532bb1350e93fb48f41855a557010d3df",
+      "source": "src/main/resources/assets/hbm_m/models/block/det_miner.json"
+    },
+    "assets/hbm_m/models/block/freaky_alien_block.json": {
+      "generated_sha256": "aeb54378395f76c15e0ec9fc43371d15223d48f14752b504f53c1ab9a6b79756",
+      "packaged_sha256": "a359a46422c64ad1b9b494cab86dd71dbb48df64f6514da7a0c2e812695704f0",
+      "source": "src/main/resources/assets/hbm_m/models/block/freaky_alien_block.json"
+    },
+    "assets/hbm_m/models/block/nuclear_charge.json": {
+      "generated_sha256": "47089174f40d2b536b0db5a497cafca0de3c32270be72dcb4dfa77629cfa2113",
+      "packaged_sha256": "de781b55fc3d4e5e786d6fb339c220a8e2480312cfc83650a01c28ebc4f648ca",
+      "source": "src/main/resources/assets/hbm_m/models/block/nuclear_charge.json"
+    },
+    "assets/hbm_m/models/block/smoke_bomb.json": {
+      "generated_sha256": "64914f5948b094c777dd1a6654b2fdd249e64d1d780efadc05cf59359b992cd4",
+      "packaged_sha256": "cbfe8a17db769cc8155a5da9b0238f617a90ff268ff5810f13d997db968ec03a",
+      "source": "src/main/resources/assets/hbm_m/models/block/smoke_bomb.json"
+    },
+    "assets/hbm_m/models/block/steam_condenser.json": {
+      "generated_sha256": "763284358f5086708ee605d9ad2ff13b75291a1cac3e8ca4b9237293289d9c39",
+      "packaged_sha256": "10ad20e45588e0030f9e52122fb95469331c89b2f69a831bb5f9f179ca37d7bf",
+      "source": "src/main/resources/assets/hbm_m/models/block/steam_condenser.json"
+    },
+    "assets/hbm_m/models/block/sulfur_ore.json": {
+      "generated_sha256": "978d12739d4ff05f259bfa412e68d869aa7c87b325abe8271526dccabde29ee3",
+      "packaged_sha256": "5556e77157b28e03a34b531e4df5758f9f73baafbf1ada7327bf5d72d5944982",
+      "source": "src/main/resources/assets/hbm_m/models/block/sulfur_ore.json"
+    },
+    "assets/hbm_m/models/block/waste_charge.json": {
+      "generated_sha256": "b6d1ee5c4e35e80097863b6f068d68e89599700ad9103b5584e76069fb93cd27",
+      "packaged_sha256": "c563453a58c2ba2359537e080f962e46772a86120a70961fd047dbf6996c9062",
+      "source": "src/main/resources/assets/hbm_m/models/block/waste_charge.json"
+    },
+    "assets/hbm_m/models/item/centrifuge_element.json": {
+      "generated_sha256": "a550e4c57f90c88ac346ccf17921066df256796618b78e3150f430776e80dcd5",
+      "packaged_sha256": "21f3474d1d2b37bdc58c6866314fb7373252bd97fb02b7286dadcd002fa141c3",
+      "source": "src/main/resources/assets/hbm_m/models/item/centrifuge_element.json"
+    },
+    "assets/hbm_m/models/item/gas_centrifuge.json": {
+      "generated_sha256": "d3dca1c21d0941ca046392e2eb648016ce22ab0c9b1a7dda93daf4b7c92c2abc",
+      "packaged_sha256": "70b38bf85a218a9a412e2856cce7175142ea55d0cf6329a3285e2a1065a65129",
+      "source": "src/main/resources/assets/hbm_m/models/item/gas_centrifuge.json"
+    },
+    "assets/hbm_m/models/item/rbmk_absorber.json": {
+      "generated_sha256": "8f0124e61be145d631e4cba41f562340860da47641fd9887d027140be59fcfef",
+      "packaged_sha256": "f5b2ea382e9af92c286faa478bbd50e469e9164930b12ef0ebc0de2edb1d8295",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_absorber.json"
+    },
+    "assets/hbm_m/models/item/rbmk_autoloader.json": {
+      "generated_sha256": "599785484bb4e08e001fa895de4af1a066dfce7fbad218945d0b3abb499d094b",
+      "packaged_sha256": "586232a16cd3a32d7842c6601651b165d57162aeb71e3e4f8b93be36701b0834",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_autoloader.json"
+    },
+    "assets/hbm_m/models/item/rbmk_blank.json": {
+      "generated_sha256": "5b854ba2964a5c519db79fafed3f0f81d89288bbe6a74a45723f3248b4c28d3b",
+      "packaged_sha256": "8a7f9a27163cb5293605db3795c5df3bc39f1ed5270bbc731fc0a3b385b8300d",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_blank.json"
+    },
+    "assets/hbm_m/models/item/rbmk_boiler.json": {
+      "generated_sha256": "c0095c2ffcc3ae184739f10f1cf8e1dc9a5ccbf821c42a5e4ec4e629812514d9",
+      "packaged_sha256": "8a333120a69aa3dae2122d01d6f1ee74a1ff665793298324e0b176f1dcc46a57",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_boiler.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control.json": {
+      "generated_sha256": "23b5552994f3adda977c6c50fed059de8b32efc63481f54b9e11cc596359ad52",
+      "packaged_sha256": "0b046937c4b0d919f816ab9f4eafd1a032d089fb23dbda74abec14b709b738a4",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_auto.json": {
+      "generated_sha256": "f755184be2643d71e1b4bce66dfd7f8ee676d6dc760e4f5e0affb17a2e96c876",
+      "packaged_sha256": "85a2e4b494034d6dfa1dc3142a79b7909bf782a90c0a86c3688dd7429d97ad3b",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_auto.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_blue.json": {
+      "generated_sha256": "909b6e2fe6c3b8b4d38a5799ad43e11da024c43af9a6511687a16aed8eded472",
+      "packaged_sha256": "ce130b5a47bee39026980379beaa9ba67b13ab9314902dd53b0228b797d31eae",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_blue.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_green.json": {
+      "generated_sha256": "d30166bc5140ebee1fd675a3076f463a77a4ba0f31790f75340aae6fadbed396",
+      "packaged_sha256": "a5da69f0f291c489f100666dbeac1193f36192702decfe823e43d54dcefac482",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_green.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_mod.json": {
+      "generated_sha256": "53e5ba8388c3329178c2d0f9e6d08aa04fa0efdb18c8f8b6b729a6ce303304f1",
+      "packaged_sha256": "68e820f4e6e42106b2194fc4710e8d9851650be2531d850f1a94818075438b26",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_mod.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_mod_auto.json": {
+      "generated_sha256": "526fb2ebab52613fe17ceee61d662916b39b571a4ae1ae9b8bd359d59f0f9630",
+      "packaged_sha256": "0b8abb06f05e0ac9112045df80cdad19fb1aea30ed5f74a243acdf58d929f181",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_mod_auto.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_purple.json": {
+      "generated_sha256": "feedb6c182a23248da1dcbf10fd49fabbb308ded770e1c0a8714005096b2a216",
+      "packaged_sha256": "283823df12e046cb4a43650b8780d6ecddabbc2d114460523297ff68a7a5b192",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_purple.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_reasim.json": {
+      "generated_sha256": "ae31a44c2c4c8c7b4b16cfd759f6ec2d30d680b54924035bcc6e1e18638ceff8",
+      "packaged_sha256": "c4b38434844ad4eafe9eaa693f2733273cbdfd231188b3407e4a011baa023c73",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_reasim.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_reasim_auto.json": {
+      "generated_sha256": "9e1e2ef9f46d14f189ca7ec4dbb10d11de020249cc686e63aadde0797b20bbda",
+      "packaged_sha256": "0b8abb06f05e0ac9112045df80cdad19fb1aea30ed5f74a243acdf58d929f181",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_reasim_auto.json"
+    },
+    "assets/hbm_m/models/item/rbmk_control_yellow.json": {
+      "generated_sha256": "50fa143a3dd1c839da4e7edff415832f078ff5a7ed2298bab5f2a4e6781b5a35",
+      "packaged_sha256": "537a2aea02e9579093c0dbb133b9a865a24bf61c14d543fe2034b073245dafbf",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_control_yellow.json"
+    },
+    "assets/hbm_m/models/item/rbmk_cooler.json": {
+      "generated_sha256": "6bd84b1a6798d142789549b41930f5c9a7a776ebca01589f20e03d2fb5b7bc42",
+      "packaged_sha256": "2facffba8a211e7aa4edcdd514fe536de180ee1decf73bb04cdf91cf9f98d494",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_cooler.json"
+    },
+    "assets/hbm_m/models/item/rbmk_crane_console.json": {
+      "generated_sha256": "72925ace1e596a0dbcdb1d352717d0e905a95fc91024bbcb1366f2f5a2bf211a",
+      "packaged_sha256": "aece7a67167c3d3df83e30de00aa755042412dd4e560e180d60e45e54209b171",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_crane_console.json"
+    },
+    "assets/hbm_m/models/item/rbmk_debris.json": {
+      "generated_sha256": "681d0db82558e462a185d87592636933bf1ecc0f8310870ea7090dd25f445d8d",
+      "packaged_sha256": "ce2166d939e0a2847ac4052424adc6b69f57e0fa6f178d83df1a422292859616",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_debris.json"
+    },
+    "assets/hbm_m/models/item/rbmk_debris_burning.json": {
+      "generated_sha256": "8cd40610bab03a3823b479db4f416756fa5f125f578a2e35a3cd66d2d054bf7c",
+      "packaged_sha256": "51c58f30bab07694a77b304542e9323cf908792c50e8521afcdbc36135adb6e2",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_debris_burning.json"
+    },
+    "assets/hbm_m/models/item/rbmk_debris_digamma.json": {
+      "generated_sha256": "6c14ac9fd08a1af47d9f22ff8c2312df203d6f01e736a8a1ec4e856978a28d49",
+      "packaged_sha256": "9047ff1fd1c8c3c3ba23fb167ee3a54d8c3121ab7d44bacd03ccf77e15dcedbc",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_debris_digamma.json"
+    },
+    "assets/hbm_m/models/item/rbmk_debris_radiating.json": {
+      "generated_sha256": "b8b5f28d198e1e8782906353ff5f99f3d6388fd7e7538483256fbe9b8f4901c9",
+      "packaged_sha256": "a398146ca044b383efa4dd5f635b3d2f2ac86dabf385ce008b42b85481a15c9e",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_debris_radiating.json"
+    },
+    "assets/hbm_m/models/item/rbmk_display.json": {
+      "generated_sha256": "4ffb3e24c310d68f3aac830e4d95cff2b58cc27dc71ed54c813fa97ffafe0fec",
+      "packaged_sha256": "59d1138a426c482b1138190d9ff78f22d1e7eab973cd0aa226255beb27d0227a",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_display.json"
+    },
+    "assets/hbm_m/models/item/rbmk_element.json": {
+      "generated_sha256": "0be0ae5dd1077fac0948a4d49bdc1877df8010026d9afcebf80547c73e899738",
+      "packaged_sha256": "ca2da807df07cd54636cf8ae3d74cdc703e5c87191b681852d6f2cc97dab860c",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_element.json"
+    },
+    "assets/hbm_m/models/item/rbmk_element_mod.json": {
+      "generated_sha256": "cc102aa2ab6473f835a8f2c83eecaf08bdc213a0af15212fc51f98d6b2927f02",
+      "packaged_sha256": "52fdb58d914577a4ad301a9aaec52c78f61b7011ea8572f1135ca9bdae175560",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_element_mod.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_drx.json": {
+      "generated_sha256": "6c6c2f38c80b311423363ccc90e4bb66d0d606a9f6ecf664f6dfc429a49bdc7e",
+      "packaged_sha256": "5ffe8b05a335f570601bcf8da5af56be4b62265594026980c204a52b5d4c5499",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_drx.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_empty.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_empty.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_hep239.json": {
+      "generated_sha256": "19b58044da9cdf317639c580aefef41a95605b7a05a8bc71d020c4d60b48e5f5",
+      "packaged_sha256": "4a2adcc90ccdfcb5fd6bbc669e2ffc16f113c4fffcc1081e1f108b542f085f36",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_hep239.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_heu235.json": {
+      "generated_sha256": "19b58044da9cdf317639c580aefef41a95605b7a05a8bc71d020c4d60b48e5f5",
+      "packaged_sha256": "4a2adcc90ccdfcb5fd6bbc669e2ffc16f113c4fffcc1081e1f108b542f085f36",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_heu235.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_lep.json": {
+      "generated_sha256": "19b58044da9cdf317639c580aefef41a95605b7a05a8bc71d020c4d60b48e5f5",
+      "packaged_sha256": "4a2adcc90ccdfcb5fd6bbc669e2ffc16f113c4fffcc1081e1f108b542f085f36",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_lep.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_leu235.json": {
+      "generated_sha256": "19b58044da9cdf317639c580aefef41a95605b7a05a8bc71d020c4d60b48e5f5",
+      "packaged_sha256": "4a2adcc90ccdfcb5fd6bbc669e2ffc16f113c4fffcc1081e1f108b542f085f36",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_leu235.json"
+    },
+    "assets/hbm_m/models/item/rbmk_fuel_mox.json": {
+      "generated_sha256": "19b58044da9cdf317639c580aefef41a95605b7a05a8bc71d020c4d60b48e5f5",
+      "packaged_sha256": "4a2adcc90ccdfcb5fd6bbc669e2ffc16f113c4fffcc1081e1f108b542f085f36",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_fuel_mox.json"
+    },
+    "assets/hbm_m/models/item/rbmk_gauge.json": {
+      "generated_sha256": "20db81b0d63f9258fde9e4648c59519208bd20f6f18d6776723137b75f1e8822",
+      "packaged_sha256": "87854a4454648ac0f97dd7147164ac4af530b11422570aa989411112db8cf5ab",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_gauge.json"
+    },
+    "assets/hbm_m/models/item/rbmk_graph.json": {
+      "generated_sha256": "c901b26f1029ceb73c346f6ddbdea0012581d0bbda7f770d4d1d510cec5c6145",
+      "packaged_sha256": "87854a4454648ac0f97dd7147164ac4af530b11422570aa989411112db8cf5ab",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_graph.json"
+    },
+    "assets/hbm_m/models/item/rbmk_heater.json": {
+      "generated_sha256": "4a8093bfddd6b1a06903270e4efe3a30058e0ac7a505fedfec4872871011d4e2",
+      "packaged_sha256": "aad2042635a2941cd3ff1912743e239dbd9b6ec1cef1e1ea989072ac0db57748",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_heater.json"
+    },
+    "assets/hbm_m/models/item/rbmk_indicator.json": {
+      "generated_sha256": "933b8f532b9e6efb7ca2f419e25acddb0d92d57761ba48aa332ad7c0b5042b16",
+      "packaged_sha256": "87854a4454648ac0f97dd7147164ac4af530b11422570aa989411112db8cf5ab",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_indicator.json"
+    },
+    "assets/hbm_m/models/item/rbmk_keypad.json": {
+      "generated_sha256": "1d493c3a9236bb86c1227b8971639911da69f854e43cab7ecb86871eff465917",
+      "packaged_sha256": "c4b38434844ad4eafe9eaa693f2733273cbdfd231188b3407e4a011baa023c73",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_keypad.json"
+    },
+    "assets/hbm_m/models/item/rbmk_lever.json": {
+      "generated_sha256": "dcda8bae246c16d1f8f571aede756d7ee82d4f72f93cf116385b50388aa1e8f8",
+      "packaged_sha256": "c4b38434844ad4eafe9eaa693f2733273cbdfd231188b3407e4a011baa023c73",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_lever.json"
+    },
+    "assets/hbm_m/models/item/rbmk_lid.json": {
+      "generated_sha256": "7eff6889d286688f9cb7ab3c1e97f4e042a505cb5fabfdb6bf4e0aabe09fcc51",
+      "packaged_sha256": "f33dd91b11e2048188859c491bd7ea854da0b5c5952535560ca4f988aed3889e",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_lid.json"
+    },
+    "assets/hbm_m/models/item/rbmk_lid_glass.json": {
+      "generated_sha256": "acf9c390578c7dffa5b01ee60ab23c79738501beb04c0d828b2593dc8d85977e",
+      "packaged_sha256": "916806e96205a085913ebe3bdc6162cda4827d545485b6c8146ab099264c5a4f",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_lid_glass.json"
+    },
+    "assets/hbm_m/models/item/rbmk_loader.json": {
+      "generated_sha256": "c853b925249b8b47f1b90b0626ea438bf08ebd4e23c6ba711561a0eef34e1f13",
+      "packaged_sha256": "586232a16cd3a32d7842c6601651b165d57162aeb71e3e4f8b93be36701b0834",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_loader.json"
+    },
+    "assets/hbm_m/models/item/rbmk_moderator.json": {
+      "generated_sha256": "97d989652bb522312c20676cb0c35c61a9677a46f9b3bffb245675338e2a6a3d",
+      "packaged_sha256": "c0354fc6c68305d6d5a47051d741584a199d6a51f56909d34101255e744a0810",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_moderator.json"
+    },
+    "assets/hbm_m/models/item/rbmk_numitron.json": {
+      "generated_sha256": "156faa93b0430134f83c2a9d3604366be0efaa7c46b6868b98c5a9d06e1e76c1",
+      "packaged_sha256": "87854a4454648ac0f97dd7147164ac4af530b11422570aa989411112db8cf5ab",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_numitron.json"
+    },
+    "assets/hbm_m/models/item/rbmk_outgasser.json": {
+      "generated_sha256": "ef47603819d2e2c13cea358758521337d2990c24587b9e62ac60e1e5867528a5",
+      "packaged_sha256": "218bf497e25ecf72434bbf353a8efb64e3271de773c15413135083a54577d3b8",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_outgasser.json"
+    },
+    "assets/hbm_m/models/item/rbmk_pellet_hep239.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_pellet_hep239.json"
+    },
+    "assets/hbm_m/models/item/rbmk_pellet_heu235.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_pellet_heu235.json"
+    },
+    "assets/hbm_m/models/item/rbmk_pellet_lep.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_pellet_lep.json"
+    },
+    "assets/hbm_m/models/item/rbmk_pellet_leu235.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_pellet_leu235.json"
+    },
+    "assets/hbm_m/models/item/rbmk_pellet_mox.json": {
+      "generated_sha256": "b0db22929dd6f71945ed63e054d5a8f5cb122c37154a975f2d085f33c47889d9",
+      "packaged_sha256": "1cfce84b5e5f4419290e5cd02a6bc7fcf5e4cee1ca6db33d05d98a42d91a6ef5",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_pellet_mox.json"
+    },
+    "assets/hbm_m/models/item/rbmk_reflector.json": {
+      "generated_sha256": "4ca815270a1cee9136ad1c91935a619bfbbc3a287fe9a14ba61adca080103dc2",
+      "packaged_sha256": "f473e2336451c3852ba0306710f04483efbb29f95d4dc40ceeaddb8bc8f0caf9",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_reflector.json"
+    },
+    "assets/hbm_m/models/item/rbmk_steam_inlet.json": {
+      "generated_sha256": "f37ac92606abc298eb989a8e190379475835daadde5e9b9b81f5c3df0bdf9367",
+      "packaged_sha256": "ea1d507a887cda152dd069be8dd14115c33edd79441dd7b809c5ca387918b4a6",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_steam_inlet.json"
+    },
+    "assets/hbm_m/models/item/rbmk_steam_outlet.json": {
+      "generated_sha256": "23fec7bcec1b68c38e9fe63ea1f0f5548b2d5c5e10da4f25607aadba1431e66c",
+      "packaged_sha256": "ea1d507a887cda152dd069be8dd14115c33edd79441dd7b809c5ca387918b4a6",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_steam_outlet.json"
+    },
+    "assets/hbm_m/models/item/rbmk_storage.json": {
+      "generated_sha256": "afb266fbc80acc8448303d44e03d82e2c990af745e43697a14bb2c24ad0ae34b",
+      "packaged_sha256": "c8476f808f3fa77abeff9418ae15b9d65ffbc1d252e9329a44057793a389ec32",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_storage.json"
+    },
+    "assets/hbm_m/models/item/rbmk_terminal.json": {
+      "generated_sha256": "af22d329efd358382792bae9e3a3fd315cf332bd074b7c2fb4dd5a754cef0931",
+      "packaged_sha256": "87854a4454648ac0f97dd7147164ac4af530b11422570aa989411112db8cf5ab",
+      "source": "src/main/resources/assets/hbm_m/models/item/rbmk_terminal.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_empty.json": {
+      "generated_sha256": "335bc62513c6f991da9e87c0e17429ded50f78d20b15e5bac28584935f9feae7",
+      "packaged_sha256": "f63b02fc5bc2d2d905de33318e17d232ebfc87ad4c46ee799ae2bf397b62c3c9",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_empty.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_les_fuel.json": {
+      "generated_sha256": "640a2aaba1968db9356452236a59f7cb415761540d01f4295d37424a22f43477",
+      "packaged_sha256": "31f12c66af933bf5fb95b59791334f5659610540f7e3d175683e4c9ad55bbc16",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_les_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_les_fuel_depleted.json": {
+      "generated_sha256": "0b22c555d403603e5f2feae550f86a63b036fbad55db07ed2f852752813d0926",
+      "packaged_sha256": "ca1874ac0e76b4db8e86344a1a3ddb6f37d69fbe425b44623c2ab59942b11e10",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_les_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_lithium.json": {
+      "generated_sha256": "82077e5d066bf00739fa8d2adaaf77431e74d7c88e32051d98521778335946fc",
+      "packaged_sha256": "f0db8636f012f4a2b6a7e7dbd80dd3e76d63af3969254855d3d16d1bc7c6dac0",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_lithium.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_mox_fuel.json": {
+      "generated_sha256": "8d968e5d7cb207cbf84211f88606510aaff834c605a60f6ab5ca335434a97018",
+      "packaged_sha256": "006b6cc00426c9c3ddfeca2c6c6907000bd6d1dd311a5613719d76fa989f0964",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_mox_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_mox_fuel_depleted.json": {
+      "generated_sha256": "8b648539ad5e87617f80fbe91e51239fba2efc4b7316054a4e085a901ec22c99",
+      "packaged_sha256": "a29da362d793ccef2f853cd77aa9a68ceba9ed77b7d6d0bf0d60744854f2c1b4",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_mox_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_natural_uranium_fuel.json": {
+      "generated_sha256": "d6949286e815f9cc5212d301296a2f4e48b58610aec537cd1dbf732a1b9c9db0",
+      "packaged_sha256": "21bbf98fd5c9042917940e6bf016d3085a1cff307ad8e99df7aacd2ad28ff424",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_natural_uranium_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_plutonium_fuel.json": {
+      "generated_sha256": "b2470f8db43b7408e387063c7685d0fcc9dab036da5c1831176f59ecdbaf9109",
+      "packaged_sha256": "ec545653ed550bfe8245104745a09a569cf4848a9d5981ac5857a1a76ee06694",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_plutonium_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_plutonium_fuel_depleted.json": {
+      "generated_sha256": "e1aabc1347b021ec3ee9ae471e31f235d82ff90ed9c5b4224f3c3abddb85de1d",
+      "packaged_sha256": "2667867129121dc07ebf48a348b6f13330c49700dbb4e05f153e2c6e72ca64a4",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_plutonium_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_th232.json": {
+      "generated_sha256": "097f94fd21bfc5ca4350102c7163ef87802931a85ba98f9e619bfdd133f6aa13",
+      "packaged_sha256": "23e18eca81bb18d49a2feab12e17d14b8f0e4bf7c86c292fcbb86835492eeec0",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_th232.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_thorium_fuel.json": {
+      "generated_sha256": "787e9e1313b0b75e15a6d437b7f6c6f4bbabe7823d2def646fa31a77ee0cf937",
+      "packaged_sha256": "51cc53c9025bec536f1430bead88b473e828f14ab721338378c021666a58c06a",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_thorium_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_thorium_fuel_depleted.json": {
+      "generated_sha256": "41f013214f5a9062aacdd93e7b4cd6a34d9c102323bc480e21913f860961263e",
+      "packaged_sha256": "b29d0ca971f1c32ceedb1e95228738999a62902ec90b65ade81d7e7f353b5739",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_thorium_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_tritium.json": {
+      "generated_sha256": "7dbe60e1443551ffc74403928613fcef915dc2b24bd20f187c9b98569733e293",
+      "packaged_sha256": "19e421097821e02cc3dd0c4a6e39d252b22913995a8590151e04f6401e848431",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_tritium.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_u233_fuel.json": {
+      "generated_sha256": "865d1ce2d65abc103fa009fef6d9db73990f1ca910bbe0fed9bb290f4de5b7e7",
+      "packaged_sha256": "36ecf360a820df9a81766bda50eabcfdf2a584161cce47ab63e7ece390e5dc80",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_u233_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_u233_fuel_depleted.json": {
+      "generated_sha256": "133ca7ada33b12714c9ba45e6237f8a9f3947c307a4ca27e68724651a2bcd865",
+      "packaged_sha256": "1a6fc31f14cedb322ac5af9df57b56373ba3c08336222dbe488e5af869290a4a",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_u233_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_u235_fuel.json": {
+      "generated_sha256": "079c0f6ae73420717fca515358a20939b321523c8d6f655d904f5cc911895966",
+      "packaged_sha256": "f7b7bcf900e8673c20ec4aa2cb3b6f3f1a7892a2c31310e338f8f7f4f5bbdc7a",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_u235_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_u235_fuel_depleted.json": {
+      "generated_sha256": "744a6881f49c66782e138b24f1f8a78d134dc4e2067d14a039d6202a0af5dc66",
+      "packaged_sha256": "aa453982f9a97c274bc78f67d896ff05b98b85a9e64b236f07f932ff1fdc2412",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_u235_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_uranium_fuel.json": {
+      "generated_sha256": "299fc8837cc17ce2ee624d3447ac9b2023f6f5eeea31e96065378c5abe1b49c0",
+      "packaged_sha256": "f7339879919addc0678a7a1a2b4bb70401e33f591e33e5a18f25c2888d0cf883",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_uranium_fuel.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_uranium_fuel_depleted.json": {
+      "generated_sha256": "daa5bc677faf0c4c840585a3a3904c0e0f9b53d6f067e06ad44cdbf3e7f8e471",
+      "packaged_sha256": "6205fe59d7647a1fdec5fa2012ec9b6d5bb073543aee48e2be368cd8d874bf0e",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_uranium_fuel_depleted.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_zfb_mox.json": {
+      "generated_sha256": "6a5f4d32833933b25ed330d6d5fe2703b9253fb2ff2d98ec3b3bf11972fb285e",
+      "packaged_sha256": "a0d87e0689cdcdfb9d41328f4cd469337c21550d236bbc2249f5177309dc091c",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_zfb_mox.json"
+    },
+    "assets/hbm_m/models/item/rod_zirnox_zfb_mox_depleted.json": {
+      "generated_sha256": "d5d15ed1c69af3f17d4366df167703aa6a979a5d5d6baff35cc0104ecd87daa2",
+      "packaged_sha256": "3b466d24adee2c428d054ee726ec183e7dc142bc4aa350411aebe121180cb899",
+      "source": "src/main/resources/assets/hbm_m/models/item/rod_zirnox_zfb_mox_depleted.json"
+    },
+    "data/forge/tags/items/ores/uranium.json": {
+      "generated_sha256": "0b28e0830887a02a6b031230927580f9ea567e0836e4586c3716a0ddae2a9b0d",
+      "packaged_sha256": "9bd18eb0c8fb8969844fc6dd0c80ff28879ed69255a44bd140aee71677b3ad44",
+      "source": "src/main/resources/data/forge/tags/items/ores/uranium.json"
+    },
+    "data/forge/tags/items/wires_fine/lead.json": {
+      "generated_sha256": "c73664ff08fa1c39173a8bafd083ab6b536dc56fee2d651589ee95c651df771d",
+      "packaged_sha256": "b092b2259213063431df8478026a0039224b52c0f524528aae8a56a93e23e9ea",
+      "source": "src/main/resources/data/forge/tags/items/wires_fine/lead.json"
+    },
+    "data/hbm_m/damage_type/radiation.json": {
+      "generated_sha256": "38770aed78f5273297d9a152152f1ff25bef6b8d7272fa3dd50cfae300b63921",
+      "packaged_sha256": "66857abe6a3ac61610a3890360ac3fe1494e94026578fb43ce0e3b7eed0fac51",
+      "source": "src/main/resources/data/hbm_m/damage_type/radiation.json"
+    },
+    "data/hbm_m/tags/items/zirnox_rods.json": {
+      "generated_sha256": "7a1e9e43b6323e9493691983c08c51ee4ec574b7c5e8bf78137dab5b3d77fb5d",
+      "packaged_sha256": "10273d8089f1b6d4017eb52f000a31adff2afab936d54a7ebe7f32556639931a",
+      "source": "src/main/resources/data/hbm_m/tags/items/zirnox_rods.json"
+    }
+  }
+}

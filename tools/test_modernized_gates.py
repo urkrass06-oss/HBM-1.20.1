@@ -101,6 +101,16 @@ class PackageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.check()
 
+    def test_only_exact_reviewed_resource_override_is_accepted(self):
+        import hashlib
+        generated, packed = b"own generated", b"own authored"
+        overrides = {"own.json": {"generated_sha256": hashlib.sha256(generated).hexdigest(),
+                                  "packaged_sha256": hashlib.sha256(packed).hexdigest()}}
+        self.assertTrue(audit.resource_override("own.json", generated, packed, overrides))
+        self.assertFalse(audit.resource_override("other.json", generated, packed, overrides))
+        self.assertFalse(audit.resource_override("own.json", b"changed", packed, overrides))
+        self.assertFalse(audit.resource_override("own.json", generated, b"changed", overrides))
+
 
 class ReportTests(unittest.TestCase):
     def setUp(self):
